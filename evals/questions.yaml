@@ -1,0 +1,306 @@
+# Eval set: 40 questions over 14 ICMR Standard Treatment Workflows (STWs).
+#
+# 25 direct (one fact, one place), 10 multi (2+ facts, often 2+ documents),
+# 5 unanswerable (plausible, but NOT in any of the 14 PDFs).
+#
+# doc  = PDF file name without .pdf
+# page = 1-based page number. All STWs are 1 page except
+#        STW_Acute_Aortic_Syndrome (2 pages).
+#
+# NOTE: because 13 of 14 PDFs are one page, "right page" here mostly means
+# "right document". Retrieval metrics will look high. The harder tests are
+# answer accuracy (exact doses and thresholds) and refusals.
+#
+# split: 30 'dev' questions for tuning, 10 'heldout' questions run only at the end
+# (6 direct, 2 multi, 2 unanswerable). Report the held-out score.
+#
+# Written by Claude from the PDF text. Spot-check 10 against the PDFs
+# before trusting it.
+
+questions:
+  # ---------------------------------------------------------------- direct
+  - id: q01
+    split: dev
+    type: direct
+    question: "What fluid should be given in the first hour of DKA treatment, and at what rate afterwards?"
+    sources: [{doc: STW_DKA, page: 1}]
+    reference_answer: "1 litre of 0.9% saline over the first hour, then 250-500 ml/hour (10-20 ml/kg/hour initially for children)."
+
+  - id: q02
+    split: dev
+    type: direct
+    question: "When should potassium be supplemented before starting insulin in DKA?"
+    sources: [{doc: STW_DKA, page: 1}]
+    reference_answer: "If serum K+ is below 3.3 mEq/L (or there are ECG changes)."
+
+  - id: q03
+    split: heldout
+    type: direct
+    question: "In DKA, when should 5% dextrose be added to the fluids?"
+    sources: [{doc: STW_DKA, page: 1}]
+    reference_answer: "When blood glucose falls below 250 mg/dl, add 5% dextrose at 50 ml/hour."
+
+  - id: q04
+    split: dev
+    type: direct
+    question: "What are the loading and maintenance doses of aspirin in acute coronary syndrome?"
+    sources: [{doc: STW_NSTEMI, page: 1}]
+    reference_answer: "Loading dose 325 mg, followed by 75 mg once daily."
+
+  - id: q05
+    split: dev
+    type: direct
+    question: "What GRACE and TIMI scores define a high-risk UA/NSTEMI patient?"
+    sources: [{doc: STW_NSTEMI, page: 1}]
+    reference_answer: "GRACE score above 140 or TIMI score above 4."
+
+  - id: q06
+    split: dev
+    type: direct
+    question: "What dose of tenecteplase should a 75 kg STEMI patient receive?"
+    sources: [{doc: STW_STEMI, page: 1}]
+    reference_answer: "40 mg IV bolus (the dose for 70-80 kg)."
+
+  - id: q07
+    split: heldout
+    type: direct
+    question: "After thrombolysis for STEMI, when should an ECG be done to check if it worked, and what counts as success?"
+    sources: [{doc: STW_STEMI, page: 1}]
+    reference_answer: "At 60-90 minutes after starting thrombolysis; success is more than 50% ST-segment resolution with pain relief."
+
+  - id: q08
+    split: dev
+    type: direct
+    question: "Within what time window can IV tPA be given for ischaemic stroke?"
+    sources: [{doc: STW_Stroke, page: 1}]
+    reference_answer: "0-4.5 hours from symptom onset (mechanical thrombectomy may be considered from 4.5 to 24 hours if eligible)."
+
+  - id: q09
+    split: dev
+    type: direct
+    question: "What does the BEFAST acronym stand for in stroke warning signs?"
+    sources: [{doc: STW_Stroke, page: 1}]
+    reference_answer: "Balance, Eyes, Face, Arm, Speech, Time."
+
+  - id: q10
+    split: heldout
+    type: direct
+    question: "Which drugs are suggested for migraine prophylaxis, and when should prophylaxis be started?"
+    sources: [{doc: STW_Headache, page: 1}]
+    reference_answer: "When attacks are more than 2 per month: a 2-month trial of propranolol 40 mg OD or flunarizine 10 mg OD."
+
+  - id: q11
+    split: dev
+    type: direct
+    question: "What first-line drug treatment is recommended for a newly diagnosed type 2 diabetic with HbA1c below 8.5%?"
+    sources: [{doc: STW_Diabetes_Type2, page: 1}]
+    reference_answer: "Monotherapy with metformin."
+
+  - id: q12
+    split: dev
+    type: direct
+    question: "What HbA1c value is diagnostic of diabetes?"
+    sources: [{doc: STW_Diabetes_Type2, page: 1}]
+    reference_answer: "HbA1c of 6.5% or higher."
+
+  - id: q13
+    split: dev
+    type: direct
+    question: "What is the target HbA1c for most adults with type 2 diabetes?"
+    sources: [{doc: STW_Diabetes_Type2, page: 1}]
+    reference_answer: "7.0% or below, except in the elderly and those with significant comorbidities, where a higher target may be acceptable."
+
+  - id: q14
+    split: heldout
+    type: direct
+    question: "Which drug should be used for fever in probable dengue without warning signs, and what should be avoided?"
+    sources: [{doc: STW_Dengue, page: 1}]
+    reference_answer: "Paracetamol; avoid NSAIDs."
+
+  - id: q15
+    split: dev
+    type: direct
+    question: "What are the warning signs in dengue?"
+    sources: [{doc: STW_Dengue, page: 1}]
+    reference_answer: "Abdominal pain or tenderness, persistent vomiting, clinical fluid accumulation (pleural effusion, ascites), mucosal bleed (malena, epistaxis, gum bleed), liver enlargement over 2 cm, and shock."
+
+  - id: q16
+    split: dev
+    type: direct
+    question: "At what platelet count is prophylactic platelet transfusion indicated in dengue?"
+    sources: [{doc: STW_Dengue, page: 1}]
+    reference_answer: "Platelet count below 10,000/cumm."
+
+  - id: q17
+    split: dev
+    type: direct
+    question: "What is the initial fluid bolus for a child with septic shock and poor peripheral perfusion?"
+    sources: [{doc: STW_Sepsis_Children, page: 1}]
+    reference_answer: "20 ml/kg normal saline over 20-30 minutes, repeated once (20 ml/kg over 30 minutes) with monitoring for fluid overload."
+
+  - id: q18
+    split: dev
+    type: direct
+    question: "Which antibiotic is recommended for sepsis in a child older than 3 months?"
+    sources: [{doc: STW_Sepsis_Children, page: 1}]
+    reference_answer: "Injection ceftriaxone 100 mg/kg/day in 2 divided doses."
+
+  - id: q19
+    split: dev
+    type: direct
+    question: "What drugs and doses are used for severe acute asthma in a patient being admitted?"
+    sources: [{doc: STW_Asthma, page: 1}]
+    reference_answer: "Oxygen to SpO2 92-95%; nebulised levosalbutamol/ipratropium (1.25 mg/0.5 mg) three doses 20 minutes apart then 4-6 hourly; IV hydrocortisone 200 mg, then oral prednisolone 0.5 mg/kg daily for 5 days."
+
+  - id: q20
+    split: heldout
+    type: direct
+    question: "What criteria define asthma as adequately controlled?"
+    sources: [{doc: STW_Asthma, page: 1}]
+    reference_answer: "All of: daytime symptoms or rescue use twice a week or less, no night-time symptoms, no activity limitation, and FEV1 or PEF above 80% of predicted/personal best."
+
+  - id: q21
+    split: dev
+    type: direct
+    question: "What heart rate should rate control aim for in atrial fibrillation?"
+    sources: [{doc: STW_Atrial_Fibrillation, page: 1}]
+    reference_answer: "Below 110 beats per minute."
+
+  - id: q22
+    split: dev
+    type: direct
+    question: "What are the initial blood pressure and heart rate targets in medical management of acute aortic dissection?"
+    sources: [{doc: STW_Acute_Aortic_Syndrome, page: 2}]
+    reference_answer: "Systolic BP 100-120 mm Hg and heart rate around 60 (60-70) beats/min, with adequate pain control; beta blockers are started first."
+
+  - id: q23
+    split: dev
+    type: direct
+    question: "What are the classic symptoms of acute appendicitis?"
+    sources: [{doc: STW_Appendicitis, page: 1}]
+    reference_answer: "Periumbilical or epigastric colicky pain shifting to the right iliac fossa, nausea/vomiting, fever (usually absent in the first 6 hours), and loss of appetite; pain precedes vomiting."
+
+  - id: q24
+    split: heldout
+    type: direct
+    question: "What is the IV pantoprazole regimen for suspected upper GI bleed?"
+    sources: [{doc: STW_GI_Bleed, page: 1}]
+    reference_answer: "80 mg IV stat, then 40 mg every 12 hours (oral if IV unavailable); stop if a variceal bleed is documented."
+
+  - id: q25
+    split: dev
+    type: direct
+    question: "What dose of furosemide is used in heart failure?"
+    sources: [{doc: STW_Heart_Failure, page: 1}]
+    reference_answer: "20-80 mg daily orally; 10-80 mg IV as needed in the acute stage, switching to oral when symptoms subside."
+
+  # ----------------------------------------------------------------- multi
+  - id: q26
+    split: dev
+    type: multi
+    question: "A patient has chest pain with ECG changes of MI, but you suspect aortic dissection. Why should thrombolysis be avoided, and what clinical findings favour dissection?"
+    sources:
+      - {doc: STW_Acute_Aortic_Syndrome, page: 1}
+      - {doc: STW_STEMI, page: 1}
+    reference_answer: "If dissection is diagnosed with myocardial ischaemia it is managed as dissection and thrombolysis must not be started; aortic dissection is an absolute contraindication to thrombolysis. Abrupt piercing localised pain, a diastolic murmur of aortic regurgitation, unequal pulses, limb ischaemia or neurological complications favour dissection."
+
+  - id: q27
+    split: dev
+    type: multi
+    question: "Compare the loading doses of clopidogrel and ticagrelor with their maintenance doses."
+    sources: [{doc: STW_NSTEMI, page: 1}]
+    reference_answer: "Clopidogrel: 300 mg loading, then 75 mg OD. Ticagrelor: 180 mg loading, then 90 mg BD."
+
+  - id: q28
+    split: dev
+    type: multi
+    question: "How does insulin dosing in DKA work, from the starting dose to when the infusion can be stopped?"
+    sources: [{doc: STW_DKA, page: 1}]
+    reference_answer: "Regular insulin 0.1 IU/kg IV then 0.1 IU/kg/hour infusion; double the rate if glucose falls less than 10% in the first hour. Stop when the patient is eating, glucose is consistently below 250 mg/dl, anion gap has normalised and acidosis corrected, giving SC long/intermediate plus short-acting insulin at least 30 minutes before stopping the infusion."
+
+  - id: q29
+    split: dev
+    type: multi
+    question: "What are the red flag signs for headache, and which of them suggest subarachnoid haemorrhage?"
+    sources: [{doc: STW_Headache, page: 1}]
+    reference_answer: "Red flags include headache with fever or personality/consciousness change, neck stiffness, new severe headache in pregnancy/postpartum or on hormones, onset with strenuous exercise, sudden thunderclap onset, new headache with malignancy or immunosuppression, first or worst headache of life, focal signs, and headache waking from sleep. Sudden severe, first or worst headache of life points to subarachnoid haemorrhage, investigated with CT/CT angiogram or MRI/MR angiogram."
+
+  - id: q30
+    split: dev
+    type: multi
+    question: "How do you classify a UA/NSTEMI patient as very high risk, and how fast should they be revascularised?"
+    sources: [{doc: STW_NSTEMI, page: 1}]
+    reference_answer: "Very high risk: acute LVF, hypotension, uncontrolled ventricular arrhythmia or severe MR (clinical instability). They need urgent/immediate invasive strategy, within a few hours (under 2 hours), with immediate transfer if at a non-PCI-capable hospital."
+
+  - id: q31
+    split: heldout
+    type: multi
+    question: "What are the discharge criteria for dengue, and how do they compare with discharge criteria for paediatric sepsis?"
+    sources:
+      - {doc: STW_Dengue, page: 1}
+      - {doc: STW_Sepsis_Children, page: 1}
+    reference_answer: "Dengue: no fever for 48 hours, clinical improvement, rising platelet trend, stable haematocrit without IV fluids. Paediatric sepsis: afebrile for 48 hours, vitals normal for age, good oral intake, adequate urine output over 1 ml/kg/hr, and antibiotics completed per culture sensitivity. Both require 48 hours without fever."
+
+  - id: q32
+    split: dev
+    type: multi
+    question: "What features differentiate asthma from COPD?"
+    sources: [{doc: STW_Asthma, page: 1}]
+    reference_answer: "Asthma: onset in childhood/early adulthood, episodic course, nasal symptoms/atopy common, family history often, triggers identified, wheeze prominent. COPD: onset later in life (4th-5th decade), progressive, smoking almost universal, atopy and family history uncommon or rare."
+
+  - id: q33
+    split: heldout
+    type: multi
+    question: "When should a patient with an acute GI bleed receive a blood transfusion, and what are the resuscitation targets?"
+    sources: [{doc: STW_GI_Bleed, page: 1}]
+    reference_answer: "Transfuse packed RBC/whole blood if Hb below 7 g/dL (below 9 g/dL with pre-existing heart disease). Targets: systolic BP above 90 mmHg, pulse below 100/min, oxygen saturation above 90%, Hb above 7 g/dL (above 9 with heart disease)."
+
+  - id: q34
+    split: dev
+    type: multi
+    question: "Which anticoagulant regimen is used with heparin in NSTEMI, and what APTT target is used?"
+    sources: [{doc: STW_NSTEMI, page: 1}]
+    reference_answer: "Enoxaparin 1 mg/kg SC 12-hourly, or unfractionated heparin bolus 60 U/kg (max 5000 U) then 12 U/kg/hour infusion to keep APTT at 50-70 seconds."
+
+  - id: q35
+    split: dev
+    type: multi
+    question: "What should be done for a patient with an appendicular mass, and when should conservative treatment be stopped?"
+    sources: [{doc: STW_Appendicitis, page: 1}]
+    reference_answer: "Ochsner-Sherren conservative regimen: IV fluids, broad-spectrum antibiotics, vitamins, no purgatives or enemas. Stop if pulse and temperature rise, abdominal tenderness increases or spreads, the mass enlarges, or there is vomiting or copious gastric aspirate; then assess by USG for pus and drain."
+
+  # --------------------------------------------------------- unanswerable
+  - id: q36
+    split: dev
+    type: unanswerable
+    question: "What is the anti-snake venom dose for a patient with a krait bite?"
+    sources: []
+    reference_answer: ""
+
+  - id: q37
+    split: dev
+    type: unanswerable
+    question: "What is the first-line treatment for uncomplicated falciparum malaria in adults?"
+    sources: []
+    reference_answer: ""
+
+  - id: q38
+    split: heldout
+    type: unanswerable
+    question: "What starting dose of insulin glargine is recommended for a child with type 1 diabetes?"
+    sources: []
+    reference_answer: ""
+
+  - id: q39
+    split: dev
+    type: unanswerable
+    question: "Which antibiotics are recommended for community-acquired pneumonia in adults?"
+    sources: []
+    reference_answer: ""
+
+  - id: q40
+    split: heldout
+    type: unanswerable
+    question: "What is the levothyroxine starting dose for hypothyroidism in elderly patients?"
+    sources: []
+    reference_answer: ""
