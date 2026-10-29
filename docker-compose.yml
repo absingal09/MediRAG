@@ -1,0 +1,16 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16          # Postgres 16 with pgvector built in
+    container_name: medirag-db
+    environment:
+      POSTGRES_USER: medirag
+      POSTGRES_PASSWORD: Medi1234
+      POSTGRES_DB: medirag
+    ports:
+      - "5433:5432"                        # your laptop's 5433 → container's 5432
+    volumes:
+      - medirag-db-data:/var/lib/postgresql/data   # keeps data when container stops
+      - ./db:/docker-entrypoint-initdb.d         # runs db/schema.sql on first start
+
+volumes:
+  medirag-db-data:
