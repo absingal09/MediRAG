@@ -13,6 +13,7 @@ def is_boilerplate(text):
         text.startswith(("This STW has been prepared", "Department of Health Research"))
         or re.fullmatch(r"\w+/ ?\d{4}", text)
         or text == "Standard Treatment Workflow (STW)"
+        or text == "stw.icmr.org.in"
     ):
         return True
     return False
