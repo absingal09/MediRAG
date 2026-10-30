@@ -98,3 +98,33 @@ Page 2 coordinates restart at the top, so **the page number must be stored per b
   in the README; possible later fix: rebuild rows by grouping cells with the same y.
 - **Later improvement:** move a short trailing label ending in ":" (e.g.
   `Statins:`) to the start of the next block in the same column.
+
+---
+
+## Chunking findings (after building `app/chunking.py`)
+
+- **Vertical watermark `stw.icmr.org.in`** in the 5 October 2019 PDFs (Asthma,
+  Dengue, Headache, Sepsis, Stroke). One tall, thin block down the page edge:
+  it overlapped every box vertically and was narrow enough to pass the
+  overlap rule, so it glued whole columns together (Asthma: 7 chunks, one of
+  3,836 characters mixing two tables, guiding principles and exacerbation
+  management). Removed as boilerplate → Asthma 35 chunks, longest 1,606.
+- **Headings spanning two columns** (MONITORING TREATMENT, COMMON
+  ERRORS/PITFALLS) bridged the columns when any x-overlap counted. Fixed by
+  requiring overlap ≥ 80% of the narrower block; `find_heading` then attaches
+  the heading to every box below it instead.
+- **Pitfalls now carry their heading**, so "Initiating insulin therapy before
+  I/V fluid therapy" is labelled as an error, not read as an instruction.
+- **Genuinely large boxes** (e.g. Aortic complications table, ~3,900 characters,
+  returned as one block by PyMuPDF) exceeded the embedding limit; split at
+  bullet boundaries into ≤ 800-character pieces.
+
+### Known limitations
+- Monitoring and Treatment both get the heading `MANAGEMENT MONITORING TREATMENT`
+  (one heading block spans both columns).
+- Some boxes get a nearby but wrong heading (DKA "Look & address for
+  precipitating factors" gets "When to suspect DKA"); harmless when the box
+  contains its own heading.
+- Small flowchart items (e.g. "Pain abdomen") are 1-line chunks with only the
+  document title as heading.
+- Tables remain unsupported (see Decision).

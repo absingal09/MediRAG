@@ -22,9 +22,11 @@ does not make it reliable; the evals below are what measure that.
   GRACE score). Some text may be inside images.
 
 ## Ingestion
-1. **Extract:** PyMuPDF, page by page. Try `page.get_text("blocks")` and
-   `page.get_text("text", sort=True)`. Every piece of text keeps `doc_name` and
-   `page_no` (`page.number + 1`).
+1. **Extract:** PyMuPDF `page.get_text("blocks")` (chosen after the audit;
+   plain text and pymupdf4llm mixed columns). Every block keeps `doc_name`,
+   `page_no` and its position `x0, y0, x1, y1`. Text is cleaned (ligatures
+   normalised, whitespace collapsed) and boilerplate blocks are dropped
+   (disclaimer, header, edition date, `stw.icmr.org.in` watermark).
 2. **Extraction audit (before any tuning):** for each PDF, compare the
    extracted text with the page by eye and record in `docs/extraction_audit.md`:
    - is the reading order correct, or are columns/branches mixed?
@@ -37,20 +39,27 @@ does not make it reliable; the evals below are what measure that.
    This step matters most: if extraction loses a condition or a table
    association, good retrieval and fluent generation can still produce a
    misleading answer.
-3. **Chunk (baseline):** group extracted text in reading order into chunks of
-   about 600 characters with 100 characters of overlap. Chunks never cross a
-   page, so each chunk has exactly one page to cite.
-4. **Embed:** `all-MiniLM-L6-v2`: 384-dim vectors, max 256 tokens. 600
-   characters is *estimated* at ~150 tokens; the ingest script checks every
+3. **Chunk by box, not by fixed size:** blocks are grouped into flowchart
+   boxes: same page, horizontally aligned (overlap ≥ 80% of the narrower
+   block, so headings spanning two columns don't glue them together) and
+   vertically close (gap ≤ 15 pt). Each box gets the nearest ALL-CAPS heading
+   above it. Boxes over 800 characters are split at bullet boundaries.
+   No overlap: each chunk is a whole box or a piece of one.
+   - Why not fixed 500-token chunks with overlap? They would mix side-by-side
+     columns, which is exactly the failure the audit found.
+   - Result: 470 chunks across 14 PDFs, all ≤ 800 characters.
+4. **Embed:** `all-MiniLM-L6-v2`: 384-dim vectors, max 256 tokens. 800
+   characters is *estimated* at ~200 tokens; the ingest script checks every
    chunk with the model's tokenizer and fails if any exceeds the limit.
+   The heading is prepended to the text that gets embedded.
 5. **Re-ingest command:** one script wipes the tables and re-ingests all PDFs.
 
 ## Storage (Postgres + pgvector)
 ```
 documents(id, name, source_url, edition, pages)
-chunks(id, document_id → documents.id, page_no, content, embedding vector(384))
+chunks(id, document_id → documents.id, page_no, heading, content, embedding vector(384))
 ```
-- **Index:** at ~100 chunks, exact search (no index) is fast enough and has
+- **Index:** at ~470 chunks, exact search (no index) is fast enough and has
   less overhead. HNSW is an approximate index for larger collections; add it
   only if the document set grows and latency is measured to need it.
 

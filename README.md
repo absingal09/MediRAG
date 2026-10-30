@@ -35,7 +35,8 @@ uvicorn app.main:app --reload     # http://127.0.0.1:8000/health
 
 - [x] Design, data, eval set
 - [x] Repo setup (Docker, schema, `/health`)
-- [ ] Extraction audit
-- [ ] Ingestion
+- [x] Extraction audit
+- [x] Parsing and box-based chunking (470 chunks)
+- [ ] Embedding and storage
 - [ ] `/search`, `/ask`
 - [ ] Baseline evals

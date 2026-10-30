@@ -69,11 +69,44 @@ uvicorn app.main:app --reload # run API → http://127.0.0.1:8000/docs
 
 ---
 
-## Phase 2 – Extraction audit (next)
-- [ ] `scripts/inspect_pdf.py`: print each PDF 3 ways (plain, blocks, pymupdf4llm markdown)
-- [ ] Check DKA, NSTEMI (GRACE table), Aortic Syndrome (2 pages) against the PDFs
-- [ ] Record findings in `docs/extraction_audit.md`; pick the extraction method
+## Phase 2 – Extraction audit (Oct 30)
 
-## Phase 3 – Ingestion
-## Phase 4 – /search and /ask
-## Phase 5 – Baseline evals
+- `scripts/inspect_pdf.py`: printed DKA, NSTEMI and Aortic Syndrome three ways.
+- **Plain text:** headings land after their content; DKA pitfalls run into
+  treatment steps (an error to avoid reads like an instruction).
+- **Blocks sorted by y:** full-width sections fixed, side-by-side columns interleaved.
+- **pymupdf4llm:** best on DKA, but on NSTEMI it merged columns and attached
+  doses to the wrong drug (clopidogrel line ended with metoprolol's dose).
+- **Decision: `get_text("blocks")`.** Each block's own text is clean; the job
+  is grouping blocks correctly, never merging across columns.
+- Tables (DKA severity, NSTEMI GRACE, Aortic drug doses) marked unsupported;
+  no eval question depends on them.
+- Details: `docs/extraction_audit.md`.
+
+## Phase 3 – Parsing and chunking (Oct 30)
+
+| File | What |
+|---|---|
+| `app/parse.py` | `parse_pdf()`: text blocks with doc, page, x0/y0/x1/y1. `clean_text()`: NFKC (ﬁ→fi) + collapse whitespace. `is_boilerplate()`: drops disclaimer, header, edition date, watermark. |
+| `app/chunking.py` | `same_box()` → `group_blocks()` → `find_heading()` → `split_text()` → `make_chunks()` |
+| `scripts/check_parse.py` | Per PDF: pages, blocks, chunks, longest chunk, chunks over 1,000 chars |
+
+Result: **470 chunks**, all ≤ 800 characters, every one with doc, page and heading.
+
+### Bugs hit and what they taught
+- **Ligatures:** `ﬁ` is one character, so "first" didn't match "ﬁrst" → `unicodedata.normalize("NFKC")`
+- **`return` inside the loop** → only 1 group came back
+- **Headings spanning two columns glued them together** → overlap must cover ≥ 80% of the narrower block
+- **Vertical `stw.icmr.org.in` watermark glued whole columns** (Asthma: one 3,836-char chunk) → removed as boilerplate
+- **Huge single blocks** (Aortic complications table) over the embedding limit → split at bullets into ≤ 800 chars
+- **`startswith("A", "B")`** → second argument is a position; pass a tuple `startswith(("A", "B"))`
+- **Running a script inside `scripts/` couldn't import `app`** → run as a module: `python -m scripts.check_parse`
+
+## Phase 4 – Embed and store (next)
+- [ ] Add `heading` column to `chunks`
+- [ ] Embed heading + text with all-MiniLM-L6-v2; check real token counts
+- [ ] Store documents (with sources.csv URL/edition) and chunks
+- [ ] One command to wipe and re-ingest
+
+## Phase 5 – /search and /ask
+## Phase 6 – Baseline evals
