@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 # config.py is in MediRAG/app/, so .parent = app/, .parent.parent = MediRAG/
 ROOT = Path(__file__).resolve().parent.parent
-load_dotenv(ROOT / ".env")
+load_dotenv(ROOT / ".env", override=True)
 
 # Required: crash immediately with a clear KeyError if it's missing
 DATABASE_URL = os.environ["DATABASE_URL"]

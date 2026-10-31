@@ -1,6 +1,8 @@
 from fastapi import FastAPI, HTTPException
 from app.db import connect
 from app.search import search
+from pydantic import BaseModel, Field
+from app.ask import ask
 
 app = FastAPI(title="MediRAG")
 
@@ -17,3 +19,10 @@ def health():
 @app.get("/search")
 def search_endpoint(q: str, k: int = 5):
     return search(q, k)
+
+class AskRequest(BaseModel):
+    question: str = Field(min_length=3, max_length=500)
+
+@app.post("/ask")
+def ask_endpoint(req: AskRequest):
+    return ask(req.question)
