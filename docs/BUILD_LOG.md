@@ -128,5 +128,51 @@ How ingest works:
 - **`NameError: connect`** → a script must import everything it uses
 - **SQL placeholders:** values go in as `%s` parameters, never f-strings (SQL injection)
 
-## Phase 5 – /search and /ask (next)
-## Phase 6 – Baseline evals
+## Phase 5 – /search and /ask (Oct 31)
+
+| File | What |
+|---|---|
+| `app/search.py` | `search(query, k)`: embed the query, order chunks by cosine distance (`<=>`), score = 1 − distance. Returns doc, page, heading, content, score. |
+| `app/prompting.py` | System prompt (answer only from sources, cite `[S1]`, copy doses exactly, refuse with `NOT_IN_DOCUMENTS`). `build_messages()` numbers chunks `[S1] (doc, page) HEADING`. `parse_answer()` detects refusal, finds `[S<n>]` tags, maps each to its chunk's doc + page, collects tags pointing to no source in `invalid`. |
+| `app/llm.py` | `complete(messages)`: Sarvam chat API, temperature 0, `reasoning_effort` low, 60 s timeout. Raises with Sarvam's own error text on failure. |
+| `app/ask.py` | `ask(question)`: search → prompt → LLM → parse. Invalid citations → retry once; still invalid → refuse. Refusals return "I couldn't find this in the guidelines." Sources attached so answers can be checked. |
+| `app/main.py` | `GET /search?q=…&k=…` (`k` limited to 1–20 with `Query`); `POST /ask` with a Pydantic `AskRequest` (question 3–500 characters, otherwise 422). |
+
+### Results
+- *"What is the aspirin loading dose?"* → "325 mg [S1][S2]", cited STW_STEMI p.1 and STW_NSTEMI p.1 ✅
+- *"Anti-snake venom dose for a krait bite?"* (not in any PDF) → refused ✅
+- Same question, two runs, temperature 0: "325 mg [S1][S2]" vs a full sentence.
+  Temperature 0 reduces variation but doesn't remove it.
+
+### What `parse_answer` does and doesn't check
+- ✅ Every `[S<n>]` points to a real source, then it's converted to doc + page.
+  The model never writes page numbers, so it can't invent one.
+- ❌ It does **not** check that the cited chunk actually contains the claim
+  (a wrong dose with a valid `[S1]` passes). That's measured in evals; a possible
+  later check is that every number in the answer appears in the cited chunk.
+
+### Retrieval observations (baseline, vector-only)
+- Tenecteplase dose question: right document in the top 5, but the dose chunk isn't in the top 20.
+- Query `tenecteplase dose`: top 3 are heart-failure and headache doses.
+- An NSTEMI chunk glued the two drug columns ("…90 mg BD Anti thrombotics: 1. Metoprolol…")
+  and got the wrong heading ("ANGINA UNLIKELY IF:").
+- Causes: small model doesn't understand drug names; mixed-topic chunks; tiny fragments
+  ("Yes", "Immediately") rank high. Details in `docs/extraction_audit.md`.
+- Not fixed yet: the baseline eval measures it first.
+
+### Bugs hit and what they taught
+- **403 with a brand-new key:** an old `SARVAM_API_KEY` in the system environment
+  overrode `.env`, because `load_dotenv()` doesn't override by default → `override=True`
+- **Sarvam rejects unknown parameters** (`reasoning-effort` vs `reasoning_effort`) → read the error body, not just the status code
+- **`json=messages`** sent a bare list → the API body is an object: model, messages, settings
+- **Search SQL without parameters** → 3 `%s` placeholders need 3 values `(vec, vec, k)`
+- **`(x,)` vs `(x)`:** commas make a tuple, not brackets; only a 1-item tuple needs the trailing comma
+- **`{a, b}` without keys is a set, not a dict** → `{"doc_name": a, "page_no": b}`
+- **Dicts have no `.append()`** → add a key with `result["sources"] = chunks`
+- **`seen[n]` on a set** → sets use `.add(n)` and `in`; `continue` skips to the next iteration
+- **Refusal logic inside the retry loop** → it refused after the first failure and never attached
+  sources on success; post-processing belongs after the loop
+
+## Phase 6 – Refusal tests and baseline evals (next)
+- [ ] Run the 5 unanswerable questions (q36–q40) plus some answerable ones through `ask()`
+- [ ] Eval script: hit@5, MRR, answer accuracy, refusal accuracy on the 30 dev questions

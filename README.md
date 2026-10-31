@@ -39,5 +39,5 @@ uvicorn app.main:app --reload     # http://127.0.0.1:8000/health
 - [x] Extraction audit
 - [x] Parsing and box-based chunking
 - [x] Embedding and storage (494 chunks): `python -m scripts.ingest`
-- [ ] `/search`, `/ask`
+- [x] `/search`, `/ask` with citations and refusal
 - [ ] Baseline evals
