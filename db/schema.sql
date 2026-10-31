@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS chunks (
     id          SERIAL PRIMARY KEY,
     document_id INT NOT NULL REFERENCES documents(id) ON DELETE CASCADE,
     page_no     INT NOT NULL,
+    heading TEXT NOT NULL DEFAULT '',
     content     TEXT NOT NULL,
     embedding   VECTOR(384) NOT NULL
 );

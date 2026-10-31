@@ -98,7 +98,7 @@ def split_words(text, max_chars):
         pieces.append(current)              # appending the last piece
     return pieces
 
-def split_text(text, max_chars=800):
+def split_text(text, max_chars=600):
     # Cut a long chunk into pieces, preferring to break between bullets.
     if len(text) <= max_chars:
         return [text]                           # short enough -> leave it alone
