@@ -128,3 +128,43 @@ Page 2 coordinates restart at the top, so **the page number must be stored per b
 - Small flowchart items (e.g. "Pain abdomen") are 1-line chunks with only the
   document title as heading.
 - Tables remain unsupported (see Decision).
+
+---
+
+## Retrieval observations (baseline: vector-only, all-MiniLM-L6-v2, 494 chunks)
+
+First test, eval question q06: *"What dose of tenecteplase should a 75 kg STEMI patient receive?"*
+
+- **Right document:** all top 5 results come from STW_STEMI. hit@5 would count this
+  as a hit (single-page PDF), yet the answer was **not** retrieved. This is the
+  DESIGN.md caveat in practice: hit@5 overstates quality here.
+- **The dose is extracted correctly** (chunk 456: "Tenecteplase 35 mg IV bolus if
+  60-70 Kg, 40 mg IV bolus if 70-80 Kg…") but it is **not in the top 20**.
+  Heart-failure dose chunks (ARNI, furosemide) rank above it.
+
+Causes:
+1. **Mixed-topic chunk:** heparin, enoxaparin and tenecteplase share one chunk,
+   so its vector is only weakly about tenecteplase.
+2. **Wrong heading:** chunk 456 got "ABSOLUTE CONTRA-INDICATIONS TO THROMBOLYTIC
+   THERAPY" (known `find_heading` limitation).
+3. **Tiny fragment chunks rank high:** "Yes", "Immediately", "Rescue PCI",
+   "Preferably within 30 mins". Their vector is mostly their heading, so they
+   loosely match any STEMI question.
+4. **Small embedding models under-weight rare terms and numbers:** "dose" + "mg"
+   pulls in any dose chunk regardless of which drug was asked about.
+5. **Bullet-less tables are cut mid-sentence** by `split_words`: chunk 456 ends
+   "…45 mg IV bolus if more than", and the next chunk starts "80 Kg Reteplase…".
+
+
+**Second test**, short query `tenecteplase dose` via `/search?k=3`: top 3 are
+heart-failure doses (ARNI, furosemide) and a headache dose (indomethacin); no
+STEMI chunk at all. The model has no useful representation of "tenecteplase"
+(split into meaningless sub-word pieces), so the query reduces to "some dose".
+Strongest case for hybrid keyword + vector search.
+
+**Not fixed yet, on purpose:** the baseline eval will measure how common this is.
+Candidate fixes, to test one at a time with before/after numbers:
+- hybrid search (BM25 keyword + vector, merged with Reciprocal Rank Fusion)
+- dropping or merging chunks under ~30 characters into their neighbour
+- reranking the top 20 with a cross-encoder
+- better heading assignment for boxes inside tables
