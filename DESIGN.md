@@ -43,14 +43,16 @@ does not make it reliable; the evals below are what measure that.
    boxes: same page, horizontally aligned (overlap ≥ 80% of the narrower
    block, so headings spanning two columns don't glue them together) and
    vertically close (gap ≤ 15 pt). Each box gets the nearest ALL-CAPS heading
-   above it. Boxes over 800 characters are split at bullet boundaries.
+   above it. Boxes over 600 characters are split at bullet boundaries.
    No overlap: each chunk is a whole box or a piece of one.
    - Why not fixed 500-token chunks with overlap? They would mix side-by-side
      columns, which is exactly the failure the audit found.
-   - Result: 470 chunks across 14 PDFs, all ≤ 800 characters.
-4. **Embed:** `all-MiniLM-L6-v2`: 384-dim vectors, max 256 tokens. 800
-   characters is *estimated* at ~200 tokens; the ingest script checks every
-   chunk with the model's tokenizer and fails if any exceeds the limit.
+   - Result: 494 chunks across 14 PDFs, all ≤ 600 characters.
+4. **Embed:** `all-MiniLM-L6-v2`: 384-dim vectors, max 256 tokens. The first
+   limit (800 characters, estimated ~200 tokens) produced a 265-token chunk:
+   doses and units tokenize densely. At 600 characters the largest chunk is
+   211 tokens. The ingest script checks every chunk with the model's tokenizer
+   and fails if any exceeds the limit.
    The heading is prepended to the text that gets embedded.
 5. **Re-ingest command:** one script wipes the tables and re-ingests all PDFs.
 
@@ -59,7 +61,7 @@ does not make it reliable; the evals below are what measure that.
 documents(id, name, source_url, edition, pages)
 chunks(id, document_id → documents.id, page_no, heading, content, embedding vector(384))
 ```
-- **Index:** at ~470 chunks, exact search (no index) is fast enough and has
+- **Index:** at ~500 chunks, exact search (no index) is fast enough and has
   less overhead. HNSW is an approximate index for larger collections; add it
   only if the document set grows and latency is measured to need it.
 

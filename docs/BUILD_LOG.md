@@ -92,6 +92,7 @@ uvicorn app.main:app --reload # run API → http://127.0.0.1:8000/docs
 | `scripts/check_parse.py` | Per PDF: pages, blocks, chunks, longest chunk, chunks over 1,000 chars |
 
 Result: **470 chunks**, all ≤ 800 characters, every one with doc, page and heading.
+(Later lowered to 600 characters → 494 chunks; see Phase 4.)
 
 ### Bugs hit and what they taught
 - **Ligatures:** `ﬁ` is one character, so "first" didn't match "ﬁrst" → `unicodedata.normalize("NFKC")`
@@ -102,11 +103,30 @@ Result: **470 chunks**, all ≤ 800 characters, every one with doc, page and hea
 - **`startswith("A", "B")`** → second argument is a position; pass a tuple `startswith(("A", "B"))`
 - **Running a script inside `scripts/` couldn't import `app`** → run as a module: `python -m scripts.check_parse`
 
-## Phase 4 – Embed and store (next)
-- [ ] Add `heading` column to `chunks`
-- [ ] Embed heading + text with all-MiniLM-L6-v2; check real token counts
-- [ ] Store documents (with sources.csv URL/edition) and chunks
-- [ ] One command to wipe and re-ingest
+## Phase 4 – Embed and store (Oct 31)
 
-## Phase 5 – /search and /ask
+| File | What |
+|---|---|
+| `db/schema.sql` | Added `heading TEXT NOT NULL DEFAULT ''` to `chunks` (DB reset with `down -v`) |
+| `app/embeddings.py` | Loads all-MiniLM-L6-v2 once. `embed()` returns normalized 384-dim vectors; `count_tokens()` uses the model's own tokenizer |
+| `scripts/ingest.py` | `load_sources()` reads sources.csv; `insert_document()` (`RETURNING id`); `insert_chunks()` (`executemany`); `main()` wipes and re-ingests everything |
+
+**Run:** `python -m scripts.ingest` → **14 documents, 494 chunks.** Verified per-document counts in Postgres.
+
+How ingest works:
+- `TRUNCATE documents RESTART IDENTITY CASCADE` empties both tables, so re-running never duplicates.
+- Embedded text = heading + text; stored `content` = text only, heading in its own column.
+- Any chunk over 256 tokens **raises an error** instead of being silently truncated.
+- Everything runs in one transaction: if anything fails, nothing changes (the wipe is rolled back too).
+- Adding a PDF = add it to `data/pdfs/` **and** a row to `data/sources.csv`, then re-run.
+- No HNSW index: exact search is enough at ~500 chunks (see DESIGN.md).
+
+### Bugs hit and what they taught
+- **Character estimate was wrong:** 800 chars was assumed ≈ 200 tokens, but the real max was 265 (> 256).
+  Doses, units and abbreviations tokenize densely (~3 chars/token here) → lowered to 600 chars; max is now 211.
+- **`psql` failed right after `docker compose up`** → Postgres needs a few seconds to initialise a fresh volume
+- **`NameError: connect`** → a script must import everything it uses
+- **SQL placeholders:** values go in as `%s` parameters, never f-strings (SQL injection)
+
+## Phase 5 – /search and /ask (next)
 ## Phase 6 – Baseline evals

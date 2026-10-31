@@ -15,6 +15,7 @@ pip install -r requirements.txt
 copy .env.example .env            # fill in POSTGRES_PASSWORD, DATABASE_URL, SARVAM_API_KEY
 
 docker compose up -d              # Postgres + pgvector on port 5433
+python -m scripts.ingest          # parse, chunk, embed and store all PDFs
 uvicorn app.main:app --reload     # http://127.0.0.1:8000/health
 ```
 
@@ -36,7 +37,7 @@ uvicorn app.main:app --reload     # http://127.0.0.1:8000/health
 - [x] Design, data, eval set
 - [x] Repo setup (Docker, schema, `/health`)
 - [x] Extraction audit
-- [x] Parsing and box-based chunking (470 chunks)
-- [ ] Embedding and storage
+- [x] Parsing and box-based chunking
+- [x] Embedding and storage (494 chunks): `python -m scripts.ingest`
 - [ ] `/search`, `/ask`
 - [ ] Baseline evals
