@@ -177,20 +177,28 @@ How ingest works:
 
 | File | What |
 |---|---|
-| `scripts/eval_refusal.py` | Loads only `split=dev` questions, calls `ask()`, prints answers and refusal flags, and counts correct and false refusals by `type`. |
+| `scripts/eval_refusal.py` | Loads only `split=dev` questions, calls `ask()`, and counts correct and false refusals by `type`. |
+| `scripts/eval_retrieval.py` | Evaluates 27 answerable dev questions: hit@5, MRR@5, page coverage and all-required-pages@5. Matches by document + page; no LLM calls. |
 
 ### Results
 - **Correct refusals: 3/3** unanswerable dev questions.
 - **False refusals: 7/27** answerable dev questions.
-- Two runs produced the same counts.
+- Two refusal runs produced the same counts.
+- **Hit@5: 27/27 (100%); MRR@5: 0.907.**
+- **Mean page coverage@5: 100%; all-required-pages@5: 27/27.**
+- Page-level metrics overstate evidence retrieval: q06 passes despite
+  missing the answer-bearing chunk.
 - No settings changed; held-out questions untouched.
-- Answer correctness is not measured yet.
+- Answer correctness and fact-level evidence coverage are not measured yet.
 
 ### Bugs hit and what they taught
 - **Iterating over `data` yielded keys, not question dictionaries**
   → use `data["questions"]`; confirmed 30 dev questions before running.
+- **Totals updated before metrics were calculated; calculations outside
+  the question loop** → calculate each question's metrics inside the loop,
+  then update totals.
 
 ### Next
-- [ ] Dev baseline: hit@5, MRR, multi-part evidence coverage and answer accuracy.
+- [ ] Multi-part fact-level evidence coverage and answer accuracy.
 - [ ] Hand-check failures and sample citation support.
 - [ ] Record settings and results in `evals/results.md` before tuning.
