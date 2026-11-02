@@ -177,38 +177,47 @@ How ingest works:
 
 | File | What |
 |---|---|
-| `scripts/eval_refusal.py` | Loads only `split=dev` questions, calls `ask()`, and counts correct and false refusals by `type`. |
-| `scripts/eval_retrieval.py` | Evaluates 27 answerable dev questions by document + page: hit@5, MRR@5, page coverage and all-required-pages@5. Also prints passages for manual evidence inspection; no LLM calls. |
-| `evals/evidence_review.md` | Manual comparison of top-5 passages against reference facts for all 8 multi-part dev questions. |
+| `scripts/eval_refusal.py` | Runs only dev questions through `ask()` and counts correct and false refusals. |
+| `scripts/eval_retrieval.py` | Measures hit@5, MRR@5, page coverage and all-required-pages@5 by document + page; prints passages for inspection. |
+| `scripts/eval_answers.py` | Saves 30 dev answers, citations and sources in formatted JSON; resumes by saved ID. |
+| `scripts/eval_judge.py` | Judges 27 answerable responses against references; validates and saves verdicts, skipping completed IDs. |
+| `evals/evidence_review.md` | Manual reference-fact coverage review of 8 multi-part dev questions. |
+| `evals/answer_review.md` | Manual review of all 27 answerable responses and their cited evidence. |
+| `evals/results.md` | Baseline settings, results and limitations. |
 
 ### Results
-- **Correct refusals: 3/3** unanswerable dev questions.
-- **False refusals: 7/27** answerable dev questions.
+- **Correct refusals: 3/3; false refusals: 7/27.**
 - Two refusal runs produced the same counts.
-- **Hit@5: 27/27 (100%); MRR@5: 0.907.**
+- **Hit@5: 27/27; MRR@5: 0.907.**
 - **Mean page coverage@5: 100%; all-required-pages@5: 27/27.**
 - Page-level metrics overstate evidence retrieval: q06 passes despite
   missing the answer-bearing chunk.
-- Multi-part reference-fact coverage:
-  - **Full: 3/8** — q27, q28, q34.
-  - **Partial: 4/8** — q26, q29, q30, q35.
-  - **None: 1/8** — q32.
-- Missing context, incomplete lists and absent table rows explain evidence
-  gaps that page-level metrics miss.
-- No settings changed; held-out questions untouched.
-- Answer correctness is not measured yet.
+- Multi-part reference coverage: **full 3/8, partial 4/8, none 1/8**.
+- Raw LLM judge: **14 correct, 5 partial, 8 incorrect**.
+- All 27 answerable responses manually reviewed; raw verdicts preserved.
+- Review found scope penalties (q08, q17), unclear migration detail (q23),
+  ambiguous question wording (q34), and unsupported SAH citation linkage (q29).
+- q22 substituted special-case targets; q12 required original-PDF checking.
+- No adjusted accuracy reported while ambiguities remain.
+- Generator and judge: `glm5.3`; no tuning; held-out untouched.
 
 ### Bugs hit and what they taught
-- **Iterating over `data` yielded keys, not question dictionaries**
-  → use `data["questions"]`; confirmed 30 dev questions before running.
-- **Totals updated before metrics were calculated; calculations outside
-  the question loop** → calculate each question's metrics inside the loop,
-  then update totals.
+- **Iterating over `data` yielded keys** → use `data["questions"]`;
+  confirmed 30 dev questions before running.
+- **Totals updated before metrics; calculations outside the loop**
+  → calculate per-question metrics first, then accumulate.
 - **Correct page mistaken for complete evidence**
-  → inspect retrieved content against required facts, not just doc + page.
+  → inspect required facts, not just document + page.
+- **`json.loads(file)`** → use `json.load(file)` for an open file.
+- **Appending JSON lists created invalid JSON**
+  → save the complete list with `"w"` and `indent=2`.
+- **Judge penalized unrequested reference details**
+  → manually check question scope and citation support separately.
 
 ### Next
-- [x] Multi-part fact-level evidence review.
-- [ ] Answer accuracy with an LLM judge.
-- [ ] Hand-check failures and sample citation support.
-- [ ] Record settings and results in `evals/results.md` before tuning.
+- [x] Dev refusal and retrieval baselines.
+- [x] Multi-part reference-fact coverage review.
+- [x] LLM judging and manual review of all answerable responses.
+- [x] Record baseline settings and results in `evals/results.md`.
+- [ ] Resolve outstanding label ambiguities before adjusted scoring.
+- [ ] Begin measured experiments, one change at a time.
