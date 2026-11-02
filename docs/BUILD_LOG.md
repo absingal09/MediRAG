@@ -173,6 +173,24 @@ How ingest works:
 - **Refusal logic inside the retry loop** → it refused after the first failure and never attached
   sources on success; post-processing belongs after the loop
 
-## Phase 6 – Refusal tests and baseline evals (next)
-- [ ] Run the 5 unanswerable questions (q36–q40) plus some answerable ones through `ask()`
-- [ ] Eval script: hit@5, MRR, answer accuracy, refusal accuracy on the 30 dev questions
+## Phase 6 – Refusal tests and baseline evals (Nov 2)
+
+| File | What |
+|---|---|
+| `scripts/eval_refusal.py` | Loads only `split=dev` questions, calls `ask()`, prints answers and refusal flags, and counts correct and false refusals by `type`. |
+
+### Results
+- **Correct refusals: 3/3** unanswerable dev questions.
+- **False refusals: 7/27** answerable dev questions.
+- Two runs produced the same counts.
+- No settings changed; held-out questions untouched.
+- Answer correctness is not measured yet.
+
+### Bugs hit and what they taught
+- **Iterating over `data` yielded keys, not question dictionaries**
+  → use `data["questions"]`; confirmed 30 dev questions before running.
+
+### Next
+- [ ] Dev baseline: hit@5, MRR, multi-part evidence coverage and answer accuracy.
+- [ ] Hand-check failures and sample citation support.
+- [ ] Record settings and results in `evals/results.md` before tuning.
