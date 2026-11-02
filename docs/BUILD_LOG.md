@@ -178,7 +178,8 @@ How ingest works:
 | File | What |
 |---|---|
 | `scripts/eval_refusal.py` | Loads only `split=dev` questions, calls `ask()`, and counts correct and false refusals by `type`. |
-| `scripts/eval_retrieval.py` | Evaluates 27 answerable dev questions: hit@5, MRR@5, page coverage and all-required-pages@5. Matches by document + page; no LLM calls. |
+| `scripts/eval_retrieval.py` | Evaluates 27 answerable dev questions by document + page: hit@5, MRR@5, page coverage and all-required-pages@5. Also prints passages for manual evidence inspection; no LLM calls. |
+| `evals/evidence_review.md` | Manual comparison of top-5 passages against reference facts for all 8 multi-part dev questions. |
 
 ### Results
 - **Correct refusals: 3/3** unanswerable dev questions.
@@ -188,8 +189,14 @@ How ingest works:
 - **Mean page coverage@5: 100%; all-required-pages@5: 27/27.**
 - Page-level metrics overstate evidence retrieval: q06 passes despite
   missing the answer-bearing chunk.
+- Multi-part reference-fact coverage:
+  - **Full: 3/8** — q27, q28, q34.
+  - **Partial: 4/8** — q26, q29, q30, q35.
+  - **None: 1/8** — q32.
+- Missing context, incomplete lists and absent table rows explain evidence
+  gaps that page-level metrics miss.
 - No settings changed; held-out questions untouched.
-- Answer correctness and fact-level evidence coverage are not measured yet.
+- Answer correctness is not measured yet.
 
 ### Bugs hit and what they taught
 - **Iterating over `data` yielded keys, not question dictionaries**
@@ -197,8 +204,11 @@ How ingest works:
 - **Totals updated before metrics were calculated; calculations outside
   the question loop** → calculate each question's metrics inside the loop,
   then update totals.
+- **Correct page mistaken for complete evidence**
+  → inspect retrieved content against required facts, not just doc + page.
 
 ### Next
-- [ ] Multi-part fact-level evidence coverage and answer accuracy.
+- [x] Multi-part fact-level evidence review.
+- [ ] Answer accuracy with an LLM judge.
 - [ ] Hand-check failures and sample citation support.
 - [ ] Record settings and results in `evals/results.md` before tuning.
