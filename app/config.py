@@ -21,3 +21,6 @@ TOP_K = int(os.getenv("TOP_K", "5"))   # .env values are strings
 PDF_DIR = ROOT / "data" / "pdfs"
 SOURCES_CSV = ROOT / "data" / "sources.csv"
 QUESTIONS_FILE = ROOT / "evals" / "questions.yaml"
+
+# Corpus Version
+CORPUS_VERSION = os.getenv("CORPUS_VERSION", "v1")

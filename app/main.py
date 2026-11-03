@@ -4,7 +4,11 @@ from app.db import connect
 from app.search import search
 from pydantic import BaseModel, Field
 from app.ask import ask, ask_stream
+from contextlib import closing
 import json
+import logging
+
+logger = logging.getLogger("uvicorn.error")
 
 app = FastAPI(title="MediRAG")
 
@@ -33,10 +37,12 @@ def ask_endpoint(req: AskRequest):
 def ask_stream_endpoint(req: AskRequest):
     def events():
         try:
-            for event in ask_stream(req.question):
-                text = json.dumps(event["data"], ensure_ascii=False)
-                yield f"event: {event['event']}\ndata: {text}\n\n"
+            with closing(ask_stream(req.question)) as stream:
+                for event in stream:
+                    text = json.dumps(event["data"], ensure_ascii=False)
+                    yield f"event: {event['event']}\ndata: {text}\n\n"
         except Exception:
+            logger.exception("Streaming answer failed")
             error = json.dumps({"message": "Answer generation failed. Discard provisional text."})
             yield f"event: error\ndata: {error}\n\n"
 
