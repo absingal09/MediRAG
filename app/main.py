@@ -1,8 +1,10 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import StreamingResponse
 from app.db import connect
 from app.search import search
 from pydantic import BaseModel, Field
-from app.ask import ask
+from app.ask import ask, ask_stream
+import json
 
 app = FastAPI(title="MediRAG")
 
@@ -26,3 +28,19 @@ class AskRequest(BaseModel):
 @app.post("/ask")
 def ask_endpoint(req: AskRequest):
     return ask(req.question)
+
+@app.post("/ask/stream")
+def ask_stream_endpoint(req: AskRequest):
+    def events():
+        try:
+            for event in ask_stream(req.question):
+                text = json.dumps(event["data"], ensure_ascii=False)
+                yield f"event: {event['event']}\ndata: {text}\n\n"
+        except Exception:
+            error = json.dumps({"message": "Answer generation failed. Discard provisional text."})
+            yield f"event: error\ndata: {error}\n\n"
+
+    return StreamingResponse(
+        events(),
+        media_type="text/event-stream"
+    )
