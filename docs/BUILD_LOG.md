@@ -250,3 +250,42 @@ How ingest works:
 - **Yielding dictionaries to StreamingResponse** → serialize SSE text
   with a blank line between events.
 - **DB connection timeout** → start Docker and the Compose database.
+
+## Phase 8 – Caching and usage logging (Nov 3)
+
+| File | What |
+|---|---|
+| `app/cache.py` | Shared in-memory cache with deep copies; keys include question, k, corpus, models and pipeline version. |
+| `app/config.py` | Added `CORPUS_VERSION`; documented in `.env.example`. |
+| `app/telemetry.py` | Structured request logs: mode, cache hit, latency, status and error type; separate model-usage logs. |
+| `app/ask.py` | Both answer paths reuse finalized cached results; invalid-citation failures aren't cached. Logs success, errors and generator closure. |
+| `app/llm.py` | Captures normal/streaming token usage once per attempted call; closes responses in `finally`. |
+| `app/main.py` | Logs streaming exceptions and explicitly closes the answer generator. |
+| `scripts/check_cache.py`, `scripts/check_ask_cache.py`, `scripts/check_stream_cache.py` | Mock checks for cache isolation and repeated-request reuse. |
+| `scripts/check_request_logging.py`, `scripts/check_usage_logging.py` | Mock checks for failures, generator closure, unknown usage and response cleanup. |
+
+### Results
+- Repeated requests skip retrieval and generation; cache shared across endpoints.
+- Live `/ask`: **4,589 ms uncached, 0.107 ms cached**; 525 tokens on miss.
+- Normal and streaming usage logs verified; cache hits make no model call.
+- Failure and closure checks passed without database or API calls.
+- Unavailable usage is `null`, not zero.
+- Cache resets on restart; update corpus/pipeline versions after relevant changes.
+- No retrieval tuning; saved baseline unchanged; held-out untouched.
+
+### Bugs hit and what they taught
+- **Timer outside function** → measured time since import; start per request.
+- **Empty choices skipped streaming usage** → capture usage before that check.
+- **Cached questions hid usage logs** → test an uncached request.
+- **Sarvam overload/timeouts** → inspect provider errors and server tracebacks;
+  increasing the timeout alone did not resolve overload.
+- **1,024 output tokens, 1,023 reasoning tokens** → a successful HTTP response
+  can still exhaust the generation budget.
+- **List-iterator mock lacked `.close()`** → use a generator mock for closure tests.
+
+### Limitations / next
+- Cache is process-local and currently unbounded.
+- Incomplete-generation validation remains pending.
+- Stream closure was mock-tested; HTTP disconnect detection may wait for
+  a blocking provider read. Immediate disconnect handling is not verified.
+- Next planner task: timeouts, exponential-backoff retries and model fallback.
