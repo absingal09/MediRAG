@@ -221,3 +221,32 @@ How ingest works:
 - [x] Record baseline settings and results in `evals/results.md`.
 - [ ] Resolve outstanding label ambiguities before adjusted scoring.
 - [ ] Begin measured experiments, one change at a time.
+
+## Phase 7 – Streaming answers (Nov 3)
+
+| File | What |
+|---|---|
+| `app/llm.py` | Added `stream_complete()`: parses Sarvam SSE events, yields text fragments and closes the response. |
+| `app/ask.py` | Added `ask_stream()`: provisional deltas, citation validation, one retry and a final result. Existing `ask()` unchanged. |
+| `app/main.py` | Added `POST /ask/stream` with delta, final and error events. |
+| `scripts/check_stream.py` | Checks streamed model text. |
+| `scripts/check_ask_stream.py` | Checks streamed retrieval and final citations. |
+| `scripts/check_stream_retry.py` | Mocks invalid citations to verify retry and final refusal. |
+
+### Results
+- Longer answer arrived progressively through curl.
+- Answerable question returned mapped citations.
+- Unsupported question returned a normalized refusal with no citations.
+- Mocked invalid citations triggered one retry, then refusal.
+- Deltas are provisional; clients must replace them with the final result
+  or discard them on error.
+- No retrieval tuning; held-out untouched.
+
+### Bugs hit and what they taught
+- **Duplicate pasted functions** → keep one definition of each function.
+- **Citation clearing outside the invalid check** → successful retries
+  must retain their citations.
+- **`return` in a generator** → use `yield` to deliver the final event.
+- **Yielding dictionaries to StreamingResponse** → serialize SSE text
+  with a blank line between events.
+- **DB connection timeout** → start Docker and the Compose database.
