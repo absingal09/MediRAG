@@ -1,0 +1,108 @@
+@import "@fontsource-variable/newsreader";
+@import "@fontsource-variable/newsreader/wght-italic.css";
+@import "@fontsource-variable/dm-sans";
+:root {
+  font-family: "DM Sans Variable", sans-serif;
+  color: #222a36;
+  background: #f7f5ef;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  --paper: #f7f5ef;
+  --ink: #222a36;
+  --muted: #71736e;
+  --blue: #2849ba;
+  --line: #deded4;
+  --serif: "Newsreader Variable", Georgia, serif;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+}
+button,
+input,
+textarea {
+  font: inherit;
+}
+button,
+a,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+}
+a {
+  color: inherit;
+}
+button {
+  color: inherit;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #5475d4;
+  outline-offset: 4px;
+}
+button:disabled {
+  opacity: 0.45;
+}
+button svg,
+a svg {
+  flex-shrink: 0;
+}
+button {
+  touch-action: manipulation;
+}
+::selection {
+  background: #dbe4ff;
+  color: #16318b;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+button {
+  border: 0;
+}
+dialog {
+  color: var(--ink);
+}
+dialog::backdrop {
+  background: #1b23384d;
+  backdrop-filter: blur(4px);
+}
+[hidden] {
+  display: none !important;
+}
+.spin {
+  animation: spin 1.1s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
