@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-/** A visual reading aid, not a claim of coordinates inside the PDF. */
+/** Point only at a unique text match measured in the rendered source PDF. */
 export function SourceConnector() {
   const svg = useRef<SVGSVGElement>(null);
   const [path, setPath] = useState("");
@@ -11,7 +11,7 @@ export function SourceConnector() {
     const measure = () => {
       const citation = workspace.querySelector(".citation.selected");
       const reading = workspace.querySelector(".reading-column");
-      const target = workspace.querySelector(".source-document");
+      const target = workspace.querySelector(".source-column .pdf-match");
       if (!citation || !reading || !target || window.innerWidth <= 800) {
         setPath("");
         return;
@@ -20,14 +20,25 @@ export function SourceConnector() {
       const from = citation.getBoundingClientRect();
       const column = reading.getBoundingClientRect();
       const to = target.getBoundingClientRect();
+      const surface = target.closest(".pdf-surface")?.getBoundingClientRect();
+      if (
+        !surface ||
+        to.top < surface.top ||
+        to.bottom > surface.bottom ||
+        to.left < surface.left ||
+        to.right > surface.right
+      ) {
+        setPath("");
+        return;
+      }
       const x0 = column.right - origin.left + 8;
-      const x1 = to.left - origin.left - 8;
+      const x1 = to.left - origin.left - 3;
       const y0 = from.top + from.height / 2 - origin.top;
       const y1 = to.top + to.height / 2 - origin.top;
-      const middle = (x0 + x1) / 2;
+      const middle = x0 + 20;
       setPath(
         x1 > x0 && from.height > 0
-          ? `M ${x0} ${y0} C ${middle} ${y0}, ${middle} ${y1}, ${x1} ${y1}`
+          ? `M ${x0} ${y0} C ${middle} ${y0}, ${middle} ${y1}, ${middle + 8} ${y1} L ${x1} ${y1}`
           : "",
       );
     };
@@ -37,6 +48,15 @@ export function SourceConnector() {
         ? new ResizeObserver(measure)
         : null;
     observer?.observe(workspace);
+    const mutations = new MutationObserver(measure);
+    const panel = workspace.querySelector(".source-column");
+    if (panel)
+      mutations.observe(panel, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ["style", "hidden"],
+      });
     for (const element of workspace.querySelectorAll(
       ".reading-column, .source-column",
     )) {
@@ -51,6 +71,7 @@ export function SourceConnector() {
     return () => {
       active = false;
       observer?.disconnect();
+      mutations.disconnect();
       window.removeEventListener("resize", measure);
       window.removeEventListener("scroll", measure, true);
     };

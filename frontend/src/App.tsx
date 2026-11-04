@@ -381,9 +381,12 @@ export default function App() {
         id="main"
         className={`workspace ${phase !== "idle" ? "has-response" : ""}`}
       >
-        {finalAnswer && activeSource && !sourceUnavailable && (
-          <SourceConnector />
-        )}
+        {finalAnswer &&
+          activeSource &&
+          !sourceUnavailable &&
+          sourceTab === "document" &&
+          page === activeSource.page_no &&
+          !expanded && <SourceConnector />}
         <section
           className="reading-column"
           aria-label="Question and answer"
@@ -826,6 +829,11 @@ export default function App() {
                 page={page}
                 zoom={zoom}
                 onPages={updatePages}
+                highlightText={
+                  finalAnswer && activeSource?.page_no === page
+                    ? activeSource.content
+                    : ""
+                }
               />
             )}
             {!sourceUnavailable && (
@@ -1048,6 +1056,11 @@ export default function App() {
             page={page}
             zoom={1}
             onPages={updatePages}
+            highlightText={
+              finalAnswer && activeSource?.page_no === page
+                ? activeSource.content
+                : ""
+            }
           />
         )}
       </dialog>

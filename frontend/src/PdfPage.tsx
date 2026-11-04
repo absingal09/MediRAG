@@ -3,17 +3,20 @@ import { getDocument, GlobalWorkerOptions } from "pdfjs-dist";
 import type { PDFDocumentProxy, RenderTask } from "pdfjs-dist";
 import workerUrl from "pdfjs-dist/build/pdf.worker.min.mjs?url";
 import { FileWarning, LoaderCircle } from "lucide-react";
+import { matchSourceItems } from "./pdfSourceMatch";
 GlobalWorkerOptions.workerSrc = workerUrl;
 export function PdfPage({
   url,
   page,
   zoom,
   onPages,
+  highlightText = "",
 }: {
   url: string;
   page: number;
   zoom: number;
   onPages: (pages: number) => void;
+  highlightText?: string;
 }) {
   const host = useRef<HTMLDivElement>(null),
     canvas = useRef<HTMLCanvasElement>(null);
@@ -22,6 +25,13 @@ export function PdfPage({
     [busy, setBusy] = useState(true);
   const [error, setError] = useState(""),
     [retry, setRetry] = useState(0);
+  const [location, setLocation] = useState<{
+    key: string;
+    boxes: { left: number; top: number; width: number; height: number }[];
+  } | null>(null);
+  const locationKey = JSON.stringify([url, page, zoom, width, highlightText]);
+  const boxes =
+    !busy && !error && location?.key === locationKey ? location.boxes : [];
   useEffect(() => {
     if (!host.current) return;
     const observer = new ResizeObserver(([entry]) =>
@@ -69,7 +79,7 @@ export function PdfPage({
     setBusy(true);
     pdf
       .getPage(page)
-      .then((documentPage) => {
+      .then(async (documentPage) => {
         if (!active || !canvas.current) return;
         const viewport = documentPage.getViewport({
           scale: (width / documentPage.getViewport({ scale: 1 }).width) * zoom,
@@ -88,7 +98,50 @@ export function PdfPage({
           viewport,
           transform: ratio === 1 ? undefined : [ratio, 0, 0, ratio, 0, 0],
         });
-        return render.promise;
+        await render.promise;
+        let matchedBoxes: NonNullable<typeof location>["boxes"] = [];
+        if (highlightText && documentPage.rotate === 0) {
+          try {
+            const text = await documentPage.getTextContent();
+            const items = text.items.filter(
+              (item): item is Extract<typeof item, { str: string }> =>
+                "str" in item,
+            );
+            const indices = matchSourceItems(items, highlightText);
+            // Only horizontal text has supported geometry. Fail closed otherwise.
+            if (
+              indices.every((index) => {
+                const t = items[index].transform;
+                return (
+                  Math.abs(t[1]) < 0.001 &&
+                  Math.abs(t[2]) < 0.001 &&
+                  t[0] > 0 &&
+                  t[3] > 0
+                );
+              })
+            ) {
+              matchedBoxes = indices
+                .map((index) => {
+                  const item = items[index];
+                  const [left, baseline] = viewport.convertToViewportPoint(
+                    item.transform[4],
+                    item.transform[5],
+                  );
+                  const height = item.height * viewport.scale;
+                  return {
+                    left,
+                    top: baseline - height,
+                    width: item.width * viewport.scale,
+                    height,
+                  };
+                })
+                .filter((box) => box.width > 0 && box.height > 0);
+            }
+          } catch {
+            // Text extraction failure must not prevent reading the original page.
+          }
+        }
+        if (active) setLocation({ key: locationKey, boxes: matchedBoxes });
       })
       .then(() => {
         if (active) setBusy(false);
@@ -103,7 +156,18 @@ export function PdfPage({
       active = false;
       render?.cancel();
     };
-  }, [pdf, page, width, zoom]);
+  }, [pdf, page, width, zoom, highlightText, locationKey]);
+  useEffect(() => {
+    if (!boxes.length || !host.current) return;
+    const target = host.current.querySelector<HTMLElement>(".pdf-match");
+    if (!target) return;
+    const viewport = host.current.getBoundingClientRect();
+    const rect = target.getBoundingClientRect();
+    host.current.scrollTop +=
+      rect.top - viewport.top - host.current.clientHeight / 2;
+    host.current.scrollLeft +=
+      rect.left - viewport.left - host.current.clientWidth / 3;
+  }, [location, busy, boxes.length]);
   return (
     <div className="pdf-surface" ref={host} aria-busy={busy}>
       {busy && !error && (
@@ -124,15 +188,32 @@ export function PdfPage({
           </button>
         </div>
       )}
-      <canvas
-        ref={canvas}
-        role="img"
-        aria-label={`PDF source, page ${page}. Use Open original to read or search the accessible PDF.`}
-        style={{
-          display: error ? "none" : "block",
-          visibility: busy ? "hidden" : "visible",
-        }}
-      />
+      {!busy && !error && highlightText && (
+        <p className="pdf-location-note" role="status">
+          {boxes.length
+            ? "Matched source passage highlighted below."
+            : "Exact passage location unavailable; showing the cited page."}
+        </p>
+      )}
+      <div className="pdf-page-frame" style={{ width: width * zoom }}>
+        <canvas
+          ref={canvas}
+          role="img"
+          aria-label={`PDF source, page ${page}. Use Open original to read or search the accessible PDF.`}
+          style={{
+            display: error ? "none" : "block",
+            visibility: busy ? "hidden" : "visible",
+          }}
+        />
+        {boxes.map((box, index) => (
+          <span
+            key={index}
+            className="pdf-match"
+            aria-hidden="true"
+            style={box}
+          />
+        ))}
+      </div>
     </div>
   );
 }
