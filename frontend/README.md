@@ -37,4 +37,4 @@ For deployment later, set `VITE_API_BASE_URL` at build time or configure an `/ap
 
 ## Current limits
 
-Source metadata provides pages, not highlight coordinates: the UI shows the original page without inventing a highlight. A citation is not proof of claim support. Live API integration still needs an end-to-end check with FastAPI running. All five reviewers passed the same round-two candidate; see `REVIEW.md` for the acceptance scope and `WORK_CHECKPOINT.md` for the handoff.
+Source metadata provides pages, not highlight coordinates. The reader locates a unique complete passage in the PDF's own text and uses its measured text-item coordinates to highlight it. On desktop, the blue connector points into that passage. If matching is missing, ambiguous, too short, or uses unsupported rotated text, the cited page remains available without a highlight or arrow. Layout whitespace is normalized; numeric operators and dose ranges are preserved. Highlights locate the retrieved passage, not independently verified support for each generated claim. See `REVIEW.md` for review scope and `WORK_CHECKPOINT.md` for the historical handoff.

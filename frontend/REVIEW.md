@@ -35,10 +35,18 @@ Five independent agents evaluate the same unchanged candidate against their fixe
 These are scoped design, frontend behavior, code and provenance reviews—not clinical validation, a full WCAG audit or live LLM evaluation. The API was offline during browser verification; end-to-end model answers need the existing FastAPI/database running. Local PDF import previews a file only; server ingestion is not implemented. No exact passage highlight is drawn without source coordinates.
 
 Nonblocking observation: the floating mobile Source notes control may overlap footer copy near the bottom. Reviewers accepted this candidate; changing its UI later starts a new review round if five-way acceptance is requested again.
-# Citation connector follow-up
+# Citation connector follow-up (superseded by PDF-location correction below)
 
 - Added a decorative cobalt arrow from the selected citation row, through the desktop gutter, to the document header. No PDF coordinates or highlights are inferred.
 - Hidden on mobile and absent for refusals, errors, cleared selections or unavailable documents. Pointer input and keyboard navigation are unaffected.
 - Verification: 17 tests and production build passed; desktop preview checked; at 390px the connector is hidden with no horizontal overflow.
-- Five independent reviewers passed the same unchanged candidate in one round: visual, typography, interaction, accessibility and sources. This records the connector follow-up separately from the original acceptance below.
+- Five independent reviewers passed the same unchanged candidate in one round: visual, typography, interaction, accessibility and sources. The user clarified that the arrow must reach text inside the PDF; this header-only implementation was replaced.
+
+## PDF-location correction
+
+- Matches the complete retrieved passage uniquely against the cited PDF page's text; highlights measured text-item boxes and points the desktop arrow into the first matched line. Zoom, scroll and expanded-reader highlights verified using the Stroke example.
+- No fuzzy, duplicate or short-fragment matches; unsupported rotated text and missing matches keep page access with an explicit unavailable-location message. No backend changes.
+- Review round 1: visual, typography, interaction and accessibility PASS; sources FAIL because Unicode comparison symbols were removed during matching. Fixed normalization to preserve mathematical symbols and dose ranges, with regression tests.
+- Review round 2: all five independent reviewers PASS on the same unchanged corrected candidate. 24 tests and production build pass. Mobile 390px retains source highlights, hides the cross-column arrow and has no horizontal overflow.
+- This is passage location, not clinical validation or proof that each answer claim is supported. Historical acceptance notes above describe their original candidates.
 
