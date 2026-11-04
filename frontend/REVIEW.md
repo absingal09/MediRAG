@@ -1,0 +1,37 @@
+# Editorial Brief — review record
+
+4 November 2026. All changes are confined to `frontend/`; no backend, evaluation, held-out data, deployment or `main` changes.
+
+## Acceptance rule
+
+Five independent agents evaluate the same unchanged candidate against their fixed checklists. Any UI/code revision resets all five reviews. Review waves may run sequentially due to concurrency limits; a round always refers to one candidate, not simultaneous execution.
+
+| Reviewer | Round 1 | Round 2 |
+|---|---|---|
+| Visual design | Fail: selected passage not visible enough | Pass |
+| Typography | Fail: small metadata, long prose lines | Pass |
+| Interaction | Pass | Pass |
+| Accessibility/layout | Fail: faint essential labels | Pass |
+| Source/provenance | Fail: stale unknown PDF and silently clamped page | Pass |
+
+**Round 2: all five passed one unchanged version.** No UI edits were made between the first and fifth verdict.
+
+## Candidate identity
+
+- `src/App.tsx` SHA-256: `C05C8A101F7BA7BBAAFE96D83851751BEB06232B2CAF26428D390BD456408A86`
+- `src/App.css` SHA-256: `106517DB446EF3F8C12C120A9EDDAAD2231B0E34322C2351EF9BB81EA0015821`
+- Local screenshots: `.qa/desktop-round2.png`, `.qa/mobile-round2.png`, `.qa/mobile-source-round2.png`. These QA artifacts are ignored by Git.
+
+## Validation
+
+- All 16 tests and the production build passed.
+- Browser: library filtering/empty state, local-only PDF import, two-page document navigation, expanded reader, Escape/focus restoration, citation switch back to the correct PDF, arrow-key source tabs and offline API error clearing.
+- Desktop 1440px and mobile 390px reported no horizontal page overflow.
+- Mobile source drawer moves focus inside, wraps focus, makes background controls inert, locks background scrolling and restores focus on Escape.
+- The example is clearly local/title metadata, not an API answer. Real PDFs are rendered without invented text highlights.
+
+## Scope and remaining limits
+
+These are scoped design, frontend behavior, code and provenance reviews—not clinical validation, a full WCAG audit or live LLM evaluation. The API was offline during browser verification; end-to-end model answers need the existing FastAPI/database running. Local PDF import previews a file only; server ingestion is not implemented. No exact passage highlight is drawn without source coordinates.
+
+Nonblocking observation: the floating mobile Source notes control may overlap footer copy near the bottom. Reviewers accepted this candidate; changing its UI later starts a new review round if five-way acceptance is requested again.

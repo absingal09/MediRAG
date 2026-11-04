@@ -1,5 +1,7 @@
 # Frontend work checkpoint — 4 November 2026
 
+**Current status: resumed after reset; round 2 passed all five reviewers on one unchanged candidate. See `REVIEW.md`. The earlier paused/pending notes below are historical.**
+
 ## Authorization and stopping rule
 
 - User authorizes autonomous frontend-only edits and commits on `frontend`.
@@ -16,9 +18,9 @@ Editorial Brief React/Vite implementation in this directory: library, real PDFs,
 - 16 unit/contract tests passed (API stream parsing, interrupted/error/refusal states, citation metadata, unknown sources and unavailable pages).
 - All 16 tests and the production build passed after the PDF-switch fix and source formatting. PDF code is lazy-loaded; no oversized-entry warning remains.
 - Browser verified library filtering/empty state, aortic syndrome page 2, expanded reader, Escape restoring focus and citation navigation.
-- That last switch exposed a PDF canvas error. Fixed by remounting the reader for URL changes and retaining the canvas through error states. Browser recheck pending.
+- That last switch exposed a PDF canvas error. Fixed by remounting the reader for URL changes and retaining the canvas through error states. Browser recheck passed after reset (aortic page 2 → expanded reader → Escape → DKA citation page 1).
 - Backend port 8000 is offline. No live model request made. Live end-to-end API behavior remains unverified.
-- Still verify offline error state, mobile drawer/overflow, keyboard tab selection and local import; then capture final desktop example + mobile views.
+- Offline error clearing, mobile drawer/overflow, keyboard tab selection and local import checked after reset. Final desktop example and mobile views captured in `.qa/`; these are ignored local artifacts.
 - Local preview server runs in session 29628 at http://127.0.0.1:5173/ (restart with `npm run dev` if absent). Browser preview is an agent-created IAB tab; viewport currently 1440x1000 for desktop testing. Reset temporary viewport before handoff.
 
 ## Strict five-reviewer gauntlet
@@ -35,14 +37,14 @@ The user requires **all five reviewers to PASS the same unchanged candidate in o
 
 Round 1: visual FAIL (selected passage not prominent), typography FAIL (9–11px metadata and long prose), interaction PASS, accessibility FAIL (faint small metadata), sources FAIL (unknown doc showed stale PDF; requested unavailable page was clamped).
 
-All identified issues were addressed: visible selected-passage section; essential metadata >=12px; prose16px/68ch; unknown PDFs suppressed; requested pages preserved and explicitly rejected when unavailable. **Round 2 has not started. No claim of five passes yet.**
+All identified issues were addressed: visible selected-passage section; essential metadata >=12px; prose16px/68ch; unknown PDFs suppressed; requested pages preserved and explicitly rejected when unavailable. **Round 2: visual, typography, interaction, accessibility and sources all PASS on the same unchanged candidate.**
 
 Round-1 screenshot: `.qa/desktop-round1.png` (ignored). Final screenshots/review evidence can remain in `.qa/`. For round 2, give all five the same screenshot paths and source snapshot; do not change app code until all report. Maintain complete honest review results.
 
 ## Next
 
-Finish browser checks, run tests/build, format readable source, freeze and capture candidate R2, run all five reviews, revise and repeat until all five pass one full round, record results here/in a frontend review doc, commit code and docs separately to `frontend`. Leave backend/evals untouched. Report live API and import limitations accurately.
+Frontend acceptance is complete within its documented scope. Code and review documentation are committed separately on `frontend`. Await the user's design feedback; do not merge or deploy. A future live API smoke check needs the existing backend/database running. Leave backend/evals untouched.
 
 ## Paused checkpoint
 
-Allowance read reached **95% used / 5% remaining**. Work stopped before starting round 2, at the user's explicit threshold. Test/build checks are complete; code has been formatted. Resume from browser rechecks and candidate capture, not another scaffold or image-generation round. The one-shot automation id is `resume-medirag-frontend-after-usage-reset`. Do not start new work before the scheduled reset unless the user explicitly overrides the pause.
+Allowance reached **95% used / 5% remaining** before reset. Work stopped at the user's threshold, then resumed through the one-shot automation after the reset. The continuation has completed and its automation is removed; no ongoing monitor remains. Preserve the user's 5%-remaining stopping rule for future work. No reset credits were consumed.

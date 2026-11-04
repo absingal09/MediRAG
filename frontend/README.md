@@ -37,4 +37,4 @@ For deployment later, set `VITE_API_BASE_URL` at build time or configure an `/ap
 
 ## Current limits
 
-Source metadata provides pages, not highlight coordinates: the UI shows the original page without inventing a highlight. A citation is not proof of claim support. Live API integration still needs an end-to-end check with FastAPI running. Five-reviewer acceptance is pending; see `WORK_CHECKPOINT.md`.
+Source metadata provides pages, not highlight coordinates: the UI shows the original page without inventing a highlight. A citation is not proof of claim support. Live API integration still needs an end-to-end check with FastAPI running. All five reviewers passed the same round-two candidate; see `REVIEW.md` for the acceptance scope and `WORK_CHECKPOINT.md` for the handoff.
