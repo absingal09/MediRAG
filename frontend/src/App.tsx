@@ -27,6 +27,7 @@ import { askQuestion } from "./api";
 import { PdfPage } from "./PdfReader";
 import type { AskResult, Guideline, OpenDocument } from "./types";
 import "./App.css";
+import { SourceConnector } from "./SourceConnector";
 
 const initialDocument = documentById("STW_DKA")!;
 const prompts = [
@@ -380,6 +381,9 @@ export default function App() {
         id="main"
         className={`workspace ${phase !== "idle" ? "has-response" : ""}`}
       >
+        {finalAnswer && activeSource && !sourceUnavailable && (
+          <SourceConnector />
+        )}
         <section
           className="reading-column"
           aria-label="Question and answer"

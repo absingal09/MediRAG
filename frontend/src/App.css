@@ -76,12 +76,30 @@
   color: #535e69;
 }
 .workspace {
+  position: relative;
   max-width: 1292px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 386px;
   column-gap: 64px;
   padding: 52px 36px 0;
+}
+.source-connector {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 1.5;
+  opacity: 0.75;
+}
+@media (max-width: 800px) {
+  .source-connector {
+    display: none;
+  }
 }
 .reading-column {
   min-width: 0;
