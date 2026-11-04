@@ -76,6 +76,7 @@
   color: #535e69;
 }
 .workspace {
+  position: relative;
   max-width: 1292px;
   margin: 0 auto;
   display: grid;
@@ -685,6 +686,31 @@ h1 em {
   margin: auto;
   box-shadow: 0 1px 4px #23304412;
   background: white;
+}
+.pdf-page-frame {
+  position: relative;
+  margin: auto;
+}
+.pdf-page-frame canvas {
+  margin: 0;
+}
+.pdf-match {
+  position: absolute;
+  background: #3863e52b;
+  outline: 1px solid #3159c5b3;
+  pointer-events: none;
+}
+.pdf-location-note {
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  font-size: 12px;
+  line-height: 1.5;
+  background: var(--paper);
+  padding: 7px;
+  margin-bottom: 12px;
+  color: #45576e;
 }
 .pdf-state {
   min-height: 270px;

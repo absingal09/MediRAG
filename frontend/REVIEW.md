@@ -35,3 +35,25 @@ Five independent agents evaluate the same unchanged candidate against their fixe
 These are scoped design, frontend behavior, code and provenance reviews—not clinical validation, a full WCAG audit or live LLM evaluation. The API was offline during browser verification; end-to-end model answers need the existing FastAPI/database running. Local PDF import previews a file only; server ingestion is not implemented. No exact passage highlight is drawn without source coordinates.
 
 Nonblocking observation: the floating mobile Source notes control may overlap footer copy near the bottom. Reviewers accepted this candidate; changing its UI later starts a new review round if five-way acceptance is requested again.
+# Citation connector follow-up (superseded by PDF-location correction below)
+
+- Added a decorative cobalt arrow from the selected citation row, through the desktop gutter, to the document header. No PDF coordinates or highlights are inferred.
+- Hidden on mobile and absent for refusals, errors, cleared selections or unavailable documents. Pointer input and keyboard navigation are unaffected.
+- Verification: 17 tests and production build passed; desktop preview checked; at 390px the connector is hidden with no horizontal overflow.
+- Five independent reviewers passed the same unchanged candidate in one round: visual, typography, interaction, accessibility and sources. The user clarified that the arrow must reach text inside the PDF; this header-only implementation was replaced.
+
+## PDF-location correction
+
+- Matches the complete retrieved passage uniquely against the cited PDF page's text; highlights measured text-item boxes and points the desktop arrow into the first matched line. Zoom, scroll and expanded-reader highlights verified using the Stroke example.
+- No fuzzy, duplicate or short-fragment matches; unsupported rotated text and missing matches keep page access with an explicit unavailable-location message. No backend changes.
+- Review round 1: visual, typography, interaction and accessibility PASS; sources FAIL because Unicode comparison symbols were removed during matching. Fixed normalization to preserve mathematical symbols and dose ranges, with regression tests.
+- Review round 2: all five independent reviewers PASS on the same unchanged corrected candidate. 24 tests and production build pass. Mobile 390px retains source highlights, hides the cross-column arrow and has no horizontal overflow.
+- This is passage location, not clinical validation or proof that each answer claim is supported. Historical acceptance notes above describe their original candidates.
+
+## Citation highlights without arrows — current behavior
+
+- Removed the connector at the user's request. Clicking each citation opens its own document/page and selects its passage, including multiple source chunks on the same page.
+- PDF.js text order differed from ingestion's flowchart grouping. Added a frontend-only index of original PyMuPDF character coordinates for all 494 ingestion chunks across 14 PDFs. The generator checks its output against existing chunking; Vite checks original PDF hashes. No backend or evaluation changes.
+- Verification: 28 tests and production build pass. Live DKA answer: clicked sources 5, 3, 4 and 1; all four selected distinct matched text boxes. Live aspirin answer: both STEMI and NSTEMI citations highlight in their matching PDFs. Mobile 390px retains highlighting without horizontal overflow.
+- All five independent reviewers PASS on the same unchanged candidate in one round: visual, typography, interaction, accessibility and sources. Prior arrow acceptance is historical.
+

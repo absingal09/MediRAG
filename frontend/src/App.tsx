@@ -822,6 +822,13 @@ export default function App() {
                 page={page}
                 zoom={zoom}
                 onPages={updatePages}
+                sourceDoc={activeSource?.doc_name}
+                sourceHeading={activeSource?.heading}
+                highlightText={
+                  finalAnswer && activeSource?.page_no === page
+                    ? activeSource.content
+                    : ""
+                }
               />
             )}
             {!sourceUnavailable && (
@@ -1044,6 +1051,13 @@ export default function App() {
             page={page}
             zoom={1}
             onPages={updatePages}
+            sourceDoc={activeSource?.doc_name}
+            sourceHeading={activeSource?.heading}
+            highlightText={
+              finalAnswer && activeSource?.page_no === page
+                ? activeSource.content
+                : ""
+            }
           />
         )}
       </dialog>
