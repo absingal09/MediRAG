@@ -289,3 +289,32 @@ How ingest works:
 - Stream closure was mock-tested; HTTP disconnect detection may wait for
   a blocking provider read. Immediate disconnect handling is not verified.
 - Next planner task: timeouts, exponential-backoff retries and model fallback.
+
+## Phase 9 – Timeouts, retries and fallback (Nov 4)
+
+| File | What |
+|---|---|
+| `app/llm.py` | Explicit connection/read timeouts, bounded retries, exponential backoff and model fallback for normal and streaming calls. |
+| `app/config.py`, `app/cache.py` | Fallback model setting included in cache keys. |
+| `scripts/check_retries.py`, `scripts/check_fallback.py` | Mock checks for retry limits, HTTP errors, fallback and interrupted streams. |
+| `scripts/check_fallback_model.py` | Direct fallback-model compatibility check. |
+
+### Results
+- Timeout: 10 seconds to connect, 60 seconds between received data.
+- Maximum three attempts per model; waits of 1 and 2 seconds.
+- Retries timeouts, connection errors and HTTP 429/500/502/503/504.
+- Authentication errors do not trigger retries or fallback.
+- Streaming retries/fallback stop once text has been sent.
+- Retry and fallback mock checks passed; fallback model direct call worked.
+- Response cleanup and per-attempt usage logging retained.
+- No retrieval tuning; held-out untouched.
+
+### Bugs hit and what they taught
+- **Return inside the stream loop** → end only after processing all events.
+- **Retry tests called the fallback wrapper** → test single-model helpers separately.
+- **Missing model default** → preserve existing calls through a wrapper.
+
+### Limitations / next
+- Timeouts apply per attempt, not to the whole request.
+- Incomplete-stream detection remains pending.
+- Next planner task: frontend.
