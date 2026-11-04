@@ -41,3 +41,7 @@ uvicorn app.main:app --reload     # http://127.0.0.1:8000/health
 - [x] Embedding and storage (494 chunks): `python -m scripts.ingest`
 - [x] `/search`, `/ask` with citations and refusal
 - [ ] Baseline evals
+
+## Deferred tasks
+
+- [ ] Make uploaded PDFs searchable: add a backend upload/ingestion endpoint and connect the frontend upload control with progress/error feedback. Deferred; not required for current work. Uploads currently support local preview only.
