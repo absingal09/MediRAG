@@ -60,6 +60,9 @@ export default function App() {
   const [notice, setNotice] = useState("");
   const [localDocument, setLocalDocument] = useState<OpenDocument | null>(null);
   const [mobileSource, setMobileSource] = useState(false);
+  const [isMobile, setIsMobile] = useState(
+    () => window.matchMedia?.("(max-width: 800px)").matches ?? false,
+  );
   const [expanded, setExpanded] = useState(false);
   const input = useRef<HTMLTextAreaElement>(null);
   const answerHeading = useRef<HTMLHeadingElement>(null);
@@ -68,6 +71,9 @@ export default function App() {
   const fileInput = useRef<HTMLInputElement>(null);
   const abort = useRef<AbortController | null>(null);
   const localUrl = useRef<string | null>(null);
+  const sourcePanel = useRef<HTMLElement>(null);
+  const closeSourceButton = useRef<HTMLButtonElement>(null);
+  const sourceTrigger = useRef<HTMLButtonElement>(null);
   const busy = phase === "loading" || phase === "streaming";
   const activeSource =
     sourceIndex !== null ? result?.sources[sourceIndex] : undefined;
@@ -75,6 +81,53 @@ export default function App() {
     activeSource && !documentById(activeSource.doc_name),
   );
   const finalAnswer = result && !result.refused && !result.invalid?.length;
+  const closeSource = useCallback(() => {
+    setMobileSource(false);
+    window.setTimeout(() => sourceTrigger.current?.focus(), 0);
+  }, []);
+
+  useEffect(() => {
+    const media = window.matchMedia?.("(max-width: 800px)");
+    if (!media) return;
+    const update = () => setIsMobile(media.matches);
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
+  useEffect(() => {
+    if (!isMobile || !mobileSource) return;
+    const previousOverflow = window.document.body.style.overflow;
+    window.document.body.style.overflow = "hidden";
+    closeSourceButton.current?.focus();
+    const onKey = (event: KeyboardEvent) => {
+      if (libraryDialog.current?.open || pdfDialog.current?.open) return;
+      if (event.key === "Escape") {
+        event.preventDefault();
+        closeSource();
+      }
+      if (event.key !== "Tab") return;
+      const controls = Array.from(
+        sourcePanel.current?.querySelectorAll<HTMLElement>(
+          'button:not(:disabled), a[href], [tabindex="0"]',
+        ) ?? [],
+      ).filter(
+        (element) => element.getClientRects().length && element.tabIndex >= 0,
+      );
+      const first = controls[0],
+        last = controls[controls.length - 1];
+      if (event.shiftKey && window.document.activeElement === first) {
+        event.preventDefault();
+        last?.focus();
+      } else if (!event.shiftKey && window.document.activeElement === last) {
+        event.preventDefault();
+        first?.focus();
+      }
+    };
+    window.document.addEventListener("keydown", onKey);
+    return () => {
+      window.document.body.style.overflow = previousOverflow;
+      window.document.removeEventListener("keydown", onKey);
+    };
+  }, [isMobile, mobileSource, closeSource]);
 
   useEffect(
     () => () => {
@@ -90,7 +143,8 @@ export default function App() {
         !(event.target instanceof HTMLInputElement) &&
         !(event.target instanceof HTMLTextAreaElement) &&
         !libraryDialog.current?.open &&
-        !pdfDialog.current?.open
+        !pdfDialog.current?.open &&
+        !(isMobile && mobileSource)
       ) {
         event.preventDefault();
         input.current?.focus();
@@ -98,7 +152,7 @@ export default function App() {
     };
     window.addEventListener("keydown", focusQuestion);
     return () => window.removeEventListener("keydown", focusQuestion);
-  }, []);
+  }, [isMobile, mobileSource]);
   useEffect(() => {
     if (!notice) return;
     const timer = setTimeout(() => setNotice(""), 5000);
@@ -287,7 +341,7 @@ export default function App() {
       <a className="skip-link" href="#main">
         Skip to question
       </a>
-      <header className="site-header">
+      <header className="site-header" inert={isMobile && mobileSource}>
         <a className="brand" href="./" aria-label="MediRAG home">
           <BookOpen size={25} strokeWidth={1.6} />
           <span>
@@ -324,7 +378,11 @@ export default function App() {
         id="main"
         className={`workspace ${phase !== "idle" ? "has-response" : ""}`}
       >
-        <section className="reading-column" aria-label="Question and answer">
+        <section
+          className="reading-column"
+          aria-label="Question and answer"
+          inert={isMobile && mobileSource}
+        >
           <div className="desk-label">
             <span className="blue-rule" />
             THE GUIDELINE DESK{" "}
@@ -580,6 +638,9 @@ export default function App() {
         </section>
 
         <aside
+          ref={sourcePanel}
+          role={isMobile && mobileSource ? "dialog" : undefined}
+          aria-modal={isMobile && mobileSource ? true : undefined}
           className={`source-column ${mobileSource ? "mobile-open" : ""}`}
           aria-label="Source notes"
         >
@@ -592,8 +653,9 @@ export default function App() {
             </div>
             <button
               className="icon-button mobile-close"
+              ref={closeSourceButton}
               aria-label="Close source notes"
-              onClick={() => setMobileSource(false)}
+              onClick={closeSource}
             >
               <X size={20} />
             </button>
@@ -820,6 +882,9 @@ export default function App() {
       </main>
       <button
         className="mobile-source-button"
+        ref={sourceTrigger}
+        disabled={isMobile && mobileSource}
+        aria-hidden={isMobile && mobileSource}
         onClick={() => setMobileSource(true)}
       >
         <BookOpen size={17} />
