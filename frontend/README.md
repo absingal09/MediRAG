@@ -37,4 +37,14 @@ For deployment later, set `VITE_API_BASE_URL` at build time or configure an `/ap
 
 ## Current limits
 
-Source metadata provides pages, not highlight coordinates. The reader locates a unique complete passage in the PDF's own text and uses its measured text-item coordinates to highlight it. On desktop, the blue connector points into that passage. If matching is missing, ambiguous, too short, or uses unsupported rotated text, the cited page remains available without a highlight or arrow. Layout whitespace is normalized; numeric operators and dose ranges are preserved. Highlights locate the retrieved passage, not independently verified support for each generated claim. See `REVIEW.md` for review scope and `WORK_CHECKPOINT.md` for the historical handoff.
+Click any answer citation to open its document/page and highlight that retrieved passage. Different citations on the same page select different passages. There is no connecting arrow.
+
+The frontend location index covers all 494 current chunks across the 14 PDFs. It reuses the existing read-only PyMuPDF parsing/chunking code to record original character coordinates; it does not change ingestion, retrieval or the database. Matching uses document, page, heading and complete chunk text, with only Unicode/whitespace normalization. Vite verifies PDF hashes so an outdated index cannot silently accompany changed PDFs.
+
+After changing corpus PDFs or chunking, regenerate the frontend index from the repository root before starting/building Vite:
+
+```powershell
+.\.venv\Scripts\python.exe frontend/scripts/build_source_locations.py
+```
+
+For text outside the index, such as the saved interface example, the reader still attempts a unique PDF-text match. Unsupported or unlocatable text keeps access to the cited page with an explicit unavailable-location message. Highlights locate retrieved text; they do not independently verify each generated claim. See `REVIEW.md` for acceptance scope.

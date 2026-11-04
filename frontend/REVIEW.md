@@ -50,3 +50,10 @@ Nonblocking observation: the floating mobile Source notes control may overlap fo
 - Review round 2: all five independent reviewers PASS on the same unchanged corrected candidate. 24 tests and production build pass. Mobile 390px retains source highlights, hides the cross-column arrow and has no horizontal overflow.
 - This is passage location, not clinical validation or proof that each answer claim is supported. Historical acceptance notes above describe their original candidates.
 
+## Citation highlights without arrows — current behavior
+
+- Removed the connector at the user's request. Clicking each citation opens its own document/page and selects its passage, including multiple source chunks on the same page.
+- PDF.js text order differed from ingestion's flowchart grouping. Added a frontend-only index of original PyMuPDF character coordinates for all 494 ingestion chunks across 14 PDFs. The generator checks its output against existing chunking; Vite checks original PDF hashes. No backend or evaluation changes.
+- Verification: 28 tests and production build pass. Live DKA answer: clicked sources 5, 3, 4 and 1; all four selected distinct matched text boxes. Live aspirin answer: both STEMI and NSTEMI citations highlight in their matching PDFs. Mobile 390px retains highlighting without horizontal overflow.
+- All five independent reviewers PASS on the same unchanged candidate in one round: visual, typography, interaction, accessibility and sources. Prior arrow acceptance is historical.
+
