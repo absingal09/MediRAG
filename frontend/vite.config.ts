@@ -1,6 +1,7 @@
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 import { readFileSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import type { Plugin } from "vite";
@@ -35,6 +36,19 @@ function corpusPlugin(): Plugin {
       size: readFileSync(resolve(corpus, file)).byteLength,
     };
   });
+  const sourceLocations = JSON.parse(
+    readFileSync(resolve(root, "src/generated/sourceLocations.json"), "utf8"),
+  );
+  for (const entry of entries) {
+    const hash = createHash("sha256")
+      .update(readFileSync(resolve(corpus, entry.file)))
+      .digest("hex");
+    if (sourceLocations.files[entry.id] !== hash) {
+      throw new Error(
+        `PDF location index is stale for ${entry.file}. From the repo root run: .venv/Scripts/python frontend/scripts/build_source_locations.py`,
+      );
+    }
+  }
   return {
     name: "medirag-corpus",
     resolveId(id) {

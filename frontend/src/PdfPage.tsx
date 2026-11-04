@@ -4,6 +4,7 @@ import type { PDFDocumentProxy, RenderTask } from "pdfjs-dist";
 import workerUrl from "pdfjs-dist/build/pdf.worker.min.mjs?url";
 import { FileWarning, LoaderCircle } from "lucide-react";
 import { matchSourceItems } from "./pdfSourceMatch";
+import { corpusSourceLocation } from "./corpusSourceLocation";
 GlobalWorkerOptions.workerSrc = workerUrl;
 export function PdfPage({
   url,
@@ -11,12 +12,16 @@ export function PdfPage({
   zoom,
   onPages,
   highlightText = "",
+  sourceDoc = "",
+  sourceHeading = "",
 }: {
   url: string;
   page: number;
   zoom: number;
   onPages: (pages: number) => void;
   highlightText?: string;
+  sourceDoc?: string;
+  sourceHeading?: string;
 }) {
   const host = useRef<HTMLDivElement>(null),
     canvas = useRef<HTMLCanvasElement>(null);
@@ -29,7 +34,15 @@ export function PdfPage({
     key: string;
     boxes: { left: number; top: number; width: number; height: number }[];
   } | null>(null);
-  const locationKey = JSON.stringify([url, page, zoom, width, highlightText]);
+  const locationKey = JSON.stringify([
+    url,
+    page,
+    zoom,
+    width,
+    highlightText,
+    sourceDoc,
+    sourceHeading,
+  ]);
   const boxes =
     !busy && !error && location?.key === locationKey ? location.boxes : [];
   useEffect(() => {
@@ -102,40 +115,57 @@ export function PdfPage({
         let matchedBoxes: NonNullable<typeof location>["boxes"] = [];
         if (highlightText && documentPage.rotate === 0) {
           try {
-            const text = await documentPage.getTextContent();
-            const items = text.items.filter(
-              (item): item is Extract<typeof item, { str: string }> =>
-                "str" in item,
-            );
-            const indices = matchSourceItems(items, highlightText);
-            // Only horizontal text has supported geometry. Fail closed otherwise.
-            if (
-              indices.every((index) => {
-                const t = items[index].transform;
-                return (
-                  Math.abs(t[1]) < 0.001 &&
-                  Math.abs(t[2]) < 0.001 &&
-                  t[0] > 0 &&
-                  t[3] > 0
-                );
-              })
-            ) {
-              matchedBoxes = indices
-                .map((index) => {
-                  const item = items[index];
-                  const [left, baseline] = viewport.convertToViewportPoint(
-                    item.transform[4],
-                    item.transform[5],
+            const anchored = sourceDoc
+              ? await corpusSourceLocation(
+                  sourceDoc,
+                  page,
+                  sourceHeading,
+                  highlightText,
+                )
+              : [];
+            if (anchored.length) {
+              matchedBoxes = anchored.map(([x0, y0, x1, y1]) => ({
+                left: x0 * viewport.width,
+                top: y0 * viewport.height,
+                width: (x1 - x0) * viewport.width,
+                height: (y1 - y0) * viewport.height,
+              }));
+            } else {
+              const text = await documentPage.getTextContent();
+              const items = text.items.filter(
+                (item): item is Extract<typeof item, { str: string }> =>
+                  "str" in item,
+              );
+              const indices = matchSourceItems(items, highlightText);
+              // Only horizontal text has supported geometry. Fail closed otherwise.
+              if (
+                indices.every((index) => {
+                  const t = items[index].transform;
+                  return (
+                    Math.abs(t[1]) < 0.001 &&
+                    Math.abs(t[2]) < 0.001 &&
+                    t[0] > 0 &&
+                    t[3] > 0
                   );
-                  const height = item.height * viewport.scale;
-                  return {
-                    left,
-                    top: baseline - height,
-                    width: item.width * viewport.scale,
-                    height,
-                  };
                 })
-                .filter((box) => box.width > 0 && box.height > 0);
+              ) {
+                matchedBoxes = indices
+                  .map((index) => {
+                    const item = items[index];
+                    const [left, baseline] = viewport.convertToViewportPoint(
+                      item.transform[4],
+                      item.transform[5],
+                    );
+                    const height = item.height * viewport.scale;
+                    return {
+                      left,
+                      top: baseline - height,
+                      width: item.width * viewport.scale,
+                      height,
+                    };
+                  })
+                  .filter((box) => box.width > 0 && box.height > 0);
+              }
             }
           } catch {
             // Text extraction failure must not prevent reading the original page.
@@ -156,7 +186,16 @@ export function PdfPage({
       active = false;
       render?.cancel();
     };
-  }, [pdf, page, width, zoom, highlightText, locationKey]);
+  }, [
+    pdf,
+    page,
+    width,
+    zoom,
+    highlightText,
+    locationKey,
+    sourceDoc,
+    sourceHeading,
+  ]);
   useEffect(() => {
     if (!boxes.length || !host.current) return;
     const target = host.current.querySelector<HTMLElement>(".pdf-match");

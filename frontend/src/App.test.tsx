@@ -13,9 +13,18 @@ import type { AskResult } from "./types";
 
 vi.mock("./api", () => ({ askQuestion: vi.fn() }));
 vi.mock("./PdfReader", () => ({
-  PdfPage: ({ url, page }: { url: string; page: number }) => (
+  PdfPage: ({
+    url,
+    page,
+    highlightText,
+  }: {
+    url: string;
+    page: number;
+    highlightText?: string;
+  }) => (
     <div data-testid="pdf-reader">
       {url} · requested page {page}
+      <span data-testid="selected-pdf-text">{highlightText}</span>
     </div>
   ),
 }));
@@ -42,6 +51,43 @@ function submit() {
   fireEvent.submit(question.closest("form")!);
 }
 describe("answer and provenance states", () => {
+  it("switches each citation's PDF text, including two passages from the same page", async () => {
+    const sources = [
+      result.sources[0],
+      { ...result.sources[0], content: "Second passage on the same DKA page" },
+      {
+        ...result.sources[0],
+        doc_name: "STW_Stroke",
+        content: "A passage in a different document",
+      },
+    ];
+    vi.mocked(askQuestion).mockResolvedValue({
+      ...result,
+      answer: "Three citations [S1][S2][S3]",
+      sources,
+      citations: sources.map((source) => ({
+        doc_name: source.doc_name,
+        page_no: source.page_no,
+      })),
+    });
+    render(<App />);
+    submit();
+    await screen.findByText("Three citations");
+    for (const [index, source] of sources.entries()) {
+      fireEvent.click(
+        screen.getByRole("button", {
+          name: new RegExp(`^${index + 1}(DKA|Stroke)`),
+        }),
+      );
+      expect(screen.getByTestId("selected-pdf-text").textContent).toBe(
+        source.content,
+      );
+      expect(screen.getByTestId("pdf-reader").textContent).toContain(
+        `${source.doc_name}.pdf`,
+      );
+    }
+    expect(document.querySelector(".source-connector")).toBeNull();
+  });
   it("links a final citation to the selected document, page and retrieved passage", async () => {
     vi.mocked(askQuestion).mockResolvedValue(result);
     render(<App />);

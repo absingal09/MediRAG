@@ -84,24 +84,6 @@
   column-gap: 64px;
   padding: 52px 36px 0;
 }
-.source-connector {
-  z-index: 2;
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-  pointer-events: none;
-  fill: none;
-  stroke: var(--blue);
-  stroke-width: 1.5;
-  opacity: 0.75;
-}
-@media (max-width: 800px) {
-  .source-connector {
-    display: none;
-  }
-}
 .reading-column {
   min-width: 0;
 }

@@ -27,7 +27,6 @@ import { askQuestion } from "./api";
 import { PdfPage } from "./PdfReader";
 import type { AskResult, Guideline, OpenDocument } from "./types";
 import "./App.css";
-import { SourceConnector } from "./SourceConnector";
 
 const initialDocument = documentById("STW_DKA")!;
 const prompts = [
@@ -381,12 +380,6 @@ export default function App() {
         id="main"
         className={`workspace ${phase !== "idle" ? "has-response" : ""}`}
       >
-        {finalAnswer &&
-          activeSource &&
-          !sourceUnavailable &&
-          sourceTab === "document" &&
-          page === activeSource.page_no &&
-          !expanded && <SourceConnector />}
         <section
           className="reading-column"
           aria-label="Question and answer"
@@ -829,6 +822,8 @@ export default function App() {
                 page={page}
                 zoom={zoom}
                 onPages={updatePages}
+                sourceDoc={activeSource?.doc_name}
+                sourceHeading={activeSource?.heading}
                 highlightText={
                   finalAnswer && activeSource?.page_no === page
                     ? activeSource.content
@@ -1056,6 +1051,8 @@ export default function App() {
             page={page}
             zoom={1}
             onPages={updatePages}
+            sourceDoc={activeSource?.doc_name}
+            sourceHeading={activeSource?.heading}
             highlightText={
               finalAnswer && activeSource?.page_no === page
                 ? activeSource.content
