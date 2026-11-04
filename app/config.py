@@ -14,6 +14,7 @@ DATABASE_URL = os.environ["DATABASE_URL"]
 # Optional: fall back to a default
 SARVAM_API_KEY = os.getenv("SARVAM_API_KEY", "")
 SARVAM_MODEL = os.getenv("SARVAM_MODEL", "glm5.3")
+SARVAM_FALLBACK_MODEL = os.getenv("SARVAM_FALLBACK_MODEL", "sarvam-105b")
 EMBED_MODEL = os.getenv("EMBED_MODEL", "all-MiniLM-L6-v2")
 TOP_K = int(os.getenv("TOP_K", "5"))   # .env values are strings
 

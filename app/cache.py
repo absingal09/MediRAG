@@ -1,7 +1,7 @@
 import hashlib
 import json
 
-from app.config import CORPUS_VERSION, EMBED_MODEL, SARVAM_MODEL
+from app.config import CORPUS_VERSION, EMBED_MODEL, SARVAM_MODEL, SARVAM_FALLBACK_MODEL
 from copy import deepcopy
 
 PIPELINE_VERSION = "v1"
@@ -14,6 +14,7 @@ def make_cache_key(question, k):
         "corpus_version" : CORPUS_VERSION,
         "embedding_model" : EMBED_MODEL,
         "generation_model" : SARVAM_MODEL,
+        "fallback_model": SARVAM_FALLBACK_MODEL,
         "pipeline_version" : PIPELINE_VERSION
     }
 
