@@ -242,20 +242,22 @@ export default function App() {
   function showExample() {
     const response: AskResult = {
       answer:
-        "The **Diabetic Ketoacidosis** workflow is open in the source reader. [S1]\n\nUse a citation to open its document and page. The passage panel keeps the returned text separate from the answer.",
+        "**BEFAST** stands for six warning-sign prompts in the stroke guideline: [S1]\n\n- **B — Balance:** loss of balance or coordination.\n- **E — Eyes:** sudden blurred or double vision, or persistent vision trouble.\n- **F — Face:** deviation at the angle of the mouth.\n- **A — Arm:** arm drift.\n- **S — Speech:** slurred speech or inability to speak or understand.\n- **T — Time:** act fast.",
       refused: false,
       invalid: [],
-      citations: [{ doc_name: "STW_DKA", page_no: 1 }],
+      citations: [{ doc_name: "STW_Stroke", page_no: 1 }],
       sources: [
         {
-          doc_name: "STW_DKA",
+          doc_name: "STW_Stroke",
           page_no: 1,
-          heading: "Document title",
-          content: "Diabetic Ketoacidosis",
+          heading: "WARNING SIGNS (BEFAST)",
+          content:
+            "BALANCE: Loss of balance or coordination\nEYES: Sudden blurred or double vision / sudden, persistent vision trouble\nFACE: Deviation at the angle of the mouth\nARM: Arm Drift\nSPEECH: Slurred speech or the inability to speak or understand\nTIME: Act fast",
         },
       ],
     };
-    setAsked("Which guideline is open?");
+    setAsked("What does BEFAST stand for in the stroke guideline?");
+    setQuestion("What does BEFAST stand for in the stroke guideline?");
     setResult(response);
     setExample(true);
     setPhase("done");
@@ -587,8 +589,8 @@ export default function App() {
               </div>
               {example && (
                 <p className="example-note">
-                  This local example demonstrates the interface. The passage is
-                  document-title metadata, not retrieved clinical evidence.
+                  This saved example uses an excerpt from the Stroke guideline,
+                  page 1. It is not a live model response.
                 </p>
               )}
               {!!result.sources.length && (
@@ -703,7 +705,7 @@ export default function App() {
             >
               <span className="small-label">
                 {example
-                  ? "SELECTED EXAMPLE · TITLE METADATA"
+                  ? "SELECTED EXAMPLE · PDF EXCERPT"
                   : "SELECTED RETRIEVED PASSAGE"}
               </span>
               <p>{sourceText}</p>
@@ -842,7 +844,7 @@ export default function App() {
           >
             <span className="small-label">
               {example
-                ? "EXAMPLE · DOCUMENT-TITLE METADATA"
+                ? "EXAMPLE · EXCERPT FROM THE PDF"
                 : "TEXT RETURNED BY RETRIEVAL"}
             </span>
             {sourceText ? (

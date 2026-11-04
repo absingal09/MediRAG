@@ -102,15 +102,40 @@ describe("answer and provenance states", () => {
     fireEvent.click(
       screen.getByRole("button", { name: "Explore an interface example" }),
     );
-    expect(screen.getByRole("button", { name: /DKA · p\. 1/ })).toBeTruthy();
+    expect(screen.getByRole("button", { name: /Stroke · p\. 1/ })).toBeTruthy();
     submit();
     expect((await screen.findByRole("alert")).textContent).toContain(
       "Connection failed",
     );
-    expect(screen.queryByRole("button", { name: /DKA · p\. 1/ })).toBeNull();
+    expect(screen.queryByRole("button", { name: /Stroke · p\. 1/ })).toBeNull();
     expect(
       screen.queryByRole("region", { name: "Selected source passage" }),
     ).toBeNull();
+  });
+  it("shows a realistic saved example with its matching PDF and excerpt", () => {
+    render(<App />);
+    fireEvent.click(
+      screen.getByRole("button", { name: "Explore an interface example" }),
+    );
+    expect(
+      screen.getByRole("heading", {
+        name: "What does BEFAST stand for in the stroke guideline?",
+      }),
+    ).toBeTruthy();
+    expect(
+      screen
+        .getByRole("button", { name: /Stroke · p\. 1/ })
+        .getAttribute("aria-pressed"),
+    ).toBe("true");
+    expect(screen.getByTestId("pdf-reader").textContent).toContain(
+      "STW_Stroke.pdf · requested page 1",
+    );
+    expect(
+      screen.getByRole("region", { name: "Selected source passage" })
+        .textContent,
+    ).toContain("BALANCE: Loss of balance or coordination");
+    expect(screen.getByText(/It is not a live model response/)).toBeTruthy();
+    expect(askQuestion).not.toHaveBeenCalled();
   });
   it("renders refusals without interactive answer citations", async () => {
     vi.mocked(askQuestion).mockResolvedValue({
