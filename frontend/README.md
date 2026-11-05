@@ -31,7 +31,8 @@ npm test
 npm run build
 ```
 
-Tests mock the API/PDF engine; they do not call an LLM or read eval questions. Browser checks use the local interface example and actual local PDFs.
+Tests mock the API/PDF engine; they do not call an LLM or read eval questions. Browser checks cover the local interface example, actual PDFs and live
+FastAPI answers, including citation switching, refusal, caching and errors.
 
 For deployment later, set `VITE_API_BASE_URL` at build time or configure an `/api` reverse proxy. The dev proxy is not a production server. Preserve the `documents/` assets in the built output.
 

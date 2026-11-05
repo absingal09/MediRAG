@@ -1,6 +1,6 @@
 # Frontend work checkpoint — 4 November 2026
 
-**Current status: resumed after reset; round 2 passed all five reviewers on one unchanged candidate. See `REVIEW.md`. The earlier paused/pending notes below are historical.**
+**Historical checkpoint: the status and pending checks below describe 4 November 2026. For completed frontend work and subsequent live API verification, see Phase 10 of `../docs/BUILD_LOG.md`.**
 
 ## Authorization and stopping rule
 

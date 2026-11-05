@@ -136,7 +136,7 @@ How ingest works:
 | `app/prompting.py` | System prompt (answer only from sources, cite `[S1]`, copy doses exactly, refuse with `NOT_IN_DOCUMENTS`). `build_messages()` numbers chunks `[S1] (doc, page) HEADING`. `parse_answer()` detects refusal, finds `[S<n>]` tags, maps each to its chunk's doc + page, collects tags pointing to no source in `invalid`. |
 | `app/llm.py` | `complete(messages)`: Sarvam chat API, temperature 0, `reasoning_effort` low, 60 s timeout. Raises with Sarvam's own error text on failure. |
 | `app/ask.py` | `ask(question)`: search → prompt → LLM → parse. Invalid citations → retry once; still invalid → refuse. Refusals return "I couldn't find this in the guidelines." Sources attached so answers can be checked. |
-| `app/main.py` | `GET /search?q=…&k=…` (`k` limited to 1–20 with `Query`); `POST /ask` with a Pydantic `AskRequest` (question 3–500 characters, otherwise 422). |
+| `app/main.py` | `GET /search?q=…&k=…`; `POST /ask` with a Pydantic `AskRequest` (question 3–500 characters, otherwise 422). |
 
 ### Results
 - *"What is the aspirin loading dose?"* → "325 mg [S1][S2]", cited STW_STEMI p.1 and STW_NSTEMI p.1 ✅
@@ -318,3 +318,64 @@ How ingest works:
 - Timeouts apply per attempt, not to the whole request.
 - Incomplete-stream detection remains pending.
 - Next planner task: frontend.
+
+## Phase 10 – Frontend and citation highlighting (Nov 4–5)
+
+| File | What |
+|---|---|
+| `frontend/src/App.tsx`, `App.css` | Editorial Brief interface: question form, streamed answers, citations, library and responsive source drawer. |
+| `frontend/src/api.ts` | Reads SSE delta, final and error events; discards provisional text on failure. |
+| `frontend/src/PdfPage.tsx` | PDF reader with page navigation, zoom, expanded view and selected-passage highlighting. |
+| `frontend/scripts/build_source_locations.py` | Generates original PDF character coordinates for all 494 chunks across 14 documents. |
+| `frontend/src/corpusSourceLocation.ts`, `vite.config.ts` | Matches citations by document, page, heading and content; checks PDF hashes against the location index. |
+
+### Results
+- **28 frontend tests and production build passed.**
+- Five independent reviewers passed the same unchanged final candidate.
+- Live checks passed: streamed answers, citation navigation, refusal,
+  repeated-question caching and API error display.
+- All four distinct citations in a live DKA answer highlighted their passages.
+- Cross-document citations opened and highlighted the matching PDFs.
+- Mobile highlighting checked at 390px without horizontal overflow.
+- Removed the connecting arrow; clicking a citation selects its PDF passage.
+- Local PDF import supports preview only.
+- No retrieval tuning or evaluation-data changes; held-out untouched.
+
+### Bugs hit and what they taught
+- **PDF.js text order differed from ingestion**
+  → use coordinates from the original PyMuPDF extraction.
+- **Matching removed Unicode comparison symbols**
+  → preserve operators, decimals and dose ranges; add regression tests.
+- **Different citations can share a document and page**
+  → locate by heading and complete source content as well.
+
+### Limitations / next
+- Highlights locate retrieved text; they do not prove claim support.
+- Regenerate the frontend location index after corpus or chunking changes.
+- Searchable PDF uploads are deferred; not required for current work.
+- Next planner task: hosted PostgreSQL + pgvector using Supabase.
+
+## Phase 11 – Hosted PostgreSQL with Supabase (Nov 5)
+
+| Configuration | What |
+|---|---|
+| Supabase | Project in Singapore; Data API and automatic table exposure off, automatic RLS on. |
+| SQL Editor | Enabled pgvector in `extensions`; created `documents` and `chunks`. |
+| `.env` | Session-pooler connection with SSL; password URL-encoded. Docker URL preserved separately. |
+
+### Results
+- Existing Python connection and pgvector registration succeeded.
+- Re-ingestion completed; SQL counts confirmed **14 documents, 494 chunks**.
+- Restarted FastAPI; `/health` returned `{"status":"ok"}`.
+- Frontend requests reached the Supabase-backed pipeline.
+- No retrieval tuning; held-out untouched.
+
+### Observations
+- A multi-part DKA question retrieved stopping criteria but missed starting
+  dose and adjustment instructions.
+- Provisional streamed text was replaced by a final refusal.
+- Hosting works; retrieval completeness remains a known baseline limitation.
+
+### Next
+- [ ] Deploy FastAPI and the frontend.
+- Searchable PDF uploads remain deferred.
