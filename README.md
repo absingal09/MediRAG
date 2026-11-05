@@ -18,6 +18,17 @@ docker compose up -d              # Postgres + pgvector on port 5433
 python -m scripts.ingest          # parse, chunk, embed and store all PDFs
 uvicorn app.main:app --reload     # http://127.0.0.1:8000/health
 ```
+## Frontend
+
+Keep FastAPI running on port 8000. In a separate terminal:
+
+```powershell
+cd frontend
+npm ci
+npm run dev
+```
+
+Open http://127.0.0.1:5173/. See `frontend/README.md` for details.
 
 ## Layout
 
@@ -34,10 +45,19 @@ uvicorn app.main:app --reload     # http://127.0.0.1:8000/health
 
 ## Status
 
-- [x] Design, data, eval set
-- [x] Repo setup (Docker, schema, `/health`)
-- [x] Extraction audit
-- [x] Parsing and box-based chunking
-- [x] Embedding and storage (494 chunks): `python -m scripts.ingest`
-- [x] `/search`, `/ask` with citations and refusal
-- [ ] Baseline evals
+- [x] Design, data and evaluation set
+- [x] Local PostgreSQL + pgvector in Docker
+- [x] Extraction, chunking, embedding and storage: 494 chunks
+- [x] Search and answers with citations and refusal
+- [x] Dev baseline evaluation and manual answer review
+- [x] Streaming, caching, usage logging, retries and model fallback
+- [x] React frontend, PDF reader and citation highlighting
+- [ ] Hosted PostgreSQL + pgvector — Supabase setup in progress
+- [ ] Deployment
+- [ ] Resolve evaluation-label ambiguities; held-out evaluation after tuning
+
+## Deferred tasks
+
+- [ ] Searchable PDF uploads: backend upload/ingestion endpoint,
+  connected frontend control and progress/error feedback.
+  Current imports support local preview only.
