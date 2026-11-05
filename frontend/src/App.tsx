@@ -30,7 +30,7 @@ import "./App.css";
 
 const initialDocument = documentById("STW_DKA")!;
 const prompts = [
-  "What does the DKA guideline say about insulin?",
+  "When should potassium be supplemented before starting insulin in DKA?",
   "What are the warning signs of stroke?",
   "How is asthma assessed?",
 ];
@@ -242,22 +242,26 @@ export default function App() {
   function showExample() {
     const response: AskResult = {
       answer:
-        "**BEFAST** stands for six warning-sign prompts in the stroke guideline: [S1]\n\n- **B — Balance:** loss of balance or coordination.\n- **E — Eyes:** sudden blurred or double vision, or persistent vision trouble.\n- **F — Face:** deviation at the angle of the mouth.\n- **A — Arm:** arm drift.\n- **S — Speech:** slurred speech or inability to speak or understand.\n- **T — Time:** act fast.",
+        "Potassium should be supplemented before insulin if serum K+ < 3.3 mEq/L (or if there are ECG changes). [S1]",
       refused: false,
       invalid: [],
-      citations: [{ doc_name: "STW_Stroke", page_no: 1 }],
+      citations: [{ doc_name: "STW_DKA", page_no: 1 }],
       sources: [
         {
-          doc_name: "STW_Stroke",
+          doc_name: "STW_DKA",
           page_no: 1,
-          heading: "WARNING SIGNS (BEFAST)",
+          heading: "MANAGEMENT MONITORING TREATMENT",
           content:
-            "BALANCE: Loss of balance or coordination\nEYES: Sudden blurred or double vision / sudden, persistent vision trouble\nFACE: Deviation at the angle of the mouth\nARM: Arm Drift\nSPEECH: Slurred speech or the inability to speak or understand\nTIME: Act fast",
+            "• Replace fluids – 1 l of 0.9% saline over first hour followed by 250-500 ml/hour (10-20ml/kg/hour initially for children) • Administer regular insulin – 0.1 IU/kg IV then 0.1 IU/kg/hour IV infusion • Double infusion rate if less than 10% fall in blood glucose after 1 hour • When blood glucose < 250 mg/dl, add 5% dextrose @ 50 ml/hour • Supplement potassium before insulin if serum K+ < 3.3 mEq/L (or ECG changes) • Replace potassium @ 10-20 mEq/hour with insulin infusion if serum K+ < 5.5 mEq/L • If pH < 7.0, add sodium bicarbonate; 50 mmol in 200 ml sterile water over 2 hour",
         },
       ],
     };
-    setAsked("What does BEFAST stand for in the stroke guideline?");
-    setQuestion("What does BEFAST stand for in the stroke guideline?");
+    setAsked(
+      "When should potassium be supplemented before starting insulin in DKA?",
+    );
+    setQuestion(
+      "When should potassium be supplemented before starting insulin in DKA?",
+    );
     setResult(response);
     setExample(true);
     setPhase("done");
@@ -589,7 +593,7 @@ export default function App() {
               </div>
               {example && (
                 <p className="example-note">
-                  This saved example uses an excerpt from the Stroke guideline,
+                  This saved example uses an excerpt from the DKA guideline,
                   page 1. It is not a live model response.
                 </p>
               )}

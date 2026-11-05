@@ -148,12 +148,12 @@ describe("answer and provenance states", () => {
     fireEvent.click(
       screen.getByRole("button", { name: "Explore an interface example" }),
     );
-    expect(screen.getByRole("button", { name: /Stroke · p\. 1/ })).toBeTruthy();
+    expect(screen.getByRole("button", { name: /DKA · p\. 1/ })).toBeTruthy();
     submit();
     expect((await screen.findByRole("alert")).textContent).toContain(
       "Connection failed",
     );
-    expect(screen.queryByRole("button", { name: /Stroke · p\. 1/ })).toBeNull();
+    expect(screen.queryByRole("button", { name: /DKA · p\. 1/ })).toBeNull();
     expect(
       screen.queryByRole("region", { name: "Selected source passage" }),
     ).toBeNull();
@@ -165,21 +165,21 @@ describe("answer and provenance states", () => {
     );
     expect(
       screen.getByRole("heading", {
-        name: "What does BEFAST stand for in the stroke guideline?",
+        name: "When should potassium be supplemented before starting insulin in DKA?",
       }),
     ).toBeTruthy();
     expect(
       screen
-        .getByRole("button", { name: /Stroke · p\. 1/ })
+        .getByRole("button", { name: /DKA · p\. 1/ })
         .getAttribute("aria-pressed"),
     ).toBe("true");
     expect(screen.getByTestId("pdf-reader").textContent).toContain(
-      "STW_Stroke.pdf · requested page 1",
+      "STW_DKA.pdf · requested page 1",
     );
     expect(
       screen.getByRole("region", { name: "Selected source passage" })
         .textContent,
-    ).toContain("BALANCE: Loss of balance or coordination");
+    ).toContain("Supplement potassium before insulin if serum K+ < 3.3 mEq/L");
     expect(screen.getByText(/It is not a live model response/)).toBeTruthy();
     expect(askQuestion).not.toHaveBeenCalled();
   });
