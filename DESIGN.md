@@ -138,7 +138,9 @@ Change one retrieval component at a time and record every result.
 - Python connection, pgvector registration, health and retrieval checks passed.
 - Data API and automatic table exposure off; automatic RLS selected.
 - Docker remains available for local development.
-- **FastAPI and frontend deployment remain pending.**
+- FastAPI deployed on Render Free: https://medirag-3xvf.onrender.com/.
+- Frontend deployed on Vercel: https://medirag-desk.vercel.app/.
+- Vercel proxies `/api` to Render; deployed health, answer, refusal and citation highlighting checks passed.
 
 ## Deferred
 

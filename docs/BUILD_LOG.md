@@ -379,3 +379,19 @@ How ingest works:
 ### Next
 - [ ] Deploy FastAPI and the frontend.
 - Searchable PDF uploads remain deferred.
+
+## Phase 12 – Backend and frontend deployment (Nov 5)
+
+| Service / file | What |
+|---|---|
+| Render | FastAPI on Free compute, using CPU-only PyTorch and one worker. |
+| Vercel | React/Vite frontend at https://medirag-desk.vercel.app/. |
+| `frontend/vercel.json` | Proxies `/api` requests to https://medirag-3xvf.onrender.com/. |
+
+### Results
+- Render and Vercel-proxied `/health` returned `{"status":"ok"}`.
+- Live answer returned with a working PDF citation and passage highlighting.
+- Unsupported question refused with no stale citations or highlights.
+- Deployment smoke checks passed; load testing is not completed.
+- Replaced the BEFAST example with the potassium-in-DKA question verified through the deployed API.
+- No retrieval tuning; held-out untouched. Searchable uploads remain deferred.

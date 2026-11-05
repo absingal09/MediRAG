@@ -53,7 +53,7 @@ Open http://127.0.0.1:5173/. See `frontend/README.md` for details.
 - [x] Streaming, caching, usage logging, retries and model fallback
 - [x] React frontend, PDF reader and citation highlighting
 - [x] Hosted PostgreSQL + pgvector — Supabase setup
-- [ ] Deployment
+- [x] Deployment — [frontend](https://medirag-desk.vercel.app/) on Vercel, [backend](https://medirag-3xvf.onrender.com/) on Render
 - [ ] Resolve evaluation-label ambiguities; held-out evaluation after tuning
 
 ## Deferred tasks
