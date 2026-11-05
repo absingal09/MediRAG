@@ -36,6 +36,15 @@ FastAPI answers, including citation switching, refusal, caching and errors.
 
 For deployment later, set `VITE_API_BASE_URL` at build time or configure an `/api` reverse proxy. The dev proxy is not a production server. Preserve the `documents/` assets in the built output.
 
+### Vercel deployment configuration
+
+- Import this repository with Root Directory `frontend` and framework Vite.
+- Build command: `npm run build`; output directory: `dist`.
+- Keep "Include source files outside of the Root Directory in the Build Step" enabled: the build reads `../data/sources.csv` and the corpus PDFs.
+- Leave `VITE_API_BASE_URL` unset. `vercel.json` forwards `/api/:path*` to `https://medirag-3xvf.onrender.com/:path*`.
+- Database and Sarvam credentials stay on Render; no frontend secrets are needed.
+- After deployment, verify live answer streaming and citation PDFs through the Vercel URL. Local build success does not verify the hosted proxy.
+
 ## Current limits
 
 Click any answer citation to open its document/page and highlight that retrieved passage. Different citations on the same page select different passages. There is no connecting arrow.
