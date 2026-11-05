@@ -52,7 +52,7 @@ Open http://127.0.0.1:5173/. See `frontend/README.md` for details.
 - [x] Dev baseline evaluation and manual answer review
 - [x] Streaming, caching, usage logging, retries and model fallback
 - [x] React frontend, PDF reader and citation highlighting
-- [ ] Hosted PostgreSQL + pgvector — Supabase setup in progress
+- [x] Hosted PostgreSQL + pgvector — Supabase setup
 - [ ] Deployment
 - [ ] Resolve evaluation-label ambiguities; held-out evaluation after tuning
 

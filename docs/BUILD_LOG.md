@@ -354,3 +354,28 @@ How ingest works:
 - Regenerate the frontend location index after corpus or chunking changes.
 - Searchable PDF uploads are deferred; not required for current work.
 - Next planner task: hosted PostgreSQL + pgvector using Supabase.
+
+## Phase 11 – Hosted PostgreSQL with Supabase (Nov 5)
+
+| Configuration | What |
+|---|---|
+| Supabase | Project in Singapore; Data API and automatic table exposure off, automatic RLS on. |
+| SQL Editor | Enabled pgvector in `extensions`; created `documents` and `chunks`. |
+| `.env` | Session-pooler connection with SSL; password URL-encoded. Docker URL preserved separately. |
+
+### Results
+- Existing Python connection and pgvector registration succeeded.
+- Re-ingestion completed; SQL counts confirmed **14 documents, 494 chunks**.
+- Restarted FastAPI; `/health` returned `{"status":"ok"}`.
+- Frontend requests reached the Supabase-backed pipeline.
+- No retrieval tuning; held-out untouched.
+
+### Observations
+- A multi-part DKA question retrieved stopping criteria but missed starting
+  dose and adjustment instructions.
+- Provisional streamed text was replaced by a final refusal.
+- Hosting works; retrieval completeness remains a known baseline limitation.
+
+### Next
+- [ ] Deploy FastAPI and the frontend.
+- Searchable PDF uploads remain deferred.
