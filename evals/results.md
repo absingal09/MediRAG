@@ -248,3 +248,40 @@ or statistical-significance claim. Held-out untouched.
 - Evaluation bypasses answer caching.
 - Dev tuning finished for this evaluation.
 - Do not adjust this configuration after viewing held-out results.
+
+## Held-out evaluation — frozen reranked configuration
+
+10 held-out questions: 8 answerable and 2 unanswerable.
+Used the frozen configuration above, with answer caching bypassed.
+Saved 10 responses with 10 unique IDs; judged the 8 answerable responses.
+No configuration changes were made after inspecting held-out results.
+
+| Metric | Result |
+|---|---|
+| Hit@5 | 8/8 (100%) |
+| MRR@5 | 1.000 |
+| Mean page coverage@5 | 93.8% |
+| All-required-pages@5 | 7/8 (87.5%) |
+| Correct refusals | 2/2 unanswerable |
+| False refusals | 3/8 answerable |
+| Raw judge: correct / partial / incorrect | 5 / 0 / 3 |
+| Manual review: correct / partial / incorrect | 5 / 0 / 3 |
+
+### Manual review and limitations
+
+- All 8 answerable responses and cited passages reviewed; see
+  `heldout_answer_review.md`.
+- Correct: q03, q07, q10, q14, q24.
+- Incorrect/refused: q20, q31, q33. Required answer facts were absent
+  from the retrieved passages.
+- q31 retrieved only the dengue page, missing the paediatric sepsis page;
+  neither discharge-criteria list was present in the top 5.
+- q10 accepted as listing prophylaxis options, but uses “and” where the
+  reference uses “or”; alternative-versus-combination wording is ambiguous.
+- q24's added oral esomeprazole option is supported by its cited passage.
+- Perfect hit@5/MRR does not establish complete answer evidence.
+- One saved generation per question; small held-out set, same generator
+  and judge model, and no independent clinical validation.
+- Raw answers and judge results are preserved in `heldout_answers.json`
+  and `heldout_judgements.json`.
+- App still uses vector baseline; held-out evaluation did not deploy reranking.

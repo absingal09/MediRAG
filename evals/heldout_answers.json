@@ -1,0 +1,595 @@
+[
+  {
+    "id": "q03",
+    "type": "direct",
+    "question": "In DKA, when should 5% dextrose be added to the fluids?",
+    "reference_answer": "When blood glucose falls below 250 mg/dl, add 5% dextrose at 50 ml/hour.",
+    "generated_answer": "When blood glucose < 250 mg/dl, add 5% dextrose @ 50 ml/hour [S1].",
+    "refused": false,
+    "citations": [
+      {
+        "doc_name": "STW_DKA",
+        "page_no": 1
+      }
+    ],
+    "retrieved_sources": [
+      {
+        "chunk_id": 233,
+        "doc_name": "STW_DKA",
+        "page_no": 1,
+        "heading": "MANAGEMENT MONITORING TREATMENT",
+        "content": "• Replace fluids – 1 l of 0.9% saline over first hour followed by 250-500 ml/hour (10-20ml/kg/hour initially for children) • Administer regular insulin – 0.1 IU/kg IV then 0.1 IU/kg/hour IV infusion • Double infusion rate if less than 10% fall in blood glucose after 1 hour • When blood glucose < 250 mg/dl, add 5% dextrose @ 50 ml/hour • Supplement potassium before insulin if serum K+ < 3.3 mEq/L (or ECG changes) • Replace potassium @ 10-20 mEq/hour with insulin infusion if serum K+ < 5.5 mEq/L • If pH < 7.0, add sodium bicarbonate; 50 mmol in 200 ml sterile water over 2 hour",
+        "score": 0.406493127346039,
+        "rerank_score": 0.5983824729919434
+      },
+      {
+        "chunk_id": 411,
+        "doc_name": "STW_Sepsis_Children",
+        "page_no": 1,
+        "heading": "",
+        "content": "weight in mg in 50 ml NS or 5% dextrose at 1 ml/hr will give 0.1 microgram/kg/min",
+        "score": 0.539157807826996,
+        "rerank_score": -1.7016477584838867
+      },
+      {
+        "chunk_id": 228,
+        "doc_name": "STW_DKA",
+        "page_no": 1,
+        "heading": "DIABETIC KETOACIDOSIS ICD-10-E11.10",
+        "content": "ASSESS SEVERITY OF DKA Mild pH 7.25-7.3 15-18 Alert",
+        "score": 0.322385996580124,
+        "rerank_score": -6.890691757202148
+      },
+      {
+        "chunk_id": 235,
+        "doc_name": "STW_DKA",
+        "page_no": 1,
+        "heading": "MANAGEMENT MONITORING TREATMENT",
+        "content": "• Strict input/ output charting: every 1 hour ▶ Report if urine output is <30ml/hour for 2 consecutive hours ▶ One hour after starting the treatment: Till resolution of DKA ▶ BP and vital signs: every 1 hour ▶ Blood glucose every 1 hour ▶ Venous pH, Na, K, HCO3 : 2-4 hourly ▶ Blood ketones (if available)/Urine for ketones: 12 hourly • After resolution of DKA: Blood glucose monitoring every 4 hours",
+        "score": 0.422716796398163,
+        "rerank_score": -8.57530403137207
+      },
+      {
+        "chunk_id": 54,
+        "doc_name": "STW_Acute_Aortic_Syndrome",
+        "page_no": 2,
+        "heading": "",
+        "content": "Add Vasodilator (Nitroprusside)",
+        "score": 0.313332378864288,
+        "rerank_score": -8.702861785888672
+      }
+    ]
+  },
+  {
+    "id": "q07",
+    "type": "direct",
+    "question": "After thrombolysis for STEMI, when should an ECG be done to check if it worked, and what counts as success?",
+    "reference_answer": "At 60-90 minutes after starting thrombolysis; success is more than 50% ST-segment resolution with pain relief.",
+    "generated_answer": "ECG should be done at 60–90 min after starting thrombolysis to assess whether thrombolysis was successful [S1]. Success is defined as >50% ST settlement with pain relief [S1].",
+    "refused": false,
+    "citations": [
+      {
+        "doc_name": "STW_STEMI",
+        "page_no": 1
+      }
+    ],
+    "retrieved_sources": [
+      {
+        "chunk_id": 434,
+        "doc_name": "STW_STEMI",
+        "page_no": 1,
+        "heading": "PATIENT WITH STEMI WITHIN 12 HOURS",
+        "content": "PCI INCAPABLE CENTRE A. Tranfer to PCI capable hospital if PCI can be performed within 120 min B. If Transfer to PCI incapable hospital not feasible THROMBOLYSE 1. Within 12 hours of symptom onset, if no contra-indication 2. Preferably with fibrin specific agent Tenecteplase/ TPA/ Reteplase or Streptokinase, if fibrin-specific are unavailable 3. Therapy to be started within 10 min preferably POST THROMBOLYSIS 1. ECG to be done at 60-90 min after starting thrombolysis to assess whether thrombolysis is successful ( >50% ST settlement with pain relief) or not 2. If successful, transfer patient",
+        "score": 0.685592809748867,
+        "rerank_score": 1.6370025873184204
+      },
+      {
+        "chunk_id": 435,
+        "doc_name": "STW_STEMI",
+        "page_no": 1,
+        "heading": "PATIENT WITH STEMI WITHIN 12 HOURS",
+        "content": "for PCI within 3-24 hours 3. If thrombolysis failed, transfer patient immediately for PCI capable hospital 4. Enoxaparin (preferred over unfractionated heparin) to be continued till PCI OR discharge",
+        "score": 0.650195817643531,
+        "rerank_score": -3.84833025932312
+      },
+      {
+        "chunk_id": 357,
+        "doc_name": "STW_Heart_Failure",
+        "page_no": 1,
+        "heading": "REFER TO A DISTRICT HOSPITAL",
+        "content": "INVESTIGATIONS: WHAT TO LOOK FOR IN AN ECG? • Pathological Q wave • Conduction abnormalities, especially LBBB • Chamber enlargement • Atrial fibrillation Note: If ST elevation present, manage as STEMI COMMON DRUGS AND DOSAGE FOR CHF • CARVEDILOL Dose 3.125 to 25 mg twice daily PO METOPROLOL 12.5-50mg twice daily PO BISOPROLOL 1.25-10mg once a day PO PRECAUTIONS • Start after decongestion with low dose with BP > 100 mmHg and HR >60/min • Uptitrate dose 1-2 weekly till maximum tolerable dose • Keep watch on BP, heart rate and recipitation of CHF symptoms",
+        "score": 0.494219556278573,
+        "rerank_score": -5.279413223266602
+      },
+      {
+        "chunk_id": 433,
+        "doc_name": "STW_STEMI",
+        "page_no": 1,
+        "heading": "",
+        "content": "ECG REVEALS ST ELEVATION MI Refer to primary angioplasty/ thrombolysis capable hospital",
+        "score": 0.486188738714977,
+        "rerank_score": -5.63020133972168
+      },
+      {
+        "chunk_id": 438,
+        "doc_name": "STW_STEMI",
+        "page_no": 1,
+        "heading": "PATIENT WITH STEMI IN 12-24 HOURS",
+        "content": "If ongoing pain, thrombolysis and transfer immediately",
+        "score": 0.693354746501289,
+        "rerank_score": -5.694949150085449
+      }
+    ]
+  },
+  {
+    "id": "q10",
+    "type": "direct",
+    "question": "Which drugs are suggested for migraine prophylaxis, and when should prophylaxis be started?",
+    "reference_answer": "When attacks are more than 2 per month: a 2-month trial of propranolol 40 mg OD or flunarizine 10 mg OD.",
+    "generated_answer": "Prophylaxis should be started when headache frequency is > 2/month, as a trial for 2 months [S1]. Suggested drugs: Propranolol 40 mg OD and Flunarizine 10 mg OD [S1]. Migraine prophylaxis should be given after ruling out stroke and other diseases [S3], for an adequate duration and tapered after remission [S2].",
+    "refused": false,
+    "citations": [
+      {
+        "doc_name": "STW_Headache",
+        "page_no": 1
+      },
+      {
+        "doc_name": "STW_Headache",
+        "page_no": 1
+      },
+      {
+        "doc_name": "STW_Headache",
+        "page_no": 1
+      }
+    ],
+    "retrieved_sources": [
+      {
+        "chunk_id": 288,
+        "doc_name": "STW_Headache",
+        "page_no": 1,
+        "heading": "",
+        "content": "Frequency > 2 /month - Start prophylaxis trial for 2 months • Propranolol 40 mg OD • Flunarizine 10 mg OD Acute management • Analgesics( Paracetamol 650 mg, or Indomethacin 50 mg) and • Antiemetics ( Prochlorperazine 10mg). Life style changes • Good sleep at least 6 hrs, food habit modification, avoiding triggers of migraine.",
+        "score": 0.754996403158356,
+        "rerank_score": 5.77175235748291
+      },
+      {
+        "chunk_id": 325,
+        "doc_name": "STW_Headache",
+        "page_no": 1,
+        "heading": "FOLLOW UP OF HEADACHE PATIENTS",
+        "content": "TREATMENT OF HEADACHE Good control of blood pressure Antiepileptic medications Follow up of anticoagulation Give prophylaxis for adequate duration of time and taper after remission",
+        "score": 0.611007135778455,
+        "rerank_score": 1.0508582592010498
+      },
+      {
+        "chunk_id": 293,
+        "doc_name": "STW_Headache",
+        "page_no": 1,
+        "heading": "",
+        "content": "• CT/ MRI with MR angiogram or CT angiogram if required • Migraine prophylaxis after ruling out stroke and other diseases",
+        "score": 0.540240970835629,
+        "rerank_score": -0.14316251873970032
+      },
+      {
+        "chunk_id": 324,
+        "doc_name": "STW_Headache",
+        "page_no": 1,
+        "heading": "FOLLOW UP OF HEADACHE PATIENTS",
+        "content": "Migraine",
+        "score": 0.617937454354027,
+        "rerank_score": -5.188657283782959
+      },
+      {
+        "chunk_id": 318,
+        "doc_name": "STW_Headache",
+        "page_no": 1,
+        "heading": "MENINGIOENCEPHALITIS",
+        "content": "Antibiotics/ antivirals",
+        "score": 0.403800946020967,
+        "rerank_score": -7.369790077209473
+      }
+    ]
+  },
+  {
+    "id": "q14",
+    "type": "direct",
+    "question": "Which drug should be used for fever in probable dengue without warning signs, and what should be avoided?",
+    "reference_answer": "Paracetamol; avoid NSAIDs.",
+    "generated_answer": "Paracetamol should be used for fever, and NSAIDs should be avoided [S2].",
+    "refused": false,
+    "citations": [
+      {
+        "doc_name": "STW_Dengue",
+        "page_no": 1
+      }
+    ],
+    "retrieved_sources": [
+      {
+        "chunk_id": 163,
+        "doc_name": "STW_Dengue",
+        "page_no": 1,
+        "heading": "",
+        "content": "Dengue with warning signs",
+        "score": 0.705986994148077,
+        "rerank_score": -1.0112217664718628
+      },
+      {
+        "chunk_id": 167,
+        "doc_name": "STW_Dengue",
+        "page_no": 1,
+        "heading": "TREATMENT OF PROBABLE DENGUE WITHOUT WARNING SIGNS",
+        "content": "• Symptomatic ambulatory treatment • Paracetamol for fever: avoid NSAIDs • Daily monitoring: clinical, PCV, platelets",
+        "score": 0.804835331151765,
+        "rerank_score": -1.0834002494812012
+      },
+      {
+        "chunk_id": 159,
+        "doc_name": "STW_Dengue",
+        "page_no": 1,
+        "heading": "",
+        "content": "Standard Treatment Workflow (STW) for the Management of DENGUE FEVER ICD-10-A90",
+        "score": 0.658026298402174,
+        "rerank_score": -2.034834623336792
+      },
+      {
+        "chunk_id": 164,
+        "doc_name": "STW_Dengue",
+        "page_no": 1,
+        "heading": "",
+        "content": "Severe dengue",
+        "score": 0.716654138764494,
+        "rerank_score": -3.819561004638672
+      },
+      {
+        "chunk_id": 171,
+        "doc_name": "STW_Dengue",
+        "page_no": 1,
+        "heading": "TREATMENT OF PROBABLE DENGUE WITHOUT WARNING SIGNS",
+        "content": "INVESTIGATIONS DESIRABLE ESSENTIAL OPTIONAL • Chest X-ray • LFT, RFT, • CPK, albumin • USG abdomen • Dengue IgM SHOCK",
+        "score": 0.703799503815205,
+        "rerank_score": -6.491458892822266
+      }
+    ]
+  },
+  {
+    "id": "q20",
+    "type": "direct",
+    "question": "What criteria define asthma as adequately controlled?",
+    "reference_answer": "All of: daytime symptoms or rescue use twice a week or less, no night-time symptoms, no activity limitation, and FEV1 or PEF above 80% of predicted/personal best.",
+    "generated_answer": "I couldn't find this in the guidelines.",
+    "refused": true,
+    "citations": [],
+    "retrieved_sources": [
+      {
+        "chunk_id": 98,
+        "doc_name": "STW_Asthma",
+        "page_no": 1,
+        "heading": "",
+        "content": "Adequately controlled (all should be present)",
+        "score": 0.561509482680621,
+        "rerank_score": 0.6449457406997681
+      },
+      {
+        "chunk_id": 111,
+        "doc_name": "STW_Asthma",
+        "page_no": 1,
+        "heading": "",
+        "content": "• Follow-up at 4-12 weeks, assess diseases control by clinical parameters (see Table 2) • Step-up or step-down treatment as per level of asthma control (see figure 1) • Follow up three-monthly and modulate treatment as needed • Refer for further evaluation and management if asthma remains poorly controlled",
+        "score": 0.577999403715205,
+        "rerank_score": -0.05923232436180115
+      },
+      {
+        "chunk_id": 94,
+        "doc_name": "STW_Asthma",
+        "page_no": 1,
+        "heading": "",
+        "content": "TABLE 2. LEVEL OF CURRENT ASTHMA CONTROL (OVER THE PRECEDING FOUR WEEKS)",
+        "score": 0.602421414419161,
+        "rerank_score": -5.039684295654297
+      },
+      {
+        "chunk_id": 112,
+        "doc_name": "STW_Asthma",
+        "page_no": 1,
+        "heading": "INITIATION AND MODULATION OF ASTHMA PHARMACOTHERAPY",
+        "content": "Poor Control",
+        "score": 0.57857259639665,
+        "rerank_score": -6.272356986999512
+      },
+      {
+        "chunk_id": 119,
+        "doc_name": "STW_Asthma",
+        "page_no": 1,
+        "heading": "INITIATION AND MODULATION OF ASTHMA PHARMACOTHERAPY",
+        "content": "KEEP A HIGH THRESHOLD FOR INVASIVE PROCEDURES REFERENCES 1. Agarwal R, et al. Guidelines for diagnosis and management of bronchial asthma: Joint ICS/NCCP(I) recommendations. Lung India 2015;32(Suppl 1):S3-S42. 2. Global Initiative for Asthma (GINA). Global strategy for asthma management and prevention. 2018. 3. National Institute for Health and Care Excellence (NICE). Asthma: diagnosis, monitoring and chronic asthma management. 2017.",
+        "score": 0.542646196922888,
+        "rerank_score": -7.046112060546875
+      }
+    ]
+  },
+  {
+    "id": "q24",
+    "type": "direct",
+    "question": "What is the IV pantoprazole regimen for suspected upper GI bleed?",
+    "reference_answer": "80 mg IV stat, then 40 mg every 12 hours (oral if IV unavailable); stop if a variceal bleed is documented.",
+    "generated_answer": "Inj. Pantoprazole 80 mg I.V. stat, followed by 40 mg 12 hourly [S1]. If I.V. is not available, give oral Pantoprazole/Esomeprazole, and stop if variceal bleed is documented [S1].",
+    "refused": false,
+    "citations": [
+      {
+        "doc_name": "STW_GI_Bleed",
+        "page_no": 1
+      }
+    ],
+    "retrieved_sources": [
+      {
+        "chunk_id": 268,
+        "doc_name": "STW_GI_Bleed",
+        "page_no": 1,
+        "heading": "INVESTIGATIONS",
+        "content": "Inj. Pantoprazole or Esomeprazole 80 mg I.V. stat, followed by 40 mg 12 hourly; if I.V. not available, give oral Pantoprazole/ Esomeprazole. Stop if variceal bleed is documented",
+        "score": 0.659756919160074,
+        "rerank_score": -2.2227578163146973
+      },
+      {
+        "chunk_id": 262,
+        "doc_name": "STW_GI_Bleed",
+        "page_no": 1,
+        "heading": "RESUSCITATE",
+        "content": "CLINICAL EVALUATION Assess for History and examination Points towards Upper GI bleed Hematemesis/ blood in NG tube/ melena Lower/Upper GI bleed Site of bleed Fresh blood per rectum/ maroon stools H/o - alcohol intake/ jaundice/ blood transfusion Variceal bleed O/E - jaundice/ ascites/ splenomegaly H/o epigastric pain/ NSAID intake/ antiplatelets Ulcer bleed Infective causes If lower GI Bleed: H/o fever/ diarrhea (eg: Typhoid) H/o bleeding per rectum with concomitant yellow stools Hemorrhoids/ rectal lesion Rapid blood loss Rate of blood Large volume hematemesis/ fresh blood/ frequent melena/",
+        "score": 0.484196276414617,
+        "rerank_score": -3.6431052684783936
+      },
+      {
+        "chunk_id": 239,
+        "doc_name": "STW_GI_Bleed",
+        "page_no": 1,
+        "heading": "",
+        "content": "Standard Treatment Workflow (STW) ACUTE GASTROINTESTINAL BLEED IN ADULTS - PART A ICD-10-K92.2 Diagnose Acute GI Bleed if there is history of",
+        "score": 0.515482096941347,
+        "rerank_score": -4.739113807678223
+      },
+      {
+        "chunk_id": 277,
+        "doc_name": "STW_GI_Bleed",
+        "page_no": 1,
+        "heading": "INVESTIGATIONS",
+        "content": "cases of acute GI Bleed must undergo endoscopy within 24 hours of initial stabilisation. Patients with active ongoing bleed may require an earlier endoscopy. Appropriate informed consent to be taken prior to endoscopy.",
+        "score": 0.538541062517733,
+        "rerank_score": -4.817781925201416
+      },
+      {
+        "chunk_id": 242,
+        "doc_name": "STW_GI_Bleed",
+        "page_no": 1,
+        "heading": "",
+        "content": "Blood in nasogastric tube (NG) (Active GI bleed)",
+        "score": 0.525069920714503,
+        "rerank_score": -5.744335174560547
+      }
+    ]
+  },
+  {
+    "id": "q31",
+    "type": "multi",
+    "question": "What are the discharge criteria for dengue, and how do they compare with discharge criteria for paediatric sepsis?",
+    "reference_answer": "Dengue: no fever for 48 hours, clinical improvement, rising platelet trend, stable haematocrit without IV fluids. Paediatric sepsis: afebrile for 48 hours, vitals normal for age, good oral intake, adequate urine output over 1 ml/kg/hr, and antibiotics completed per culture sensitivity. Both require 48 hours without fever.",
+    "generated_answer": "I couldn't find this in the guidelines.",
+    "refused": true,
+    "citations": [],
+    "retrieved_sources": [
+      {
+        "chunk_id": 189,
+        "doc_name": "STW_Dengue",
+        "page_no": 1,
+        "heading": "TREATMENT OF PROBABLE DENGUE WITHOUT WARNING SIGNS",
+        "content": "Once stable, observe for 24 hours, then discharge if the discharge criteria is fulfilled",
+        "score": 0.711796675706311,
+        "rerank_score": -2.9606170654296875
+      },
+      {
+        "chunk_id": 164,
+        "doc_name": "STW_Dengue",
+        "page_no": 1,
+        "heading": "",
+        "content": "Severe dengue",
+        "score": 0.642239017219665,
+        "rerank_score": -5.826072692871094
+      },
+      {
+        "chunk_id": 163,
+        "doc_name": "STW_Dengue",
+        "page_no": 1,
+        "heading": "",
+        "content": "Dengue with warning signs",
+        "score": 0.591864217297532,
+        "rerank_score": -6.142621040344238
+      },
+      {
+        "chunk_id": 159,
+        "doc_name": "STW_Dengue",
+        "page_no": 1,
+        "heading": "",
+        "content": "Standard Treatment Workflow (STW) for the Management of DENGUE FEVER ICD-10-A90",
+        "score": 0.582861115591397,
+        "rerank_score": -7.7920122146606445
+      },
+      {
+        "chunk_id": 162,
+        "doc_name": "STW_Dengue",
+        "page_no": 1,
+        "heading": "",
+        "content": "Live in / travel to dengue endemic area",
+        "score": 0.580916216264226,
+        "rerank_score": -7.848154067993164
+      }
+    ]
+  },
+  {
+    "id": "q33",
+    "type": "multi",
+    "question": "When should a patient with an acute GI bleed receive a blood transfusion, and what are the resuscitation targets?",
+    "reference_answer": "Transfuse packed RBC/whole blood if Hb below 7 g/dL (below 9 g/dL with pre-existing heart disease). Targets: systolic BP above 90 mmHg, pulse below 100/min, oxygen saturation above 90%, Hb above 7 g/dL (above 9 with heart disease).",
+    "generated_answer": "I couldn't find this in the guidelines.",
+    "refused": true,
+    "citations": [],
+    "retrieved_sources": [
+      {
+        "chunk_id": 277,
+        "doc_name": "STW_GI_Bleed",
+        "page_no": 1,
+        "heading": "INVESTIGATIONS",
+        "content": "cases of acute GI Bleed must undergo endoscopy within 24 hours of initial stabilisation. Patients with active ongoing bleed may require an earlier endoscopy. Appropriate informed consent to be taken prior to endoscopy.",
+        "score": 0.6635397274357,
+        "rerank_score": 2.87857723236084
+      },
+      {
+        "chunk_id": 239,
+        "doc_name": "STW_GI_Bleed",
+        "page_no": 1,
+        "heading": "",
+        "content": "Standard Treatment Workflow (STW) ACUTE GASTROINTESTINAL BLEED IN ADULTS - PART A ICD-10-K92.2 Diagnose Acute GI Bleed if there is history of",
+        "score": 0.574976563453674,
+        "rerank_score": -2.318753719329834
+      },
+      {
+        "chunk_id": 447,
+        "doc_name": "STW_STEMI",
+        "page_no": 1,
+        "heading": "ABSOLUTE CONTRA-INDICATIONS TO THROMBOLYIC THERAPY:",
+        "content": "Recent (within 1 month) major GI bleed",
+        "score": 0.45763206986999,
+        "rerank_score": -3.3868439197540283
+      },
+      {
+        "chunk_id": 242,
+        "doc_name": "STW_GI_Bleed",
+        "page_no": 1,
+        "heading": "",
+        "content": "Blood in nasogastric tube (NG) (Active GI bleed)",
+        "score": 0.543044328689575,
+        "rerank_score": -3.839486598968506
+      },
+      {
+        "chunk_id": 262,
+        "doc_name": "STW_GI_Bleed",
+        "page_no": 1,
+        "heading": "RESUSCITATE",
+        "content": "CLINICAL EVALUATION Assess for History and examination Points towards Upper GI bleed Hematemesis/ blood in NG tube/ melena Lower/Upper GI bleed Site of bleed Fresh blood per rectum/ maroon stools H/o - alcohol intake/ jaundice/ blood transfusion Variceal bleed O/E - jaundice/ ascites/ splenomegaly H/o epigastric pain/ NSAID intake/ antiplatelets Ulcer bleed Infective causes If lower GI Bleed: H/o fever/ diarrhea (eg: Typhoid) H/o bleeding per rectum with concomitant yellow stools Hemorrhoids/ rectal lesion Rapid blood loss Rate of blood Large volume hematemesis/ fresh blood/ frequent melena/",
+        "score": 0.642559289932251,
+        "rerank_score": -4.753496170043945
+      }
+    ]
+  },
+  {
+    "id": "q38",
+    "type": "unanswerable",
+    "question": "What starting dose of insulin glargine is recommended for a child with type 1 diabetes?",
+    "reference_answer": "",
+    "generated_answer": "I couldn't find this in the guidelines.",
+    "refused": true,
+    "citations": [],
+    "retrieved_sources": [
+      {
+        "chunk_id": 410,
+        "doc_name": "STW_Sepsis_Children",
+        "page_no": 1,
+        "heading": "",
+        "content": "**If there is improvement after 1st bolus and history of diarrhea present then: Give 70 ml/kg over 5 hours in infants and over 2 1⁄2 hours in a child with hypovolemic shock. Give additional fluids if losses continue. Start maintenance fluid in case of other illness Antibiotics 1. >3 months Inj Ceftriaxone 100mg/kg/day ( 2 divided doses) 2. <3 month Inj Cefotaxime 200mg/kg (divided 6-8hrly), Inj Gentamicin 5-7.5 mg/kg single dose /day 3. If soft tissue infection: consider Inj Cloxacillin 200mg/kg divided 6 hourly or Inj Amoxicillin- Clavulanic acid 30 mg/kg/dose 8hrly) Inj Adrenaline- 0.3x body",
+        "score": 0.408498913049698,
+        "rerank_score": -4.165761947631836
+      },
+      {
+        "chunk_id": 233,
+        "doc_name": "STW_DKA",
+        "page_no": 1,
+        "heading": "MANAGEMENT MONITORING TREATMENT",
+        "content": "• Replace fluids – 1 l of 0.9% saline over first hour followed by 250-500 ml/hour (10-20ml/kg/hour initially for children) • Administer regular insulin – 0.1 IU/kg IV then 0.1 IU/kg/hour IV infusion • Double infusion rate if less than 10% fall in blood glucose after 1 hour • When blood glucose < 250 mg/dl, add 5% dextrose @ 50 ml/hour • Supplement potassium before insulin if serum K+ < 3.3 mEq/L (or ECG changes) • Replace potassium @ 10-20 mEq/hour with insulin infusion if serum K+ < 5.5 mEq/L • If pH < 7.0, add sodium bicarbonate; 50 mmol in 200 ml sterile water over 2 hour",
+        "score": 0.560746371746063,
+        "rerank_score": -4.460953712463379
+      },
+      {
+        "chunk_id": 208,
+        "doc_name": "STW_Diabetes_Type2",
+        "page_no": 1,
+        "heading": "DIAGNOSIS",
+        "content": "PREDIABETES: Impaired fasting glucose: FPG 100-125 mg/dL; Impaired glucose tolerance: 140-199 mg/dL; HbA1c 5.7-6.4%",
+        "score": 0.45361158528259,
+        "rerank_score": -4.975261688232422
+      },
+      {
+        "chunk_id": 236,
+        "doc_name": "STW_DKA",
+        "page_no": 1,
+        "heading": "MANAGEMENT MONITORING TREATMENT",
+        "content": "WHEN TO STOP INSULIN INFUSION? • Patient accepting orally, blood glucose consistently < 250 mg/dl, normalization of anion gap and correction of metabolic acidosis • Administer SC dose of long/intermediate-acting & short acting insulin at least 30 mins before stopping insulin infusion. Shift to basal-bolus/pre-mixed insulin regimen",
+        "score": 0.509134650230408,
+        "rerank_score": -5.006097793579102
+      },
+      {
+        "chunk_id": 352,
+        "doc_name": "STW_Heart_Failure",
+        "page_no": 1,
+        "heading": "",
+        "content": "ARNI • Dose 50 to 200 mg twice daily PO • Start with low dose with BP >100 mmHg, normal electrolyte and creatinine less than 2.5 mg/dl • Uptitrate dose 1-2 weekly till maximum tolerable dose • Keep watch on BP and electrolytes before every increment and on follow-up",
+        "score": 0.471356987953186,
+        "rerank_score": -5.408674240112305
+      }
+    ]
+  },
+  {
+    "id": "q40",
+    "type": "unanswerable",
+    "question": "What is the levothyroxine starting dose for hypothyroidism in elderly patients?",
+    "reference_answer": "",
+    "generated_answer": "I couldn't find this in the guidelines.",
+    "refused": true,
+    "citations": [],
+    "retrieved_sources": [
+      {
+        "chunk_id": 116,
+        "doc_name": "STW_Asthma",
+        "page_no": 1,
+        "heading": "INITIATION AND MODULATION OF ASTHMA PHARMACOTHERAPY",
+        "content": "• If no response after 24 hours, or symptomatic worsening, or further reduction in PEF, contact physician • Physician to assess severity of exacerbation and manage accordingly • Oxygen supplementation to maintain spO2 92-95% • Nebulized levosalbutamol/ipratropium (1.25 mg/0.5 mg) three doses at 20-minute interval, then 4-6 hourly or as needed • Injection hydrocortisone 200 mg intravenously, then oral prednisolone 0.5 mg/kg daily for five days • Refer if no improvement",
+        "score": 0.386071390743769,
+        "rerank_score": -3.4613137245178223
+      },
+      {
+        "chunk_id": 353,
+        "doc_name": "STW_Heart_Failure",
+        "page_no": 1,
+        "heading": "",
+        "content": "FUROSEMIDE • Dose 20-80 mg daily PO • Intravenous 10-80 mg SOS in acute stage • Change to oral when symptoms subside • Monitor serum electrolytes, creatinine and uric acid on therapy",
+        "score": 0.339653739949838,
+        "rerank_score": -4.512295722961426
+      },
+      {
+        "chunk_id": 352,
+        "doc_name": "STW_Heart_Failure",
+        "page_no": 1,
+        "heading": "",
+        "content": "ARNI • Dose 50 to 200 mg twice daily PO • Start with low dose with BP >100 mmHg, normal electrolyte and creatinine less than 2.5 mg/dl • Uptitrate dose 1-2 weekly till maximum tolerable dose • Keep watch on BP and electrolytes before every increment and on follow-up",
+        "score": 0.409969484211834,
+        "rerank_score": -4.6202898025512695
+      },
+      {
+        "chunk_id": 410,
+        "doc_name": "STW_Sepsis_Children",
+        "page_no": 1,
+        "heading": "",
+        "content": "**If there is improvement after 1st bolus and history of diarrhea present then: Give 70 ml/kg over 5 hours in infants and over 2 1⁄2 hours in a child with hypovolemic shock. Give additional fluids if losses continue. Start maintenance fluid in case of other illness Antibiotics 1. >3 months Inj Ceftriaxone 100mg/kg/day ( 2 divided doses) 2. <3 month Inj Cefotaxime 200mg/kg (divided 6-8hrly), Inj Gentamicin 5-7.5 mg/kg single dose /day 3. If soft tissue infection: consider Inj Cloxacillin 200mg/kg divided 6 hourly or Inj Amoxicillin- Clavulanic acid 30 mg/kg/dose 8hrly) Inj Adrenaline- 0.3x body",
+        "score": 0.354937740866081,
+        "rerank_score": -4.635132789611816
+      },
+      {
+        "chunk_id": 40,
+        "doc_name": "STW_Acute_Aortic_Syndrome",
+        "page_no": 2,
+        "heading": "",
+        "content": "over 2 to 5 min, Maintenance dose: 5mg/h IV infusion Sick sinus syndrome, Ventricular dysfunction 2.5-15 mg/hour IV infusion Pulmonary congestion",
+        "score": 0.372184433210825,
+        "rerank_score": -4.6755757331848145
+      }
+    ]
+  }
+]

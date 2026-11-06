@@ -469,3 +469,22 @@ How ingest works:
 - Reranking is the preferred candidate; app still uses vector baseline.
 - Finalize configuration before held-out evaluation.
 - Render latency/memory not established; held-out untouched.
+
+## Phase 17 – Held-out evaluation (Nov 6)
+
+### Results
+- Ran frozen reranked configuration on 10 held-out questions.
+- Retrieval: hit@5 8/8, MRR@5 1.000, mean page coverage 93.8%,
+  all-required-pages@5 7/8.
+- Correct refusals: 2/2; false refusals: 3/8.
+- Raw judge and manual review: 5 correct, 0 partial, 3 incorrect.
+- Reviewed all 8 answerable responses and cited passages.
+- q20/q31/q33 refused with required evidence missing.
+- q31 lacked the sepsis page and both discharge-criteria lists.
+- q10 accepted as listing options; “and” versus “or” ambiguity recorded.
+- Saved answers, judge outputs and manual review separately.
+
+### Decision
+- No tuning after inspecting held-out results.
+- Perfect page-level ranking does not establish complete evidence.
+- Deployed app remains on vector baseline; reranking not shipped.
