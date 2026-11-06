@@ -30,4 +30,7 @@ passages using the baseline manual rubric. Raw judge verdicts preserved.
 ## Limits
 Single generation/judging run per configuration; no repeatability claim.
 Evidence review uses extracted passages, with the noted q12 PDF check.
-Latency measurement and adoption decision pending. Held-out untouched.
+Warm local median retrieval: vector 839.9 ms, reranked 1166.6 ms.
+Reranking was selected and frozen for the completed held-out evaluation;
+see `heldout_answer_review.md` and `results.md`. Deployment remains pending:
+the app still uses vector baseline, and Render latency/memory are unverified.

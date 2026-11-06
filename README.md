@@ -45,7 +45,7 @@ Open http://127.0.0.1:5173/. See `frontend/README.md` for details.
 
 ## Dev baseline results
 
-30 dev questions; 10 held-out questions remain reserved until tuning is complete.
+30 dev questions; 10 held-out questions were reserved until pipeline tuning finished.
 Vector-only retrieval, 494 chunks, top 5; generator and judge: glm5.3.
 
 | Metric | Result |

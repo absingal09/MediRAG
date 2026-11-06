@@ -53,13 +53,17 @@ used at the current corpus size; HNSW is deferred until measured need.
 Known weaknesses: exact drug names/doses can be missed, tiny fragments rank
 highly, and correct page retrieval does not guarantee complete evidence.
 
-Planned experiments, measured one at a time:
-1. Keyword + vector search merged with Reciprocal Rank Fusion.
-2. Dropping or merging short fragments.
-3. Cross-encoder reranking: retrieve 20, keep 5.
-4. Alternative chunk sizes within the token limit.
+Completed pipeline experiments, measured one at a time:
+1. BM25 + vector search with Reciprocal Rank Fusion: not adopted;
+   useful evidence regressed despite slightly higher page-level MRR.
+2. Excluding chunks under 30 characters: not adopted; answer gains were
+   not attributable to filtering in the single saved run.
+3. Cross-encoder reranking: selected for frozen evaluation. Original vector
+   search retrieves 20; `cross-encoder/ms-marco-MiniLM-L6-v2` on CPU scores
+   question + content pairs and keeps 5, without a score threshold.
 
-No retrieval tuning has been applied yet.
+The deployed app still uses vector-only search; reranking is not shipped.
+Alternative chunk sizes were not tested. No model weights were fine-tuned.
 
 ## Answering
 
@@ -114,8 +118,9 @@ Citations use `{doc_name, page_no}`. The frontend uses a local document catalog;
 
 40 questions: 25 direct, 10 multi-part, 5 unanswerable.
 
-- **30 dev:** development and tuning.
-- **10 held-out:** do not inspect or run until tuning is complete.
+- **30 dev:** used for development and pipeline tuning.
+- **10 held-out:** evaluated after the reranked configuration was frozen;
+  no subsequent tuning against these results.
 
 Measure:
 - Hit@5, MRR@5, page coverage and all-required-pages@5.
@@ -126,6 +131,13 @@ Baseline: **vector-only, chunks ≤600 characters, no overlap, top 5**.
 Dev results and manual reviews are in `evals/results.md`. Raw judge verdicts
 are preserved alongside finalized manual results: 15 correct, 4 partial
 and 8 incorrect out of 27 answerable dev questions.
+
+Selected reranker dev manual results: **21 correct, 2 partial, 4 incorrect**.
+Held-out manual results: **5 correct, 0 partial, 3 incorrect** out of 8
+answerable questions; **2/2 correct refusals**, **3/8 false refusals**.
+Held-out hit@5 was 8/8, MRR@5 1.000, mean page coverage 93.8% and
+all-required-pages@5 7/8. Wording caveats and failures are recorded in
+`evals/heldout_answer_review.md`; raw judge results remain preserved.
 
 Page-level scores can overstate performance because most PDFs have one page.
 Change one retrieval component at a time and record every result.
