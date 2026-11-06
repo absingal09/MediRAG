@@ -69,6 +69,27 @@ All 27 answerable responses were manually reviewed. Page-level retrieval
 scores do not establish complete evidence retrieval or answer correctness.
 See `evals/results.md` for settings, evidence coverage and limitations.
 
+## Held-out results — frozen reranked configuration
+
+Vector top 20 → cross-encoder/ms-marco-MiniLM-L6-v2 → top 5.
+Evaluated 10 held-out questions after dev tuning finished.
+
+| Metric | Result |
+|---|---|
+| Hit@5 | 8/8 |
+| MRR@5 | 1.000 |
+| Mean page coverage@5 | 93.8% |
+| All-required-pages@5 | 7/8 |
+| Correct refusals | 2/2 unanswerable |
+| False refusals | 3/8 answerable |
+| Manually reviewed correct answers | 5/8 |
+
+All 8 answerable responses manually reviewed. Page-level retrieval
+does not establish complete evidence. See `evals/results.md` for
+failures, wording caveats and evaluation limits.
+
+The deployed app still uses vector search; reranking is not shipped.
+
 ## Status
 
 - [x] Design, data and evaluation set
@@ -81,7 +102,7 @@ See `evals/results.md` for settings, evidence coverage and limitations.
 - [x] Hosted PostgreSQL + pgvector — Supabase setup
 - [x] Deployment — [frontend](https://medirag-desk.vercel.app/) on Vercel, [backend](https://medirag-3xvf.onrender.com/) on Render
 - [x] Dev baseline adjudication
-- [ ] Held-out evaluation after tuning
+- [x] Held-out evaluation after tuning
 
 ## Deferred tasks
 
