@@ -447,3 +447,25 @@ How ingest works:
 - Not adopted yet: q30/q34 answer gains occurred with unchanged sources.
 - q06 remains unresolved; q32 still refused despite more evidence.
 - App retains vector baseline; held-out untouched.
+
+## Phase 16 – Cross-encoder reranking experiment (Nov 6)
+
+### Built
+- CPU cross-encoder reranks 20 original vector candidates into top 5.
+- Separate retrieval/answer/judge runners and saved results.
+- Local warm-retrieval latency comparison.
+
+### Results
+- MRR@5: 0.907 → 0.944; hit@5 and page coverage remain 100%.
+- Multi-part evidence: 3/4/1 → 4/4/0 (full/partial/none).
+- q30 gains timing/transfer evidence; q32 gains partial evidence.
+- q29 loses useful evidence and regresses to refusal.
+- Correct refusals: 3/3; false refusals: 7/27 → 4/27.
+- Manual answers: 15/4/8 → 21/2/4; all 27 reviewed.
+- Warm median retrieval: 839.9 → 1166.6 ms on laptop.
+- Raw judge results and baseline artifacts preserved.
+
+### Decision
+- Reranking is the preferred candidate; app still uses vector baseline.
+- Finalize configuration before held-out evaluation.
+- Render latency/memory not established; held-out untouched.

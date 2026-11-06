@@ -178,3 +178,60 @@ q30 and q34 answered better with unchanged source text, so the answer
 gains cannot be attributed to filtering from this single run.
 
 App retains baseline vector search. Held-out untouched.
+
+## Experiment 3 — Cross-encoder reranking
+
+- Original vector search retrieves 20 candidates; no short-chunk filter
+  or BM25.
+- CPU model: cross-encoder/ms-marco-MiniLM-L6-v2.
+- Scores question + chunk content pairs; returns top 5.
+- No score threshold; chunk ID breaks score ties.
+
+| Metric | Baseline | Reranked |
+|---|---|---|
+| Hit@5 | 27/27 | 27/27 |
+| MRR@5 | 0.907 | 0.944 |
+| Mean page coverage@5 | 100% | 100% |
+| All-required-pages@5 | 27/27 | 27/27 |
+| Multi-part evidence: full / partial / none | 3 / 4 / 1 | 4 / 4 / 0 |
+
+### Evidence review
+- All 8 multi-part dev questions reviewed.
+- q30: partial → full; timing and transfer evidence retrieved.
+- q32: none → partial; asthma features present, COPD comparison absent.
+- q29: remains partial but loses useful red-flag evidence.
+- Other coverage categories unchanged.
+- Reranking cannot recover passages outside its 20 candidates;
+  q06 remains unresolved by this candidate pool.
+
+### Answer and refusal evaluation
+
+| Metric | Baseline | Reranked |
+|---|---|---|
+| Correct refusals | 3/3 | 3/3 |
+| False refusals | 7/27 | 4/27 |
+| Raw judge: correct / partial / incorrect | 14 / 5 / 8 | 20 / 3 / 4 |
+| Manual review: correct / partial / incorrect | 15 / 4 / 8 | 21 / 2 / 4 |
+
+All 27 answerable responses manually reviewed; see
+`reranked_answer_review.md`. Raw judge verdicts preserved.
+q29 regressed from partial answer to refusal.
+
+### Local retrieval latency
+
+- Warm models, 27 answerable dev questions, one measurement per
+  method/question; execution order alternated.
+- Median vector retrieval: 839.9 ms.
+- Median reranked retrieval: 1166.6 ms.
+- Difference between unrounded medians: 326.8 ms.
+- Includes database access; excludes generation and model loading.
+- Laptop measurements do not establish Render latency or memory usage.
+
+### Decision
+
+Preferred candidate based on dev answer quality and local latency.
+App still uses vector baseline; configuration finalization and
+held-out evaluation remain pending.
+
+Single answer-generation run per configuration; no repeatability
+or statistical-significance claim. Held-out untouched.

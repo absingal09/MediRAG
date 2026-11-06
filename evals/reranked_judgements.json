@@ -1,0 +1,277 @@
+[
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate matches reference exactly: 1L 0.9% saline first hour, then 250-500 ml/hour, with pediatric rate included.",
+    "id": "q01"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate matches the reference threshold (<3.3 mEq/L) and ECG changes condition exactly.",
+    "id": "q02"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate matches reference: 325 mg loading dose, then 75 mg once daily (OD).",
+    "id": "q04"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate matches the reference thresholds exactly.",
+    "id": "q05"
+  },
+  {
+    "verdict": "incorrect",
+    "missing_facts": [
+      "40 mg IV bolus (dose for 70-80 kg patients)"
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "The candidate refuses to answer an answerable question; the reference specifies 40 mg IV bolus for a 70-80 kg patient.",
+    "id": "q06"
+  },
+  {
+    "verdict": "partial",
+    "missing_facts": [
+      "Mechanical thrombectomy may be considered from 4.5 to 24 hours if eligible"
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "The 0–4.5 hour window for IV tPA is correctly stated, but the reference also mentions mechanical thrombectomy from 4.5 to 24 hours if eligible, which is omitted.",
+    "id": "q08"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [
+      "Detailed descriptions of each sign (e.g., 'deviation at the angle of the mouth', 'arm drift') go beyond the reference, which only lists the acronym letters"
+    ],
+    "reason": "All six components (Balance, Eyes, Face, Arm, Speech, Time) are correctly conveyed; added descriptions are elaborations not in the reference.",
+    "id": "q09"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate matches the reference: metformin monotherapy for HbA1c below 8.5%.",
+    "id": "q11"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate states HbA1c ≥ 6.5%, equivalent to the reference's 6.5% or higher.",
+    "id": "q12"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate matches the reference: target ≤7.0% with exceptions for elderly and significant comorbidities.",
+    "id": "q13"
+  },
+  {
+    "verdict": "incorrect",
+    "missing_facts": [
+      "Abdominal pain or tenderness",
+      "Persistent vomiting",
+      "Clinical fluid accumulation (pleural effusion, ascites)",
+      "Mucosal bleed (malena, epistaxis, gum bleed)",
+      "Liver enlargement over 2 cm",
+      "Shock"
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "The candidate refuses to answer an answerable question and provides none of the reference warning signs.",
+    "id": "q15"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate states platelet count below 10,000/cumm, matching the reference.",
+    "id": "q16"
+  },
+  {
+    "verdict": "partial",
+    "missing_facts": [
+      "Bolus may be repeated once (20 ml/kg over 30 minutes)",
+      "Monitoring for fluid overload"
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "The candidate correctly states the initial bolus of 20 ml/kg normal saline over 20-30 minutes, but omits that it can be repeated once and that monitoring for fluid overload is required.",
+    "id": "q17"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Matches reference: ceftriaxone 100 mg/kg/day in 2 divided doses.",
+    "id": "q18"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [
+      "'or as needed' added to the 4-6 hourly nebulisation frequency, not stated in the reference"
+    ],
+    "reason": "All drugs, doses, routes, frequencies, and timing match the reference; only a minor 'or as needed' addition to review.",
+    "id": "q19"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate states heart rate less than 110/min, matching the reference of below 110 beats per minute.",
+    "id": "q21"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [
+      "Mean arterial pressure target of 70 mm Hg (or 70-80 mm Hg) in significant aortic regurgitation",
+      "Target heart rate near 80/min in significant aortic regurgitation to avoid prolonged diastole worsening regurgitation"
+    ],
+    "reason": "The candidate accurately states systolic BP 100-120 mm Hg and heart rate 60-70 beats/min, matching the reference. Additional claims about aortic regurgitation management (MAP and HR targets) are not in the reference and should be reviewed.",
+    "id": "q22"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [
+      "Nonobstructive type pain may start at the right iliac fossa",
+      "Onset more acute and abrupt in acute obstructive appendicitis"
+    ],
+    "reason": "All reference facts conveyed: periumbilical/epigastric colicky pain shifting to RIF, nausea/vomiting, fever absent in first 6 hours, loss of appetite, pain precedes vomiting. Extra details about obstructive/nonobstructive types are additions to review.",
+    "id": "q23"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate matches reference: 20-80 mg daily PO; 10-80 mg IV as needed (SOS) in acute stage, switching to oral when symptoms subside.",
+    "id": "q25"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [
+      "Dissection-related coronary malperfusion can present with ECG changes of myocardial ischemia/infarction, risking misdiagnosis; need to differentiate primary coronary event from coronary malperfusion secondary to dissection"
+    ],
+    "reason": "All reference facts are conveyed: dissection is an absolute contraindication to thrombolysis, and all listed clinical findings (abrupt piercing localized pain, AR diastolic murmur, unequal pulses, limb ischemia, neurological complications) are present. The candidate adds an explanatory mechanism about coronary malperfusion not in the reference, flagged for review.",
+    "id": "q26"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "All doses, frequencies and drugs match the reference exactly.",
+    "id": "q27"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [
+      "Add 5% dextrose at 50 ml/hour when blood glucose falls below 250 mg/dl",
+      "Shift to a basal-bolus or pre-mixed insulin regimen after stopping the infusion"
+    ],
+    "reason": "All required reference facts (initial dose, infusion rate, doubling rule, stopping criteria, and SC insulin 30 minutes before stopping) are accurately conveyed. Two extra claims about dextrose and post-stopping regimen are not in the reference and should be reviewed.",
+    "id": "q28"
+  },
+  {
+    "verdict": "incorrect",
+    "missing_facts": [
+      "Headache with fever or personality/consciousness change",
+      "Neck stiffness",
+      "New severe headache in pregnancy/postpartum or on hormones",
+      "Onset with strenuous exercise",
+      "Sudden thunderclap onset",
+      "New headache with malignancy or immunosuppression",
+      "First or worst headache of life",
+      "Focal signs",
+      "Headache waking from sleep",
+      "Sudden severe, first or worst headache of life suggests subarachnoid haemorrhage",
+      "Investigation with CT/CT angiogram or MRI/MR angiogram"
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "The candidate refuses to answer an answerable question, providing none of the reference facts.",
+    "id": "q29"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [
+      "Loading preferably with ticagrelor or prasugrel if PCI is planned — not stated in the reference answer"
+    ],
+    "reason": "All required facts (very high risk criteria, urgent/immediate invasive strategy within <2 hours, immediate transfer from non-PCI hospital) are accurately conveyed. The ticagrelor/prasugrel loading detail is an extra claim not in the reference.",
+    "id": "q30"
+  },
+  {
+    "verdict": "incorrect",
+    "missing_facts": [
+      "Asthma: onset in childhood/early adulthood",
+      "Asthma: episodic course",
+      "Asthma: nasal symptoms/atopy common",
+      "Asthma: family history often",
+      "Asthma: triggers identified",
+      "Asthma: wheeze prominent",
+      "COPD: onset later in life (4th-5th decade)",
+      "COPD: progressive course",
+      "COPD: smoking almost universal",
+      "COPD: atopy and family history uncommon or rare"
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "The candidate refuses to answer an answerable question, providing none of the reference facts.",
+    "id": "q32"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate accurately conveys enoxaparin 1 mg/kg SC 12-hourly and UFH bolus 60 U/kg (max 5000 U) then 12 U/kg/h infusion with APTT target 50-70 seconds.",
+    "id": "q34"
+  },
+  {
+    "verdict": "partial",
+    "missing_facts": [
+      "After stopping conservative treatment, assess by USG for pus and drain it"
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [
+      "Surgery may cause more bleeding, injury to caecum and ileum, faecal fistula",
+      "Operation should be done at a higher centre by an experienced surgeon"
+    ],
+    "reason": "Regimen and stop criteria are accurately conveyed, but the reference's follow-up step (USG assessment for pus and drainage) is missing.",
+    "id": "q35"
+  }
+]
