@@ -43,6 +43,32 @@ Open http://127.0.0.1:5173/. See `frontend/README.md` for details.
 | `scripts/` | Ingestion and inspection scripts |
 | `evals/questions.yaml` | 40 eval questions (30 dev, 10 held-out) |
 
+## Dev baseline results
+
+30 dev questions; 10 held-out questions remain reserved until tuning is complete.
+Vector-only retrieval, 494 chunks, top 5; generator and judge: glm5.3.
+
+| Metric | Result |
+|---|---|
+| Hit@5 | 27/27 (100%) |
+| MRR@5 | 0.907 |
+| Mean page coverage@5 | 100% |
+| All-required-pages@5 | 27/27 |
+| Correct refusals | 3/3 unanswerable |
+| False refusals | 7/27 answerable |
+| Raw LLM judge: correct / partial / incorrect | 14 / 5 / 8 |
+| Manual review: correct / partial / incorrect | 15 / 4 / 8 |
+
+Manual review changed three verdicts:
+
+- **q08 and q17: partial → correct.** Both answered the question asked; the
+  judge penalized omitted reference details beyond its scope.
+- **q23: correct → partial.** Pain migration to the right iliac fossa was unclear.
+
+All 27 answerable responses were manually reviewed. Page-level retrieval
+scores do not establish complete evidence retrieval or answer correctness.
+See `evals/results.md` for settings, evidence coverage and limitations.
+
 ## Status
 
 - [x] Design, data and evaluation set
@@ -54,7 +80,8 @@ Open http://127.0.0.1:5173/. See `frontend/README.md` for details.
 - [x] React frontend, PDF reader and citation highlighting
 - [x] Hosted PostgreSQL + pgvector — Supabase setup
 - [x] Deployment — [frontend](https://medirag-desk.vercel.app/) on Vercel, [backend](https://medirag-3xvf.onrender.com/) on Render
-- [ ] Resolve evaluation-label ambiguities; held-out evaluation after tuning
+- [x] Dev baseline adjudication
+- [ ] Held-out evaluation after tuning
 
 ## Deferred tasks
 

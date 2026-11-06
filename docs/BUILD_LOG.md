@@ -395,3 +395,14 @@ How ingest works:
 - Deployment smoke checks passed; load testing is not completed.
 - Replaced the BEFAST example with the potassium-in-DKA question verified through the deployed API.
 - No retrieval tuning; held-out untouched. Searchable uploads remain deferred.
+
+## Phase 13 – Dev baseline finalization (Nov 6)
+
+### Results
+- Restored aggregate retrieval evaluation; rerun matched the baseline:
+  hit@5 27/27, MRR@5 0.907, page coverage and all-required-pages@5 100%.
+- Final manual results: **15 correct, 4 partial, 8 incorrect**.
+- q08/q17: partial → correct for asked scope; q23: correct → partial
+  for unclear pain migration. Raw judge verdicts preserved.
+- Added README results table and updated DESIGN evaluation status.
+- No tuning or question changes; held-out untouched.

@@ -124,7 +124,8 @@ Measure:
 
 Baseline: **vector-only, chunks ≤600 characters, no overlap, top 5**.
 Dev results and manual reviews are in `evals/results.md`. Raw judge verdicts
-are preserved; label ambiguities remain before adjusted scoring.
+are preserved alongside finalized manual results: 15 correct, 4 partial
+and 8 incorrect out of 27 answerable dev questions.
 
 Page-level scores can overstate performance because most PDFs have one page.
 Change one retrieval component at a time and record every result.

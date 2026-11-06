@@ -68,15 +68,25 @@ Cited passages were inspected for non-refused answers.
   Accepted for the asked scope; q08 leaves the symptom-onset anchor implicit.
 - q23: judge marked correct; manual review found unclear pain-migration
   detail in both candidate and extracted source.
-- q34: question wording is ambiguous; manual adjudication remains pending.
+- q34: partial; both alternatives were intended. Retrieved evidence contains both, but generation omitted enoxaparin.
 - q22: wrong answer for the requested general targets; retrieved sources
   lacked those targets, and the candidate substituted a special case.
 - q29: partial answer; cited passages do not establish the claimed SAH link.
 - q12: original PDF confirms the answer, but extracted diagnostic text
   interleaves criteria and weakens citation clarity.
 
-No single adjusted accuracy is reported while ambiguities remain.
 Detailed findings are in `answer_review.md`.
+
+## Manually reviewed answer results
+
+| Verdict | Count |
+|---|---|
+| Correct | 15/27 (55.6%) |
+| Partial | 4/27 |
+| Incorrect | 8/27 |
+
+Based on the recorded manual decisions: q08 and q17 accepted for question
+scope; q23 marked partial; q34 confirmed partial. Raw judge outputs are unchanged.
 
 ## Limitations
 
@@ -90,7 +100,7 @@ Detailed findings are in `answer_review.md`.
 
 ## Next
 
-Finish ambiguous-label adjudication before reporting adjusted scores.
+Dev baseline adjudication is complete. Test one retrieval change at a time.
 
 Then test one change at a time:
 1. Hybrid lexical + vector retrieval with Reciprocal Rank Fusion.
