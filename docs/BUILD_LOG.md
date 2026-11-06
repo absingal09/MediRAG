@@ -488,3 +488,36 @@ How ingest works:
 - No tuning after inspecting held-out results.
 - Perfect page-level ranking does not establish complete evidence.
 - Deployed app remains on vector baseline; reranking not shipped.
+
+## Phase 18 – Reranker memory checks (Nov 7)
+
+### Results
+- Tested CPU-only Linux Docker container: 512 MiB limit, swap disabled.
+- Batch size 1 reduced post-retrieval anonymous memory:
+  480.3 → 363.6 MiB in separate smoke runs.
+- Dev retrieval metrics unchanged: MRR@5 0.944, hit@5 27/27.
+- Single-worker HTTP /ask and /ask/stream completed with reranking.
+- Streaming reached final event; container remained running, no OOM kill.
+- Post-request Docker stats: 434.1 MiB normal, 436.1 MiB streaming.
+- These are snapshots, not peak measurements or concurrent-load tests.
+
+### Next
+- Connect selected reranker to the app and invalidate old answer caches.
+- Verify on Render; local Docker success does not establish hosted capacity.
+
+## Phase 19 – Connect reranking to the app (Nov 7)
+
+### Built
+- Default search now calls reranked retrieval through a lazy import.
+- Baseline evaluator explicitly retains vector-only search.
+- Cache pipeline version changed to v2-reranked.
+
+### Results
+- Local /ask returned classification, timing and transfer with citations.
+- First request missed cache; repeated request hit cache.
+- Uncached /ask/stream reached final with citations.
+- Reranker uses batch_size=1; dev retrieval metrics unchanged.
+
+### Next
+- Commit code and docs separately.
+- Deploy and verify on Render; live app has not been updated yet.
