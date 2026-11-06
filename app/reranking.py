@@ -20,7 +20,7 @@ def reranked_search(query, k=5):
         for chunk in candidates
     ]
 
-    scores = get_reranker().predict(pairs)
+    scores = get_reranker().predict(pairs, batch_size=1)
 
     scored_chunks = [
         {**chunk, "rerank_score": float(score)}

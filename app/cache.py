@@ -4,7 +4,7 @@ import json
 from app.config import CORPUS_VERSION, EMBED_MODEL, SARVAM_MODEL, SARVAM_FALLBACK_MODEL
 from copy import deepcopy
 
-PIPELINE_VERSION = "v1"
+PIPELINE_VERSION = "v2-reranked"
 
 
 def make_cache_key(question, k):

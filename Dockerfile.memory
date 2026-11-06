@@ -1,0 +1,14 @@
+FROM python:3.12-slim
+
+WORKDIR /workspace
+
+COPY requirements.txt .
+RUN python -m pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu \
+    && python -m pip install --no-cache-dir -r requirements.txt
+
+RUN python -c "from sentence_transformers import SentenceTransformer, CrossEncoder; SentenceTransformer('all-MiniLM-L6-v2'); CrossEncoder('cross-encoder/ms-marco-MiniLM-L6-v2')"
+
+COPY app/ app/
+COPY scripts/ scripts/
+
+CMD ["python", "-m", "scripts.check_memory"]

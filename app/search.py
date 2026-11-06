@@ -47,7 +47,9 @@ def filtered_vector_search(query, k=5):
 
 
 def search(query, k=5):
-    return vector_search(query, k)
+    from app.reranking import reranked_search
+
+    return reranked_search(query, k)
 
 def reciprocal_rank_fusion(vector_results, lexical_results, k=5):
     scores = {}

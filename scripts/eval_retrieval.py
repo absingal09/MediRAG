@@ -1,6 +1,6 @@
 from pathlib import Path
 import yaml
-from app.search import search
+from app.search import vector_search as search
 
 # 1. Load only answerable dev questions.
 questions_path = (
