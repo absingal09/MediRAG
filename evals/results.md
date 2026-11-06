@@ -235,3 +235,16 @@ held-out evaluation remain pending.
 
 Single answer-generation run per configuration; no repeatability
 or statistical-significance claim. Held-out untouched.
+
+## Frozen configuration for held-out evaluation
+
+- Original 494 chunks; no short-chunk filter or BM25.
+- all-MiniLM-L6-v2 vector search: retrieve 20 candidates.
+- cross-encoder/ms-marco-MiniLM-L6-v2 on CPU:
+  question + content pairs, keep top 5, no score threshold.
+- Existing prompt, citation validation and refusal behavior unchanged.
+- Generator: glm5.3, temperature 0, reasoning effort low,
+  max_tokens 1024.
+- Evaluation bypasses answer caching.
+- Dev tuning finished for this evaluation.
+- Do not adjust this configuration after viewing held-out results.
