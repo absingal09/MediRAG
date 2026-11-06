@@ -62,7 +62,8 @@ Completed pipeline experiments, measured one at a time:
    search retrieves 20; `cross-encoder/ms-marco-MiniLM-L6-v2` on CPU scores
    question + content pairs and keeps 5, without a score threshold.
 
-The deployed app still uses vector-only search; reranking is not shipped.
+The deployed app uses vector top 20 → cross-encoder reranking → top 5,
+with inference `batch_size=1` to reduce temporary memory use.
 Alternative chunk sizes were not tested. No model weights were fine-tuned.
 
 ## Answering
@@ -152,6 +153,7 @@ Change one retrieval component at a time and record every result.
 - Data API and automatic table exposure off; automatic RLS selected.
 - Docker remains available for local development.
 - FastAPI deployed on Render Free: https://medirag-3xvf.onrender.com/.
+- Render CPU threading: `OMP_NUM_THREADS=1` and `MKL_NUM_THREADS=1`.
 - Frontend deployed on Vercel: https://medirag-desk.vercel.app/.
 - Vercel proxies `/api` to Render; deployed health, answer, refusal and citation highlighting checks passed.
 

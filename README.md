@@ -88,7 +88,7 @@ All 8 answerable responses manually reviewed. Page-level retrieval
 does not establish complete evidence. See `evals/results.md` for
 failures, wording caveats and evaluation limits.
 
-The deployed app still uses vector search; reranking is not shipped.
+The deployed app uses vector top 20 → cross-encoder reranking → top 5.
 
 ## Status
 

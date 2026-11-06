@@ -521,3 +521,19 @@ How ingest works:
 ### Next
 - Commit code and docs separately.
 - Deploy and verify on Render; live app has not been updated yet.
+
+## Phase 20 – Deploy reranking and limit CPU threads (Nov 7)
+
+### Results
+- Deployed reranked retrieval and v2-reranked cache version.
+- Initial hosted retrieval-only probe took 73.3 seconds.
+- Added Render environment settings:
+  OMP_NUM_THREADS=1 and MKL_NUM_THREADS=1.
+- After redeployment: first probe 18.5 s; warm probes 8.5 s and 8.2 s.
+- Both warm probes returned the same ranked chunk IDs.
+- User confirmed live frontend question checks work.
+- Timings exclude Sarvam generation; concurrent load not tested.
+
+### What it taught
+- Passing a memory limit does not establish acceptable CPU performance.
+- Docker memory tests did not reproduce Render Free's 0.1 CPU allocation.

@@ -32,5 +32,6 @@ Single generation/judging run per configuration; no repeatability claim.
 Evidence review uses extracted passages, with the noted q12 PDF check.
 Warm local median retrieval: vector 839.9 ms, reranked 1166.6 ms.
 Reranking was selected and frozen for the completed held-out evaluation;
-see `heldout_answer_review.md` and `results.md`. Deployment remains pending:
-the app still uses vector baseline, and Render latency/memory are unverified.
+see `heldout_answer_review.md` and `results.md`.
+Reranking subsequently deployed; live checks passed. Hosted warm
+retrieval-only probes: 8.5 s and 8.2 s. Concurrent capacity remains unverified.
