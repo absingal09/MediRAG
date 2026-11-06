@@ -11,6 +11,16 @@ SEARCH_SQL = """
     LIMIT %s
 """
 
+FILTERED_SEARCH_SQL = """
+    SELECT c.id, d.name, c.page_no, c.heading, c.content,
+           1 - (c.embedding <=> %s) AS score
+    FROM chunks c
+    JOIN documents d ON d.id = c.document_id
+    WHERE char_length(trim(c.content)) >= 30
+    ORDER BY c.embedding <=> %s
+    LIMIT %s
+"""
+
 def vector_search(query, k=5):
     vec = embed([query])[0]                    # 1. embed the query (one vector, not a list)
 
@@ -22,6 +32,19 @@ def vector_search(query, k=5):
          "content" : content, "score" : score}
         for chunk_id, name, page, heading, content, score in rows
     ]                  # 3. one dict per row: doc_name, page_no, heading, content, score
+
+def filtered_vector_search(query, k=5):
+    vec = embed([query])[0]                    # 1. embed the query (one vector, not a list)
+
+    with connect() as conn:
+        rows = conn.execute(FILTERED_SEARCH_SQL, (vec, vec, k)).fetchall()              # 2. run FILTERED_SEARCH_SQL with (vec, vec, k), fetch all rows
+
+    return [
+        {"chunk_id": chunk_id, "doc_name" : name, "page_no" : page, "heading" : heading,
+         "content" : content, "score" : score}
+        for chunk_id, name, page, heading, content, score in rows
+    ]                  # 3. one dict per row: doc_name, page_no, heading, content, score
+
 
 def search(query, k=5):
     return vector_search(query, k)

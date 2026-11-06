@@ -1,7 +1,7 @@
-from app.search import hybrid_search
+from app.search import filtered_vector_search
 
-question = "How does insulin dosing in DKA work, from the starting dose to when the infusion can be stopped?"
+question = "What should be done for a patient with an appendicular mass, and when should conservative treatment be stopped?"
 
-for rank, chunk in enumerate(hybrid_search(question, k=5), start=1):
+for rank, chunk in enumerate(filtered_vector_search(question, k=5), start=1):
     print(rank, chunk["chunk_id"], chunk["doc_name"], chunk["score"])
     print(chunk["content"], "\n")
