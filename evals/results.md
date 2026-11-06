@@ -136,3 +136,45 @@ until tuning is finished.
 Do not adopt this configuration: page-level MRR improved slightly,
 but q28 evidence coverage regressed and q06 remained unresolved.
 App and retrieval evaluator retain vector search. Held-out untouched.
+
+## Experiment 2 — Filter short chunks
+
+- Vector search only; exclude content shorter than 30 characters
+  after trimming, before ranking and LIMIT.
+- Same corpus, embeddings and top 5; no re-ingestion.
+
+| Metric | Baseline | Filtered |
+|---|---|---|
+| Hit@5 | 27/27 | 27/27 |
+| MRR@5 | 0.907 | 0.926 |
+| Mean page coverage@5 | 100% | 98.1% |
+| All-required-pages@5 | 27/27 | 26/27 |
+| Multi-part evidence: full / partial / none | 3 / 4 / 1 | 3 / 5 / 0 |
+
+### Evidence review
+- Reviewed all 8 multi-part dev questions.
+- q32 improved from none to partial: asthma features retrieved,
+  but COPD comparison remains missing.
+- Other coverage categories unchanged.
+- q26 lost the STEMI page match; previously useful evidence remained.
+- q06 dose passage still missing from top 5.
+
+### Answer and refusal evaluation
+
+| Metric | Baseline | Filtered |
+|---|---|---|
+| Correct refusals | 3/3 | 3/3 |
+| False refusals | 7/27 | 6/27 |
+| Raw judge: correct / partial / incorrect | 14 / 5 / 8 | 16 / 4 / 7 |
+| Manual review: correct / partial / incorrect | 15 / 4 / 8 | 16 / 4 / 7 |
+
+All 27 answerable filtered responses reviewed; see
+`filtered_answer_review.md`. Raw judge verdicts preserved.
+
+### Decision
+
+Do not adopt yet. q32 evidence improved, but its answer still refused.
+q30 and q34 answered better with unchanged source text, so the answer
+gains cannot be attributed to filtering from this single run.
+
+App retains baseline vector search. Held-out untouched.

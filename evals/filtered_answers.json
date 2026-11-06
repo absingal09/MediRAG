@@ -1,0 +1,1693 @@
+[
+  {
+    "id": "q01",
+    "type": "direct",
+    "question": "What fluid should be given in the first hour of DKA treatment, and at what rate afterwards?",
+    "reference_answer": "1 litre of 0.9% saline over the first hour, then 250-500 ml/hour (10-20 ml/kg/hour initially for children).",
+    "generated_answer": "I couldn't find this in the guidelines.",
+    "refused": true,
+    "citations": [],
+    "retrieved_sources": [
+      {
+        "chunk_id": 407,
+        "doc_name": "STW_Sepsis_Children",
+        "page_no": 1,
+        "heading": "",
+        "content": "Give 20 ml/kg of normal saline fluid bolus over 20- 30 minutes.",
+        "score": 0.607152151208864
+      },
+      {
+        "chunk_id": 235,
+        "doc_name": "STW_DKA",
+        "page_no": 1,
+        "heading": "MANAGEMENT MONITORING TREATMENT",
+        "content": "• Strict input/ output charting: every 1 hour ▶ Report if urine output is <30ml/hour for 2 consecutive hours ▶ One hour after starting the treatment: Till resolution of DKA ▶ BP and vital signs: every 1 hour ▶ Blood glucose every 1 hour ▶ Venous pH, Na, K, HCO3 : 2-4 hourly ▶ Blood ketones (if available)/Urine for ketones: 12 hourly • After resolution of DKA: Blood glucose monitoring every 4 hours",
+        "score": 0.593072354793549
+      },
+      {
+        "chunk_id": 237,
+        "doc_name": "STW_DKA",
+        "page_no": 1,
+        "heading": "COMMON ERRORS/PITFALLS IN DKA DIAGNOSIS AND MANAGEMENT",
+        "content": "• Initiating Insulin therapy before I/V fluid therapy • Failure to review fluid replacement therapy particularly in elderly patients • Failure to identify underlying cause • Search for another cause of obtundation: If the osmolality is <than 320 mOsm/kg H2O • Potassium: may be normal despite depletion of body stores due to metabolic acidosis • Elevated total leucocyte count does not suggest presence of infection until more than >15 X 109/l • Monitor for cerebral edema especially in childern",
+        "score": 0.543697357177734
+      },
+      {
+        "chunk_id": 179,
+        "doc_name": "STW_Dengue",
+        "page_no": 1,
+        "heading": "",
+        "content": "Gradually decrease infusion rate 10ml/kg/hr 1-2 hr 7ml/kg for 2-3 hrs 5ml/kg for 2-4 hrs 3ml/kg for 2-4 hrs Stop at 48 hours",
+        "score": 0.51408603703463
+      },
+      {
+        "chunk_id": 232,
+        "doc_name": "STW_DKA",
+        "page_no": 1,
+        "heading": "WHEN TO SUSPECT DKA IF THERE IS HISTORY OF",
+        "content": "LOOK & ADDRESS FOR PRECIPITATING FACTORS • Skipping/missing insulin doses • Fever/cough/loose stools/burning micturition",
+        "score": 0.501156508922577
+      }
+    ]
+  },
+  {
+    "id": "q02",
+    "type": "direct",
+    "question": "When should potassium be supplemented before starting insulin in DKA?",
+    "reference_answer": "If serum K+ is below 3.3 mEq/L (or there are ECG changes).",
+    "generated_answer": "Potassium should be supplemented before insulin if serum K+ < 3.3 mEq/L (or if there are ECG changes) [S1].",
+    "refused": false,
+    "citations": [
+      {
+        "doc_name": "STW_DKA",
+        "page_no": 1
+      }
+    ],
+    "retrieved_sources": [
+      {
+        "chunk_id": 233,
+        "doc_name": "STW_DKA",
+        "page_no": 1,
+        "heading": "MANAGEMENT MONITORING TREATMENT",
+        "content": "• Replace fluids – 1 l of 0.9% saline over first hour followed by 250-500 ml/hour (10-20ml/kg/hour initially for children) • Administer regular insulin – 0.1 IU/kg IV then 0.1 IU/kg/hour IV infusion • Double infusion rate if less than 10% fall in blood glucose after 1 hour • When blood glucose < 250 mg/dl, add 5% dextrose @ 50 ml/hour • Supplement potassium before insulin if serum K+ < 3.3 mEq/L (or ECG changes) • Replace potassium @ 10-20 mEq/hour with insulin infusion if serum K+ < 5.5 mEq/L • If pH < 7.0, add sodium bicarbonate; 50 mmol in 200 ml sterile water over 2 hour",
+        "score": 0.631100077363851
+      },
+      {
+        "chunk_id": 235,
+        "doc_name": "STW_DKA",
+        "page_no": 1,
+        "heading": "MANAGEMENT MONITORING TREATMENT",
+        "content": "• Strict input/ output charting: every 1 hour ▶ Report if urine output is <30ml/hour for 2 consecutive hours ▶ One hour after starting the treatment: Till resolution of DKA ▶ BP and vital signs: every 1 hour ▶ Blood glucose every 1 hour ▶ Venous pH, Na, K, HCO3 : 2-4 hourly ▶ Blood ketones (if available)/Urine for ketones: 12 hourly • After resolution of DKA: Blood glucose monitoring every 4 hours",
+        "score": 0.559263544060694
+      },
+      {
+        "chunk_id": 237,
+        "doc_name": "STW_DKA",
+        "page_no": 1,
+        "heading": "COMMON ERRORS/PITFALLS IN DKA DIAGNOSIS AND MANAGEMENT",
+        "content": "• Initiating Insulin therapy before I/V fluid therapy • Failure to review fluid replacement therapy particularly in elderly patients • Failure to identify underlying cause • Search for another cause of obtundation: If the osmolality is <than 320 mOsm/kg H2O • Potassium: may be normal despite depletion of body stores due to metabolic acidosis • Elevated total leucocyte count does not suggest presence of infection until more than >15 X 109/l • Monitor for cerebral edema especially in childern",
+        "score": 0.550469474508449
+      },
+      {
+        "chunk_id": 238,
+        "doc_name": "STW_DKA",
+        "page_no": 1,
+        "heading": "COMMON ERRORS/PITFALLS IN DKA DIAGNOSIS AND MANAGEMENT",
+        "content": "• Body temperature cannot be used as a guide to presence of infection • Hyperamylasemia: Cannot be used as a marker for diagnosis of pancreatitis • Hypertriglycredemia: can cause pseudohyponatremia and when marked precipitates pancreatitis • Ketosis may worsen paradoxically with successful treatment initially • Stopping I/V insulin before S/C insulin given",
+        "score": 0.508226706842186
+      },
+      {
+        "chunk_id": 232,
+        "doc_name": "STW_DKA",
+        "page_no": 1,
+        "heading": "WHEN TO SUSPECT DKA IF THERE IS HISTORY OF",
+        "content": "LOOK & ADDRESS FOR PRECIPITATING FACTORS • Skipping/missing insulin doses • Fever/cough/loose stools/burning micturition",
+        "score": 0.480189009910495
+      }
+    ]
+  },
+  {
+    "id": "q04",
+    "type": "direct",
+    "question": "What are the loading and maintenance doses of aspirin in acute coronary syndrome?",
+    "reference_answer": "Loading dose 325 mg, followed by 75 mg once daily.",
+    "generated_answer": "Aspirin: Loading dose 325 mg followed by 75 mg OD [S1][S2].",
+    "refused": false,
+    "citations": [
+      {
+        "doc_name": "STW_NSTEMI",
+        "page_no": 1
+      },
+      {
+        "doc_name": "STW_STEMI",
+        "page_no": 1
+      }
+    ],
+    "retrieved_sources": [
+      {
+        "chunk_id": 389,
+        "doc_name": "STW_NSTEMI",
+        "page_no": 1,
+        "heading": "ANGINA UNLIKELY IF:",
+        "content": "OPTIONAL INVESTIGATIONS 1. Coronary Angiography 2. CT scan including coronary angiography 3. Stress Radionuclide/ echocardiographic imaging 4. MRI 5. Coronary Fractional Flow Reserve 5. Intra-vascular Ultrasound Anti-platelets Anti-ischemic: 1. Aspirin: Loading dose 325 mg followed by 75 mg OD 2. Clopidogrel: Loading dose 300 mg followed 75 mg OD 3. Prasugrel: Loading dose 60 mg followed by 10 mg OD 4. Ticagralor: Loading dose 180 mg followed by 90 mg BD Anti thrombotics: 1. Metoprolol: Short acting 25-100 mg BD Long acting 25 -100 mg OD 2. Nitrates: Isosorbide mono-nitare 20 to 60 mg in 2",
+        "score": 0.627816103230948
+      },
+      {
+        "chunk_id": 470,
+        "doc_name": "STW_STEMI",
+        "page_no": 1,
+        "heading": "DRUGS & DOSAGE",
+        "content": "Anti-platelets 1. Aspirin: Loading dose 325 mg followed by 75 mg OD 2. Clopidogrel: Loading dose 300 mg followed 75 mg OD 3. Prasugrel: Loading dose 60 mg followed by 10 mg OD 4. Ticagralor: Loading dose 180 mg followed by 90 mg BD Anti-ischemic: Metoprolol: Short acting: 25-100 mg BD Long acting: 25 -100 mg OD Nitrates: Isosorbide mono-nitare 20 to 60 mg in 2 divided dose Nitroglycerine sustained release 2.6 to 6.5 mg BD Nitroglycerine IV 5-25 mcg/ min infusion Lipid lowering agents: High dose Atorvastatin 80 mg OD Rosuvastatin 20-40mg OD Non-statin lipid modifying agents Ace-inhibitor",
+        "score": 0.610257589205648
+      },
+      {
+        "chunk_id": 390,
+        "doc_name": "STW_NSTEMI",
+        "page_no": 1,
+        "heading": "ANGINA UNLIKELY IF:",
+        "content": "devided dose Nitroglycerine sustained release 2.6 to 6.5 mg BD Nitroglycerine IV 5-25 mcg/min infusion Statins: 1. Enoxaparin: 1 mg/Kg SC 12 hrly 2. Unfractionated heparin: Bolus of 60 U/Kg (maximum 5000 U) followed by 12 U/Kg hourly infusion to maintain APTT at 50-70 sec Ace-inhibitor High dose Atorvastatin 80 mg OD or Rosuvastatin Ramipril 2.5 -10 mg OD Enalapril 2.5-10 mg BD 20-40 mg OD REFERENCES 1. Byrne RA et al. 2023ESC guidelines for the management of acute coronary syndrome. European Heart J (2024) 44, 3720-3826 2. Rao SV et al. 2025 ACC/AHA/ACEP/NAEMSP/SCAI guidelines for the",
+        "score": 0.565900027751923
+      },
+      {
+        "chunk_id": 372,
+        "doc_name": "STW_NSTEMI",
+        "page_no": 1,
+        "heading": "ANGINA UNLIKELY IF:",
+        "content": "MANAGEMENT TERTIARY CENTRE 1. Admit, reassess clinically and monitor in ICCU 2. Continue aspirin and heparin 3. Load with clopidogrel or prasugrel or ticagralor if not already done 4. Optimal medical therapy to continue (BB, high dose atorvastatin, ACE-inhibitors, intra-venous nitrates if ongoing pain, severe MR or LVF) 5. Detailed echocardiography 6. Low risk patients may undergo non-invasive risk stratification with exercise stress test, CT coronary angiography or stress imaging 7. Very high risk, high risk and intermediate risk patients may be subjected to coronary revascularization",
+        "score": 0.551205337047577
+      },
+      {
+        "chunk_id": 39,
+        "doc_name": "STW_Acute_Aortic_Syndrome",
+        "page_no": 2,
+        "heading": "",
+        "content": "ANTIHYPERTENSIVE DRUGS IN MANAGEMENT OF ACUTE DISSECTION Group Drugs Dose Special precaution/contraindication Labetalol Loading: 20 mg IV in 2 minutes Hypersensitivity, Severe asthma, Maintenance: 1-2 mg/minute Loading : 250-500 μg/kg in one minute Heart block, Uncompensated heart failure Maintenance: 50-100 μg/kg/min (maximum upto 300 μg/kg/min) Loading dose: 5mg IV over 2min, up to 3 doses; Severe chronic obstructive pulmonary disease, Severe Aortic Regurgitation (avoid extreme bradycardia) Maintenance dose: 3-5 mg every hour Hypersensitivity, Atrioventricular block, Loading dose: 0.25 mg/kg",
+        "score": 0.541344285011292
+      }
+    ]
+  },
+  {
+    "id": "q05",
+    "type": "direct",
+    "question": "What GRACE and TIMI scores define a high-risk UA/NSTEMI patient?",
+    "reference_answer": "GRACE score above 140 or TIMI score above 4.",
+    "generated_answer": "High risk is defined as GRACE score > 140 or TIMI score > 4 [S1][S3].",
+    "refused": false,
+    "citations": [
+      {
+        "doc_name": "STW_NSTEMI",
+        "page_no": 1
+      },
+      {
+        "doc_name": "STW_NSTEMI",
+        "page_no": 1
+      }
+    ],
+    "retrieved_sources": [
+      {
+        "chunk_id": 387,
+        "doc_name": "STW_NSTEMI",
+        "page_no": 1,
+        "heading": "ANGINA UNLIKELY IF:",
+        "content": "UA/NSTEMI: RISK CATEGORIZATION: Based on clinical features, GRACE score & TIMI score A).Very high risk: -Acute LVF -Hypotension -Uncontrolled Ventricular arrhythmia -Severe MR B. High Risk: -GRACE score > 140 or TIMI score >4 C. Intermediate Risk: -GRACE score 109-140 or TIMI score 2-3 D. Low Risk: -Grace score <108 or TIMI score 0-1",
+        "score": 0.730818661353748
+      },
+      {
+        "chunk_id": 381,
+        "doc_name": "STW_NSTEMI",
+        "page_no": 1,
+        "heading": "",
+        "content": "2. TIMI SCORE: One point for each of following 1. Age >65 yrs 2. More than 3 risk factors 3. Known CAD (>50% lesion) 4. Recurrence of angina in 24 hrs 5. Aspirin use within 7 days 6. ST deviation >0.5 mV 7. Raised cardiac markerss Sum total = TIMI score of patient",
+        "score": 0.643744787946655
+      },
+      {
+        "chunk_id": 384,
+        "doc_name": "STW_NSTEMI",
+        "page_no": 1,
+        "heading": "ANGINA UNLIKELY IF:",
+        "content": "Intermediate risk GRACE 109-140, TIMI2-3 Low risk GRACE <109, TIMI <1 High risk GRACE > 140, TIMI >4 Early invasive 2-24 h Delayed invasive 25-72 h Medical/ non-invasive strategy Clinical instability. rise in cTn, or ECG changes",
+        "score": 0.616357491450609
+      },
+      {
+        "chunk_id": 377,
+        "doc_name": "STW_NSTEMI",
+        "page_no": 1,
+        "heading": "",
+        "content": "PHC/CHC LEVEL 1, ECG, Troponin. 2. Start -Aspirin, Clopidogrel in loading dose -Heparin/ LMWH -High dose statin -Metoprolol 3. Risk stratify GRACE score or TIMI score - Refer High/ Intermediate risk to PCI capable centre - Refer Low risk for further evaluation to DH 4. Refer to PCI capable centre if: - Acute LVF - Hypotension - Systolic murmur - Arrythmia 1. GRACE SCORE: Killip Class I II III IV",
+        "score": 0.564772598174501
+      },
+      {
+        "chunk_id": 382,
+        "doc_name": "STW_NSTEMI",
+        "page_no": 1,
+        "heading": "ANGINA UNLIKELY IF:",
+        "content": "Heart rate Beats/ min Age. y Creatinine Level, mg/ dL Points Points Points Points Points SBP1 mm Hg 0 20 39 59 <30 30-39 40-49 50-59 60-69 70-79 80-89 >90 0-0.39 0.40-0.79 0.80-1.19 1.20-1.59 1.60-1.99 2.00-3.99 >4.0 <50 50-69 70-89 90-109 110-149 150-199 >200 0 8 25 41 58 75 91 100 1 4 7 10 13 21 28 <80 80-99 100-119 120-139 140-159 160-199 >200 58 53 43 34 24 10 0 0 3 9 15 24 38 46 UNSTABLE ANGINA OR NSTEMI DIAGNOSIS",
+        "score": 0.545384851373146
+      }
+    ]
+  },
+  {
+    "id": "q06",
+    "type": "direct",
+    "question": "What dose of tenecteplase should a 75 kg STEMI patient receive?",
+    "reference_answer": "40 mg IV bolus (the dose for 70-80 kg).",
+    "generated_answer": "I couldn't find this in the guidelines.",
+    "refused": true,
+    "citations": [],
+    "retrieved_sources": [
+      {
+        "chunk_id": 432,
+        "doc_name": "STW_STEMI",
+        "page_no": 1,
+        "heading": "PATIENT WITH STEMI WITHIN 12 HOURS",
+        "content": "GENERAL MEASURES 1. Admit in ICU equipped with continuous ECG monitoring & defibrillation 2. Routine bio-chemistry and serial cardiac enzymes (troponin) 3. Pain relief by opioid 4. O2 if saturation less than 90% 5. Aspirin 325 mg, Clopidogrel 300 mg and Atorvastatin 80 mg/Rosuvastatin 20-40mg 6. Echocardiography, particularly for mechanical complication",
+        "score": 0.54523231223918
+      },
+      {
+        "chunk_id": 468,
+        "doc_name": "STW_STEMI",
+        "page_no": 1,
+        "heading": "ABSOLUTE CONTRA-INDICATIONS TO THROMBOLYIC THERAPY:",
+        "content": "80 Kg Reteplase min Alteplase 15 mg IV bolus followed by 0.75 mg/Kg over 30 min upto 50 Kg weight, then 0.5 mg/Kg over 60 min up to 35 mg Streptokinase 1.5 million units IV over 60 min",
+        "score": 0.470557034015656
+      },
+      {
+        "chunk_id": 438,
+        "doc_name": "STW_STEMI",
+        "page_no": 1,
+        "heading": "PATIENT WITH STEMI IN 12-24 HOURS",
+        "content": "If ongoing pain, thrombolysis and transfer immediately",
+        "score": 0.456475377082825
+      },
+      {
+        "chunk_id": 352,
+        "doc_name": "STW_Heart_Failure",
+        "page_no": 1,
+        "heading": "",
+        "content": "ARNI • Dose 50 to 200 mg twice daily PO • Start with low dose with BP >100 mmHg, normal electrolyte and creatinine less than 2.5 mg/dl • Uptitrate dose 1-2 weekly till maximum tolerable dose • Keep watch on BP and electrolytes before every increment and on follow-up",
+        "score": 0.453340888023376
+      },
+      {
+        "chunk_id": 353,
+        "doc_name": "STW_Heart_Failure",
+        "page_no": 1,
+        "heading": "",
+        "content": "FUROSEMIDE • Dose 20-80 mg daily PO • Intravenous 10-80 mg SOS in acute stage • Change to oral when symptoms subside • Monitor serum electrolytes, creatinine and uric acid on therapy",
+        "score": 0.451444029808044
+      }
+    ]
+  },
+  {
+    "id": "q08",
+    "type": "direct",
+    "question": "Within what time window can IV tPA be given for ischaemic stroke?",
+    "reference_answer": "0-4.5 hours from symptom onset (mechanical thrombectomy may be considered from 4.5 to 24 hours if eligible).",
+    "generated_answer": "IV tPA can be given within 0–4.5 hours [S1].",
+    "refused": false,
+    "citations": [
+      {
+        "doc_name": "STW_Stroke",
+        "page_no": 1
+      }
+    ],
+    "retrieved_sources": [
+      {
+        "chunk_id": 486,
+        "doc_name": "STW_Stroke",
+        "page_no": 1,
+        "heading": "TYPES OF STROKE",
+        "content": "ISCHEMIC: * IV tPA (0-4.5 hrs) or endovascular treatment according to eligibility and availability",
+        "score": 0.717933177947998
+      },
+      {
+        "chunk_id": 489,
+        "doc_name": "STW_Stroke",
+        "page_no": 1,
+        "heading": "STROKE ONSET TIME: <4.5 HOURS",
+        "content": "• Noncontrast brain CT or brain MRI • Blood glucose • Oxygen saturation • Serum electrolytes/renal function tests • Complete blood count, including platelet count • Markers of cardiac ischemia • BT, CT, Prothrombin time/INR • Activated partial thromboplastin time • ECG • FLP and carotid doppler (ischemic stroke)",
+        "score": 0.580715477466583
+      },
+      {
+        "chunk_id": 487,
+        "doc_name": "STW_Stroke",
+        "page_no": 1,
+        "heading": "STROKE ONSET TIME: <4.5 HOURS",
+        "content": "* RECOMMENDED DIAGNOSTIC STUDIES ALL PATIENTS SELECTED PATIENTS",
+        "score": 0.562293708324432
+      },
+      {
+        "chunk_id": 494,
+        "doc_name": "STW_Stroke",
+        "page_no": 1,
+        "heading": "STROKE ONSET TIME: >4.5 HOURS",
+        "content": "STROKE UNIT MANAGEMENT · Medical and Nursing staff : control of blood pressure; control of diabetes; swallow assessment; DVT prophylaxis; antiplatelet drugs · Rehabilitation staff: » Acute phase: basic bed mobility, transfer techniques, communication training, prevention of complications » Subacute and chronic phase: mobility, gait and balance training, training of activities of daily living (grooming, eating, dressing etc), bowel/bladder training, perceptual and cognitive rehabilitation, provision of assistive devices.",
+        "score": 0.551400542259216
+      },
+      {
+        "chunk_id": 434,
+        "doc_name": "STW_STEMI",
+        "page_no": 1,
+        "heading": "PATIENT WITH STEMI WITHIN 12 HOURS",
+        "content": "PCI INCAPABLE CENTRE A. Tranfer to PCI capable hospital if PCI can be performed within 120 min B. If Transfer to PCI incapable hospital not feasible THROMBOLYSE 1. Within 12 hours of symptom onset, if no contra-indication 2. Preferably with fibrin specific agent Tenecteplase/ TPA/ Reteplase or Streptokinase, if fibrin-specific are unavailable 3. Therapy to be started within 10 min preferably POST THROMBOLYSIS 1. ECG to be done at 60-90 min after starting thrombolysis to assess whether thrombolysis is successful ( >50% ST settlement with pain relief) or not 2. If successful, transfer patient",
+        "score": 0.519345967808607
+      }
+    ]
+  },
+  {
+    "id": "q09",
+    "type": "direct",
+    "question": "What does the BEFAST acronym stand for in stroke warning signs?",
+    "reference_answer": "Balance, Eyes, Face, Arm, Speech, Time.",
+    "generated_answer": "BEFAST stands for [S4]:\n- **BALANCE**: Loss of balance or coordination\n- **EYES**: Sudden blurred or double vision/sudden, persistent vision trouble\n- **FACE**: Deviation at the angle of the mouth\n- **ARM**: Arm Drift\n- **SPEECH**: Slurred speech or the inability to speak or understand\n- **TIME**: Act fast",
+    "refused": false,
+    "citations": [
+      {
+        "doc_name": "STW_Stroke",
+        "page_no": 1
+      }
+    ],
+    "retrieved_sources": [
+      {
+        "chunk_id": 489,
+        "doc_name": "STW_Stroke",
+        "page_no": 1,
+        "heading": "STROKE ONSET TIME: <4.5 HOURS",
+        "content": "• Noncontrast brain CT or brain MRI • Blood glucose • Oxygen saturation • Serum electrolytes/renal function tests • Complete blood count, including platelet count • Markers of cardiac ischemia • BT, CT, Prothrombin time/INR • Activated partial thromboplastin time • ECG • FLP and carotid doppler (ischemic stroke)",
+        "score": 0.494518786995484
+      },
+      {
+        "chunk_id": 494,
+        "doc_name": "STW_Stroke",
+        "page_no": 1,
+        "heading": "STROKE ONSET TIME: >4.5 HOURS",
+        "content": "STROKE UNIT MANAGEMENT · Medical and Nursing staff : control of blood pressure; control of diabetes; swallow assessment; DVT prophylaxis; antiplatelet drugs · Rehabilitation staff: » Acute phase: basic bed mobility, transfer techniques, communication training, prevention of complications » Subacute and chronic phase: mobility, gait and balance training, training of activities of daily living (grooming, eating, dressing etc), bowel/bladder training, perceptual and cognitive rehabilitation, provision of assistive devices.",
+        "score": 0.491197437572633
+      },
+      {
+        "chunk_id": 486,
+        "doc_name": "STW_Stroke",
+        "page_no": 1,
+        "heading": "TYPES OF STROKE",
+        "content": "ISCHEMIC: * IV tPA (0-4.5 hrs) or endovascular treatment according to eligibility and availability",
+        "score": 0.485479921967989
+      },
+      {
+        "chunk_id": 476,
+        "doc_name": "STW_Stroke",
+        "page_no": 1,
+        "heading": "",
+        "content": "WARNING SIGNS (BEFAST) • BALANCE : Loss of balance or coordination • EYES : Sudden blurred or double vision/ sudden, persistent vision trouble • FACE : Deviation at the angle of the mouth • ARM : Arm Drift • SPEECH : Slurred speech or the inability to speak or understand • TIME : Act fast • Sudden new onset of headache or loss of consciousness • Sudden giddiness, vomiting and imbalance",
+        "score": 0.484935731593626
+      },
+      {
+        "chunk_id": 487,
+        "doc_name": "STW_Stroke",
+        "page_no": 1,
+        "heading": "STROKE ONSET TIME: <4.5 HOURS",
+        "content": "* RECOMMENDED DIAGNOSTIC STUDIES ALL PATIENTS SELECTED PATIENTS",
+        "score": 0.481911779528155
+      }
+    ]
+  },
+  {
+    "id": "q11",
+    "type": "direct",
+    "question": "What first-line drug treatment is recommended for a newly diagnosed type 2 diabetic with HbA1c below 8.5%?",
+    "reference_answer": "Monotherapy with metformin.",
+    "generated_answer": "Metformin monotherapy [S1].",
+    "refused": false,
+    "citations": [
+      {
+        "doc_name": "STW_Diabetes_Type2",
+        "page_no": 1
+      }
+    ],
+    "retrieved_sources": [
+      {
+        "chunk_id": 213,
+        "doc_name": "STW_Diabetes_Type2",
+        "page_no": 1,
+        "heading": "ASSESS",
+        "content": "TREATMENT • Dietary modification • Avoidance of tobacco and restriction/ avoidance of alcohol • Physical activity • Pharmacotherapy: › HbA1c < 8.5%: Monotherapy- Metformin › HbA1c 8.5-10%: Dual therapy- Metformin + SU’s/TZD/ DPPIVi/SGLT2i /AGI/GLP-1RA › HbA1c > 10%: Basal Insulin+ Metformin + another OAD / triple OAD combination",
+        "score": 0.586096405982971
+      },
+      {
+        "chunk_id": 208,
+        "doc_name": "STW_Diabetes_Type2",
+        "page_no": 1,
+        "heading": "DIAGNOSIS",
+        "content": "PREDIABETES: Impaired fasting glucose: FPG 100-125 mg/dL; Impaired glucose tolerance: 140-199 mg/dL; HbA1c 5.7-6.4%",
+        "score": 0.541788903368182
+      },
+      {
+        "chunk_id": 201,
+        "doc_name": "STW_Diabetes_Type2",
+        "page_no": 1,
+        "heading": "DIAGNOSIS",
+        "content": "2-h plasma glucose ≥200 HbA1C ≥ OR OR OR mg/dl during OGTT 6.5%",
+        "score": 0.51420956680661
+      },
+      {
+        "chunk_id": 236,
+        "doc_name": "STW_DKA",
+        "page_no": 1,
+        "heading": "MANAGEMENT MONITORING TREATMENT",
+        "content": "WHEN TO STOP INSULIN INFUSION? • Patient accepting orally, blood glucose consistently < 250 mg/dl, normalization of anion gap and correction of metabolic acidosis • Administer SC dose of long/intermediate-acting & short acting insulin at least 30 mins before stopping insulin infusion. Shift to basal-bolus/pre-mixed insulin regimen",
+        "score": 0.481596052646637
+      },
+      {
+        "chunk_id": 233,
+        "doc_name": "STW_DKA",
+        "page_no": 1,
+        "heading": "MANAGEMENT MONITORING TREATMENT",
+        "content": "• Replace fluids – 1 l of 0.9% saline over first hour followed by 250-500 ml/hour (10-20ml/kg/hour initially for children) • Administer regular insulin – 0.1 IU/kg IV then 0.1 IU/kg/hour IV infusion • Double infusion rate if less than 10% fall in blood glucose after 1 hour • When blood glucose < 250 mg/dl, add 5% dextrose @ 50 ml/hour • Supplement potassium before insulin if serum K+ < 3.3 mEq/L (or ECG changes) • Replace potassium @ 10-20 mEq/hour with insulin infusion if serum K+ < 5.5 mEq/L • If pH < 7.0, add sodium bicarbonate; 50 mmol in 200 ml sterile water over 2 hour",
+        "score": 0.474060267210007
+      }
+    ]
+  },
+  {
+    "id": "q12",
+    "type": "direct",
+    "question": "What HbA1c value is diagnostic of diabetes?",
+    "reference_answer": "HbA1c of 6.5% or higher.",
+    "generated_answer": "HbA1c ≥ 6.5% [S1]",
+    "refused": false,
+    "citations": [
+      {
+        "doc_name": "STW_Diabetes_Type2",
+        "page_no": 1
+      }
+    ],
+    "retrieved_sources": [
+      {
+        "chunk_id": 201,
+        "doc_name": "STW_Diabetes_Type2",
+        "page_no": 1,
+        "heading": "DIAGNOSIS",
+        "content": "2-h plasma glucose ≥200 HbA1C ≥ OR OR OR mg/dl during OGTT 6.5%",
+        "score": 0.673466204381073
+      },
+      {
+        "chunk_id": 208,
+        "doc_name": "STW_Diabetes_Type2",
+        "page_no": 1,
+        "heading": "DIAGNOSIS",
+        "content": "PREDIABETES: Impaired fasting glucose: FPG 100-125 mg/dL; Impaired glucose tolerance: 140-199 mg/dL; HbA1c 5.7-6.4%",
+        "score": 0.64763228325459
+      },
+      {
+        "chunk_id": 212,
+        "doc_name": "STW_Diabetes_Type2",
+        "page_no": 1,
+        "heading": "ASSESS",
+        "content": "Pin-prick sensation, monofilament BMI waist circumference pulses Hypertension Dyslipidaemia CAD CKD Skin, oral cavity, foot BP Peripheral EXAMINATION: test ,vibration, DTR METABOLIC TARGETS • HbA1c </= 7 .0% (except elderly and those with significant comorbid conditions) where higher target may be acceptable • Pre-prandial capillary plasma glucose: 80-130 mg/dl • Post-prandial capillary plasma glucose: <180 mg/dl • BP=140/90 (130/80 in CKD) LDL: < 100 mg/dl (< 70mg/dl in CAD)",
+        "score": 0.541922954206292
+      },
+      {
+        "chunk_id": 202,
+        "doc_name": "STW_Diabetes_Type2",
+        "page_no": 1,
+        "heading": "",
+        "content": "Diabetes symptoms + random plasma glucose ≥ 200 mg/dl",
+        "score": 0.538026626345321
+      },
+      {
+        "chunk_id": 213,
+        "doc_name": "STW_Diabetes_Type2",
+        "page_no": 1,
+        "heading": "ASSESS",
+        "content": "TREATMENT • Dietary modification • Avoidance of tobacco and restriction/ avoidance of alcohol • Physical activity • Pharmacotherapy: › HbA1c < 8.5%: Monotherapy- Metformin › HbA1c 8.5-10%: Dual therapy- Metformin + SU’s/TZD/ DPPIVi/SGLT2i /AGI/GLP-1RA › HbA1c > 10%: Basal Insulin+ Metformin + another OAD / triple OAD combination",
+        "score": 0.52069207902598
+      }
+    ]
+  },
+  {
+    "id": "q13",
+    "type": "direct",
+    "question": "What is the target HbA1c for most adults with type 2 diabetes?",
+    "reference_answer": "7.0% or below, except in the elderly and those with significant comorbidities, where a higher target may be acceptable.",
+    "generated_answer": "HbA1c ≤ 7.0% (except elderly and those with significant comorbid conditions, where a higher target may be acceptable) [S4].",
+    "refused": false,
+    "citations": [
+      {
+        "doc_name": "STW_Diabetes_Type2",
+        "page_no": 1
+      }
+    ],
+    "retrieved_sources": [
+      {
+        "chunk_id": 201,
+        "doc_name": "STW_Diabetes_Type2",
+        "page_no": 1,
+        "heading": "DIAGNOSIS",
+        "content": "2-h plasma glucose ≥200 HbA1C ≥ OR OR OR mg/dl during OGTT 6.5%",
+        "score": 0.616747589886763
+      },
+      {
+        "chunk_id": 208,
+        "doc_name": "STW_Diabetes_Type2",
+        "page_no": 1,
+        "heading": "DIAGNOSIS",
+        "content": "PREDIABETES: Impaired fasting glucose: FPG 100-125 mg/dL; Impaired glucose tolerance: 140-199 mg/dL; HbA1c 5.7-6.4%",
+        "score": 0.597766709727042
+      },
+      {
+        "chunk_id": 213,
+        "doc_name": "STW_Diabetes_Type2",
+        "page_no": 1,
+        "heading": "ASSESS",
+        "content": "TREATMENT • Dietary modification • Avoidance of tobacco and restriction/ avoidance of alcohol • Physical activity • Pharmacotherapy: › HbA1c < 8.5%: Monotherapy- Metformin › HbA1c 8.5-10%: Dual therapy- Metformin + SU’s/TZD/ DPPIVi/SGLT2i /AGI/GLP-1RA › HbA1c > 10%: Basal Insulin+ Metformin + another OAD / triple OAD combination",
+        "score": 0.594395685864013
+      },
+      {
+        "chunk_id": 212,
+        "doc_name": "STW_Diabetes_Type2",
+        "page_no": 1,
+        "heading": "ASSESS",
+        "content": "Pin-prick sensation, monofilament BMI waist circumference pulses Hypertension Dyslipidaemia CAD CKD Skin, oral cavity, foot BP Peripheral EXAMINATION: test ,vibration, DTR METABOLIC TARGETS • HbA1c </= 7 .0% (except elderly and those with significant comorbid conditions) where higher target may be acceptable • Pre-prandial capillary plasma glucose: 80-130 mg/dl • Post-prandial capillary plasma glucose: <180 mg/dl • BP=140/90 (130/80 in CKD) LDL: < 100 mg/dl (< 70mg/dl in CAD)",
+        "score": 0.511436878271479
+      },
+      {
+        "chunk_id": 211,
+        "doc_name": "STW_Diabetes_Type2",
+        "page_no": 1,
+        "heading": "CO-MORBIDITIES:",
+        "content": "INVESTIGATION • HbA1c • Creatinine • K+ • Fasting lipid profile • Urine routine examination and spot albumin: creatinine ratio# • LFT/ ALT, AST • ECG • Others like Echo, USG abdomen as indicated #These may best be carried out after initial glycaemic control",
+        "score": 0.50907289873685
+      }
+    ]
+  },
+  {
+    "id": "q15",
+    "type": "direct",
+    "question": "What are the warning signs in dengue?",
+    "reference_answer": "Abdominal pain or tenderness, persistent vomiting, clinical fluid accumulation (pleural effusion, ascites), mucosal bleed (malena, epistaxis, gum bleed), liver enlargement over 2 cm, and shock.",
+    "generated_answer": "I couldn't find this in the guidelines.",
+    "refused": true,
+    "citations": [],
+    "retrieved_sources": [
+      {
+        "chunk_id": 165,
+        "doc_name": "STW_Dengue",
+        "page_no": 1,
+        "heading": "WHEN TO SUSPECT?",
+        "content": "Dengue without warning signs ASSESSMENT",
+        "score": 0.824796697521609
+      },
+      {
+        "chunk_id": 191,
+        "doc_name": "STW_Dengue",
+        "page_no": 1,
+        "heading": "TREATMENT OF PROBABLE DENGUE WITHOUT WARNING SIGNS",
+        "content": "Look for anemia, acidosis, myocardial dysfunction and treat accordingly",
+        "score": 0.727851228246031
+      },
+      {
+        "chunk_id": 172,
+        "doc_name": "STW_Dengue",
+        "page_no": 1,
+        "heading": "TREATMENT OF PROBABLE DENGUE WITHOUT WARNING SIGNS",
+        "content": "Assess airway, breathing, circulation & start oxygen inhalation",
+        "score": 0.716318445425138
+      },
+      {
+        "chunk_id": 170,
+        "doc_name": "STW_Dengue",
+        "page_no": 1,
+        "heading": "TREATMENT OF PROBABLE DENGUE WITHOUT WARNING SIGNS",
+        "content": "• Hb, TLC, DLC, Platelets, PCV • Positive tourniquet test • NS1 antigen (ELISA method)",
+        "score": 0.7032914096192
+      },
+      {
+        "chunk_id": 167,
+        "doc_name": "STW_Dengue",
+        "page_no": 1,
+        "heading": "TREATMENT OF PROBABLE DENGUE WITHOUT WARNING SIGNS",
+        "content": "• Symptomatic ambulatory treatment • Paracetamol for fever: avoid NSAIDs • Daily monitoring: clinical, PCV, platelets",
+        "score": 0.69963959459787
+      }
+    ]
+  },
+  {
+    "id": "q16",
+    "type": "direct",
+    "question": "At what platelet count is prophylactic platelet transfusion indicated in dengue?",
+    "reference_answer": "Platelet count below 10,000/cumm.",
+    "generated_answer": "I couldn't find this in the guidelines.",
+    "refused": true,
+    "citations": [],
+    "retrieved_sources": [
+      {
+        "chunk_id": 181,
+        "doc_name": "STW_Dengue",
+        "page_no": 1,
+        "heading": "SEVERE DENGUE",
+        "content": "Colloids 10-20ml/kg Blood Transfusion",
+        "score": 0.759911417961121
+      },
+      {
+        "chunk_id": 170,
+        "doc_name": "STW_Dengue",
+        "page_no": 1,
+        "heading": "TREATMENT OF PROBABLE DENGUE WITHOUT WARNING SIGNS",
+        "content": "• Hb, TLC, DLC, Platelets, PCV • Positive tourniquet test • NS1 antigen (ELISA method)",
+        "score": 0.692826468180034
+      },
+      {
+        "chunk_id": 167,
+        "doc_name": "STW_Dengue",
+        "page_no": 1,
+        "heading": "TREATMENT OF PROBABLE DENGUE WITHOUT WARNING SIGNS",
+        "content": "• Symptomatic ambulatory treatment • Paracetamol for fever: avoid NSAIDs • Daily monitoring: clinical, PCV, platelets",
+        "score": 0.670264899730682
+      },
+      {
+        "chunk_id": 168,
+        "doc_name": "STW_Dengue",
+        "page_no": 1,
+        "heading": "SEVERE DENGUE",
+        "content": "• Fluid accumulation with respiratory distress • Severe bleeding • Impaired consciousness",
+        "score": 0.630456149578094
+      },
+      {
+        "chunk_id": 187,
+        "doc_name": "STW_Dengue",
+        "page_no": 1,
+        "heading": "TREATMENT OF PROBABLE DENGUE WITHOUT WARNING SIGNS",
+        "content": "Assessment at third hour Colloids 10ml/kg/hr",
+        "score": 0.621049523353577
+      }
+    ]
+  },
+  {
+    "id": "q17",
+    "type": "direct",
+    "question": "What is the initial fluid bolus for a child with septic shock and poor peripheral perfusion?",
+    "reference_answer": "20 ml/kg normal saline over 20-30 minutes, repeated once (20 ml/kg over 30 minutes) with monitoring for fluid overload.",
+    "generated_answer": "Give 20 ml/kg of normal saline fluid bolus over 20-30 minutes [S3].",
+    "refused": false,
+    "citations": [
+      {
+        "doc_name": "STW_Sepsis_Children",
+        "page_no": 1
+      }
+    ],
+    "retrieved_sources": [
+      {
+        "chunk_id": 404,
+        "doc_name": "STW_Sepsis_Children",
+        "page_no": 1,
+        "heading": "",
+        "content": "GOOD PERIPHERAL PERFUSION POOR PERIPHERAL PERFUSION** Admit or initiate treatment as per IMNCI guidelines2 With fast pulse, cold peripheries, poor pulse volume, CRT >3 seconds (Fast pulse: HR> 180 in < 12 month old child, HR >120 in >12 month old child)",
+        "score": 0.600186014164329
+      },
+      {
+        "chunk_id": 392,
+        "doc_name": "STW_Sepsis_Children",
+        "page_no": 1,
+        "heading": "",
+        "content": "Standard Treatment Workflow (STW) for the Management of SEPSIS AND SEPTIC SHOCK IN CHILDREN ICD-A41.9, R65.21 WHEN TO SUSPECT (2-59 MONTHS)?",
+        "score": 0.585568631555521
+      },
+      {
+        "chunk_id": 407,
+        "doc_name": "STW_Sepsis_Children",
+        "page_no": 1,
+        "heading": "",
+        "content": "Give 20 ml/kg of normal saline fluid bolus over 20- 30 minutes.",
+        "score": 0.582346454439202
+      },
+      {
+        "chunk_id": 409,
+        "doc_name": "STW_Sepsis_Children",
+        "page_no": 1,
+        "heading": "",
+        "content": "If no improvement Repeat bolus of 20 ml/kg over 30 minutes, with careful monitoring for hepatomegaly, oxygen saturation, crepitation’s in chest (if any of above appears then stop fluids)",
+        "score": 0.550239086151127
+      },
+      {
+        "chunk_id": 415,
+        "doc_name": "STW_Sepsis_Children",
+        "page_no": 1,
+        "heading": "",
+        "content": "When to refer • Shock does not improve after 2nd fluid bolus • Signs of fluid overload • No facility for continuous monitoring. • Before referral counsel the parents and inform referring facility",
+        "score": 0.527286407078933
+      }
+    ]
+  },
+  {
+    "id": "q18",
+    "type": "direct",
+    "question": "Which antibiotic is recommended for sepsis in a child older than 3 months?",
+    "reference_answer": "Injection ceftriaxone 100 mg/kg/day in 2 divided doses.",
+    "generated_answer": "Inj Ceftriaxone 100mg/kg/day (2 divided doses) [S3]",
+    "refused": false,
+    "citations": [
+      {
+        "doc_name": "STW_Sepsis_Children",
+        "page_no": 1
+      }
+    ],
+    "retrieved_sources": [
+      {
+        "chunk_id": 398,
+        "doc_name": "STW_Sepsis_Children",
+        "page_no": 1,
+        "heading": "",
+        "content": "Sepsis to be suspected: in children with any infections (fever with or without rashes/ pneumonia/ diarrhoea) and they are at risk of life threatening organ dysfunction",
+        "score": 0.63838986892821
+      },
+      {
+        "chunk_id": 392,
+        "doc_name": "STW_Sepsis_Children",
+        "page_no": 1,
+        "heading": "",
+        "content": "Standard Treatment Workflow (STW) for the Management of SEPSIS AND SEPTIC SHOCK IN CHILDREN ICD-A41.9, R65.21 WHEN TO SUSPECT (2-59 MONTHS)?",
+        "score": 0.622244559392658
+      },
+      {
+        "chunk_id": 410,
+        "doc_name": "STW_Sepsis_Children",
+        "page_no": 1,
+        "heading": "",
+        "content": "**If there is improvement after 1st bolus and history of diarrhea present then: Give 70 ml/kg over 5 hours in infants and over 2 1⁄2 hours in a child with hypovolemic shock. Give additional fluids if losses continue. Start maintenance fluid in case of other illness Antibiotics 1. >3 months Inj Ceftriaxone 100mg/kg/day ( 2 divided doses) 2. <3 month Inj Cefotaxime 200mg/kg (divided 6-8hrly), Inj Gentamicin 5-7.5 mg/kg single dose /day 3. If soft tissue infection: consider Inj Cloxacillin 200mg/kg divided 6 hourly or Inj Amoxicillin- Clavulanic acid 30 mg/kg/dose 8hrly) Inj Adrenaline- 0.3x body",
+        "score": 0.609243118212038
+      },
+      {
+        "chunk_id": 418,
+        "doc_name": "STW_Sepsis_Children",
+        "page_no": 1,
+        "heading": "",
+        "content": "Completion of antibiotics as per culture sensitivity",
+        "score": 0.513910232316228
+      },
+      {
+        "chunk_id": 397,
+        "doc_name": "STW_Sepsis_Children",
+        "page_no": 1,
+        "heading": "",
+        "content": "CHECK FOR HISTORY OF Prior treatment Previous recurrent infections Prior hospitalisation Chronic systemic illness (congenital or acquired) Immunization (age appropriate)",
+        "score": 0.457812878023811
+      }
+    ]
+  },
+  {
+    "id": "q19",
+    "type": "direct",
+    "question": "What drugs and doses are used for severe acute asthma in a patient being admitted?",
+    "reference_answer": "Oxygen to SpO2 92-95%; nebulised levosalbutamol/ipratropium (1.25 mg/0.5 mg) three doses 20 minutes apart then 4-6 hourly; IV hydrocortisone 200 mg, then oral prednisolone 0.5 mg/kg daily for 5 days.",
+    "generated_answer": "For severe acute asthma (patient to be admitted):\n- Oxygen supplementation to maintain spO2 92-95% [S3]\n- Nebulized levosalbutamol/ipratropium (1.25 mg/0.5 mg) three doses at 20-minute interval, then 4-6 hourly or as needed [S3]\n- Injection hydrocortisone 200 mg intravenously, then oral prednisolone 0.5 mg/kg daily for five days [S3]\n- Refer if no improvement [S3]",
+    "refused": false,
+    "citations": [
+      {
+        "doc_name": "STW_Asthma",
+        "page_no": 1
+      }
+    ],
+    "retrieved_sources": [
+      {
+        "chunk_id": 117,
+        "doc_name": "STW_Asthma",
+        "page_no": 1,
+        "heading": "INITIATION AND MODULATION OF ASTHMA PHARMACOTHERAPY",
+        "content": "• Discharge only when symptoms improve, wheezing absent or significantly reduced, heart rate <100 bpm, respiratory rate <30/min, room air sPo2 >94% • Schedule follow-up outpatient visit at one week LIFE-THREATENING EXACERBATION Altered sensorium, orthopnea, cyanosis, paradoxical breathing, hypotension, and/or bradycardia (heart rate <60 bpm) – immediately refer to higher centre with ICU facility NON-SEVERE ACUTE ASTHMA • If none of the above features present – manage on outpatient basis • Continue additional inhaler doses as needed • Oral prednisolone 0.5 mg/kg daily for five days",
+        "score": 0.720510125160217
+      },
+      {
+        "chunk_id": 115,
+        "doc_name": "STW_Asthma",
+        "page_no": 1,
+        "heading": "INITIATION AND MODULATION OF ASTHMA PHARMACOTHERAPY",
+        "content": "DISEASE EXACERBATION SEVERE ACUTE ASTHMA (PATIENT TO BE ADMITTED) • Inability to complete sentences, agitation, use of accessory muscles, respiratory rate >30/min, heart rate >110/min, pulsus paradoxus >25 mm Hg, silent chest, and/or room air sPo2 <92% WHEN TO SUSPECT EXACERBATION • Suspect if acute symptomatic worsening , or reduction in PEF to below 80% of personal best , while on continued treatment • Take two additional puffs of the inhaler used if symptoms persist, and repeat if needed",
+        "score": 0.688171803951263
+      },
+      {
+        "chunk_id": 116,
+        "doc_name": "STW_Asthma",
+        "page_no": 1,
+        "heading": "INITIATION AND MODULATION OF ASTHMA PHARMACOTHERAPY",
+        "content": "• If no response after 24 hours, or symptomatic worsening, or further reduction in PEF, contact physician • Physician to assess severity of exacerbation and manage accordingly • Oxygen supplementation to maintain spO2 92-95% • Nebulized levosalbutamol/ipratropium (1.25 mg/0.5 mg) three doses at 20-minute interval, then 4-6 hourly or as needed • Injection hydrocortisone 200 mg intravenously, then oral prednisolone 0.5 mg/kg daily for five days • Refer if no improvement",
+        "score": 0.655479669570923
+      },
+      {
+        "chunk_id": 118,
+        "doc_name": "STW_Asthma",
+        "page_no": 1,
+        "heading": "INITIATION AND MODULATION OF ASTHMA PHARMACOTHERAPY",
+        "content": "• Schedule follow-up outpatient visit at one week",
+        "score": 0.644388794898987
+      },
+      {
+        "chunk_id": 105,
+        "doc_name": "STW_Asthma",
+        "page_no": 1,
+        "heading": "INITIATION AND MODULATION OF ASTHMA PHARMACOTHERAPY",
+        "content": "Regular Symptoms (>2 per week) or exacerbation in past one year",
+        "score": 0.616054773330688
+      }
+    ]
+  },
+  {
+    "id": "q21",
+    "type": "direct",
+    "question": "What heart rate should rate control aim for in atrial fibrillation?",
+    "reference_answer": "Below 110 beats per minute.",
+    "generated_answer": "I couldn't find this in the guidelines.",
+    "refused": true,
+    "citations": [],
+    "retrieved_sources": [
+      {
+        "chunk_id": 52,
+        "doc_name": "STW_Acute_Aortic_Syndrome",
+        "page_no": 2,
+        "heading": "",
+        "content": "Heart Rate controlled Systolic BP high",
+        "score": 0.632312040558101
+      },
+      {
+        "chunk_id": 123,
+        "doc_name": "STW_Atrial_Fibrillation",
+        "page_no": 1,
+        "heading": "ATRIAL FIBRILLATION ICD-11-BC81.31",
+        "content": "MANAGEMENT PRINCIPLES • Categorize AF • Look for immediate intervention indicators • Assess stroke risk & need for anti-coagulation • Assess bleeding risk • Need for rate control • Consideration for rhythm control",
+        "score": 0.595495033801194
+      },
+      {
+        "chunk_id": 136,
+        "doc_name": "STW_Atrial_Fibrillation",
+        "page_no": 1,
+        "heading": "ATRIAL FIBRILLATION ICD-11-BC81.31",
+        "content": "effects Patients’ preference WHAT TO LOOK FOR IN ECG ? • Ventricular rate • Chamber enlargement • Pre-excitation • Prior MI • Bundle branch block • QT interval RHYTHM CONTROL Pharmacological Cardioversion",
+        "score": 0.590590620601737
+      },
+      {
+        "chunk_id": 51,
+        "doc_name": "STW_Acute_Aortic_Syndrome",
+        "page_no": 2,
+        "heading": "",
+        "content": "Both Systolic BP and Heart Rate are high",
+        "score": 0.56777148630959
+      },
+      {
+        "chunk_id": 134,
+        "doc_name": "STW_Atrial_Fibrillation",
+        "page_no": 1,
+        "heading": "ATRIAL FIBRILLATION ICD-11-BC81.31",
+        "content": "Unacceptable rate control drug side",
+        "score": 0.547214773463323
+      }
+    ]
+  },
+  {
+    "id": "q22",
+    "type": "direct",
+    "question": "What are the initial blood pressure and heart rate targets in medical management of acute aortic dissection?",
+    "reference_answer": "Systolic BP 100-120 mm Hg and heart rate around 60 (60-70) beats/min, with adequate pain control; beta blockers are started first.",
+    "generated_answer": "In patients with severe aortic regurgitation, maintain a mean arterial pressure between 70-80 mm of Hg to ensure adequate end-organ perfusion, and keep the target heart rate near 80/minute, since lowering the heart rate further may prolong diastole and aggravate the regurgitation [S3].",
+    "refused": false,
+    "citations": [
+      {
+        "doc_name": "STW_Acute_Aortic_Syndrome",
+        "page_no": 2
+      }
+    ],
+    "retrieved_sources": [
+      {
+        "chunk_id": 31,
+        "doc_name": "STW_Acute_Aortic_Syndrome",
+        "page_no": 2,
+        "heading": "",
+        "content": "TREATMENT OF ACUTE DISSECTION • Acute Type A dissection is a surgical emergency. Acute Type B dissection is mostly subjected to medical treatment unless complicated. Irrespective of surgical or endovascular intervention, medical therapy to control blood pressure and pain is essential Initial Medical Therapy • Initial management of dissection is directed at pain control and limiting the propagation of dissection by reducing the aortic wall stress. Aortic wall stress is affected by the velocity of ventricular contraction (dP/dt), the rate of ventricular contraction and blood pressure",
+        "score": 0.709016578852143
+      },
+      {
+        "chunk_id": 3,
+        "doc_name": "STW_Acute_Aortic_Syndrome",
+        "page_no": 1,
+        "heading": "",
+        "content": "Aortic Dissection (AD) Commonest and Most lethal",
+        "score": 0.702551859465132
+      },
+      {
+        "chunk_id": 33,
+        "doc_name": "STW_Acute_Aortic_Syndrome",
+        "page_no": 2,
+        "heading": "",
+        "content": "• In patients with severe aortic regurgitation, it is important to maintain a mean arterial pressure between 70-80 mm of Hg to ensure adequate end-organ perfusion. In presence of significant aortic regurgitation target heart rate is kept near 80/minute as lowering the heart rate furthur may prolong diastole and aggravate regurgitation Dissection patients need management at specialized centers. Hence, after initiation of medical therapy, patient should be referred to specialized centre as soon as possible",
+        "score": 0.68968939781189
+      },
+      {
+        "chunk_id": 19,
+        "doc_name": "STW_Acute_Aortic_Syndrome",
+        "page_no": 1,
+        "heading": "",
+        "content": "ACUTE TYPE A DISSECTION DIAGNOSTIC IMAGING IN ACUTE AORTIC DISSECTION",
+        "score": 0.660759051992951
+      },
+      {
+        "chunk_id": 11,
+        "doc_name": "STW_Acute_Aortic_Syndrome",
+        "page_no": 1,
+        "heading": "",
+        "content": "AORTIC DISSECTION: PATHOPHYSIOLOGY • Blood enters through the intimal tear and separates the intima from the media and or adventitia. This creates an additional false lumen in the layers of aorta • Dissection can proceed antegrade or retrograde • The aorta gets weakened and can rupture causing cardiac tamponade or hemothorax, shock and even death • Dissection can compromise the aortic true lumen and side branches causing various malperfusion syndromes such as myocardial ischemia, cerebral ischemia, spinal cord ischemia, mesenteric, renal and limb ischemia",
+        "score": 0.657295167446136
+      }
+    ]
+  },
+  {
+    "id": "q23",
+    "type": "direct",
+    "question": "What are the classic symptoms of acute appendicitis?",
+    "reference_answer": "Periumbilical or epigastric colicky pain shifting to the right iliac fossa, nausea/vomiting, fever (usually absent in the first 6 hours), and loss of appetite; pain precedes vomiting.",
+    "generated_answer": "The classic symptoms of acute appendicitis are [S1]:\n\n1. **Pain** – periumbilical or epigastric colic (in the nonobstructive type the pain may start at the right iliac fossa), with shifting of pain from the periumbilical region or beginning from this site [S1]\n2. **Nausea/vomiting** [S1]\n3. **Pyrexia** – usually absent in the first 6 hours [S1]\n4. **Loss of appetite** [S1]\n\nAdditional notes: pain always precedes vomiting (Murphy), and the onset of symptoms is more acute and abrupt in acute obstructive appendicitis [S1]. If the patient has rigor and high fever within 24 hours of the onset of pain, appendicitis is most unlikely [S1].",
+    "refused": false,
+    "citations": [
+      {
+        "doc_name": "STW_Appendicitis",
+        "page_no": 1
+      }
+    ],
+    "retrieved_sources": [
+      {
+        "chunk_id": 63,
+        "doc_name": "STW_Appendicitis",
+        "page_no": 1,
+        "heading": "",
+        "content": "SYMPTOMS OF ACUTE APPENDICITIS 1) Pain a) Periumbilical or epigastric colic (in nonobstructive type the pain may start at RIF) b) Shifting of pain from periumbilical region or begins from this site 2) Nausea/ vomiting 3) Pyrexia (usually absent in first 6 hours) 4) Loss of appetite NB: a) Pain always precedes vomiting (Murphy). Onset of symptom is more acute and abrupt in acute obstructive appendicitis b) If the patient has rigor and high fever within 24hrs of the onset of pain, appendicitis is most unlikely",
+        "score": 0.81322826068233
+      },
+      {
+        "chunk_id": 76,
+        "doc_name": "STW_Appendicitis",
+        "page_no": 1,
+        "heading": "",
+        "content": "ACUTE APPENDICITIS (Late presentation beyond ≥ 72 hours)",
+        "score": 0.735197381067433
+      },
+      {
+        "chunk_id": 68,
+        "doc_name": "STW_Appendicitis",
+        "page_no": 1,
+        "heading": "",
+        "content": "INVESTIGATIONS The diagnosis of acute appendicitis is essentially clinical. The investigations include: 1. Full blood count – usually shows leucocytosis with raised polymorphs 2.Urinalysis to exclude urinary tract infection 3.Ultrasonography – often very helpful to confirm diagnosis and identifying periappendicular collection of exudate or abscess 4.Plain X-ray abdomen – to rule out ureteric calculus or peptic perforation 5.CT scan of abdomen – useful in special situation of uncertain diagnosis of appendicitis",
+        "score": 0.702407795047297
+      },
+      {
+        "chunk_id": 62,
+        "doc_name": "STW_Appendicitis",
+        "page_no": 1,
+        "heading": "",
+        "content": "PRESENTATION OF APPENDICITIS MAY BE AS 1) Acute appendicitis - early / delayed 2) Appendicular mass 3) Recurrent appendicitis",
+        "score": 0.690693974494934
+      },
+      {
+        "chunk_id": 64,
+        "doc_name": "STW_Appendicitis",
+        "page_no": 1,
+        "heading": "",
+        "content": "APPENDICITIS ICD-10-K35 ACUTE APPENDICITIS (Early presentation within 72 hours) SIGNS OF ACUTE APPENDICITIS 1. Pointing sign – The patient points with the index finger the site of maximum pain at region of Mc Burney’s point 2. Cough test – C/O pain at right iliac fossa on coughing 3. Tenderness at Mc Burney’s point 4. Muscle guard at right iliac fossa (RIF) 5. Rovsing’s sign – pain at RIF with sudden thurst of palpation at left flank of abdomen 6. Rebound tenderness – pain at RIF with sudden withdrawal of the maintained pressure with hand 7. Generalised rigidity is a sign of generalized",
+        "score": 0.672104139798634
+      }
+    ]
+  },
+  {
+    "id": "q25",
+    "type": "direct",
+    "question": "What dose of furosemide is used in heart failure?",
+    "reference_answer": "20-80 mg daily orally; 10-80 mg IV as needed in the acute stage, switching to oral when symptoms subside.",
+    "generated_answer": "Furosemide dose in heart failure: 20-80 mg daily PO, and intravenous 10-80 mg SOS in the acute stage, changing to oral when symptoms subside [S1]. At CHC level, decongestion is done with intravenous furosemide [S5].",
+    "refused": false,
+    "citations": [
+      {
+        "doc_name": "STW_Heart_Failure",
+        "page_no": 1
+      },
+      {
+        "doc_name": "STW_Heart_Failure",
+        "page_no": 1
+      }
+    ],
+    "retrieved_sources": [
+      {
+        "chunk_id": 353,
+        "doc_name": "STW_Heart_Failure",
+        "page_no": 1,
+        "heading": "",
+        "content": "FUROSEMIDE • Dose 20-80 mg daily PO • Intravenous 10-80 mg SOS in acute stage • Change to oral when symptoms subside • Monitor serum electrolytes, creatinine and uric acid on therapy",
+        "score": 0.688869059085846
+      },
+      {
+        "chunk_id": 414,
+        "doc_name": "STW_Sepsis_Children",
+        "page_no": 1,
+        "heading": "",
+        "content": "Complications • Respiratory failure ( excessive increase in the respiratory rates and inability to maintain saturation> 94% with oxygen) -non-invasive (CPAP/BIPAP) or invasive ventilation • Congestive heart failure- Dobutamine / Milrinone infusion and Furosemide • Infections on other sites- explore and treat accordingly",
+        "score": 0.635285794734955
+      },
+      {
+        "chunk_id": 338,
+        "doc_name": "STW_Heart_Failure",
+        "page_no": 1,
+        "heading": "",
+        "content": "MANAGEMENT AT PHC • Rule out respiratory cause: Breathlessness with fever, cough and expectoration or known patient of asthma or COPD • Likely CHF: Decongest with furosemide REFER IF FOLLOWING: • BP < 90 mmHg or > 200 mmHg • Heart rate < 50/min or > 120/min • Respiratory rate > 30/min or cyanosis • Oliguria • Altered sensorium",
+        "score": 0.590789938521986
+      },
+      {
+        "chunk_id": 39,
+        "doc_name": "STW_Acute_Aortic_Syndrome",
+        "page_no": 2,
+        "heading": "",
+        "content": "ANTIHYPERTENSIVE DRUGS IN MANAGEMENT OF ACUTE DISSECTION Group Drugs Dose Special precaution/contraindication Labetalol Loading: 20 mg IV in 2 minutes Hypersensitivity, Severe asthma, Maintenance: 1-2 mg/minute Loading : 250-500 μg/kg in one minute Heart block, Uncompensated heart failure Maintenance: 50-100 μg/kg/min (maximum upto 300 μg/kg/min) Loading dose: 5mg IV over 2min, up to 3 doses; Severe chronic obstructive pulmonary disease, Severe Aortic Regurgitation (avoid extreme bradycardia) Maintenance dose: 3-5 mg every hour Hypersensitivity, Atrioventricular block, Loading dose: 0.25 mg/kg",
+        "score": 0.574206650257111
+      },
+      {
+        "chunk_id": 337,
+        "doc_name": "STW_Heart_Failure",
+        "page_no": 1,
+        "heading": "",
+        "content": "MANAGEMENT AT CHC • Admit and stabilize • Send for routine investigations • ECG: Rule out acute ST-Elevation MI, tachyarrhythmia • X-ray chest: Rule out respiratory etiology • Decongest with intravenous furosemide • O2 therapy if systemic saturation < 90% • Start ARNI and spironolactone orally • Consider β blockers after decongestion • SGLT2 inhibitors",
+        "score": 0.556238260493383
+      }
+    ]
+  },
+  {
+    "id": "q26",
+    "type": "multi",
+    "question": "A patient has chest pain with ECG changes of MI, but you suspect aortic dissection. Why should thrombolysis be avoided, and what clinical findings favour dissection?",
+    "reference_answer": "If dissection is diagnosed with myocardial ischaemia it is managed as dissection and thrombolysis must not be started; aortic dissection is an absolute contraindication to thrombolysis. Abrupt piercing localised pain, a diastolic murmur of aortic regurgitation, unequal pulses, limb ischaemia or neurological complications favour dissection.",
+    "generated_answer": "Thrombolysis should NOT be initiated because if dissection is diagnosed with myocardial ischemia, it should be managed on the line of dissection [S1]. The myocardial ischemia in dissection occurs because the dissection process involves one or more coronary ostia [S2].\n\nClinical findings favouring dissection include:\n- Pain that is abrupt, piercing, and well localized [S1]\n- Diastolic murmur of aortic regurgitation [S1]\n- Unequal pulses [S1]\n- Limb ischemia [S1]\n- Neurological complications [S1]",
+    "refused": false,
+    "citations": [
+      {
+        "doc_name": "STW_Acute_Aortic_Syndrome",
+        "page_no": 1
+      },
+      {
+        "doc_name": "STW_Acute_Aortic_Syndrome",
+        "page_no": 1
+      }
+    ],
+    "retrieved_sources": [
+      {
+        "chunk_id": 22,
+        "doc_name": "STW_Acute_Aortic_Syndrome",
+        "page_no": 1,
+        "heading": "",
+        "content": "• In dissection, pain is usually abrupt, piercing, and well localized. Presence of diastolic murmur of aortic regurgitation, unequal pulses, limb ischemia or neurological complications favor the diagnosis of acute dissection • If dissection is diagnosed with myocardial ischemia it should be managed on the line of dissection and thrombolytic therapy should NOT be initiated IMAGING AND DIAGNOSTIC ALGORITHM",
+        "score": 0.745640196036098
+      },
+      {
+        "chunk_id": 16,
+        "doc_name": "STW_Acute_Aortic_Syndrome",
+        "page_no": 1,
+        "heading": "",
+        "content": "IMPORTANT COMPLICATIONS OF DISSECTION, CAUSATIVE MECHANISMS, AND PRESENTATIONS COMPLICATION CAUSATIVE MECHANISM PRESENTATION Aortic Regurgitation Loss of support and distortion of aortic valve Diastolic murmur, Severe acute regurgitation can cause heart failure and pulmonary edema Myocardial Ischemia Dissection process involves one or more coronary ostia Chest pain and ECG suggestive of myocardial infarction. Cardiac enzymes may be raised Congestive heart failure Acute severe aortic regurgitation, extensive myocardial Hypotension, features of low cardiac ischemia output Cardiac Tamponade",
+        "score": 0.626737494073436
+      },
+      {
+        "chunk_id": 12,
+        "doc_name": "STW_Acute_Aortic_Syndrome",
+        "page_no": 1,
+        "heading": "",
+        "content": "• If the dissection involves aortic root it may cause acute aortic valve insufficiency",
+        "score": 0.618553597287941
+      },
+      {
+        "chunk_id": 13,
+        "doc_name": "STW_Acute_Aortic_Syndrome",
+        "page_no": 1,
+        "heading": "",
+        "content": "• If a patient survives acute episode, the false lumen may either get thrombosed or may dilate aneurysmally Two factors are primarily responsible for pathogenesis of dissection ◦Higher wall stress due to hypertension or dilatation of aorta ◦Inherently weak/degenerated aortic media Predisposing factors ◦The commonest risk factor is hypertension. ◦Genetically mediated aortopathies like ▪Marfan’s syndrome ▪Vascular Ehlers-Danlos syndrome ▪Bicuspid aortic valve ▪Familial aortic dissection Trauma and iatrogenic injury are also emerging as important causes of aortic dissection",
+        "score": 0.61203457748993
+      },
+      {
+        "chunk_id": 11,
+        "doc_name": "STW_Acute_Aortic_Syndrome",
+        "page_no": 1,
+        "heading": "",
+        "content": "AORTIC DISSECTION: PATHOPHYSIOLOGY • Blood enters through the intimal tear and separates the intima from the media and or adventitia. This creates an additional false lumen in the layers of aorta • Dissection can proceed antegrade or retrograde • The aorta gets weakened and can rupture causing cardiac tamponade or hemothorax, shock and even death • Dissection can compromise the aortic true lumen and side branches causing various malperfusion syndromes such as myocardial ischemia, cerebral ischemia, spinal cord ischemia, mesenteric, renal and limb ischemia",
+        "score": 0.611439067466231
+      }
+    ]
+  },
+  {
+    "id": "q27",
+    "type": "multi",
+    "question": "Compare the loading doses of clopidogrel and ticagrelor with their maintenance doses.",
+    "reference_answer": "Clopidogrel: 300 mg loading, then 75 mg OD. Ticagrelor: 180 mg loading, then 90 mg BD.",
+    "generated_answer": "Clopidogrel: loading dose 300 mg, followed by maintenance 75 mg OD [S1][S2].\n\nTicagrelor: loading dose 180 mg, followed by maintenance 90 mg BD [S1][S2].",
+    "refused": false,
+    "citations": [
+      {
+        "doc_name": "STW_NSTEMI",
+        "page_no": 1
+      },
+      {
+        "doc_name": "STW_STEMI",
+        "page_no": 1
+      }
+    ],
+    "retrieved_sources": [
+      {
+        "chunk_id": 389,
+        "doc_name": "STW_NSTEMI",
+        "page_no": 1,
+        "heading": "ANGINA UNLIKELY IF:",
+        "content": "OPTIONAL INVESTIGATIONS 1. Coronary Angiography 2. CT scan including coronary angiography 3. Stress Radionuclide/ echocardiographic imaging 4. MRI 5. Coronary Fractional Flow Reserve 5. Intra-vascular Ultrasound Anti-platelets Anti-ischemic: 1. Aspirin: Loading dose 325 mg followed by 75 mg OD 2. Clopidogrel: Loading dose 300 mg followed 75 mg OD 3. Prasugrel: Loading dose 60 mg followed by 10 mg OD 4. Ticagralor: Loading dose 180 mg followed by 90 mg BD Anti thrombotics: 1. Metoprolol: Short acting 25-100 mg BD Long acting 25 -100 mg OD 2. Nitrates: Isosorbide mono-nitare 20 to 60 mg in 2",
+        "score": 0.558715012150109
+      },
+      {
+        "chunk_id": 470,
+        "doc_name": "STW_STEMI",
+        "page_no": 1,
+        "heading": "DRUGS & DOSAGE",
+        "content": "Anti-platelets 1. Aspirin: Loading dose 325 mg followed by 75 mg OD 2. Clopidogrel: Loading dose 300 mg followed 75 mg OD 3. Prasugrel: Loading dose 60 mg followed by 10 mg OD 4. Ticagralor: Loading dose 180 mg followed by 90 mg BD Anti-ischemic: Metoprolol: Short acting: 25-100 mg BD Long acting: 25 -100 mg OD Nitrates: Isosorbide mono-nitare 20 to 60 mg in 2 divided dose Nitroglycerine sustained release 2.6 to 6.5 mg BD Nitroglycerine IV 5-25 mcg/ min infusion Lipid lowering agents: High dose Atorvastatin 80 mg OD Rosuvastatin 20-40mg OD Non-statin lipid modifying agents Ace-inhibitor",
+        "score": 0.542718735771256
+      },
+      {
+        "chunk_id": 471,
+        "doc_name": "STW_STEMI",
+        "page_no": 1,
+        "heading": "DRUGS & DOSAGE",
+        "content": "Ramipril 2.5 -10 mg OD Enalapril 2.5 -10mg BD Oxygen: If oxygen saturation below 90% Morphine: Titrated in a dose of 2-4 mg IV every 15 minutes Beta-blocker: Oral beta-blocker if LVEF is less than 40%",
+        "score": 0.473213642835617
+      },
+      {
+        "chunk_id": 39,
+        "doc_name": "STW_Acute_Aortic_Syndrome",
+        "page_no": 2,
+        "heading": "",
+        "content": "ANTIHYPERTENSIVE DRUGS IN MANAGEMENT OF ACUTE DISSECTION Group Drugs Dose Special precaution/contraindication Labetalol Loading: 20 mg IV in 2 minutes Hypersensitivity, Severe asthma, Maintenance: 1-2 mg/minute Loading : 250-500 μg/kg in one minute Heart block, Uncompensated heart failure Maintenance: 50-100 μg/kg/min (maximum upto 300 μg/kg/min) Loading dose: 5mg IV over 2min, up to 3 doses; Severe chronic obstructive pulmonary disease, Severe Aortic Regurgitation (avoid extreme bradycardia) Maintenance dose: 3-5 mg every hour Hypersensitivity, Atrioventricular block, Loading dose: 0.25 mg/kg",
+        "score": 0.462734699249268
+      },
+      {
+        "chunk_id": 299,
+        "doc_name": "STW_Headache",
+        "page_no": 1,
+        "heading": "",
+        "content": "Indomethacin (25mg TID) for 7 days",
+        "score": 0.450122687213262
+      }
+    ]
+  },
+  {
+    "id": "q28",
+    "type": "multi",
+    "question": "How does insulin dosing in DKA work, from the starting dose to when the infusion can be stopped?",
+    "reference_answer": "Regular insulin 0.1 IU/kg IV then 0.1 IU/kg/hour infusion; double the rate if glucose falls less than 10% in the first hour. Stop when the patient is eating, glucose is consistently below 250 mg/dl, anion gap has normalised and acidosis corrected, giving SC long/intermediate plus short-acting insulin at least 30 minutes before stopping the infusion.",
+    "generated_answer": "Insulin dosing in DKA per the sources:\n\n1. **Initial fluid first, then insulin**: Give 1 l of 0.9% saline over the first hour (250–500 ml/hour thereafter; 10–20 ml/kg/hour initially for children) [S5]. Note that initiating insulin before IV fluid therapy is a common error/pitfall [S3].\n\n2. **Starting insulin dose**: Regular insulin 0.1 IU/kg IV, then 0.1 IU/kg/hour IV infusion [S5].\n\n3. **Dose adjustment**: Double the infusion rate if there is less than 10% fall in blood glucose after 1 hour [S5].\n\n4. **Add dextrose**: When blood glucose < 250 mg/dl, add 5% dextrose @ 50 ml/hour [S5].\n\n5. **Potassium considerations**: Supplement potassium before insulin if serum K+ < 3.3 mEq/L (or ECG changes); replace potassium @ 10–20 mEq/hour with the insulin infusion if serum K+ < 5.5 mEq/L [S5].\n\n6. **When to stop the insulin infusion**: Patient accepting orally, blood glucose consistently < 250 mg/dl, normalization of anion gap, and correction of metabolic acidosis [S1].\n\n7. **Transition to subcutaneous insulin**: Administer SC dose of long/intermediate-acting & short-acting insulin at least 30 mins before stopping the insulin infusion, then shift to a basal-bolus/pre-mixed insulin regimen [S1]. Stopping IV insulin before SC insulin is given is a common pitfall [S4].",
+    "refused": false,
+    "citations": [
+      {
+        "doc_name": "STW_DKA",
+        "page_no": 1
+      },
+      {
+        "doc_name": "STW_DKA",
+        "page_no": 1
+      },
+      {
+        "doc_name": "STW_DKA",
+        "page_no": 1
+      },
+      {
+        "doc_name": "STW_DKA",
+        "page_no": 1
+      }
+    ],
+    "retrieved_sources": [
+      {
+        "chunk_id": 236,
+        "doc_name": "STW_DKA",
+        "page_no": 1,
+        "heading": "MANAGEMENT MONITORING TREATMENT",
+        "content": "WHEN TO STOP INSULIN INFUSION? • Patient accepting orally, blood glucose consistently < 250 mg/dl, normalization of anion gap and correction of metabolic acidosis • Administer SC dose of long/intermediate-acting & short acting insulin at least 30 mins before stopping insulin infusion. Shift to basal-bolus/pre-mixed insulin regimen",
+        "score": 0.616666399439193
+      },
+      {
+        "chunk_id": 235,
+        "doc_name": "STW_DKA",
+        "page_no": 1,
+        "heading": "MANAGEMENT MONITORING TREATMENT",
+        "content": "• Strict input/ output charting: every 1 hour ▶ Report if urine output is <30ml/hour for 2 consecutive hours ▶ One hour after starting the treatment: Till resolution of DKA ▶ BP and vital signs: every 1 hour ▶ Blood glucose every 1 hour ▶ Venous pH, Na, K, HCO3 : 2-4 hourly ▶ Blood ketones (if available)/Urine for ketones: 12 hourly • After resolution of DKA: Blood glucose monitoring every 4 hours",
+        "score": 0.531679717798251
+      },
+      {
+        "chunk_id": 237,
+        "doc_name": "STW_DKA",
+        "page_no": 1,
+        "heading": "COMMON ERRORS/PITFALLS IN DKA DIAGNOSIS AND MANAGEMENT",
+        "content": "• Initiating Insulin therapy before I/V fluid therapy • Failure to review fluid replacement therapy particularly in elderly patients • Failure to identify underlying cause • Search for another cause of obtundation: If the osmolality is <than 320 mOsm/kg H2O • Potassium: may be normal despite depletion of body stores due to metabolic acidosis • Elevated total leucocyte count does not suggest presence of infection until more than >15 X 109/l • Monitor for cerebral edema especially in childern",
+        "score": 0.528470663519463
+      },
+      {
+        "chunk_id": 238,
+        "doc_name": "STW_DKA",
+        "page_no": 1,
+        "heading": "COMMON ERRORS/PITFALLS IN DKA DIAGNOSIS AND MANAGEMENT",
+        "content": "• Body temperature cannot be used as a guide to presence of infection • Hyperamylasemia: Cannot be used as a marker for diagnosis of pancreatitis • Hypertriglycredemia: can cause pseudohyponatremia and when marked precipitates pancreatitis • Ketosis may worsen paradoxically with successful treatment initially • Stopping I/V insulin before S/C insulin given",
+        "score": 0.514927831603081
+      },
+      {
+        "chunk_id": 233,
+        "doc_name": "STW_DKA",
+        "page_no": 1,
+        "heading": "MANAGEMENT MONITORING TREATMENT",
+        "content": "• Replace fluids – 1 l of 0.9% saline over first hour followed by 250-500 ml/hour (10-20ml/kg/hour initially for children) • Administer regular insulin – 0.1 IU/kg IV then 0.1 IU/kg/hour IV infusion • Double infusion rate if less than 10% fall in blood glucose after 1 hour • When blood glucose < 250 mg/dl, add 5% dextrose @ 50 ml/hour • Supplement potassium before insulin if serum K+ < 3.3 mEq/L (or ECG changes) • Replace potassium @ 10-20 mEq/hour with insulin infusion if serum K+ < 5.5 mEq/L • If pH < 7.0, add sodium bicarbonate; 50 mmol in 200 ml sterile water over 2 hour",
+        "score": 0.497464567573991
+      }
+    ]
+  },
+  {
+    "id": "q29",
+    "type": "multi",
+    "question": "What are the red flag signs for headache, and which of them suggest subarachnoid haemorrhage?",
+    "reference_answer": "Red flags include headache with fever or personality/consciousness change, neck stiffness, new severe headache in pregnancy/postpartum or on hormones, onset with strenuous exercise, sudden thunderclap onset, new headache with malignancy or immunosuppression, first or worst headache of life, focal signs, and headache waking from sleep. Sudden severe, first or worst headache of life points to subarachnoid haemorrhage, investigated with CT/CT angiogram or MRI/MR angiogram.",
+    "generated_answer": "Red flag signs for headache include:\n\n- Sudden severe headache, first or worst headache of life [S1]\n- Headache with fever, change in personality, mental status, level of consciousness [S3]\n- Fever, neck stiffness or meningism [S3]\n- New onset of severe headache in pregnancy or postpartum or while on hormone treatment [S3]\n- Progressive headache of acute or subacute onset persisting more than 1 week [S5]\n\nOf these, the sudden severe headache and first or worst headache of life are the red flag signs suggesting subarachnoid haemorrhage, which is bleeding into the subarachnoid space [S1][S2].",
+    "refused": false,
+    "citations": [
+      {
+        "doc_name": "STW_Headache",
+        "page_no": 1
+      },
+      {
+        "doc_name": "STW_Headache",
+        "page_no": 1
+      },
+      {
+        "doc_name": "STW_Headache",
+        "page_no": 1
+      },
+      {
+        "doc_name": "STW_Stroke",
+        "page_no": 1
+      }
+    ],
+    "retrieved_sources": [
+      {
+        "chunk_id": 308,
+        "doc_name": "STW_Headache",
+        "page_no": 1,
+        "heading": "RED FLAG SIGNS",
+        "content": "Sudden Severe headache, First or Worst headache of life",
+        "score": 0.708033084869385
+      },
+      {
+        "chunk_id": 477,
+        "doc_name": "STW_Stroke",
+        "page_no": 1,
+        "heading": "TYPES OF STROKE",
+        "content": "Subarachnoid haemorrhage Bleeding into the subarachnoid space",
+        "score": 0.652666369239473
+      },
+      {
+        "chunk_id": 305,
+        "doc_name": "STW_Headache",
+        "page_no": 1,
+        "heading": "",
+        "content": "• Headache with fever, change in personality, mental status, level of consciousness • Fever, neck stiffness or meningism • New onset of severe headache in pregnancy or postpartum or while on hormone treatment",
+        "score": 0.585612773895264
+      },
+      {
+        "chunk_id": 302,
+        "doc_name": "STW_Headache",
+        "page_no": 1,
+        "heading": "",
+        "content": "CLUSTER HEADACHE, PAROXYSMAL HEMICRANIAS, SHORT LASTING UNILATERAL NEURALGIFORM PAIN WITH CONJUNCTIVAL INJECTION AND TEARING SYNDOME (SUNCT)",
+        "score": 0.566117942333221
+      },
+      {
+        "chunk_id": 282,
+        "doc_name": "STW_Headache",
+        "page_no": 1,
+        "heading": "",
+        "content": "CONTINUOUS HEADACHES • Progressive headache of acute or subacute onset persisting more than 1 week • Possibilities: Cerebral Venous Thrombosis, Intra Cranial Space Occupying Lesion, Meningitis, Brain abscess",
+        "score": 0.55336320400238
+      }
+    ]
+  },
+  {
+    "id": "q30",
+    "type": "multi",
+    "question": "How do you classify a UA/NSTEMI patient as very high risk, and how fast should they be revascularised?",
+    "reference_answer": "Very high risk: acute LVF, hypotension, uncontrolled ventricular arrhythmia or severe MR (clinical instability). They need urgent/immediate invasive strategy, within a few hours (under 2 hours), with immediate transfer if at a non-PCI-capable hospital.",
+    "generated_answer": "Based on the sources:\n\n**Very high risk classification** — a UA/NSTEMI patient is very high risk if any of these clinical features are present [S2]:\n- Acute LVF\n- Hypotension\n- Uncontrolled ventricular arrhythmia\n- Severe MR\n\n**Revascularisation timing** — the sources state that intermediate/high/very high risk patients should undergo revascularisation [S3], but no specific timeframe for how fast revascularisation should occur is provided in the documents.",
+    "refused": false,
+    "citations": [
+      {
+        "doc_name": "STW_NSTEMI",
+        "page_no": 1
+      },
+      {
+        "doc_name": "STW_NSTEMI",
+        "page_no": 1
+      }
+    ],
+    "retrieved_sources": [
+      {
+        "chunk_id": 244,
+        "doc_name": "STW_GI_Bleed",
+        "page_no": 1,
+        "heading": "",
+        "content": "ASSESS FOR HIGH RISK (Classify as high risk if any of these are present) Pulse rate >100/min",
+        "score": 0.537210730480509
+      },
+      {
+        "chunk_id": 387,
+        "doc_name": "STW_NSTEMI",
+        "page_no": 1,
+        "heading": "ANGINA UNLIKELY IF:",
+        "content": "UA/NSTEMI: RISK CATEGORIZATION: Based on clinical features, GRACE score & TIMI score A).Very high risk: -Acute LVF -Hypotension -Uncontrolled Ventricular arrhythmia -Severe MR B. High Risk: -GRACE score > 140 or TIMI score >4 C. Intermediate Risk: -GRACE score 109-140 or TIMI score 2-3 D. Low Risk: -Grace score <108 or TIMI score 0-1",
+        "score": 0.527425285884704
+      },
+      {
+        "chunk_id": 388,
+        "doc_name": "STW_NSTEMI",
+        "page_no": 1,
+        "heading": "ANGINA UNLIKELY IF:",
+        "content": "UA/NSTEMI: RISK CATEGORY MANAGEMENT: A)Low risk: 1.Conservative management: Aspirin, clopidogrel, BB and statin 2. CT coronary angiography/TMT within a week to risk stratify 3.Refer low risk for re-vascularization if -Recurrent pain -Hemodynamic deterioration -New ECG change B. Intermediate/ Very High/ High risk: Re-vascularization",
+        "score": 0.525313703697104
+      },
+      {
+        "chunk_id": 382,
+        "doc_name": "STW_NSTEMI",
+        "page_no": 1,
+        "heading": "ANGINA UNLIKELY IF:",
+        "content": "Heart rate Beats/ min Age. y Creatinine Level, mg/ dL Points Points Points Points Points SBP1 mm Hg 0 20 39 59 <30 30-39 40-49 50-59 60-69 70-79 80-89 >90 0-0.39 0.40-0.79 0.80-1.19 1.20-1.59 1.60-1.99 2.00-3.99 >4.0 <50 50-69 70-89 90-109 110-149 150-199 >200 0 8 25 41 58 75 91 100 1 4 7 10 13 21 28 <80 80-99 100-119 120-139 140-159 160-199 >200 58 53 43 34 24 10 0 0 3 9 15 24 38 46 UNSTABLE ANGINA OR NSTEMI DIAGNOSIS",
+        "score": 0.494319111447388
+      },
+      {
+        "chunk_id": 400,
+        "doc_name": "STW_Sepsis_Children",
+        "page_no": 1,
+        "heading": "",
+        "content": "EXAMINATION VITAL SIGNS GENERAL PHYSICAL EXAMINATION SYSTEMIC EXAMINATION Heart rate and respiratory rate (outside the age range) Respiratory: Signs of respiratory distress – retraction, nasal flaring, grunting ,crepitation on auscultation CVS: Murmur, gallop rhythm Per abdomen: Abdominal distension CNS: *AVPU scale, signs of meningitis, seizures Skin: Rashes Bone & joints: Swelling, redness, tenderness Pulse volume (High volume as Petechial rash well as low volume/feeble Mucosal bleeding pulse) Rapid breathing Pulse oximetry (saturation <95%) Capillary refilling time > 3 seconds Chest in",
+        "score": 0.473972828747462
+      }
+    ]
+  },
+  {
+    "id": "q32",
+    "type": "multi",
+    "question": "What features differentiate asthma from COPD?",
+    "reference_answer": "Asthma: onset in childhood/early adulthood, episodic course, nasal symptoms/atopy common, family history often, triggers identified, wheeze prominent. COPD: onset later in life (4th-5th decade), progressive, smoking almost universal, atopy and family history uncommon or rare.",
+    "generated_answer": "I couldn't find this in the guidelines.",
+    "refused": true,
+    "citations": [],
+    "retrieved_sources": [
+      {
+        "chunk_id": 86,
+        "doc_name": "STW_Asthma",
+        "page_no": 1,
+        "heading": "",
+        "content": "TABLE 1. DIFFERENTIATING BETWEEN ASTHMA AND CHRONIC OBSTRUCTIVE AIRWAY DISEASE (COPD)",
+        "score": 0.820259532897528
+      },
+      {
+        "chunk_id": 82,
+        "doc_name": "STW_Asthma",
+        "page_no": 1,
+        "heading": "",
+        "content": "TRY AND RULE OUT • Other obstructive airway disorders – see Table 1 for features that favour asthma over COPD • Other mimics – presence of fever, constitutional symptoms, purulent sputum, hemoptysis, focal chest signs on physical examination, foreign body aspiration, abnormal chest radiograph, etc.",
+        "score": 0.793642664713542
+      },
+      {
+        "chunk_id": 94,
+        "doc_name": "STW_Asthma",
+        "page_no": 1,
+        "heading": "",
+        "content": "TABLE 2. LEVEL OF CURRENT ASTHMA CONTROL (OVER THE PRECEDING FOUR WEEKS)",
+        "score": 0.568160074682223
+      },
+      {
+        "chunk_id": 115,
+        "doc_name": "STW_Asthma",
+        "page_no": 1,
+        "heading": "INITIATION AND MODULATION OF ASTHMA PHARMACOTHERAPY",
+        "content": "DISEASE EXACERBATION SEVERE ACUTE ASTHMA (PATIENT TO BE ADMITTED) • Inability to complete sentences, agitation, use of accessory muscles, respiratory rate >30/min, heart rate >110/min, pulsus paradoxus >25 mm Hg, silent chest, and/or room air sPo2 <92% WHEN TO SUSPECT EXACERBATION • Suspect if acute symptomatic worsening , or reduction in PEF to below 80% of personal best , while on continued treatment • Take two additional puffs of the inhaler used if symptoms persist, and repeat if needed",
+        "score": 0.547437039170443
+      },
+      {
+        "chunk_id": 85,
+        "doc_name": "STW_Asthma",
+        "page_no": 1,
+        "heading": "",
+        "content": "Supportive features • History of atopy, family history of asthma, presence of triggers, presence of rhonchi on chest auscultation • No alternative explanation for these symptoms",
+        "score": 0.527346993563118
+      }
+    ]
+  },
+  {
+    "id": "q34",
+    "type": "multi",
+    "question": "Which anticoagulant regimen is used with heparin in NSTEMI, and what APTT target is used?",
+    "reference_answer": "Enoxaparin 1 mg/kg SC 12-hourly, or unfractionated heparin bolus 60 U/kg (max 5000 U) then 12 U/kg/hour infusion to keep APTT at 50-70 seconds.",
+    "generated_answer": "Unfractionated heparin: bolus of 60 U/Kg (maximum 5000 U) followed by 12 U/Kg hourly infusion to maintain APTT at 50-70 sec [S3]. (Enoxaparin 1 mg/Kg SC 12 hrly is also listed as an antithrombotic option [S3].)",
+    "refused": false,
+    "citations": [
+      {
+        "doc_name": "STW_NSTEMI",
+        "page_no": 1
+      }
+    ],
+    "retrieved_sources": [
+      {
+        "chunk_id": 456,
+        "doc_name": "STW_STEMI",
+        "page_no": 1,
+        "heading": "ABSOLUTE CONTRA-INDICATIONS TO THROMBOLYIC THERAPY:",
+        "content": "Anti thrombotics: 1. Unfractionated heparin: Bolus of 60 U/Kg (maximum 5000 U) followed by 12 U/Kg hourly infusion to maintain APTT at 50-70 sec 2. Enoxaparin: 1 mg/Kg SC 12 hrly Thrombolyic Therapy: Tenecteplase 35 mg IV bolus if 60-70 Kg 40 mg IV bolus if 70-80 Kg 45 mg IV bolus if more than",
+        "score": 0.618856035539149
+      },
+      {
+        "chunk_id": 389,
+        "doc_name": "STW_NSTEMI",
+        "page_no": 1,
+        "heading": "ANGINA UNLIKELY IF:",
+        "content": "OPTIONAL INVESTIGATIONS 1. Coronary Angiography 2. CT scan including coronary angiography 3. Stress Radionuclide/ echocardiographic imaging 4. MRI 5. Coronary Fractional Flow Reserve 5. Intra-vascular Ultrasound Anti-platelets Anti-ischemic: 1. Aspirin: Loading dose 325 mg followed by 75 mg OD 2. Clopidogrel: Loading dose 300 mg followed 75 mg OD 3. Prasugrel: Loading dose 60 mg followed by 10 mg OD 4. Ticagralor: Loading dose 180 mg followed by 90 mg BD Anti thrombotics: 1. Metoprolol: Short acting 25-100 mg BD Long acting 25 -100 mg OD 2. Nitrates: Isosorbide mono-nitare 20 to 60 mg in 2",
+        "score": 0.50096976745489
+      },
+      {
+        "chunk_id": 390,
+        "doc_name": "STW_NSTEMI",
+        "page_no": 1,
+        "heading": "ANGINA UNLIKELY IF:",
+        "content": "devided dose Nitroglycerine sustained release 2.6 to 6.5 mg BD Nitroglycerine IV 5-25 mcg/min infusion Statins: 1. Enoxaparin: 1 mg/Kg SC 12 hrly 2. Unfractionated heparin: Bolus of 60 U/Kg (maximum 5000 U) followed by 12 U/Kg hourly infusion to maintain APTT at 50-70 sec Ace-inhibitor High dose Atorvastatin 80 mg OD or Rosuvastatin Ramipril 2.5 -10 mg OD Enalapril 2.5-10 mg BD 20-40 mg OD REFERENCES 1. Byrne RA et al. 2023ESC guidelines for the management of acute coronary syndrome. European Heart J (2024) 44, 3720-3826 2. Rao SV et al. 2025 ACC/AHA/ACEP/NAEMSP/SCAI guidelines for the",
+        "score": 0.484575779165282
+      },
+      {
+        "chunk_id": 276,
+        "doc_name": "STW_GI_Bleed",
+        "page_no": 1,
+        "heading": "INVESTIGATIONS",
+        "content": "Inj Terlipressin* 2 mg I.V. stat, followed by Terlipressin 1 mg 6 hourly X 3-5 days OR Inj. Somatostatin 250 μg I.V. stat, followed by 250 μg/ hr infusion X 3-5 days OR Inj. Octreotide 50 μg stat I.V. followed by 50 μg/ hr infusion X 3-5 days * Avoid Terlipressin in patients with suspected heart disease or peripheral vascular disease. if patient is on Terlipressin examine for signs of peripheral/ cardiac ischemia regularly Inj Ceftriaxone I.V. 1 g 12 hourly x 3-5 days OR Inj Cefotaxime I.V. 1 g 8 hourly X 3-5 days Inj Ceftriaxone 2g I.V. 12 hourly AND Inj Metronidazole 500 mg I.V. 8 hourly All",
+        "score": 0.473979088785757
+      },
+      {
+        "chunk_id": 155,
+        "doc_name": "STW_Atrial_Fibrillation",
+        "page_no": 1,
+        "heading": "",
+        "content": "Anti-coagulants in all Except • Limited period with reversible etiology • Score <2",
+        "score": 0.471041174468925
+      }
+    ]
+  },
+  {
+    "id": "q35",
+    "type": "multi",
+    "question": "What should be done for a patient with an appendicular mass, and when should conservative treatment be stopped?",
+    "reference_answer": "Ochsner-Sherren conservative regimen: IV fluids, broad-spectrum antibiotics, vitamins, no purgatives or enemas. Stop if pulse and temperature rise, abdominal tenderness increases or spreads, the mass enlarges, or there is vomiting or copious gastric aspirate; then assess by USG for pus and drain.",
+    "generated_answer": "For a patient with an appendicular mass, conservative treatment (Ochsner-Sherren) is used, since surgery may cause more bleeding, injury to caecum and ileum, and faecal fistula may develop [S1]. It includes:\n- IV fluid\n- Broad spectrum antibiotics\n- Vitamins\n- No purgative\n- No enema [S1]\n\nIf operation is indicated, it should always be done at a higher centre and performed by an experienced surgeon [S1].\n\nConservative treatment should be stopped if there are [S4]:\n- A rising pulse and body temperature\n- Increasing intensity and spreading abdominal tenderness\n- Increasing size of the mass\n- Vomiting or copious gastric aspirate\n\nSigns of improvement to monitor include reduced pain, patient feeling better, improved appetite, and diminishing tenderness [S2].",
+    "refused": false,
+    "citations": [
+      {
+        "doc_name": "STW_Appendicitis",
+        "page_no": 1
+      },
+      {
+        "doc_name": "STW_Appendicitis",
+        "page_no": 1
+      },
+      {
+        "doc_name": "STW_Appendicitis",
+        "page_no": 1
+      }
+    ],
+    "retrieved_sources": [
+      {
+        "chunk_id": 79,
+        "doc_name": "STW_Appendicitis",
+        "page_no": 1,
+        "heading": "APPENDICULAR MASS",
+        "content": "OCHSNER-SHERREN CONSERVATIVE TREATMENT (In the presence of appendicular mass, surgery may cause more bleeding, injury to caecum and ileum; faecal fistula may develop). Conservative treatment includes • IV fluid: • Broad spectrum antibiotics • Vitamins • No purgative • No Enema NB: OPERATION FOR APPENDICULAR MASS IF INDICATED SHOULD ALWAYS BE DONE AT HIGHER CENTRE AND PERFORMED BY AN EXPERIENCED SURGEON.",
+        "score": 0.642228960990906
+      },
+      {
+        "chunk_id": 78,
+        "doc_name": "STW_Appendicitis",
+        "page_no": 1,
+        "heading": "APPENDICULAR MASS",
+        "content": "SIGNS OF IMPROVEMENT IN PRESENCE OF APPENDICULAR MASS • Reduced pain • Patient feeling better • Appetite improves • Tenderness diminishes",
+        "score": 0.575856268405914
+      },
+      {
+        "chunk_id": 80,
+        "doc_name": "STW_Appendicitis",
+        "page_no": 1,
+        "heading": "APPENDICULAR MASS",
+        "content": "RECURRENT APPENDICITIS Diagnosis is mainly clinical. Usually a past history suggestive of acute appendicitis is present and latter shows a history of recurrent acute pain at RIF or it may follow a chronic course. Signs of indigestion, flatulence may be present. Mc Burney’s point tender. Ultrasonography often compliment the clinical diagnosis. CT-Scan and barium follow through X-ray are often required to confirm the diagnosis. Treatment is appendicectomy - open or laparoscopic",
+        "score": 0.531021849245484
+      },
+      {
+        "chunk_id": 77,
+        "doc_name": "STW_Appendicitis",
+        "page_no": 1,
+        "heading": "",
+        "content": "CRITERIA FOR STOPPING THE CONSERVATIVE TREATMENT • A rising pulse and body temperature • Increasing intensity and spreading abdominal tenderness • Increasing size of the mass • Vomiting or copious gastric aspirate",
+        "score": 0.518917350833575
+      },
+      {
+        "chunk_id": 62,
+        "doc_name": "STW_Appendicitis",
+        "page_no": 1,
+        "heading": "",
+        "content": "PRESENTATION OF APPENDICITIS MAY BE AS 1) Acute appendicitis - early / delayed 2) Appendicular mass 3) Recurrent appendicitis",
+        "score": 0.516992032527924
+      }
+    ]
+  },
+  {
+    "id": "q36",
+    "type": "unanswerable",
+    "question": "What is the anti-snake venom dose for a patient with a krait bite?",
+    "reference_answer": "",
+    "generated_answer": "I couldn't find this in the guidelines.",
+    "refused": true,
+    "citations": [],
+    "retrieved_sources": [
+      {
+        "chunk_id": 299,
+        "doc_name": "STW_Headache",
+        "page_no": 1,
+        "heading": "",
+        "content": "Indomethacin (25mg TID) for 7 days",
+        "score": 0.453591736937063
+      },
+      {
+        "chunk_id": 456,
+        "doc_name": "STW_STEMI",
+        "page_no": 1,
+        "heading": "ABSOLUTE CONTRA-INDICATIONS TO THROMBOLYIC THERAPY:",
+        "content": "Anti thrombotics: 1. Unfractionated heparin: Bolus of 60 U/Kg (maximum 5000 U) followed by 12 U/Kg hourly infusion to maintain APTT at 50-70 sec 2. Enoxaparin: 1 mg/Kg SC 12 hrly Thrombolyic Therapy: Tenecteplase 35 mg IV bolus if 60-70 Kg 40 mg IV bolus if 70-80 Kg 45 mg IV bolus if more than",
+        "score": 0.448032230138779
+      },
+      {
+        "chunk_id": 389,
+        "doc_name": "STW_NSTEMI",
+        "page_no": 1,
+        "heading": "ANGINA UNLIKELY IF:",
+        "content": "OPTIONAL INVESTIGATIONS 1. Coronary Angiography 2. CT scan including coronary angiography 3. Stress Radionuclide/ echocardiographic imaging 4. MRI 5. Coronary Fractional Flow Reserve 5. Intra-vascular Ultrasound Anti-platelets Anti-ischemic: 1. Aspirin: Loading dose 325 mg followed by 75 mg OD 2. Clopidogrel: Loading dose 300 mg followed 75 mg OD 3. Prasugrel: Loading dose 60 mg followed by 10 mg OD 4. Ticagralor: Loading dose 180 mg followed by 90 mg BD Anti thrombotics: 1. Metoprolol: Short acting 25-100 mg BD Long acting 25 -100 mg OD 2. Nitrates: Isosorbide mono-nitare 20 to 60 mg in 2",
+        "score": 0.440703723388689
+      },
+      {
+        "chunk_id": 410,
+        "doc_name": "STW_Sepsis_Children",
+        "page_no": 1,
+        "heading": "",
+        "content": "**If there is improvement after 1st bolus and history of diarrhea present then: Give 70 ml/kg over 5 hours in infants and over 2 1⁄2 hours in a child with hypovolemic shock. Give additional fluids if losses continue. Start maintenance fluid in case of other illness Antibiotics 1. >3 months Inj Ceftriaxone 100mg/kg/day ( 2 divided doses) 2. <3 month Inj Cefotaxime 200mg/kg (divided 6-8hrly), Inj Gentamicin 5-7.5 mg/kg single dose /day 3. If soft tissue infection: consider Inj Cloxacillin 200mg/kg divided 6 hourly or Inj Amoxicillin- Clavulanic acid 30 mg/kg/dose 8hrly) Inj Adrenaline- 0.3x body",
+        "score": 0.430234581232071
+      },
+      {
+        "chunk_id": 288,
+        "doc_name": "STW_Headache",
+        "page_no": 1,
+        "heading": "",
+        "content": "Frequency > 2 /month - Start prophylaxis trial for 2 months • Propranolol 40 mg OD • Flunarizine 10 mg OD Acute management • Analgesics( Paracetamol 650 mg, or Indomethacin 50 mg) and • Antiemetics ( Prochlorperazine 10mg). Life style changes • Good sleep at least 6 hrs, food habit modification, avoiding triggers of migraine.",
+        "score": 0.421104917394532
+      }
+    ]
+  },
+  {
+    "id": "q37",
+    "type": "unanswerable",
+    "question": "What is the first-line treatment for uncomplicated falciparum malaria in adults?",
+    "reference_answer": "",
+    "generated_answer": "I couldn't find this in the guidelines.",
+    "refused": true,
+    "citations": [],
+    "retrieved_sources": [
+      {
+        "chunk_id": 183,
+        "doc_name": "STW_Dengue",
+        "page_no": 1,
+        "heading": "TREATMENT OF PROBABLE DENGUE WITHOUT WARNING SIGNS",
+        "content": "RL 10-15ml/kg/hr Assessment at second hour No Improvement RL 15ml/kg/hr",
+        "score": 0.417383849620819
+      },
+      {
+        "chunk_id": 159,
+        "doc_name": "STW_Dengue",
+        "page_no": 1,
+        "heading": "",
+        "content": "Standard Treatment Workflow (STW) for the Management of DENGUE FEVER ICD-10-A90",
+        "score": 0.416294753551483
+      },
+      {
+        "chunk_id": 192,
+        "doc_name": "STW_Dengue",
+        "page_no": 1,
+        "heading": "TREATMENT OF PROBABLE DENGUE WITHOUT WARNING SIGNS",
+        "content": "In case of shock, start bolus and arrange for urgent referral with continuous monitoring by a health professional to facilities with a PICU.",
+        "score": 0.405448680791338
+      },
+      {
+        "chunk_id": 170,
+        "doc_name": "STW_Dengue",
+        "page_no": 1,
+        "heading": "TREATMENT OF PROBABLE DENGUE WITHOUT WARNING SIGNS",
+        "content": "• Hb, TLC, DLC, Platelets, PCV • Positive tourniquet test • NS1 antigen (ELISA method)",
+        "score": 0.396093672746798
+      },
+      {
+        "chunk_id": 167,
+        "doc_name": "STW_Dengue",
+        "page_no": 1,
+        "heading": "TREATMENT OF PROBABLE DENGUE WITHOUT WARNING SIGNS",
+        "content": "• Symptomatic ambulatory treatment • Paracetamol for fever: avoid NSAIDs • Daily monitoring: clinical, PCV, platelets",
+        "score": 0.395020544528961
+      }
+    ]
+  },
+  {
+    "id": "q39",
+    "type": "unanswerable",
+    "question": "Which antibiotics are recommended for community-acquired pneumonia in adults?",
+    "reference_answer": "",
+    "generated_answer": "I couldn't find this in the guidelines.",
+    "refused": true,
+    "citations": [],
+    "retrieved_sources": [
+      {
+        "chunk_id": 418,
+        "doc_name": "STW_Sepsis_Children",
+        "page_no": 1,
+        "heading": "",
+        "content": "Completion of antibiotics as per culture sensitivity",
+        "score": 0.53704613005565
+      },
+      {
+        "chunk_id": 410,
+        "doc_name": "STW_Sepsis_Children",
+        "page_no": 1,
+        "heading": "",
+        "content": "**If there is improvement after 1st bolus and history of diarrhea present then: Give 70 ml/kg over 5 hours in infants and over 2 1⁄2 hours in a child with hypovolemic shock. Give additional fluids if losses continue. Start maintenance fluid in case of other illness Antibiotics 1. >3 months Inj Ceftriaxone 100mg/kg/day ( 2 divided doses) 2. <3 month Inj Cefotaxime 200mg/kg (divided 6-8hrly), Inj Gentamicin 5-7.5 mg/kg single dose /day 3. If soft tissue infection: consider Inj Cloxacillin 200mg/kg divided 6 hourly or Inj Amoxicillin- Clavulanic acid 30 mg/kg/dose 8hrly) Inj Adrenaline- 0.3x body",
+        "score": 0.485979468466076
+      },
+      {
+        "chunk_id": 397,
+        "doc_name": "STW_Sepsis_Children",
+        "page_no": 1,
+        "heading": "",
+        "content": "CHECK FOR HISTORY OF Prior treatment Previous recurrent infections Prior hospitalisation Chronic systemic illness (congenital or acquired) Immunization (age appropriate)",
+        "score": 0.457886817581248
+      },
+      {
+        "chunk_id": 342,
+        "doc_name": "STW_Heart_Failure",
+        "page_no": 1,
+        "heading": "REFER TO A DISTRICT HOSPITAL",
+        "content": "MANAGEMENT AT TERTIARY HOSPITAL 1. Re-assess and confirm diagnosis of HF 2. Categorize acute (< 3 months) vs chronic (> 3 months) and HFrEF (EF 35%) vs HFpEF (EF 35-50%) 3. Optimize therapy with furosemide, ARNI, β blockers (HFrEF, HFMrEF, HFpEF) spironolactone and O2 4. Consider ivabradine, vericiguat and lanoxin 5. Pneumococcal and influenza vaccines 6. Investigate for etiology and manage 7. Consider non-pharmacological invasive therapy a. ICD: In selected patients (Ref Arrhythmia STW) b. BiV: Consider in NYHA class II/ III Symptomatic patient, EF <35%, QRS >150msec in sinus rhythm with LBBB",
+        "score": 0.427013669788023
+      },
+      {
+        "chunk_id": 406,
+        "doc_name": "STW_Sepsis_Children",
+        "page_no": 1,
+        "heading": "",
+        "content": "Start O2 with face mask @ 4-6 lit/min, or hood @8-10 lit if not available nasal prongs 1-2 lit/min to maintain SpO2 >95%, Insert two IV cannulas, give first dose of antibiotics within first one hour",
+        "score": 0.407767431539161
+      }
+    ]
+  }
+]

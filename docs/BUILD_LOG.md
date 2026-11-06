@@ -427,3 +427,23 @@ How ingest works:
 - Better page-level MRR can hide worse answer-bearing evidence.
 - RRF can favour chunks appearing in both lists over a useful
   chunk retrieved by only one method.
+
+## Phase 15 – Short-chunk filter experiment (Nov 6)
+
+### Built
+- Separate vector search excluding trimmed content under 30 characters.
+- Separate saved answers, judge results and manual review; baseline preserved.
+- Experiment runner bypasses answer caching.
+
+### Results
+- MRR@5: 0.907 → 0.926; hit@5 unchanged at 27/27.
+- All-required-pages@5: 27/27 → 26/27; q26 lost a fragment-only page match.
+- Multi-part evidence: 3 full, 5 partial, 0 none; q32 improved.
+- Correct refusals: 3/3; false refusals: 7/27 → 6/27.
+- Manual answers: 15/4/8 → 16/4/7; all 27 reviewed.
+- q35 judge inconsistency corrected manually; raw verdict preserved.
+
+### Decision
+- Not adopted yet: q30/q34 answer gains occurred with unchanged sources.
+- q06 remains unresolved; q32 still refused despite more evidence.
+- App retains vector baseline; held-out untouched.
