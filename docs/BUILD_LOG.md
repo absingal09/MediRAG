@@ -406,3 +406,24 @@ How ingest works:
   for unclear pain migration. Raw judge verdicts preserved.
 - Added README results table and updated DESIGN evaluation status.
 - No tuning or question changes; held-out untouched.
+
+## Phase 14 – Hybrid retrieval experiment (Nov 6)
+
+| File | What |
+|---|---|
+| `app/lexical.py` | Cached BM25 index over chunk headings and content. |
+| `app/search.py` | Preserved vector search; added hybrid search with RRF. |
+| `scripts/check_lexical.py` | Inspects keyword/hybrid results independently. |
+
+### Results
+- Hybrid: 20 candidates per method, equal-weight RRF with constant 60.
+- Hit@5 remained 27/27; MRR@5 increased from 0.907 to 0.915.
+- q06 dose passage appeared at BM25 rank 3 but was lost after fusion.
+- q28 evidence coverage regressed from full to partial.
+- Configuration not adopted; app and evaluator retain vector search.
+- Full hybrid answer evaluation not run; held-out untouched.
+
+### What it taught
+- Better page-level MRR can hide worse answer-bearing evidence.
+- RRF can favour chunks appearing in both lists over a useful
+  chunk retrieved by only one method.

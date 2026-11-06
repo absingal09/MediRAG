@@ -109,3 +109,30 @@ Then test one change at a time:
 
 Record improvements and regressions. Keep held-out questions untouched
 until tuning is finished.
+
+## Experiment 1 — BM25 + vector with RRF
+
+- Same corpus, chunking and embedding model as baseline.
+- BM25: heading + content, lowercase regex tokenization,
+  BM25Okapi defaults.
+- Retrieve 20 candidates per method; equal-weight RRF,
+  constant 60; return top 5.
+
+| Metric | Vector baseline | Hybrid |
+|---|---|---|
+| Hit@5 | 27/27 | 27/27 |
+| MRR@5 | 0.907 | 0.915 |
+| Mean page coverage@5 | 100% | 100% |
+| All-required-pages@5 | 27/27 | 27/27 |
+
+### Evidence spot checks
+- q06: BM25 alone retrieved the required dose passage at rank 3,
+  but fusion excluded it from the top 5.
+- q28: full → partial coverage; starting dose, infusion rate and
+  adjustment evidence lost, while stopping criteria remained.
+- Full hybrid evidence and answer evaluations were not run.
+
+### Decision
+Do not adopt this configuration: page-level MRR improved slightly,
+but q28 evidence coverage regressed and q06 remained unresolved.
+App and retrieval evaluator retain vector search. Held-out untouched.
