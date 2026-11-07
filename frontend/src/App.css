@@ -80,9 +80,19 @@
   max-width: 1292px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 386px;
-  column-gap: 64px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 40px;
   padding: 52px 36px 0;
+}
+.workspace::before {
+  content: "";
+  position: absolute;
+  top: 52px;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: var(--line);
+  pointer-events: none;
 }
 .reading-column {
   min-width: 0;
@@ -519,12 +529,58 @@ h1 em {
   color: #74797d;
 }
 .source-column {
-  border-left: 1px solid var(--line);
-  padding-left: 31px;
   min-width: 0;
   align-self: start;
   position: sticky;
   top: 28px;
+}
+.document-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+.document-title {
+  min-width: 0;
+}
+.document-title h2 {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+.local-preview-label {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.document-actions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 3px;
+}
+.document-actions a {
+  text-decoration: none;
+}
+.source-column .pdf-surface {
+  height: clamp(280px, calc(100dvh - 260px), 820px);
+  max-height: none;
+  padding: 12px;
+}
+.pdf-unavailable {
+  padding: 40px 20px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+  text-align: center;
+}
+.evidence-item.selected p {
+  -webkit-line-clamp: unset;
 }
 .source-heading {
   display: flex;
@@ -1204,12 +1260,11 @@ h1 em {
     gap: 40px;
   }
   .workspace {
-    grid-template-columns: minmax(0, 1fr) 330px;
     gap: 34px;
     padding: 40px 32px 0;
   }
-  .source-column {
-    padding-left: 23px;
+  .workspace::before {
+    top: 40px;
   }
   h1 {
     font-size: 53px;
@@ -1256,6 +1311,9 @@ h1 em {
     padding: 34px 24px 30px;
     max-width: 680px;
   }
+  .workspace::before {
+    display: none;
+  }
   .source-column {
     display: none;
   }
@@ -1270,6 +1328,9 @@ h1 em {
     padding: 26px;
     border-left: 1px solid var(--line);
     box-shadow: -20px 0 70px #1d2a3940;
+  }
+  .source-column.mobile-open .pdf-surface {
+    height: calc(100dvh - 160px);
   }
   .source-decoration {
     display: none;

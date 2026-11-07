@@ -52,9 +52,6 @@ export default function App() {
     [pages, setPages] = useState(1),
     [zoom, setZoom] = useState(1);
   const [sourceIndex, setSourceIndex] = useState<number | null>(null);
-  const [sourceTab, setSourceTab] = useState<"document" | "passages">(
-    "document",
-  );
   const [filter, setFilter] = useState("");
   const [copied, setCopied] = useState(false);
   const [notice, setNotice] = useState("");
@@ -168,7 +165,6 @@ export default function App() {
     setPages(item.pages);
     setZoom(1);
     setSourceIndex(null);
-    setSourceTab("document");
   }
   function selectSource(index: number, response = result, showMobile = true) {
     const source = response?.sources[index];
@@ -177,9 +173,8 @@ export default function App() {
     if (item) openDocument(item, source.page_no);
     else {
       setNotice(
-        "This document is not in the local PDF library. Its retrieved passage is still available.",
+        "This document is not in the PDF library. Its text is available under Inspect retrieved passages.",
       );
-      setSourceTab("passages");
     }
     setSourceIndex(index);
     if (showMobile) setMobileSource(true);
@@ -319,7 +314,6 @@ export default function App() {
     pdfDialog.current?.showModal();
     setExpanded(true);
   }
-  const sourceText = activeSource?.content;
   const matches = catalog.filter((item) =>
     `${item.title} ${item.shortTitle}`
       .toLowerCase()
@@ -607,12 +601,9 @@ export default function App() {
                   <div className="evidence-list">
                     {result.sources.map((source, index) => (
                       <button
-                        className="evidence-item"
+                        className={`evidence-item ${sourceIndex === index ? "selected" : ""}`}
                         key={`${source.doc_name}-${index}`}
-                        onClick={() => {
-                          selectSource(index);
-                          setSourceTab("passages");
-                        }}
+                        onClick={() => selectSource(index)}
                       >
                         <span className="source-number">
                           {String(index + 1).padStart(2, "0")}
@@ -648,249 +639,130 @@ export default function App() {
           role={isMobile && mobileSource ? "dialog" : undefined}
           aria-modal={isMobile && mobileSource ? true : undefined}
           className={`source-column ${mobileSource ? "mobile-open" : ""}`}
-          aria-label="Source notes"
+          aria-label="Document reader"
         >
-          <div className="source-heading">
-            <div>
-              <span className="small-label">READ ALONG</span>
+          <div className="document-header">
+            <div className="document-title">
               <h2>
-                Source notes<span>.</span>
-              </h2>
-            </div>
-            <button
-              className="icon-button mobile-close"
-              ref={closeSourceButton}
-              aria-label="Close source notes"
-              onClick={closeSource}
-            >
-              <X size={20} />
-            </button>
-            <span className="source-decoration" aria-hidden="true">
-              ↗
-            </span>
-          </div>
-          <div className="source-document">
-            <span className="document-glyph">
-              <FileText size={21} strokeWidth={1.4} />
-            </span>
-            <div>
-              <h3>
                 {sourceUnavailable
                   ? readableName(activeSource!.doc_name)
                   : document.shortTitle}
-              </h3>
-              <p>
-                {sourceUnavailable
-                  ? "PDF not available in this library"
-                  : document.local
-                    ? "Local PDF · not included in search"
-                    : `${document.edition} · ICMR workflow`}
-              </p>
+              </h2>
+              {document.local && !sourceUnavailable && (
+                <span className="local-preview-label">Local preview</span>
+              )}
             </div>
-            <button
-              className="icon-button"
-              aria-label="Choose a guideline"
-              onClick={() => libraryDialog.current?.showModal()}
-            >
-              <Library size={18} />
-            </button>
-          </div>
-          <div className="source-context">
-            {activeSource
-              ? `Selected source ${sourceIndex! + 1} · ${readableName(activeSource.doc_name)} · page ${activeSource.page_no}`
-              : document.local
-                ? "Local preview only"
-                : "Browsing the original document"}
-          </div>
-          {activeSource && (
-            <section
-              className="selected-passage"
-              aria-label="Selected source passage"
-            >
-              <span className="small-label">
-                {example
-                  ? "SELECTED EXAMPLE · PDF EXCERPT"
-                  : "SELECTED RETRIEVED PASSAGE"}
-              </span>
-              <p>{sourceText}</p>
-              <span>
-                {readableName(activeSource.doc_name)} · page{" "}
-                {activeSource.page_no}
-              </span>
-            </section>
-          )}
-          <div className="source-tabs" role="tablist" aria-label="Source view">
-            <button
-              role="tab"
-              id="document-tab"
-              aria-controls="document-panel"
-              aria-selected={sourceTab === "document"}
-              disabled={sourceUnavailable}
-              tabIndex={sourceTab === "document" ? 0 : -1}
-              onKeyDown={(event) => {
-                if (event.key === "ArrowRight") {
-                  setSourceTab("passages");
-                  (
-                    event.currentTarget.nextElementSibling as HTMLElement
-                  )?.focus();
-                }
-              }}
-              onClick={() => setSourceTab("document")}
-            >
-              Document
-            </button>
-            <button
-              role="tab"
-              id="passages-tab"
-              aria-controls="passages-panel"
-              aria-selected={sourceTab === "passages"}
-              tabIndex={sourceTab === "passages" ? 0 : -1}
-              onKeyDown={(event) => {
-                if (event.key === "ArrowLeft" && !sourceUnavailable) {
-                  setSourceTab("document");
-                  (
-                    event.currentTarget.previousElementSibling as HTMLElement
-                  )?.focus();
-                }
-              }}
-              onClick={() => setSourceTab("passages")}
-            >
-              Passage {activeSource && <span className="tiny-dot" />}
-            </button>
-            <button
-              className="icon-button expand-button"
-              aria-label="Expand document reader"
-              disabled={sourceUnavailable}
-              onClick={expandPdf}
-            >
-              <Expand size={15} />
-            </button>
-          </div>
-          <div
-            role="tabpanel"
-            id="document-panel"
-            aria-labelledby="document-tab"
-            hidden={sourceTab !== "document"}
-          >
-            <div className="pdf-toolbar">
-              <div>
-                <button
-                  className="icon-button"
-                  aria-label="Previous page"
-                  disabled={page <= 1}
-                  onClick={() => setPage(page - 1)}
-                >
-                  <ChevronLeft size={16} />
-                </button>
-                <span>
-                  Page <strong>{page}</strong> of {pages}
-                </span>
-                <button
-                  className="icon-button"
-                  aria-label="Next page"
-                  disabled={page >= pages}
-                  onClick={() => setPage(page + 1)}
-                >
-                  <ChevronRight size={16} />
-                </button>
-              </div>
-              <div>
-                <button
-                  className="icon-button"
-                  aria-label="Zoom out"
-                  disabled={zoom <= 0.75}
-                  onClick={() => setZoom(Math.max(0.75, zoom - 0.25))}
-                >
-                  <Minus size={14} />
-                </button>
-                <button
-                  className="fit-button"
-                  onClick={() => setZoom(1)}
-                  aria-label="Fit page width"
-                >
-                  {zoom === 1 ? "Fit" : `${Math.round(zoom * 100)}%`}
-                </button>
-                <button
-                  className="icon-button"
-                  aria-label="Zoom in"
-                  disabled={zoom >= 3}
-                  onClick={() => setZoom(Math.min(3, zoom + 0.25))}
-                >
-                  <Plus size={14} />
-                </button>
-              </div>
-            </div>
-            {!expanded && !sourceUnavailable && (
-              <PdfPage
-                url={document.url}
-                page={page}
-                zoom={zoom}
-                onPages={updatePages}
-                sourceDoc={activeSource?.doc_name}
-                sourceHeading={activeSource?.heading}
-                highlightText={
-                  finalAnswer && activeSource?.page_no === page
-                    ? activeSource.content
-                    : ""
-                }
-              />
-            )}
-            {!sourceUnavailable && (
-              <a
-                className="original-link"
-                href={`${document.url}#page=${page}`}
-                target="_blank"
-                rel="noreferrer"
+            <div className="document-actions">
+              <button
+                className="icon-button"
+                aria-label="Choose a guideline"
+                title="Choose a guideline"
+                onClick={() => libraryDialog.current?.showModal()}
               >
-                Open original PDF <ArrowUpRight size={14} />
-              </a>
-            )}
+                <Library size={18} />
+              </button>
+              {!sourceUnavailable && (
+                <a
+                  className="icon-button"
+                  aria-label="Open original PDF"
+                  title="Open original PDF"
+                  href={`${document.url}#page=${page}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <ArrowUpRight size={18} />
+                </a>
+              )}
+              <button
+                className="icon-button"
+                aria-label="Expand document reader"
+                title="Expand reader"
+                disabled={sourceUnavailable}
+                onClick={expandPdf}
+              >
+                <Expand size={17} />
+              </button>
+              <button
+                className="icon-button mobile-close"
+                ref={closeSourceButton}
+                aria-label="Close document reader"
+                onClick={closeSource}
+              >
+                <X size={20} />
+              </button>
+            </div>
           </div>
-          <div
-            role="tabpanel"
-            id="passages-panel"
-            aria-labelledby="passages-tab"
-            hidden={sourceTab !== "passages"}
-            className="passage-panel"
-          >
-            <span className="small-label">
-              {example
-                ? "EXAMPLE · EXCERPT FROM THE PDF"
-                : "TEXT RETURNED BY RETRIEVAL"}
-            </span>
-            {sourceText ? (
-              <>
-                <h3>
-                  {activeSource?.heading ||
-                    readableName(activeSource!.doc_name)}
-                </h3>
-                <p>{sourceText}</p>
-                <span className="passage-attribution">
-                  {readableName(activeSource!.doc_name)} · page{" "}
-                  {activeSource!.page_no}
-                </span>
-              </>
-            ) : (
-              <>
-                <h3>The passage comes next.</h3>
-                <p>
-                  Ask a question and select a citation to inspect the exact text
-                  returned by retrieval.
-                </p>
-              </>
-            )}
-          </div>
-          <p className="source-caption">
-            {document.local ? (
-              "This PDF stays in your browser. It is not sent to the model."
-            ) : (
-              <>
-                Original page, original layout.
-                <br />
-                Expand the reader for the full workflow.
-              </>
-            )}
-          </p>
+          {sourceUnavailable ? (
+            <div className="pdf-unavailable" role="status">
+              PDF not available in this library.
+            </div>
+          ) : (
+            <div className="document-view">
+              <div className="pdf-toolbar">
+                <div>
+                  <button
+                    className="icon-button"
+                    aria-label="Previous page"
+                    disabled={page <= 1}
+                    onClick={() => setPage(page - 1)}
+                  >
+                    <ChevronLeft size={16} />
+                  </button>
+                  <span>
+                    Page <strong>{page}</strong> of {pages}
+                  </span>
+                  <button
+                    className="icon-button"
+                    aria-label="Next page"
+                    disabled={page >= pages}
+                    onClick={() => setPage(page + 1)}
+                  >
+                    <ChevronRight size={16} />
+                  </button>
+                </div>
+                <div>
+                  <button
+                    className="icon-button"
+                    aria-label="Zoom out"
+                    disabled={zoom <= 0.75}
+                    onClick={() => setZoom(Math.max(0.75, zoom - 0.25))}
+                  >
+                    <Minus size={14} />
+                  </button>
+                  <button
+                    className="fit-button"
+                    onClick={() => setZoom(1)}
+                    aria-label="Fit page width"
+                  >
+                    {zoom === 1 ? "Fit" : `${Math.round(zoom * 100)}%`}
+                  </button>
+                  <button
+                    className="icon-button"
+                    aria-label="Zoom in"
+                    disabled={zoom >= 3}
+                    onClick={() => setZoom(Math.min(3, zoom + 0.25))}
+                  >
+                    <Plus size={14} />
+                  </button>
+                </div>
+              </div>
+              {!expanded && (
+                <PdfPage
+                  url={document.url}
+                  page={page}
+                  zoom={zoom}
+                  onPages={updatePages}
+                  sourceDoc={activeSource?.doc_name}
+                  sourceHeading={activeSource?.heading}
+                  highlightText={
+                    finalAnswer && activeSource?.page_no === page
+                      ? activeSource.content
+                      : ""
+                  }
+                />
+              )}
+            </div>
+          )}
         </aside>
       </main>
       <button
@@ -901,7 +773,7 @@ export default function App() {
         onClick={() => setMobileSource(true)}
       >
         <BookOpen size={17} />
-        Source notes <ArrowUpRight size={15} />
+        Document <ArrowUpRight size={15} />
       </button>
       <div className="toast" role="status" aria-live="polite">
         {notice}

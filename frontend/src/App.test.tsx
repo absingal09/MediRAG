@@ -95,10 +95,13 @@ describe("answer and provenance states", () => {
     await screen.findByText("Document response.");
     const citation = screen.getByRole("button", { name: /DKA · p\. 1/ });
     expect(citation.getAttribute("aria-pressed")).toBe("true");
+    expect(screen.getByTestId("selected-pdf-text").textContent).toBe(
+      "Retrieved document text",
+    );
+    expect(screen.queryByRole("tab", { name: "Passage" })).toBeNull();
     expect(
-      screen.getByRole("region", { name: "Selected source passage" })
-        .textContent,
-    ).toContain("Retrieved document text");
+      screen.queryByRole("region", { name: "Selected source passage" }),
+    ).toBeNull();
     expect(screen.getByTestId("pdf-reader").textContent).toContain(
       "STW_DKA.pdf · requested page 1",
     );
@@ -111,7 +114,7 @@ describe("answer and provenance states", () => {
     });
     render(<App />);
     submit();
-    await screen.findByText("PDF not available in this library");
+    await screen.findByText("PDF not available in this library.");
     expect(screen.queryByTestId("pdf-reader")).toBeNull();
     expect(
       screen.queryByRole("link", { name: "Open original PDF" }),
@@ -123,11 +126,6 @@ describe("answer and provenance states", () => {
         }) as HTMLButtonElement
       ).disabled,
     ).toBe(true);
-    expect(
-      screen
-        .getByRole("tab", { name: "Passage" })
-        .getAttribute("aria-selected"),
-    ).toBe("true");
   });
   it("preserves the requested page number instead of silently clamping it", async () => {
     vi.mocked(askQuestion).mockResolvedValue({
@@ -154,9 +152,7 @@ describe("answer and provenance states", () => {
       "Connection failed",
     );
     expect(screen.queryByRole("button", { name: /DKA · p\. 1/ })).toBeNull();
-    expect(
-      screen.queryByRole("region", { name: "Selected source passage" }),
-    ).toBeNull();
+    expect(screen.getByTestId("selected-pdf-text").textContent).toBe("");
   });
   it("shows a realistic saved example with its matching PDF and excerpt", () => {
     render(<App />);
@@ -176,10 +172,9 @@ describe("answer and provenance states", () => {
     expect(screen.getByTestId("pdf-reader").textContent).toContain(
       "STW_DKA.pdf · requested page 1",
     );
-    expect(
-      screen.getByRole("region", { name: "Selected source passage" })
-        .textContent,
-    ).toContain("Supplement potassium before insulin if serum K+ < 3.3 mEq/L");
+    expect(screen.getByTestId("selected-pdf-text").textContent).toContain(
+      "Supplement potassium before insulin if serum K+ < 3.3 mEq/L",
+    );
     expect(screen.getByText(/It is not a live model response/)).toBeTruthy();
     expect(askQuestion).not.toHaveBeenCalled();
   });
@@ -194,9 +189,7 @@ describe("answer and provenance states", () => {
     submit();
     await screen.findByText("I couldn't find this in the guidelines.");
     expect(screen.queryByRole("button", { name: /DKA · p\. 1/ })).toBeNull();
-    expect(
-      screen.queryByRole("region", { name: "Selected source passage" }),
-    ).toBeNull();
+    expect(screen.getByTestId("selected-pdf-text").textContent).toBe("");
   });
   it("keeps streamed citations noninteractive until the final event", async () => {
     let resolve!: (value: AskResult) => void;
