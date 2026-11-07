@@ -66,7 +66,12 @@ it("draws measured source text boxes and removes them when the passage no longer
       highlightText="BALANCE: Loss of balance or coordination"
     />,
   );
-  await screen.findByText("Matched source passage highlighted below.");
+  await waitFor(() =>
+    expect(container.querySelector(".pdf-match")).not.toBeNull(),
+  );
+  expect(
+    screen.queryByText("Matched source passage highlighted below."),
+  ).toBeNull();
   const box = container.querySelector<HTMLElement>(".pdf-match");
   expect(box?.style.left).toBe("40px");
   expect(box?.style.top).toBe("90px");
@@ -114,7 +119,9 @@ it("uses extraction coordinates for each selected chunk on the same PDF page", a
       highlightText={passages[0].content}
     />,
   );
-  await screen.findByText("Matched source passage highlighted below.");
+  await waitFor(() =>
+    expect(container.querySelector(".pdf-match")).not.toBeNull(),
+  );
   const firstLeft =
     container.querySelector<HTMLElement>(".pdf-match")!.style.left;
   expect(parseFloat(firstLeft)).toBeCloseTo(passages[0].rects[0][0] * 480);
@@ -130,7 +137,9 @@ it("uses extraction coordinates for each selected chunk on the same PDF page", a
     />,
   );
   expect(container.querySelector(".pdf-match")).toBeNull();
-  await screen.findByText("Matched source passage highlighted below.");
+  await waitFor(() =>
+    expect(container.querySelector(".pdf-match")).not.toBeNull(),
+  );
   const secondLeft =
     container.querySelector<HTMLElement>(".pdf-match")!.style.left;
   expect(parseFloat(secondLeft)).toBeCloseTo(passages[1].rects[0][0] * 480);

@@ -227,11 +227,9 @@ export function PdfPage({
           </button>
         </div>
       )}
-      {!busy && !error && highlightText && (
+      {!busy && !error && highlightText && !boxes.length && (
         <p className="pdf-location-note" role="status">
-          {boxes.length
-            ? "Matched source passage highlighted below."
-            : "Exact passage location unavailable; showing the cited page."}
+          Exact passage location unavailable; showing the cited page.
         </p>
       )}
       <div className="pdf-page-frame" style={{ width: width * zoom }}>
