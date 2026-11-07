@@ -68,15 +68,25 @@ Cited passages were inspected for non-refused answers.
   Accepted for the asked scope; q08 leaves the symptom-onset anchor implicit.
 - q23: judge marked correct; manual review found unclear pain-migration
   detail in both candidate and extracted source.
-- q34: question wording is ambiguous; manual adjudication remains pending.
+- q34: partial; both alternatives were intended. Retrieved evidence contains both, but generation omitted enoxaparin.
 - q22: wrong answer for the requested general targets; retrieved sources
   lacked those targets, and the candidate substituted a special case.
 - q29: partial answer; cited passages do not establish the claimed SAH link.
 - q12: original PDF confirms the answer, but extracted diagnostic text
   interleaves criteria and weakens citation clarity.
 
-No single adjusted accuracy is reported while ambiguities remain.
 Detailed findings are in `answer_review.md`.
+
+## Manually reviewed answer results
+
+| Verdict | Count |
+|---|---|
+| Correct | 15/27 (55.6%) |
+| Partial | 4/27 |
+| Incorrect | 8/27 |
+
+Based on the recorded manual decisions: q08 and q17 accepted for question
+scope; q23 marked partial; q34 confirmed partial. Raw judge outputs are unchanged.
 
 ## Limitations
 
@@ -90,7 +100,7 @@ Detailed findings are in `answer_review.md`.
 
 ## Next
 
-Finish ambiguous-label adjudication before reporting adjusted scores.
+Dev baseline adjudication is complete. Test one retrieval change at a time.
 
 Then test one change at a time:
 1. Hybrid lexical + vector retrieval with Reciprocal Rank Fusion.
@@ -99,3 +109,179 @@ Then test one change at a time:
 
 Record improvements and regressions. Keep held-out questions untouched
 until tuning is finished.
+
+## Experiment 1 — BM25 + vector with RRF
+
+- Same corpus, chunking and embedding model as baseline.
+- BM25: heading + content, lowercase regex tokenization,
+  BM25Okapi defaults.
+- Retrieve 20 candidates per method; equal-weight RRF,
+  constant 60; return top 5.
+
+| Metric | Vector baseline | Hybrid |
+|---|---|---|
+| Hit@5 | 27/27 | 27/27 |
+| MRR@5 | 0.907 | 0.915 |
+| Mean page coverage@5 | 100% | 100% |
+| All-required-pages@5 | 27/27 | 27/27 |
+
+### Evidence spot checks
+- q06: BM25 alone retrieved the required dose passage at rank 3,
+  but fusion excluded it from the top 5.
+- q28: full → partial coverage; starting dose, infusion rate and
+  adjustment evidence lost, while stopping criteria remained.
+- Full hybrid evidence and answer evaluations were not run.
+
+### Decision
+Do not adopt this configuration: page-level MRR improved slightly,
+but q28 evidence coverage regressed and q06 remained unresolved.
+App and retrieval evaluator retain vector search. Held-out untouched.
+
+## Experiment 2 — Filter short chunks
+
+- Vector search only; exclude content shorter than 30 characters
+  after trimming, before ranking and LIMIT.
+- Same corpus, embeddings and top 5; no re-ingestion.
+
+| Metric | Baseline | Filtered |
+|---|---|---|
+| Hit@5 | 27/27 | 27/27 |
+| MRR@5 | 0.907 | 0.926 |
+| Mean page coverage@5 | 100% | 98.1% |
+| All-required-pages@5 | 27/27 | 26/27 |
+| Multi-part evidence: full / partial / none | 3 / 4 / 1 | 3 / 5 / 0 |
+
+### Evidence review
+- Reviewed all 8 multi-part dev questions.
+- q32 improved from none to partial: asthma features retrieved,
+  but COPD comparison remains missing.
+- Other coverage categories unchanged.
+- q26 lost the STEMI page match; previously useful evidence remained.
+- q06 dose passage still missing from top 5.
+
+### Answer and refusal evaluation
+
+| Metric | Baseline | Filtered |
+|---|---|---|
+| Correct refusals | 3/3 | 3/3 |
+| False refusals | 7/27 | 6/27 |
+| Raw judge: correct / partial / incorrect | 14 / 5 / 8 | 16 / 4 / 7 |
+| Manual review: correct / partial / incorrect | 15 / 4 / 8 | 16 / 4 / 7 |
+
+All 27 answerable filtered responses reviewed; see
+`filtered_answer_review.md`. Raw judge verdicts preserved.
+
+### Decision
+
+Do not adopt yet. q32 evidence improved, but its answer still refused.
+q30 and q34 answered better with unchanged source text, so the answer
+gains cannot be attributed to filtering from this single run.
+
+App retains baseline vector search. Held-out untouched.
+
+## Experiment 3 — Cross-encoder reranking
+
+- Original vector search retrieves 20 candidates; no short-chunk filter
+  or BM25.
+- CPU model: cross-encoder/ms-marco-MiniLM-L6-v2.
+- Scores question + chunk content pairs; returns top 5.
+- No score threshold; chunk ID breaks score ties.
+
+| Metric | Baseline | Reranked |
+|---|---|---|
+| Hit@5 | 27/27 | 27/27 |
+| MRR@5 | 0.907 | 0.944 |
+| Mean page coverage@5 | 100% | 100% |
+| All-required-pages@5 | 27/27 | 27/27 |
+| Multi-part evidence: full / partial / none | 3 / 4 / 1 | 4 / 4 / 0 |
+
+### Evidence review
+- All 8 multi-part dev questions reviewed.
+- q30: partial → full; timing and transfer evidence retrieved.
+- q32: none → partial; asthma features present, COPD comparison absent.
+- q29: remains partial but loses useful red-flag evidence.
+- Other coverage categories unchanged.
+- Reranking cannot recover passages outside its 20 candidates;
+  q06 remains unresolved by this candidate pool.
+
+### Answer and refusal evaluation
+
+| Metric | Baseline | Reranked |
+|---|---|---|
+| Correct refusals | 3/3 | 3/3 |
+| False refusals | 7/27 | 4/27 |
+| Raw judge: correct / partial / incorrect | 14 / 5 / 8 | 20 / 3 / 4 |
+| Manual review: correct / partial / incorrect | 15 / 4 / 8 | 21 / 2 / 4 |
+
+All 27 answerable responses manually reviewed; see
+`reranked_answer_review.md`. Raw judge verdicts preserved.
+q29 regressed from partial answer to refusal.
+
+### Local retrieval latency
+
+- Warm models, 27 answerable dev questions, one measurement per
+  method/question; execution order alternated.
+- Median vector retrieval: 839.9 ms.
+- Median reranked retrieval: 1166.6 ms.
+- Difference between unrounded medians: 326.8 ms.
+- Includes database access; excludes generation and model loading.
+- Laptop measurements do not establish Render latency or memory usage.
+
+### Decision
+
+Preferred candidate based on dev answer quality and local latency.
+App still uses vector baseline; configuration finalization and
+held-out evaluation remain pending.
+
+Single answer-generation run per configuration; no repeatability
+or statistical-significance claim. Held-out untouched.
+
+## Frozen configuration for held-out evaluation
+
+- Original 494 chunks; no short-chunk filter or BM25.
+- all-MiniLM-L6-v2 vector search: retrieve 20 candidates.
+- cross-encoder/ms-marco-MiniLM-L6-v2 on CPU:
+  question + content pairs, keep top 5, no score threshold.
+- Existing prompt, citation validation and refusal behavior unchanged.
+- Generator: glm5.3, temperature 0, reasoning effort low,
+  max_tokens 1024.
+- Evaluation bypasses answer caching.
+- Dev tuning finished for this evaluation.
+- Do not adjust this configuration after viewing held-out results.
+
+## Held-out evaluation — frozen reranked configuration
+
+10 held-out questions: 8 answerable and 2 unanswerable.
+Used the frozen configuration above, with answer caching bypassed.
+Saved 10 responses with 10 unique IDs; judged the 8 answerable responses.
+No configuration changes were made after inspecting held-out results.
+
+| Metric | Result |
+|---|---|
+| Hit@5 | 8/8 (100%) |
+| MRR@5 | 1.000 |
+| Mean page coverage@5 | 93.8% |
+| All-required-pages@5 | 7/8 (87.5%) |
+| Correct refusals | 2/2 unanswerable |
+| False refusals | 3/8 answerable |
+| Raw judge: correct / partial / incorrect | 5 / 0 / 3 |
+| Manual review: correct / partial / incorrect | 5 / 0 / 3 |
+
+### Manual review and limitations
+
+- All 8 answerable responses and cited passages reviewed; see
+  `heldout_answer_review.md`.
+- Correct: q03, q07, q10, q14, q24.
+- Incorrect/refused: q20, q31, q33. Required answer facts were absent
+  from the retrieved passages.
+- q31 retrieved only the dengue page, missing the paediatric sepsis page;
+  neither discharge-criteria list was present in the top 5.
+- q10 accepted as listing prophylaxis options, but uses “and” where the
+  reference uses “or”; alternative-versus-combination wording is ambiguous.
+- q24's added oral esomeprazole option is supported by its cited passage.
+- Perfect hit@5/MRR does not establish complete answer evidence.
+- One saved generation per question; small held-out set, same generator
+  and judge model, and no independent clinical validation.
+- Raw answers and judge results are preserved in `heldout_answers.json`
+  and `heldout_judgements.json`.
+- App still uses vector baseline; held-out evaluation did not deploy reranking.

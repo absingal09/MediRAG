@@ -395,3 +395,145 @@ How ingest works:
 - Deployment smoke checks passed; load testing is not completed.
 - Replaced the BEFAST example with the potassium-in-DKA question verified through the deployed API.
 - No retrieval tuning; held-out untouched. Searchable uploads remain deferred.
+
+## Phase 13 – Dev baseline finalization (Nov 6)
+
+### Results
+- Restored aggregate retrieval evaluation; rerun matched the baseline:
+  hit@5 27/27, MRR@5 0.907, page coverage and all-required-pages@5 100%.
+- Final manual results: **15 correct, 4 partial, 8 incorrect**.
+- q08/q17: partial → correct for asked scope; q23: correct → partial
+  for unclear pain migration. Raw judge verdicts preserved.
+- Added README results table and updated DESIGN evaluation status.
+- No tuning or question changes; held-out untouched.
+
+## Phase 14 – Hybrid retrieval experiment (Nov 6)
+
+| File | What |
+|---|---|
+| `app/lexical.py` | Cached BM25 index over chunk headings and content. |
+| `app/search.py` | Preserved vector search; added hybrid search with RRF. |
+| `scripts/check_lexical.py` | Inspects keyword/hybrid results independently. |
+
+### Results
+- Hybrid: 20 candidates per method, equal-weight RRF with constant 60.
+- Hit@5 remained 27/27; MRR@5 increased from 0.907 to 0.915.
+- q06 dose passage appeared at BM25 rank 3 but was lost after fusion.
+- q28 evidence coverage regressed from full to partial.
+- Configuration not adopted; app and evaluator retain vector search.
+- Full hybrid answer evaluation not run; held-out untouched.
+
+### What it taught
+- Better page-level MRR can hide worse answer-bearing evidence.
+- RRF can favour chunks appearing in both lists over a useful
+  chunk retrieved by only one method.
+
+## Phase 15 – Short-chunk filter experiment (Nov 6)
+
+### Built
+- Separate vector search excluding trimmed content under 30 characters.
+- Separate saved answers, judge results and manual review; baseline preserved.
+- Experiment runner bypasses answer caching.
+
+### Results
+- MRR@5: 0.907 → 0.926; hit@5 unchanged at 27/27.
+- All-required-pages@5: 27/27 → 26/27; q26 lost a fragment-only page match.
+- Multi-part evidence: 3 full, 5 partial, 0 none; q32 improved.
+- Correct refusals: 3/3; false refusals: 7/27 → 6/27.
+- Manual answers: 15/4/8 → 16/4/7; all 27 reviewed.
+- q35 judge inconsistency corrected manually; raw verdict preserved.
+
+### Decision
+- Not adopted yet: q30/q34 answer gains occurred with unchanged sources.
+- q06 remains unresolved; q32 still refused despite more evidence.
+- App retains vector baseline; held-out untouched.
+
+## Phase 16 – Cross-encoder reranking experiment (Nov 6)
+
+### Built
+- CPU cross-encoder reranks 20 original vector candidates into top 5.
+- Separate retrieval/answer/judge runners and saved results.
+- Local warm-retrieval latency comparison.
+
+### Results
+- MRR@5: 0.907 → 0.944; hit@5 and page coverage remain 100%.
+- Multi-part evidence: 3/4/1 → 4/4/0 (full/partial/none).
+- q30 gains timing/transfer evidence; q32 gains partial evidence.
+- q29 loses useful evidence and regresses to refusal.
+- Correct refusals: 3/3; false refusals: 7/27 → 4/27.
+- Manual answers: 15/4/8 → 21/2/4; all 27 reviewed.
+- Warm median retrieval: 839.9 → 1166.6 ms on laptop.
+- Raw judge results and baseline artifacts preserved.
+
+### Decision
+- Reranking is the preferred candidate; app still uses vector baseline.
+- Finalize configuration before held-out evaluation.
+- Render latency/memory not established; held-out untouched.
+
+## Phase 17 – Held-out evaluation (Nov 6)
+
+### Results
+- Ran frozen reranked configuration on 10 held-out questions.
+- Retrieval: hit@5 8/8, MRR@5 1.000, mean page coverage 93.8%,
+  all-required-pages@5 7/8.
+- Correct refusals: 2/2; false refusals: 3/8.
+- Raw judge and manual review: 5 correct, 0 partial, 3 incorrect.
+- Reviewed all 8 answerable responses and cited passages.
+- q20/q31/q33 refused with required evidence missing.
+- q31 lacked the sepsis page and both discharge-criteria lists.
+- q10 accepted as listing options; “and” versus “or” ambiguity recorded.
+- Saved answers, judge outputs and manual review separately.
+
+### Decision
+- No tuning after inspecting held-out results.
+- Perfect page-level ranking does not establish complete evidence.
+- Deployed app remains on vector baseline; reranking not shipped.
+
+## Phase 18 – Reranker memory checks (Nov 7)
+
+### Results
+- Tested CPU-only Linux Docker container: 512 MiB limit, swap disabled.
+- Batch size 1 reduced post-retrieval anonymous memory:
+  480.3 → 363.6 MiB in separate smoke runs.
+- Dev retrieval metrics unchanged: MRR@5 0.944, hit@5 27/27.
+- Single-worker HTTP /ask and /ask/stream completed with reranking.
+- Streaming reached final event; container remained running, no OOM kill.
+- Post-request Docker stats: 434.1 MiB normal, 436.1 MiB streaming.
+- These are snapshots, not peak measurements or concurrent-load tests.
+
+### Next
+- Connect selected reranker to the app and invalidate old answer caches.
+- Verify on Render; local Docker success does not establish hosted capacity.
+
+## Phase 19 – Connect reranking to the app (Nov 7)
+
+### Built
+- Default search now calls reranked retrieval through a lazy import.
+- Baseline evaluator explicitly retains vector-only search.
+- Cache pipeline version changed to v2-reranked.
+
+### Results
+- Local /ask returned classification, timing and transfer with citations.
+- First request missed cache; repeated request hit cache.
+- Uncached /ask/stream reached final with citations.
+- Reranker uses batch_size=1; dev retrieval metrics unchanged.
+
+### Next
+- Commit code and docs separately.
+- Deploy and verify on Render; live app has not been updated yet.
+
+## Phase 20 – Deploy reranking and limit CPU threads (Nov 7)
+
+### Results
+- Deployed reranked retrieval and v2-reranked cache version.
+- Initial hosted retrieval-only probe took 73.3 seconds.
+- Added Render environment settings:
+  OMP_NUM_THREADS=1 and MKL_NUM_THREADS=1.
+- After redeployment: first probe 18.5 s; warm probes 8.5 s and 8.2 s.
+- Both warm probes returned the same ranked chunk IDs.
+- User confirmed live frontend question checks work.
+- Timings exclude Sarvam generation; concurrent load not tested.
+
+### What it taught
+- Passing a memory limit does not establish acceptable CPU performance.
+- Docker memory tests did not reproduce Render Free's 0.1 CPU allocation.

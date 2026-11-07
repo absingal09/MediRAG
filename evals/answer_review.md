@@ -5,7 +5,7 @@
 | q08 | partial | Accept for the asked scope; onset anchor implicit | Candidate gives the requested window. Omitted thrombectomy timing is outside the question. |
 | q17 | partial | Accept for the asked scope | Candidate states the initial fluid, volume and duration. Judge penalized broader reference details beyond the initial-bolus question. |
 | q29 | partial | Partial; citation support fails for SAH association | Several requested red flags are missing. Imaging is outside the explicit question. Retrieved S1/S2 do not establish the claimed association. |
-| q34 | partial | Ambiguous question; adjudication pending | Candidate gives the complete UFH regimen and APTT target. Question says “with heparin,” but reference lists alternative regimens; unclear whether both were required. |
+| q34 | partial | Partial; generation omission | Both regimens are present in retrieved evidence. Candidate gives UFH dosing and the APTT target but omits enoxaparin. Both alternatives were intended. |
 | q35 | partial | Partial | Regimen and stopping criteria are covered, but the reference's subsequent USG assessment for pus and drainage is missing. |
 | q22 | incorrect | Incorrect | General targets absent from retrieved sources. Candidate substitutes S4's special-case targets instead of refusing, then makes an unsupported document-wide absence claim. |
 | q01 | incorrect | Incorrect; retrieval miss | Required DKA fluid regimen absent from top 5. Refusal appropriate for supplied context, but the answerable question remains unanswered. |

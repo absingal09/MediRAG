@@ -1,0 +1,87 @@
+[
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate matches the reference: add 5% dextrose at 50 ml/hour when blood glucose falls below 250 mg/dl.",
+    "id": "q03"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate matches the reference: ECG at 60–90 minutes after starting thrombolysis; success defined as >50% ST-segment resolution with pain relief. 'ST settlement' is equivalent wording for ST-segment resolution.",
+    "id": "q07"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [
+      "Migraine prophylaxis should be given after ruling out stroke and other diseases",
+      "Prophylaxis should be given for an adequate duration and tapered after remission"
+    ],
+    "reason": "All reference facts (threshold >2 attacks/month, 2-month trial, propranolol 40 mg OD, flunarizine 10 mg OD) are accurately conveyed. Extra claims from other sources are flagged for review.",
+    "id": "q10"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate matches the reference: paracetamol for fever, avoid NSAIDs.",
+    "id": "q14"
+  },
+  {
+    "verdict": "incorrect",
+    "missing_facts": [
+      "Daytime symptoms or rescue use twice a week or less",
+      "No night-time symptoms",
+      "No activity limitation",
+      "FEV1 or PEF above 80% of predicted/personal best"
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "The candidate refuses to answer this answerable question, providing none of the required criteria.",
+    "id": "q20"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [
+      "Oral esomeprazole as an alternative when IV unavailable (reference only mentions oral pantoprazole)"
+    ],
+    "reason": "All reference facts conveyed: 80 mg IV stat, 40 mg every 12 hours, oral alternative if IV unavailable, stop if variceal bleed documented. Minor addition of esomeprazole as an oral option.",
+    "id": "q24"
+  },
+  {
+    "verdict": "incorrect",
+    "missing_facts": [
+      "Dengue discharge criteria: no fever for 48 hours, clinical improvement, rising platelet trend, stable haematocrit without IV fluids",
+      "Paediatric sepsis discharge criteria: afebrile for 48 hours, vitals normal for age, good oral intake, adequate urine output over 1 ml/kg/hr, antibiotics completed per culture sensitivity",
+      "Both require 48 hours without fever"
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "The candidate refuses to answer an answerable question; none of the required reference facts are conveyed.",
+    "id": "q31"
+  },
+  {
+    "verdict": "incorrect",
+    "missing_facts": [
+      "Transfuse packed RBC/whole blood if Hb below 7 g/dL",
+      "Transfuse if Hb below 9 g/dL with pre-existing heart disease",
+      "Target systolic BP above 90 mmHg",
+      "Target pulse below 100/min",
+      "Target oxygen saturation above 90%",
+      "Target Hb above 7 g/dL (above 9 with heart disease)"
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "The candidate refuses to answer an answerable question and provides none of the reference facts.",
+    "id": "q33"
+  }
+]

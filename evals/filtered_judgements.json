@@ -1,0 +1,294 @@
+[
+  {
+    "verdict": "incorrect",
+    "missing_facts": [
+      "1 litre of 0.9% saline over the first hour",
+      "then 250-500 ml/hour",
+      "10-20 ml/kg/hour initially for children"
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "The candidate refuses to answer an answerable question, omitting all required reference facts.",
+    "id": "q01"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate matches the reference threshold (<3.3 mEq/L) and ECG changes condition exactly.",
+    "id": "q02"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate matches reference: 325 mg loading dose, then 75 mg once daily (OD).",
+    "id": "q04"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate matches the reference thresholds exactly (GRACE >140, TIMI >4).",
+    "id": "q05"
+  },
+  {
+    "verdict": "incorrect",
+    "missing_facts": [
+      "40 mg IV bolus is the tenecteplase dose for a 70-80 kg STEMI patient"
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "The candidate refuses to answer an answerable question; the reference specifies 40 mg IV bolus for a 75 kg (70-80 kg) STEMI patient.",
+    "id": "q06"
+  },
+  {
+    "verdict": "partial",
+    "missing_facts": [
+      "Mechanical thrombectomy may be considered from 4.5 to 24 hours if eligible"
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "The 0–4.5 hour window is correctly stated, but the reference also mentions mechanical thrombectomy eligibility from 4.5 to 24 hours, which is omitted.",
+    "id": "q08"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [
+      "Detailed descriptions of each sign (e.g., 'deviation at the angle of the mouth', 'arm drift') go beyond the reference, which only lists the acronym words."
+    ],
+    "reason": "The candidate correctly lists all six components of BEFAST: Balance, Eyes, Face, Arm, Speech, Time. The added descriptions are elaborations not in the reference but do not contradict it.",
+    "id": "q09"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate matches the reference: metformin monotherapy.",
+    "id": "q11"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate states HbA1c ≥ 6.5%, equivalent to the reference value of 6.5% or higher.",
+    "id": "q12"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate matches the reference target of ≤7.0% with the same exceptions for elderly and significant comorbidities.",
+    "id": "q13"
+  },
+  {
+    "verdict": "incorrect",
+    "missing_facts": [
+      "Abdominal pain or tenderness",
+      "Persistent vomiting",
+      "Clinical fluid accumulation (pleural effusion, ascites)",
+      "Mucosal bleed (melena, epistaxis, gum bleed)",
+      "Liver enlargement over 2 cm",
+      "Shock"
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "The candidate refuses to answer an answerable question; none of the reference warning signs are provided.",
+    "id": "q15"
+  },
+  {
+    "verdict": "incorrect",
+    "missing_facts": [
+      "Prophylactic platelet transfusion in dengue is indicated when platelet count is below 10,000/cumm."
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "The candidate refuses to answer an answerable question; the reference specifies platelet count below 10,000/cumm.",
+    "id": "q16"
+  },
+  {
+    "verdict": "partial",
+    "missing_facts": [
+      "The bolus may be repeated once (20 ml/kg over 30 minutes)",
+      "Monitoring for fluid overload is required"
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "The candidate correctly states the initial bolus of 20 ml/kg normal saline over 20-30 minutes, but omits that it can be repeated once and that monitoring for fluid overload is needed.",
+    "id": "q17"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate matches the reference antibiotic, dose, and divided dosing.",
+    "id": "q18"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [
+      "Refer if no improvement [S3]"
+    ],
+    "reason": "All reference facts (oxygen target, nebulised levosalbutamol/ipratropium dosing and frequency, IV hydrocortisone 200 mg, oral prednisolone 0.5 mg/kg daily for 5 days) are accurately conveyed. The added 'refer if no improvement' claim is not in the reference and is flagged for review.",
+    "id": "q19"
+  },
+  {
+    "verdict": "incorrect",
+    "missing_facts": [
+      "Rate control should aim for a heart rate below 110 beats per minute."
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "The question is answerable per the reference, but the candidate refuses to answer.",
+    "id": "q21"
+  },
+  {
+    "verdict": "incorrect",
+    "missing_facts": [
+      "Systolic BP target of 100-120 mm Hg",
+      "Heart rate target around 60 (60-70) beats/min",
+      "Adequate pain control",
+      "Beta blockers started first"
+    ],
+    "contradictions": [
+      "Candidate gives heart rate target near 80/min instead of ~60 beats/min"
+    ],
+    "extra_claims_to_review": [
+      "Mean arterial pressure 70-80 mm Hg in severe aortic regurgitation",
+      "Lowering heart rate may aggravate regurgitation"
+    ],
+    "reason": "The candidate answer addresses a different scenario (severe aortic regurgitation) and contradicts the reference heart rate target; it omits all required facts about acute aortic dissection management.",
+    "id": "q22"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [
+      "Nonobstructive type pain may start at the right iliac fossa",
+      "Onset more acute/abrupt in acute obstructive appendicitis",
+      "Rigor and high fever within 24 hours makes appendicitis unlikely"
+    ],
+    "reason": "All reference facts are conveyed: periumbilical/epigastric colicky pain shifting to right iliac fossa, nausea/vomiting, fever absent in first 6 hours, loss of appetite, and pain preceding vomiting. Extra claims go beyond the reference and should be reviewed.",
+    "id": "q23"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [
+      "At CHC level, decongestion is done with intravenous furosemide [S5]"
+    ],
+    "reason": "All reference facts (20-80 mg daily PO; 10-80 mg IV as needed in acute stage; switch to oral when symptoms subside) are accurately conveyed. The CHC-level decongestion claim is extra and not in the reference.",
+    "id": "q25"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [
+      "Myocardial ischemia in dissection occurs because the dissection involves one or more coronary ostia (not stated in reference)"
+    ],
+    "reason": "All required reference facts are conveyed: dissection takes management priority, thrombolysis must not be started, and all listed clinical findings favouring dissection are included. The coronary ostia mechanism is an extra claim not in the reference.",
+    "id": "q26"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "All doses, frequencies, and drug comparisons match the reference exactly.",
+    "id": "q27"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [
+      "Initial 0.9% saline 1 L over first hour with pediatric rates",
+      "Add 5% dextrose at 50 ml/hour when glucose < 250 mg/dl",
+      "Potassium supplementation thresholds (K+ < 3.3 mEq/L before insulin; 10–20 mEq/hour if K+ < 5.5 mEq/L)",
+      "Insulin before IV fluids and stopping IV insulin before SC insulin cited as common pitfalls"
+    ],
+    "reason": "All required reference facts are conveyed accurately: initial 0.1 IU/kg IV dose, 0.1 IU/kg/hour infusion, doubling rate if <10% glucose fall in first hour, and stopping criteria (eating, glucose consistently <250 mg/dl, normalized anion gap, corrected acidosis) with SC long/intermediate plus short-acting insulin at least 30 minutes before stopping. Additional fluid, dextrose, and potassium details go beyond the reference and are flagged for review.",
+    "id": "q28"
+  },
+  {
+    "verdict": "partial",
+    "missing_facts": [
+      "Onset with strenuous exercise",
+      "Sudden thunderclap onset",
+      "New headache with malignancy or immunosuppression",
+      "Focal signs",
+      "Headache waking from sleep",
+      "Investigation with CT/CT angiogram or MRI/MR angiogram for suspected subarachnoid haemorrhage"
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [
+      "Progressive headache of acute or subacute onset persisting more than 1 week (not in reference)"
+    ],
+    "reason": "Candidate correctly identifies several red flags and correctly names sudden severe/first or worst headache as suggesting subarachnoid haemorrhage, but omits several red flags (exercise onset, thunderclap, malignancy/immunosuppression, focal signs, sleep-waking headache) and the imaging workup.",
+    "id": "q29"
+  },
+  {
+    "verdict": "partial",
+    "missing_facts": [
+      "Urgent/immediate invasive strategy within a few hours (under 2 hours)",
+      "Immediate transfer if at a non-PCI-capable hospital"
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Classification criteria are all conveyed accurately, but the required revascularisation timing (urgent/immediate invasive strategy within under 2 hours, with immediate transfer if not at a PCI-capable hospital) is missing.",
+    "id": "q30"
+  },
+  {
+    "verdict": "incorrect",
+    "missing_facts": [
+      "Asthma: onset in childhood/early adulthood",
+      "Asthma: episodic course",
+      "Asthma: nasal symptoms/atopy common",
+      "Asthma: family history often",
+      "Asthma: triggers identified",
+      "Asthma: wheeze prominent",
+      "COPD: onset later in life (4th-5th decade)",
+      "COPD: progressive course",
+      "COPD: smoking almost universal",
+      "COPD: atopy and family history uncommon or rare"
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "The candidate refuses to answer an answerable question; none of the reference facts are conveyed.",
+    "id": "q32"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate conveys both enoxaparin 1 mg/kg SC 12-hourly and UFH bolus 60 U/kg (max 5000 U) then 12 U/kg/hour with APTT target 50-70 seconds, matching the reference.",
+    "id": "q34"
+  },
+  {
+    "verdict": "correct",
+    "missing_facts": [],
+    "contradictions": [],
+    "extra_claims_to_review": [
+      "Surgery may cause more bleeding, injury to caecum and ileum, and faecal fistula may develop",
+      "If operation is indicated, it should be done at a higher centre by an experienced surgeon",
+      "Signs of improvement: reduced pain, patient feeling better, improved appetite, diminishing tenderness"
+    ],
+    "reason": "All required reference facts (Ochsner-Sherren regimen components and all stop criteria) are accurately conveyed. The reference's follow-up action (USG for pus and drainage) is not stated, but the core stop criteria are complete. Extra claims are not in the reference and flagged for review.",
+    "id": "q35"
+  }
+]

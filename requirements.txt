@@ -7,3 +7,4 @@ pymupdf
 sentence-transformers
 requests
 pyyaml
+rank-bm25
