@@ -1,0 +1,282 @@
+[
+  {
+    "id": "f01",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f02",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f03",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f04",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f05",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f06",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f07",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f08",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f09",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f10",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f11",
+    "hit": true,
+    "rr": 0.5,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f12",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f13",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f14",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f15",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f16",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f17",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f18",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f19",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f20",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f21",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f22",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f23",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f24",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f25",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f26",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f27",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f28",
+    "hit": true,
+    "rr": 0.3333333333333333,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f29",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f30",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f31",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f32",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f33",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f34",
+    "hit": true,
+    "rr": 0.2,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f35",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f36",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f37",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f38",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f39",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  },
+  {
+    "id": "f40",
+    "hit": true,
+    "rr": 1.0,
+    "page_coverage": 1.0,
+    "all_pages": true
+  }
+]

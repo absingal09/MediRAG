@@ -1,0 +1,643 @@
+benchmark: fresh50-v1
+description: New supplementary test on the same fixed corpus; authored before outputs or retrieval rankings
+  were inspected. Not an independent clinical benchmark.
+questions:
+- id: f01
+  type: direct
+  question: During an insulin infusion for DKA, at what serum potassium threshold and infusion rate should
+    potassium be replaced?
+  sources:
+  - doc: STW_DKA
+    page: 1
+    evidence_quotes:
+    - Replace potassium @ 10-20 mEq/hour with insulin infusion if serum K+ < 5.5 mEq/L
+  required_facts:
+  - Replace potassium if serum K+ is below 5.5 mEq/L.
+  - The potassium replacement rate is 10-20 mEq/hour with the insulin infusion.
+  reference_answer: Replace potassium if serum K+ is below 5.5 mEq/L. The potassium replacement rate is
+    10-20 mEq/hour with the insulin infusion.
+- id: f02
+  type: direct
+  question: Which urine-output finding should be reported during hourly monitoring of DKA treatment?
+  sources:
+  - doc: STW_DKA
+    page: 1
+    evidence_quotes:
+    - Report if urine output is <30ml/hour for 2 consecutive hours
+  required_facts:
+  - Report urine output below 30 ml/hour for two consecutive hours.
+  reference_answer: Report urine output below 30 ml/hour for two consecutive hours.
+- id: f03
+  type: direct
+  question: What post-prandial capillary plasma glucose target is listed for type 2 diabetes?
+  sources:
+  - doc: STW_Diabetes_Type2
+    page: 1
+    evidence_quotes:
+    - 'Post-prandial capillary plasma glucose: <180 mg/dl'
+  required_facts:
+  - Post-prandial capillary plasma glucose should be below 180 mg/dl.
+  reference_answer: Post-prandial capillary plasma glucose should be below 180 mg/dl.
+- id: f04
+  type: direct
+  question: How often should HbA1c be monitored in type 2 diabetes, including when control is poor?
+  sources:
+  - doc: STW_Diabetes_Type2
+    page: 1
+    evidence_quotes:
+    - HbA1c every 6-12 months ( 3 monthly if uncontrolled)
+  required_facts:
+  - Monitor HbA1c every 6-12 months.
+  - If uncontrolled, monitor HbA1c every three months.
+  reference_answer: Monitor HbA1c every 6-12 months. If uncontrolled, monitor HbA1c every three months.
+- id: f05
+  type: direct
+  question: After normal first-trimester diabetes screening, what glucose tolerance test and gestational
+    timing are recommended?
+  sources:
+  - doc: STW_Diabetes_Type2
+    page: 1
+    evidence_quotes:
+    - All those women with normal screening in 1st trimester to get a 75 g-oral glucose tolerance test
+      done at 24-28 weeks
+  required_facts:
+  - Perform a 75 g oral glucose tolerance test.
+  - Perform it at 24-28 weeks of gestation.
+  reference_answer: Perform a 75 g oral glucose tolerance test. Perform it at 24-28 weeks of gestation.
+- id: f06
+  type: direct
+  question: In atrial fibrillation, which two conditions specifically require a vitamin K antagonist?
+  sources:
+  - doc: STW_Atrial_Fibrillation
+    page: 1
+    evidence_quotes:
+    - VKA only if severe M.S or metallic valve
+  required_facts:
+  - Use a VKA for severe mitral stenosis.
+  - Use a VKA for a metallic heart valve.
+  reference_answer: Use a VKA for severe mitral stenosis. Use a VKA for a metallic heart valve.
+- id: f07
+  type: direct
+  question: What episode duration defines persistent atrial fibrillation, rather than long-standing persistent
+    AF?
+  sources:
+  - doc: STW_Atrial_Fibrillation
+    page: 1
+    evidence_quotes:
+    - 'Persistent AF: AF lasing from 7 days to 1 year'
+  required_facts:
+  - Persistent AF lasts from seven days to one year.
+  reference_answer: Persistent AF lasts from seven days to one year.
+- id: f08
+  type: direct
+  question: What systolic blood pressure target is listed to reduce high bleeding risk in atrial fibrillation?
+  sources:
+  - doc: STW_Atrial_Fibrillation
+    page: 1
+    evidence_quotes:
+    - Control SBP to less than 140 mmHg
+  required_facts:
+  - Control systolic blood pressure to below 140 mmHg.
+  reference_answer: Control systolic blood pressure to below 140 mmHg.
+- id: f09
+  type: direct
+  question: What oral carvedilol dose range and frequency are listed for heart failure?
+  sources:
+  - doc: STW_Heart_Failure
+    page: 1
+    evidence_quotes:
+    - CARVEDILOL Dose 3.125 to 25 mg twice daily PO
+  required_facts:
+  - Carvedilol is 3.125-25 mg orally twice daily.
+  reference_answer: Carvedilol is 3.125-25 mg orally twice daily.
+- id: f10
+  type: direct
+  question: What oral bisoprolol dose range and frequency are listed for heart failure?
+  sources:
+  - doc: STW_Heart_Failure
+    page: 1
+    evidence_quotes:
+    - BISOPROLOL 1.25-10mg once a day PO
+  required_facts:
+  - Bisoprolol is 1.25-10 mg orally once daily.
+  reference_answer: Bisoprolol is 1.25-10 mg orally once daily.
+- id: f11
+  type: direct
+  question: Which three laboratory measures should be monitored during furosemide therapy for heart failure?
+  sources:
+  - doc: STW_Heart_Failure
+    page: 1
+    evidence_quotes:
+    - Monitor serum electrolytes, creatinine and uric acid on therapy
+  required_facts:
+  - Monitor serum electrolytes.
+  - Monitor creatinine.
+  - Monitor uric acid.
+  reference_answer: Monitor serum electrolytes. Monitor creatinine. Monitor uric acid.
+- id: f12
+  type: direct
+  question: How is aortic dissection classified as acute, subacute or chronic by time from pain onset?
+  sources:
+  - doc: STW_Acute_Aortic_Syndrome
+    page: 1
+    evidence_quotes:
+    - 'Acute dissection: within 14 days'
+    - 'Subacute dissection: between 15 and 90 days'
+    - 'Chronic dissection: more than 90 days'
+  required_facts:
+  - Acute dissection presents within 14 days.
+  - Subacute dissection presents between 15 and 90 days.
+  - Chronic dissection presents after more than 90 days.
+  reference_answer: Acute dissection presents within 14 days. Subacute dissection presents between 15
+    and 90 days. Chronic dissection presents after more than 90 days.
+- id: f13
+  type: direct
+  question: What labetalol loading dose, administration time and maintenance rate are listed for acute
+    aortic dissection?
+  sources:
+  - doc: STW_Acute_Aortic_Syndrome
+    page: 2
+    evidence_quotes:
+    - 'Loading: 20 mg IV in 2 minutes Maintenance: 1-2 mg/minute'
+  required_facts:
+  - The labetalol loading dose is 20 mg IV over two minutes.
+  - The maintenance rate is 1-2 mg/minute.
+  reference_answer: The labetalol loading dose is 20 mg IV over two minutes. The maintenance rate is 1-2
+    mg/minute.
+- id: f14
+  type: direct
+  question: What is Rovsing's sign in suspected appendicitis?
+  sources:
+  - doc: STW_Appendicitis
+    page: 1
+    evidence_quotes:
+    - Rovsing’s sign – pain at RIF with sudden thurst of palpation at left flank of abdomen
+  required_facts:
+  - Rovsing's sign is pain in the right iliac fossa elicited by a sudden thrust of palpation at the left
+    flank of the abdomen.
+  reference_answer: Rovsing's sign is pain in the right iliac fossa elicited by a sudden thrust of palpation
+    at the left flank of the abdomen.
+- id: f15
+  type: direct
+  question: When is an abdominal CT scan useful in the diagnostic work-up of appendicitis?
+  sources:
+  - doc: STW_Appendicitis
+    page: 1
+    evidence_quotes:
+    - CT scan of abdomen – useful in special situation of uncertain diagnosis of appendicitis
+  required_facts:
+  - Abdominal CT is useful in special situations when the diagnosis of appendicitis is uncertain.
+  reference_answer: Abdominal CT is useful in special situations when the diagnosis of appendicitis is
+    uncertain.
+- id: f16
+  type: direct
+  question: What heart-rate threshold is listed as bradycardia in life-threatening asthma exacerbation,
+    and where should the patient be referred?
+  sources:
+  - doc: STW_Asthma
+    page: 1
+    evidence_quotes:
+    - bradycardia (heart rate <60 bpm) – immediately refer to higher centre with ICU facility
+  required_facts:
+  - Bradycardia is a heart rate below 60 beats/minute.
+  - Immediately refer the patient to a higher centre with ICU facilities.
+  reference_answer: Bradycardia is a heart rate below 60 beats/minute. Immediately refer the patient to
+    a higher centre with ICU facilities.
+- id: f17
+  type: direct
+  question: When should an outpatient follow-up visit be scheduled after treatment of non-severe acute
+    asthma?
+  sources:
+  - doc: STW_Asthma
+    page: 1
+    evidence_quotes:
+    - NON-SEVERE ACUTE ASTHMA
+    - Schedule follow-up outpatient visit at one week
+  required_facts:
+  - Schedule an outpatient follow-up visit at one week.
+  reference_answer: Schedule an outpatient follow-up visit at one week.
+- id: f18
+  type: direct
+  question: For hypotensive shock in dengue, what initial fluid volume, fluid type and administration
+    time are specified?
+  sources:
+  - doc: STW_Dengue
+    page: 1
+    evidence_quotes:
+    - HYPOTENSIVE SHOCK
+    - 20 ml/ kg crystalloid or colloid in 15 minutes
+  required_facts:
+  - Give 20 ml/kg of crystalloid or colloid.
+  - Administer it over 15 minutes.
+  reference_answer: Give 20 ml/kg of crystalloid or colloid. Administer it over 15 minutes.
+- id: f19
+  type: direct
+  question: What finding indicates fresh frozen plasma or cryoprecipitate in the dengue workflow?
+  sources:
+  - doc: STW_Dengue
+    page: 1
+    evidence_quotes:
+    - FRESH FROZEN PLASMA/ CRYOPRECIPITATE Coagulopathy with bleeding
+  required_facts:
+  - Coagulopathy with bleeding indicates fresh frozen plasma or cryoprecipitate.
+  reference_answer: Coagulopathy with bleeding indicates fresh frozen plasma or cryoprecipitate.
+- id: f20
+  type: direct
+  question: Within what time should the first antibiotic dose be given in the initial management of paediatric
+    sepsis with poor peripheral perfusion?
+  sources:
+  - doc: STW_Sepsis_Children
+    page: 1
+    evidence_quotes:
+    - give first dose of antibiotics within first one hour
+  required_facts:
+  - Give the first antibiotic dose within the first hour.
+  reference_answer: Give the first antibiotic dose within the first hour.
+- id: f21
+  type: direct
+  question: At what infusion rate should adrenaline be started if shock persists after fluid boluses in
+    a child with septic shock?
+  sources:
+  - doc: STW_Sepsis_Children
+    page: 1
+    evidence_quotes:
+    - Start Inj Adrenaline infusion @0.1 microgram/kg/min and refer to higher center
+  required_facts:
+  - Start adrenaline infusion at 0.1 microgram/kg/minute.
+  reference_answer: Start adrenaline infusion at 0.1 microgram/kg/minute.
+- id: f22
+  type: direct
+  question: What oxygen saturation target is specified during preliminary stroke management?
+  sources:
+  - doc: STW_Stroke
+    page: 1
+    evidence_quotes:
+    - Maintain O2 saturation >94%
+  required_facts:
+  - Maintain oxygen saturation above 94%.
+  reference_answer: Maintain oxygen saturation above 94%.
+- id: f23
+  type: direct
+  question: Which investigation is listed when subarachnoid haemorrhage is suspected but a CT scan is
+    negative for blood?
+  sources:
+  - doc: STW_Stroke
+    page: 1
+    evidence_quotes:
+    - Lumbar puncture (if subarachnoid hemorrhage is suspected and CT scan is negative for blood)
+  required_facts:
+  - Perform lumbar puncture if subarachnoid haemorrhage is suspected and the CT scan is negative for blood.
+  reference_answer: Perform lumbar puncture if subarachnoid haemorrhage is suspected and the CT scan is
+    negative for blood.
+- id: f24
+  type: direct
+  question: What starting dose and dosing time of amitriptyline are listed for chronic tension headache?
+  sources:
+  - doc: STW_Headache
+    page: 1
+    evidence_quotes:
+    - Start Amitriptyline (10mg HS)
+  required_facts:
+  - Start amitriptyline 10 mg at bedtime.
+  reference_answer: Start amitriptyline 10 mg at bedtime.
+- id: f25
+  type: direct
+  question: What indomethacin dose, frequency and duration are shown for trigeminal autonomic cephalgias?
+  sources:
+  - doc: STW_Headache
+    page: 1
+    evidence_quotes:
+    - Indomethacin (25mg TID) for 7 days
+  required_facts:
+  - Indomethacin is 25 mg three times daily for seven days.
+  reference_answer: Indomethacin is 25 mg three times daily for seven days.
+- id: f26
+  type: direct
+  question: When should endoscopy be performed after initial stabilisation of an acute GI bleed, including
+    active ongoing bleeding?
+  sources:
+  - doc: STW_GI_Bleed
+    page: 1
+    evidence_quotes:
+    - All cases of acute GI Bleed must undergo endoscopy within 24 hours of initial stabilisation.
+    - Patients with active ongoing bleed may require an earlier endoscopy.
+  required_facts:
+  - Perform endoscopy within 24 hours of initial stabilisation.
+  - Active ongoing bleeding may require earlier endoscopy.
+  reference_answer: Perform endoscopy within 24 hours of initial stabilisation. Active ongoing bleeding
+    may require earlier endoscopy.
+- id: f27
+  type: direct
+  question: What octreotide bolus, infusion rate and duration are listed for suspected variceal bleeding?
+  sources:
+  - doc: STW_GI_Bleed
+    page: 1
+    evidence_quotes:
+    - Inj. Octreotide 50 μg stat I.V. followed by 50 μg/ hr infusion X 3-5 days
+  required_facts:
+  - Give octreotide 50 micrograms IV stat.
+  - Continue octreotide at 50 micrograms/hour by infusion for 3-5 days.
+  reference_answer: Give octreotide 50 micrograms IV stat. Continue octreotide at 50 micrograms/hour by
+    infusion for 3-5 days.
+- id: f28
+  type: direct
+  question: Below what oxygen saturation should oxygen be given in STEMI according to the workflow?
+  sources:
+  - doc: STW_STEMI
+    page: 1
+    evidence_quotes:
+    - O2 if saturation less than 90%
+  required_facts:
+  - Give oxygen if oxygen saturation is below 90%.
+  reference_answer: Give oxygen if oxygen saturation is below 90%.
+- id: f29
+  type: direct
+  question: What prasugrel loading dose and subsequent maintenance dose are listed in the STEMI workflow?
+  sources:
+  - doc: STW_STEMI
+    page: 1
+    evidence_quotes:
+    - 'Prasugrel: Loading dose 60 mg followed by 10 mg OD'
+  required_facts:
+  - The prasugrel loading dose is 60 mg.
+  - The maintenance dose is 10 mg once daily.
+  reference_answer: The prasugrel loading dose is 60 mg. The maintenance dose is 10 mg once daily.
+- id: f30
+  type: direct
+  question: Within how many hours should intermediate-risk UA/NSTEMI patients undergo revascularisation?
+  sources:
+  - doc: STW_NSTEMI
+    page: 1
+    evidence_quotes:
+    - 'Intermeditae risk patients: Revascularization (within 72 hours)'
+  required_facts:
+  - Intermediate-risk patients should undergo revascularisation within 72 hours.
+  reference_answer: Intermediate-risk patients should undergo revascularisation within 72 hours.
+- id: f31
+  type: multi
+  question: During treatment until DKA resolves, how often should vital signs, blood glucose, venous pH/electrolytes
+    and blood or urine ketones be checked?
+  sources:
+  - doc: STW_DKA
+    page: 1
+    evidence_quotes:
+    - 'BP and vital signs: every 1 hour'
+    - Blood glucose every 1 hour
+    - 'Venous pH, Na, K, HCO3 : 2-4 hourly'
+    - 'Blood ketones (if available)/Urine for ketones: 12 hourly'
+  required_facts:
+  - Check blood pressure and vital signs every hour.
+  - Check blood glucose every hour.
+  - Check venous pH, sodium, potassium and bicarbonate every 2-4 hours.
+  - Check blood ketones if available, or urine ketones, every 12 hours.
+  reference_answer: Check blood pressure and vital signs every hour. Check blood glucose every hour. Check
+    venous pH, sodium, potassium and bicarbonate every 2-4 hours. Check blood ketones if available, or
+    urine ketones, every 12 hours.
+- id: f32
+  type: multi
+  question: Compare follow-up diabetes testing after gestational diabetes with follow-up testing for prediabetes.
+  sources:
+  - doc: STW_Diabetes_Type2
+    page: 1
+    evidence_quotes:
+    - All GDM women to be tested 6 weeks post-partum and once every 3 years
+    - 'PREDIABETES: should be tested yearly'
+  required_facts:
+  - After gestational diabetes, test at six weeks postpartum.
+  - After gestational diabetes, subsequently test once every three years.
+  - Test people with prediabetes yearly.
+  reference_answer: After gestational diabetes, test at six weeks postpartum. After gestational diabetes,
+    subsequently test once every three years. Test people with prediabetes yearly.
+- id: f33
+  type: multi
+  question: In AF, what should be done for haemodynamic instability at a district hospital, and which
+    rate-control drugs may be started at PHC/CHC when HR is above 110/min without CHF?
+  sources:
+  - doc: STW_Atrial_Fibrillation
+    page: 1
+    evidence_quotes:
+    - Immediate cardioversion after heparinization,if hemodynamic instability
+    - Start Metoprolol/Diltiazem/Verapamil if HR >110/min & no evidence of CHF
+  required_facts:
+  - For haemodynamic instability, perform immediate cardioversion after heparinisation.
+  - At PHC/CHC, start metoprolol, diltiazem or verapamil if heart rate is above 110/minute and there is
+    no evidence of CHF.
+  reference_answer: For haemodynamic instability, perform immediate cardioversion after heparinisation.
+    At PHC/CHC, start metoprolol, diltiazem or verapamil if heart rate is above 110/minute and there is
+    no evidence of CHF.
+- id: f34
+  type: multi
+  question: What conditions should be met before starting beta blockers in heart failure, how often are
+    they up-titrated, and what should be monitored?
+  sources:
+  - doc: STW_Heart_Failure
+    page: 1
+    evidence_quotes:
+    - Start after decongestion with low dose with BP > 100 mmHg and HR >60/min
+    - Uptitrate dose 1-2 weekly till maximum tolerable dose
+    - Keep watch on BP, heart rate and recipitation of CHF symptoms
+  required_facts:
+  - Start after decongestion.
+  - Start at a low dose with BP above 100 mmHg and heart rate above 60/minute.
+  - Up-titrate every 1-2 weeks to the maximum tolerated dose.
+  - Monitor blood pressure, heart rate and recurrence of CHF symptoms.
+  reference_answer: Start after decongestion. Start at a low dose with BP above 100 mmHg and heart rate
+    above 60/minute. Up-titrate every 1-2 weeks to the maximum tolerated dose. Monitor blood pressure,
+    heart rate and recurrence of CHF symptoms.
+- id: f35
+  type: multi
+  question: Compare Stanford type A and type B aortic dissection by intrapericardial aortic involvement
+    and their usual definitive management.
+  sources:
+  - doc: STW_Acute_Aortic_Syndrome
+    page: 1
+    evidence_quotes:
+    - Dissection involves the intrapericardial aorta regardless of the site of intimal tear.
+    - Dissection does not involve the intrapericardial aorta.
+  - doc: STW_Acute_Aortic_Syndrome
+    page: 2
+    evidence_quotes:
+    - Acute Type A dissection is a surgical emergency.
+    - Surgery or endovascular repair is reserved for complicated or high risk acute Type B dissections
+  required_facts:
+  - Type A involves the intrapericardial aorta, regardless of the intimal tear site.
+  - Acute type A dissection is a surgical emergency.
+  - Type B does not involve the intrapericardial aorta.
+  - Type B is usually treated medically; surgery or endovascular repair is reserved for complicated or
+    high-risk cases.
+  reference_answer: Type A involves the intrapericardial aorta, regardless of the intimal tear site. Acute
+    type A dissection is a surgical emergency. Type B does not involve the intrapericardial aorta. Type
+    B is usually treated medically; surgery or endovascular repair is reserved for complicated or high-risk
+    cases.
+- id: f36
+  type: multi
+  question: In an unwell patient after appendicectomy, which wound findings and which three locations
+    of residual abscess should be checked?
+  sources:
+  - doc: STW_Appendicitis
+    page: 1
+    evidence_quotes:
+    - Examine the operation wound for induration, collection or purulent discharge
+    - Consider residual abscess (pelvis, RIF or Hepatorenal pouch of Morrison
+  required_facts:
+  - Examine the wound for induration, collection or purulent discharge.
+  - Consider residual abscess in the pelvis.
+  - Consider residual abscess in the right iliac fossa.
+  - Consider residual abscess in the hepatorenal pouch of Morrison.
+  reference_answer: Examine the wound for induration, collection or purulent discharge. Consider residual
+    abscess in the pelvis. Consider residual abscess in the right iliac fossa. Consider residual abscess
+    in the hepatorenal pouch of Morrison.
+- id: f37
+  type: multi
+  question: After severe acute asthma improves, what symptom, wheeze, heart rate, respiratory rate and
+    room-air oxygen criteria are required before discharge?
+  sources:
+  - doc: STW_Asthma
+    page: 1
+    evidence_quotes:
+    - Discharge only when symptoms improve, wheezing absent or significantly reduced, heart rate <100
+      bpm, respiratory rate <30/min, room air sPo2 >94%
+  required_facts:
+  - Symptoms must improve.
+  - Wheezing must be absent or significantly reduced.
+  - Heart rate must be below 100 beats/minute.
+  - Respiratory rate must be below 30/minute.
+  - Room-air SpO2 must be above 94%.
+  reference_answer: Symptoms must improve. Wheezing must be absent or significantly reduced. Heart rate
+    must be below 100 beats/minute. Respiratory rate must be below 30/minute. Room-air SpO2 must be above
+    94%.
+- id: f38
+  type: multi
+  question: For suspected variceal bleeding, give the terlipressin bolus and maintenance regimen, the
+    conditions in which it should be avoided, and the monitoring precaution.
+  sources:
+  - doc: STW_GI_Bleed
+    page: 1
+    evidence_quotes:
+    - Inj Terlipressin* 2 mg I.V. stat, followed by Terlipressin 1 mg 6 hourly X 3-5 days
+    - Avoid Terlipressin in patients with suspected heart disease or peripheral vascular disease.
+    - if patient is on Terlipressin examine for signs of peripheral/ cardiac ischemia regularly
+  required_facts:
+  - Give terlipressin 2 mg IV stat, then 1 mg every six hours for 3-5 days.
+  - Avoid terlipressin in suspected heart disease or peripheral vascular disease.
+  - Regularly examine for peripheral or cardiac ischaemia during treatment.
+  reference_answer: Give terlipressin 2 mg IV stat, then 1 mg every six hours for 3-5 days. Avoid terlipressin
+    in suspected heart disease or peripheral vascular disease. Regularly examine for peripheral or cardiac
+    ischaemia during treatment.
+- id: f39
+  type: multi
+  question: Compare the short-acting and long-acting metoprolol regimens listed for STEMI with the oral
+    metoprolol regimen listed for heart failure.
+  sources:
+  - doc: STW_STEMI
+    page: 1
+    evidence_quotes:
+    - 'Short acting: 25-100 mg BD'
+    - 'Long acting: 25 -100 mg OD'
+  - doc: STW_Heart_Failure
+    page: 1
+    evidence_quotes:
+    - METOPROLOL 12.5-50mg twice daily PO
+  required_facts:
+  - For STEMI, short-acting metoprolol is 25-100 mg twice daily.
+  - For STEMI, long-acting metoprolol is 25-100 mg once daily.
+  - For heart failure, metoprolol is 12.5-50 mg orally twice daily.
+  reference_answer: For STEMI, short-acting metoprolol is 25-100 mg twice daily. For STEMI, long-acting
+    metoprolol is 25-100 mg once daily. For heart failure, metoprolol is 12.5-50 mg orally twice daily.
+- id: f40
+  type: multi
+  question: Compare the oxygen delivery methods, flow rates and saturation target in initial paediatric
+    sepsis management with the supplemental oxygen flow for a high-risk adult GI bleed or shock.
+  sources:
+  - doc: STW_Sepsis_Children
+    page: 1
+    evidence_quotes:
+    - Start O2 with face mask @ 4-6 lit/min, or hood @8-10 lit if not available nasal prongs 1-2 lit/min
+      to maintain SpO2 >95%
+  - doc: STW_GI_Bleed
+    page: 1
+    evidence_quotes:
+    - Start supplemental oxygen at 2 L/min in high risk cases and those in shock
+  required_facts:
+  - For paediatric sepsis, use a face mask at 4-6 litres/minute or a hood at 8-10 litres/minute.
+  - If those are unavailable, use nasal prongs at 1-2 litres/minute.
+  - In paediatric sepsis, maintain SpO2 above 95%.
+  - For high-risk adult GI bleed or shock, start supplemental oxygen at 2 litres/minute.
+  reference_answer: For paediatric sepsis, use a face mask at 4-6 litres/minute or a hood at 8-10 litres/minute.
+    If those are unavailable, use nasal prongs at 1-2 litres/minute. In paediatric sepsis, maintain SpO2
+    above 95%. For high-risk adult GI bleed or shock, start supplemental oxygen at 2 litres/minute.
+- id: f41
+  type: unanswerable
+  question: According to these workflows, what eGFR-based dose adjustments should be used for metformin?
+  sources: []
+  required_facts: []
+  reference_answer: Refuse because the requested information is not specified in the provided guidelines.
+  absence_rationale: Metformin is named, but no eGFR-based dosing schedule is provided.
+- id: f42
+  type: unanswerable
+  question: How should the apixaban dose for atrial fibrillation be reduced based on age, body weight
+    and creatinine?
+  sources: []
+  required_facts: []
+  reference_answer: Refuse because the requested information is not specified in the provided guidelines.
+  absence_rationale: AF discusses anticoagulation classes; no apixaban dose-reduction algorithm is provided.
+- id: f43
+  type: unanswerable
+  question: Which omalizumab dose should be selected for asthma based on IgE level and body weight?
+  sources: []
+  required_facts: []
+  reference_answer: Refuse because the requested information is not specified in the provided guidelines.
+  absence_rationale: The asthma workflow has no omalizumab/IgE dosing table.
+- id: f44
+  type: unanswerable
+  question: What paediatric dexamethasone dose and duration are recommended for bacterial meningitis?
+  sources: []
+  required_facts: []
+  reference_answer: Refuse because the requested information is not specified in the provided guidelines.
+  absence_rationale: Headache mentions meningoencephalitis treatment generally, without this regimen.
+- id: f45
+  type: unanswerable
+  question: What exact antibiotic doses are prescribed for adult appendicitis in a patient with penicillin
+    allergy?
+  sources: []
+  required_facts: []
+  reference_answer: Refuse because the requested information is not specified in the provided guidelines.
+  absence_rationale: The appendicitis workflow lists broad-spectrum antibiotics without this allergy-specific
+    regimen.
+- id: f46
+  type: unanswerable
+  question: What starting dose of insulin degludec is specified for an adult with type 2 diabetes?
+  sources: []
+  required_facts: []
+  reference_answer: Refuse because the requested information is not specified in the provided guidelines.
+  absence_rationale: Basal insulin is mentioned, but no degludec starting dose is specified.
+- id: f47
+  type: unanswerable
+  question: What rabies post-exposure vaccine schedule is recommended after a dog bite?
+  sources: []
+  required_facts: []
+  reference_answer: Refuse because the requested information is not specified in the provided guidelines.
+  absence_rationale: Rabies vaccination is outside the corpus.
+- id: f48
+  type: unanswerable
+  question: What is the recommended dose of ivermectin for scabies?
+  sources: []
+  required_facts: []
+  reference_answer: Refuse because the requested information is not specified in the provided guidelines.
+  absence_rationale: Scabies treatment is outside the corpus.
+- id: f49
+  type: unanswerable
+  question: What is the first-line drug regimen for drug-sensitive pulmonary tuberculosis?
+  sources: []
+  required_facts: []
+  reference_answer: Refuse because the requested information is not specified in the provided guidelines.
+  absence_rationale: Tuberculosis is mentioned as an associated illness, without an anti-tuberculous treatment
+    regimen.
+- id: f50
+  type: unanswerable
+  question: What dose and route of oxytocin should be used for postpartum haemorrhage?
+  sources: []
+  required_facts: []
+  reference_answer: Refuse because the requested information is not specified in the provided guidelines.
+  absence_rationale: Postpartum conditions are mentioned, but postpartum haemorrhage treatment is outside
+    the corpus.

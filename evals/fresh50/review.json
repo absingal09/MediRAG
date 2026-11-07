@@ -1,0 +1,820 @@
+{
+  "reviewed_utc": "2026-11-07T15:49:20.078683+00:00",
+  "reviewer": "Codex assistant",
+  "independent_clinical_validation": false,
+  "method": "Assistant reviewed all 50 outputs, required facts, cited retrieved passages, and relevant original PDF pages; raw LLM judgements preserved.",
+  "verdict_changes": 0,
+  "records": [
+    {
+      "id": "f01",
+      "type": "direct",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "",
+      "extra_claim_review": "The additional before-insulin K+ <3.3/ECG-change advice is explicitly supported by S1 and the original DKA PDF.",
+      "citation_support": [
+        {
+          "tag": "S1",
+          "doc": "STW_DKA",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f02",
+      "type": "direct",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "",
+      "extra_claim_review": "No unsupported extra claims found in the reviewed answer.",
+      "citation_support": [
+        {
+          "tag": "S1",
+          "doc": "STW_DKA",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f03",
+      "type": "direct",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "",
+      "extra_claim_review": "No unsupported extra claims found in the reviewed answer.",
+      "citation_support": [
+        {
+          "tag": "S1",
+          "doc": "STW_Diabetes_Type2",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f04",
+      "type": "direct",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "",
+      "extra_claim_review": "No unsupported extra claims found in the reviewed answer.",
+      "citation_support": [
+        {
+          "tag": "S1",
+          "doc": "STW_Diabetes_Type2",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f05",
+      "type": "direct",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "",
+      "extra_claim_review": "No unsupported extra claims found in the reviewed answer.",
+      "citation_support": [
+        {
+          "tag": "S1",
+          "doc": "STW_Diabetes_Type2",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f06",
+      "type": "direct",
+      "raw_verdict": "incorrect",
+      "reviewed_outcome": "incorrect",
+      "changed": false,
+      "reason": "False refusal on a corpus-answerable question. Top five omit the VKA exceptions (severe mitral stenosis and metallic valve).",
+      "source_evidence_coverage": "none",
+      "scope_note": "",
+      "extra_claim_review": "No substantive answer supplied.",
+      "citation_support": []
+    },
+    {
+      "id": "f07",
+      "type": "direct",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "",
+      "extra_claim_review": "The additional long-standing-persistent duration >1 year is supported by S1 and the original AF categorization box.",
+      "citation_support": [
+        {
+          "tag": "S1",
+          "doc": "STW_Atrial_Fibrillation",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f08",
+      "type": "direct",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "",
+      "extra_claim_review": "No unsupported extra claims found in the reviewed answer.",
+      "citation_support": [
+        {
+          "tag": "S1",
+          "doc": "STW_Atrial_Fibrillation",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f09",
+      "type": "direct",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "",
+      "extra_claim_review": "No unsupported extra claims found in the reviewed answer.",
+      "citation_support": [
+        {
+          "tag": "S1",
+          "doc": "STW_Heart_Failure",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f10",
+      "type": "direct",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "",
+      "extra_claim_review": "No unsupported extra claims found in the reviewed answer.",
+      "citation_support": [
+        {
+          "tag": "S1",
+          "doc": "STW_Heart_Failure",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f11",
+      "type": "direct",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "",
+      "extra_claim_review": "No unsupported extra claims found in the reviewed answer.",
+      "citation_support": [
+        {
+          "tag": "S2",
+          "doc": "STW_Heart_Failure",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f12",
+      "type": "direct",
+      "raw_verdict": "incorrect",
+      "reviewed_outcome": "incorrect",
+      "changed": false,
+      "reason": "False refusal on a corpus-answerable question. The chronic >90-day category is present, but the acute and subacute cut-offs are absent.",
+      "source_evidence_coverage": "partial",
+      "scope_note": "",
+      "extra_claim_review": "No substantive answer supplied.",
+      "citation_support": []
+    },
+    {
+      "id": "f13",
+      "type": "direct",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "Original page-2 table confirms that 20 mg IV/2 minutes and 1-2 mg/min belong to labetalol, despite interleaved extracted rows.",
+      "extra_claim_review": "No unsupported extra claims found in the reviewed answer.",
+      "citation_support": [
+        {
+          "tag": "S1",
+          "doc": "STW_Acute_Aortic_Syndrome",
+          "page": 2,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f14",
+      "type": "direct",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "",
+      "extra_claim_review": "No unsupported extra claims found in the reviewed answer.",
+      "citation_support": [
+        {
+          "tag": "S1",
+          "doc": "STW_Appendicitis",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f15",
+      "type": "direct",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "",
+      "extra_claim_review": "The extra recurrent-appendicitis CT/barium follow-through statement is supported by S2 and the original recurrent-appendicitis section.",
+      "citation_support": [
+        {
+          "tag": "S1",
+          "doc": "STW_Appendicitis",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        },
+        {
+          "tag": "S2",
+          "doc": "STW_Appendicitis",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f16",
+      "type": "direct",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "",
+      "extra_claim_review": "No unsupported extra claims found in the reviewed answer.",
+      "citation_support": [
+        {
+          "tag": "S1",
+          "doc": "STW_Asthma",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f17",
+      "type": "direct",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "The original non-severe-asthma box confirms the one-week visit; S2 provides the corresponding sentence.",
+      "extra_claim_review": "No unsupported extra claims found in the reviewed answer.",
+      "citation_support": [
+        {
+          "tag": "S1",
+          "doc": "STW_Asthma",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        },
+        {
+          "tag": "S2",
+          "doc": "STW_Asthma",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f18",
+      "type": "direct",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "",
+      "extra_claim_review": "No unsupported extra claims found in the reviewed answer.",
+      "citation_support": [
+        {
+          "tag": "S1",
+          "doc": "STW_Dengue",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f19",
+      "type": "direct",
+      "raw_verdict": "incorrect",
+      "reviewed_outcome": "incorrect",
+      "changed": false,
+      "reason": "False refusal on a corpus-answerable question. Retrieved dengue headings and fluid rates omit the FFP/cryoprecipitate indication.",
+      "source_evidence_coverage": "none",
+      "scope_note": "",
+      "extra_claim_review": "No substantive answer supplied.",
+      "citation_support": []
+    },
+    {
+      "id": "f20",
+      "type": "direct",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "",
+      "extra_claim_review": "No unsupported extra claims found in the reviewed answer.",
+      "citation_support": [
+        {
+          "tag": "S1",
+          "doc": "STW_Sepsis_Children",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f21",
+      "type": "direct",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "The requested shock-persistence condition is already supplied in the question; the concise adrenaline rate answers that scope.",
+      "extra_claim_review": "No unsupported extra claims found in the reviewed answer.",
+      "citation_support": [
+        {
+          "tag": "S1",
+          "doc": "STW_Sepsis_Children",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f22",
+      "type": "direct",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "",
+      "extra_claim_review": "No unsupported extra claims found in the reviewed answer.",
+      "citation_support": [
+        {
+          "tag": "S1",
+          "doc": "STW_Stroke",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f23",
+      "type": "direct",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "The question already supplies suspected SAH with negative CT; the concise lumbar-puncture answer need not repeat that condition.",
+      "extra_claim_review": "No unsupported extra claims found in the reviewed answer.",
+      "citation_support": [
+        {
+          "tag": "S1",
+          "doc": "STW_Stroke",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f24",
+      "type": "direct",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "The original flowchart links amitriptyline 10 mg HS to chronic tension headache; isolated extracted text retains the dose.",
+      "extra_claim_review": "No unsupported extra claims found in the reviewed answer.",
+      "citation_support": [
+        {
+          "tag": "S1",
+          "doc": "STW_Headache",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f25",
+      "type": "direct",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "Original flowchart confirms indomethacin 25 mg TID for seven days belongs to the trigeminal-autonomic-cephalgia branch.",
+      "extra_claim_review": "No unsupported extra claims found in the reviewed answer.",
+      "citation_support": [
+        {
+          "tag": "S1",
+          "doc": "STW_Headache",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f26",
+      "type": "direct",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "",
+      "extra_claim_review": "No unsupported extra claims found in the reviewed answer.",
+      "citation_support": [
+        {
+          "tag": "S1",
+          "doc": "STW_GI_Bleed",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f27",
+      "type": "direct",
+      "raw_verdict": "incorrect",
+      "reviewed_outcome": "incorrect",
+      "changed": false,
+      "reason": "False refusal on a corpus-answerable question. The variceal-bleed label is retrieved but the octreotide dosing passage is absent.",
+      "source_evidence_coverage": "none",
+      "scope_note": "",
+      "extra_claim_review": "No substantive answer supplied.",
+      "citation_support": []
+    },
+    {
+      "id": "f28",
+      "type": "direct",
+      "raw_verdict": "incorrect",
+      "reviewed_outcome": "incorrect",
+      "changed": false,
+      "reason": "False refusal on a corpus-answerable question. A STEMI title is present; saturation thresholds from GI bleeding do not establish the STEMI oxygen rule.",
+      "source_evidence_coverage": "none",
+      "scope_note": "",
+      "extra_claim_review": "No substantive answer supplied.",
+      "citation_support": []
+    },
+    {
+      "id": "f29",
+      "type": "direct",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "Only loading/maintenance dose and frequency were asked; no unasked regimen detail was required.",
+      "extra_claim_review": "No unsupported extra claims found in the reviewed answer.",
+      "citation_support": [
+        {
+          "tag": "S1",
+          "doc": "STW_STEMI",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f30",
+      "type": "direct",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "",
+      "extra_claim_review": "No unsupported extra claims found in the reviewed answer.",
+      "citation_support": [
+        {
+          "tag": "S1",
+          "doc": "STW_NSTEMI",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f31",
+      "type": "multi",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "",
+      "extra_claim_review": "No unsupported extra claims found in the reviewed answer.",
+      "citation_support": [
+        {
+          "tag": "S1",
+          "doc": "STW_DKA",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f32",
+      "type": "multi",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "",
+      "extra_claim_review": "No unsupported extra claims found in the reviewed answer.",
+      "citation_support": [
+        {
+          "tag": "S1",
+          "doc": "STW_Diabetes_Type2",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f33",
+      "type": "multi",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "",
+      "extra_claim_review": "No unsupported extra claims found in the reviewed answer.",
+      "citation_support": [
+        {
+          "tag": "S1",
+          "doc": "STW_Atrial_Fibrillation",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f34",
+      "type": "multi",
+      "raw_verdict": "incorrect",
+      "reviewed_outcome": "incorrect",
+      "changed": false,
+      "reason": "False refusal on a corpus-answerable question. After-decongestion advice is present; HF-specific starting BP/HR, titration and monitoring facts are absent.",
+      "source_evidence_coverage": "partial",
+      "scope_note": "",
+      "extra_claim_review": "No substantive answer supplied.",
+      "citation_support": []
+    },
+    {
+      "id": "f35",
+      "type": "multi",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "Both original source pages were checked for Stanford anatomical definitions and differing usual management.",
+      "extra_claim_review": "The added proximal/distal labels, blood-pressure/pain management and TEVAR aims are supported by S1-S3 and the two original aortic-syndrome pages.",
+      "citation_support": [
+        {
+          "tag": "S1",
+          "doc": "STW_Acute_Aortic_Syndrome",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        },
+        {
+          "tag": "S2",
+          "doc": "STW_Acute_Aortic_Syndrome",
+          "page": 2,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        },
+        {
+          "tag": "S3",
+          "doc": "STW_Acute_Aortic_Syndrome",
+          "page": 2,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f36",
+      "type": "multi",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "",
+      "extra_claim_review": "No unsupported extra claims found in the reviewed answer.",
+      "citation_support": [
+        {
+          "tag": "S1",
+          "doc": "STW_Appendicitis",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f37",
+      "type": "multi",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "All five explicitly requested discharge conditions are present, including strict HR/RR/room-air-SpO2 inequalities.",
+      "extra_claim_review": "No unsupported extra claims found in the reviewed answer.",
+      "citation_support": [
+        {
+          "tag": "S1",
+          "doc": "STW_Asthma",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f38",
+      "type": "multi",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "",
+      "extra_claim_review": "No unsupported extra claims found in the reviewed answer.",
+      "citation_support": [
+        {
+          "tag": "S2",
+          "doc": "STW_GI_Bleed",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f39",
+      "type": "multi",
+      "raw_verdict": "correct",
+      "reviewed_outcome": "correct",
+      "changed": false,
+      "reason": "All frozen required facts are conveyed accurately for the question asked; no required-fact contradiction found.",
+      "source_evidence_coverage": "full",
+      "scope_note": "",
+      "extra_claim_review": "The regimen comparison is correct; added HF initiation/titration precautions are supported by S4 and the original HF drug/precautions box.",
+      "citation_support": [
+        {
+          "tag": "S1",
+          "doc": "STW_STEMI",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        },
+        {
+          "tag": "S4",
+          "doc": "STW_Heart_Failure",
+          "page": 1,
+          "finding": "Requested claim checked against cited passage and original PDF; supported within the question scope."
+        }
+      ]
+    },
+    {
+      "id": "f40",
+      "type": "multi",
+      "raw_verdict": "incorrect",
+      "reviewed_outcome": "incorrect",
+      "changed": false,
+      "reason": "False refusal on a corpus-answerable question. The adult GI-bleed oxygen flow is present, but the paediatric oxygen-method/flow/target passage is absent.",
+      "source_evidence_coverage": "partial",
+      "scope_note": "",
+      "extra_claim_review": "No substantive answer supplied.",
+      "citation_support": []
+    },
+    {
+      "id": "f41",
+      "type": "unanswerable",
+      "reviewed_outcome": "correct_refusal",
+      "reason": "Metformin is named, but no eGFR-based dosing schedule is provided.",
+      "review_method": "Assistant checked the original corpus scope and requested regimen; no independent clinician review."
+    },
+    {
+      "id": "f42",
+      "type": "unanswerable",
+      "reviewed_outcome": "correct_refusal",
+      "reason": "AF discusses anticoagulation classes; no apixaban dose-reduction algorithm is provided.",
+      "review_method": "Assistant checked the original corpus scope and requested regimen; no independent clinician review."
+    },
+    {
+      "id": "f43",
+      "type": "unanswerable",
+      "reviewed_outcome": "correct_refusal",
+      "reason": "The asthma workflow has no omalizumab/IgE dosing table.",
+      "review_method": "Assistant checked the original corpus scope and requested regimen; no independent clinician review."
+    },
+    {
+      "id": "f44",
+      "type": "unanswerable",
+      "reviewed_outcome": "correct_refusal",
+      "reason": "Headache mentions meningoencephalitis treatment generally, without this regimen.",
+      "review_method": "Assistant checked the original corpus scope and requested regimen; no independent clinician review."
+    },
+    {
+      "id": "f45",
+      "type": "unanswerable",
+      "reviewed_outcome": "correct_refusal",
+      "reason": "The appendicitis workflow lists broad-spectrum antibiotics without this allergy-specific regimen.",
+      "review_method": "Assistant checked the original corpus scope and requested regimen; no independent clinician review."
+    },
+    {
+      "id": "f46",
+      "type": "unanswerable",
+      "reviewed_outcome": "correct_refusal",
+      "reason": "Basal insulin is mentioned, but no degludec starting dose is specified.",
+      "review_method": "Assistant checked the original corpus scope and requested regimen; no independent clinician review."
+    },
+    {
+      "id": "f47",
+      "type": "unanswerable",
+      "reviewed_outcome": "correct_refusal",
+      "reason": "Rabies vaccination is outside the corpus.",
+      "review_method": "Assistant checked the original corpus scope and requested regimen; no independent clinician review."
+    },
+    {
+      "id": "f48",
+      "type": "unanswerable",
+      "reviewed_outcome": "correct_refusal",
+      "reason": "Scabies treatment is outside the corpus.",
+      "review_method": "Assistant checked the original corpus scope and requested regimen; no independent clinician review."
+    },
+    {
+      "id": "f49",
+      "type": "unanswerable",
+      "reviewed_outcome": "correct_refusal",
+      "reason": "Tuberculosis is mentioned as an associated illness, without an anti-tuberculous treatment regimen.",
+      "review_method": "Assistant checked the original corpus scope and requested regimen; no independent clinician review."
+    },
+    {
+      "id": "f50",
+      "type": "unanswerable",
+      "reviewed_outcome": "correct_refusal",
+      "reason": "Postpartum conditions are mentioned, but postpartum haemorrhage treatment is outside the corpus.",
+      "review_method": "Assistant checked the original corpus scope and requested regimen; no independent clinician review."
+    }
+  ]
+}

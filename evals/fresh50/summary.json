@@ -1,0 +1,18 @@
+{
+  "saved_answers": 50,
+  "unique_ids": 50,
+  "answerable": 40,
+  "judged": 40,
+  "raw_verdict_counts": {
+    "correct": 33,
+    "incorrect": 7
+  },
+  "correct_refusals": 10,
+  "unanswerable": 10,
+  "false_refusals": 7,
+  "hit_at_5": 40,
+  "mrr_at_5": 0.9508333333333333,
+  "mean_page_coverage": 1.0,
+  "all_pages_at_5": 40,
+  "review_status": "Raw score snapshot; completed assistant adjudication is in review.json and review.md."
+}

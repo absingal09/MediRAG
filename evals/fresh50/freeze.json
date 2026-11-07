@@ -1,0 +1,69 @@
+{
+  "created_utc": "2026-11-07T15:42:12.020383+00:00",
+  "git_revision": "15a4b2e69912e29e9abcaa6c36562d3ea49d3595",
+  "snapshot": {
+    "files": {
+      "evals/fresh50/questions.yaml": "9f00f1f23d8177cbfa06b45bb827fa23620f17bc353e7790867ac4184950b87e",
+      "evals/fresh50/protocol.md": "fd5272dc45a4bea5853f53f6604d078b0dc433186820040207a03c494f46a8df",
+      "evals/fresh50/judge_prompt.txt": "fe6f902c1b234f970a2acace3cd7dc997e5cf6e45f392b9b052766a4ee36fee1",
+      "scripts/eval_fresh50.py": "43e2290620f3d4fa1f3711927d87892f4bcb80951d629e709a518ad9bc4b4239",
+      "app/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "app/ask.py": "85c2f156b1f5307e69d54b033306ab35cce2ffed223a98e687d55adb37bb65aa",
+      "app/cache.py": "bfa35419f7466abb9fbef4e6137804e0861e6b4b22fa93b3520edfab0d6cb53e",
+      "app/chunking.py": "5277411099dcba7448d7c3f127be9b2a844008d4ae620d8101afaceed86d8c2f",
+      "app/config.py": "7174856abd089306f7c31a3e9e84e856dad80fb4f3f0c71594d08a774ece5540",
+      "app/db.py": "b80f17524d6f12cabb940e7e03553e9b52f2f92672af5fbbaf9da58dd694c12f",
+      "app/embeddings.py": "5c98700736f792d06a4d24643d7d7f049eba942e78ecf7498520e81e17f45a2c",
+      "app/lexical.py": "00c066b6e7d92aaf9095c854dc558505a15b927867031f6d0dd4cc4f803ad16e",
+      "app/llm.py": "214a230bf1a7e00629eac94e88aba6ac386dae6b629d2c9e59c1ff7dd94f723a",
+      "app/main.py": "735cef390c0cf0d340541e668735ae8fc04515771aa5c246434486f44a3d0408",
+      "app/parse.py": "a7ed616f8281fd47d96d1286e4be7b564a27fe4dd56f5c772d354e539877c204",
+      "app/prompting.py": "1c651fb1fe7ab377ba38129d1e91dca9883630f06a55077e1f1dab3bfdda602c",
+      "app/reranking.py": "44575e366a69733ec2f486173b962d860a21da69b961fe0524d908022cb71b14",
+      "app/search.py": "e08ff4bb82aae150fbcf58b8349eb2574e51a4648ca336d551d95f49e8ac72e1",
+      "app/telemetry.py": "64d3253b0d802ad857263feb83e860fa67ab5ab0a4db78f9c73caa5d5807bcaa",
+      "data/pdfs/STW_Acute_Aortic_Syndrome.pdf": "2e245de9ea5502197ced3d44c2dc916a15836768c7580e6d2cb166431359a0c4",
+      "data/pdfs/STW_Appendicitis.pdf": "8e83441ee96c0716b724bd4001c90e751edc4eafbcbb65c0184833a11773a256",
+      "data/pdfs/STW_Asthma.pdf": "4a96115a9bbad018562082654e2d8ae90349a3a04bdfcbbebda790fc56e3fc8c",
+      "data/pdfs/STW_Atrial_Fibrillation.pdf": "4c1f2004ef6d22f6a73d598cc8259bd9abca573375e418ea20e0e2f5d373122e",
+      "data/pdfs/STW_Dengue.pdf": "81b6c4477a3902de582653c1273668f7ec8cbcab8688f6ee126f4a373b2f90f5",
+      "data/pdfs/STW_Diabetes_Type2.pdf": "bcad0bfca7c2ec3a10a9b695cec7b1f2f91881bad01d05d0ed3c94925ad820fb",
+      "data/pdfs/STW_DKA.pdf": "22d9d6cb470ee6a18cea80ca740aefde2926984be6c82d592a362a73b0ecec03",
+      "data/pdfs/STW_GI_Bleed.pdf": "5ffc0c6bff9eb451051d3583e92f2b63da8ec22f3509730ee15e9e2726d19120",
+      "data/pdfs/STW_Headache.pdf": "4c390a218df0dd29782444a37441647a392015e50e001c5234d2430ba3ec2dcc",
+      "data/pdfs/STW_Heart_Failure.pdf": "bc975cec3871945972a0c2518f9735ed6b28e5027f0f2736506f27fc9c569a8a",
+      "data/pdfs/STW_NSTEMI.pdf": "4f8dcd7b654d01c71f89ce196bd4889a071413782570744536b00a3cba82d7e0",
+      "data/pdfs/STW_Sepsis_Children.pdf": "1583389fc8d0d342b3bfc9fd75c521a54aac8589dcc28ad1dd5829d18cf881cf",
+      "data/pdfs/STW_STEMI.pdf": "98c6bed931ac43c6721026d26517b608e33079ed817c36e6dfc6920462c5f17f",
+      "data/pdfs/STW_Stroke.pdf": "fad89b1fce79275f0836e6057782b9de6120d8c4874ffcbcf18edd379c9e7eca"
+    },
+    "settings": {
+      "SARVAM_MODEL": "glm5.3",
+      "SARVAM_FALLBACK_MODEL": "sarvam-105b",
+      "EMBED_MODEL": "all-MiniLM-L6-v2",
+      "TOP_K": 5,
+      "CORPUS_VERSION": "v1"
+    },
+    "database": {
+      "documents": 14,
+      "chunks": 494,
+      "content_sha256": "9e1b79d667d74938f32e861da01aaa46ef54994085615bafdaace2753a2b96bc"
+    },
+    "packages": {
+      "sentence-transformers": "6.2.0",
+      "transformers": "5.22.0",
+      "torch": "2.15.0",
+      "requests": "2.34.2",
+      "psycopg": "3.3.6",
+      "PyYAML": "6.0.3"
+    }
+  },
+  "retrieval": "vector top20 -> cross-encoder/ms-marco-MiniLM-L6-v2 CPU batch1 -> top5",
+  "generation": {
+    "temperature": 0,
+    "reasoning_effort": "low",
+    "max_tokens": 1024,
+    "cache": "bypassed",
+    "configured_fallback": "preserved"
+  }
+}

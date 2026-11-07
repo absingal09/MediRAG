@@ -1,0 +1,64 @@
+{
+  "saved_answers": 50,
+  "unique_ids": 50,
+  "answerable": 40,
+  "judged": 40,
+  "raw_verdict_counts": {
+    "correct": 33,
+    "incorrect": 7
+  },
+  "correct_refusals": 10,
+  "unanswerable": 10,
+  "false_refusals": 7,
+  "hit_at_5": 40,
+  "mrr_at_5": 0.9508333333333333,
+  "mean_page_coverage": 1.0,
+  "all_pages_at_5": 40,
+  "review_status": "complete: assistant adjudication, no independent clinical validation",
+  "reviewed_verdict_counts": {
+    "correct": 33,
+    "partial": 0,
+    "incorrect": 7
+  },
+  "answer_accuracy": 0.825,
+  "correct_refusal_rate": 1.0,
+  "false_refusal_rate": 0.175,
+  "answer_accuracy_wilson95": [
+    0.6805000966821273,
+    0.9125458625396392
+  ],
+  "correct_refusal_wilson95": [
+    0.7224672001371218,
+    0.9999999999999999
+  ],
+  "source_evidence_coverage": {
+    "full": 33,
+    "none": 4,
+    "partial": 3
+  },
+  "by_type": {
+    "direct": {
+      "correct": 25,
+      "total": 30
+    },
+    "multi": {
+      "correct": 8,
+      "total": 10
+    }
+  },
+  "generation_calls": 50,
+  "judge_calls": 33,
+  "fallback_calls": 0,
+  "observed_response_models": {
+    "glm5.3": 83
+  },
+  "usage": {
+    "prompt_tokens": 69322,
+    "completion_tokens": 5120,
+    "total_tokens": 74442
+  },
+  "generation_failures": 0,
+  "completed_utc": "2026-11-07T15:49:20.078683+00:00",
+  "answer_file_sha256": "10fa1f88c331091820c5d8de804fdb5456013d29ea4f26d3881a660df6048de2",
+  "judge_file_sha256": "2593386fded556d1496af78b406c943e2fabcefac302bda5d9794dbac41be6c0"
+}

@@ -1,0 +1,1561 @@
+[
+  {
+    "id": "f01",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate states potassium is replaced if serum K+ < 5.5 mEq/L."
+      },
+      {
+        "index": 2,
+        "supported": true,
+        "reason": "Candidate states replacement rate of 10-20 mEq/hour with the insulin infusion."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Both required facts are explicitly conveyed; the additional claim about supplementing potassium before insulin if K+ < 3.3 mEq/L or ECG changes is supported by retrieved source S1.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate states potassium is replaced if serum K+ < 5.5 mEq/L.\"},{\"index\":2,\"supported\":true,\"reason\":\"Candidate states replacement rate of 10-20 mEq/hour with the insulin infusion.\"}],\"contradictions\":[],\"extra_claims_to_review\":[],\"reason\":\"Both required facts are explicitly conveyed; the additional claim about supplementing potassium before insulin if K+ < 3.3 mEq/L or ECG changes is supported by retrieved source S1.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_b731ae7a-44e9-4058-94a6-cd1725509529",
+        "usage": {
+          "completion_tokens": 119,
+          "prompt_tokens": 1287,
+          "total_tokens": 1406,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f02",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate states to report urine output <30 ml/hour for 2 consecutive hours, matching the required fact and the source evidence."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate exactly conveys the required reporting threshold and duration, supported by retrieved source S1.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate states to report urine output <30 ml/hour for 2 consecutive hours, matching the required fact and the source evidence.\"}],\"contradictions\":[],\"extra_claims_to_review\":[],\"reason\":\"Candidate exactly conveys the required reporting threshold and duration, supported by retrieved source S1.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_4a318f5e-080d-42a1-abab-ea823cd1d315",
+        "usage": {
+          "completion_tokens": 77,
+          "prompt_tokens": 1036,
+          "total_tokens": 1113,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f03",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate states post-prandial capillary plasma glucose <180 mg/dl, matching the required fact and source evidence."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate exactly matches the required target with retrieved source support.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate states post-prandial capillary plasma glucose <180 mg/dl, matching the required fact and source evidence.\"}],\"contradictions\":[],\"extra_claims_to_review\":[],\"reason\":\"Candidate exactly matches the required target with retrieved source support.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_107dc133-1a25-4b5c-b1f5-78453c069bb0",
+        "usage": {
+          "completion_tokens": 68,
+          "prompt_tokens": 1081,
+          "total_tokens": 1149,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f04",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate states HbA1c monitored every 6-12 months, matching the source."
+      },
+      {
+        "index": 2,
+        "supported": true,
+        "reason": "Candidate states every 3 months if uncontrolled, matching the source."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Both required facts are directly supported by the retrieved source and reference evidence.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate states HbA1c monitored every 6-12 months, matching the source.\"},{\"index\":2,\"supported\":true,\"reason\":\"Candidate states every 3 months if uncontrolled, matching the source.\"}],\"contradictions\":[],\"extra_claims_to_review\":[],\"reason\":\"Both required facts are directly supported by the retrieved source and reference evidence.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_b8ebdafc-9ed3-447f-a434-33a0945383c3",
+        "usage": {
+          "completion_tokens": 91,
+          "prompt_tokens": 1163,
+          "total_tokens": 1254,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f05",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate states a 75 g oral glucose tolerance test."
+      },
+      {
+        "index": 2,
+        "supported": true,
+        "reason": "Candidate specifies 24-28 weeks timing."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Both required facts are directly stated and match the reference evidence.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate states a 75 g oral glucose tolerance test.\"},{\"index\":2,\"supported\":true,\"reason\":\"Candidate specifies 24-28 weeks timing.\"}],\"contradictions\":[],\"extra_claims_to_review\":[],\"reason\":\"Both required facts are directly stated and match the reference evidence.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_e33ab360-0a90-42d2-8320-8ba58c8e46d1",
+        "usage": {
+          "completion_tokens": 76,
+          "prompt_tokens": 1123,
+          "total_tokens": 1199,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f06",
+    "verdict": "incorrect",
+    "reason": "Refused an answerable question.",
+    "fact_results": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "raw_response": null,
+    "method": "deterministic_refusal",
+    "model_calls": []
+  },
+  {
+    "id": "f07",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate states persistent AF lasts from 7 days to 1 year, matching the required fact and source."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [
+      "Long-standing persistent AF defined as AF lasting > 1 year (supported by retrieved source chunk 121, so no contradiction)"
+    ],
+    "reason": "Candidate directly conveys the required fact; the additional long-standing persistent AF claim is also supported by the retrieved source.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate states persistent AF lasts from 7 days to 1 year, matching the required fact and source.\"}],\"contradictions\":[],\"extra_claims_to_review\":[\"Long-standing persistent AF defined as AF lasting > 1 year (supported by retrieved source chunk 121, so no contradiction)\"],\"reason\":\"Candidate directly conveys the required fact; the additional long-standing persistent AF claim is also supported by the retrieved source.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_e64c7529-e9b6-47fc-919b-e4d1b4e4b9c8",
+        "usage": {
+          "completion_tokens": 102,
+          "prompt_tokens": 914,
+          "total_tokens": 1016,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f08",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate states 'Control SBP to less than 140 mmHg', matching the required fact and the retrieved evidence."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate exactly conveys the required SBP target of <140 mmHg, supported by the retrieved STW_Atrial_Fibrillation passage.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate states 'Control SBP to less than 140 mmHg', matching the required fact and the retrieved evidence.\"}],\"contradictions\":[],\"extra_claims_to_review\":[],\"reason\":\"Candidate exactly conveys the required SBP target of <140 mmHg, supported by the retrieved STW_Atrial_Fibrillation passage.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_325cab9d-9fdc-45a2-8373-4902d61457ba",
+        "usage": {
+          "completion_tokens": 86,
+          "prompt_tokens": 1139,
+          "total_tokens": 1225,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f09",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate states carvedilol 3.125 to 25 mg twice daily PO, matching the required dose range, oral route, and frequency."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate exactly matches the required fact and the reference evidence.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate states carvedilol 3.125 to 25 mg twice daily PO, matching the required dose range, oral route, and frequency.\"}],\"contradictions\":[],\"extra_claims_to_review\":[],\"reason\":\"Candidate exactly matches the required fact and the reference evidence.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_f63cf731-1ef6-4461-9a0f-f69d5b1d2bb5",
+        "usage": {
+          "completion_tokens": 73,
+          "prompt_tokens": 1500,
+          "total_tokens": 1573,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f10",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate states bisoprolol 1.25–10 mg once a day PO, matching the required dose range, oral route, and frequency."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate exactly matches the required fact and the reference evidence.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate states bisoprolol 1.25–10 mg once a day PO, matching the required dose range, oral route, and frequency.\"}],\"contradictions\":[],\"extra_claims_to_review\":[],\"reason\":\"Candidate exactly matches the required fact and the reference evidence.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_4fe20317-67ab-4961-a4d7-c27aca246232",
+        "usage": {
+          "completion_tokens": 74,
+          "prompt_tokens": 1541,
+          "total_tokens": 1615,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f11",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate lists serum electrolytes as a measure to monitor."
+      },
+      {
+        "index": 2,
+        "supported": true,
+        "reason": "Candidate lists creatinine as a measure to monitor."
+      },
+      {
+        "index": 3,
+        "supported": true,
+        "reason": "Candidate lists uric acid as a measure to monitor."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate states all three required laboratory measures (serum electrolytes, creatinine, uric acid), matching the reference evidence and retrieved STW_Heart_Failure passage.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate lists serum electrolytes as a measure to monitor.\"},{\"index\":2,\"supported\":true,\"reason\":\"Candidate lists creatinine as a measure to monitor.\"},{\"index\":3,\"supported\":true,\"reason\":\"Candidate lists uric acid as a measure to monitor.\"}],\"contradictions\":[],\"extra_claims_to_review\":[],\"reason\":\"Candidate states all three required laboratory measures (serum electrolytes, creatinine, uric acid), matching the reference evidence and retrieved STW_Heart_Failure passage.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_26c0a9c0-5749-4f36-9d9b-0dd64254ed3d",
+        "usage": {
+          "completion_tokens": 121,
+          "prompt_tokens": 1145,
+          "total_tokens": 1266,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f12",
+    "verdict": "incorrect",
+    "reason": "Refused an answerable question.",
+    "fact_results": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "raw_response": null,
+    "method": "deterministic_refusal",
+    "model_calls": []
+  },
+  {
+    "id": "f13",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate states labetalol loading dose 20 mg IV in 2 minutes, matching the required fact."
+      },
+      {
+        "index": 2,
+        "supported": true,
+        "reason": "Candidate states maintenance rate 1-2 mg/minute, matching the required fact."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Both required facts are explicitly conveyed and match the reference evidence.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate states labetalol loading dose 20 mg IV in 2 minutes, matching the required fact.\"},{\"index\":2,\"supported\":true,\"reason\":\"Candidate states maintenance rate 1-2 mg/minute, matching the required fact.\"}],\"contradictions\":[],\"extra_claims_to_review\":[],\"reason\":\"Both required facts are explicitly conveyed and match the reference evidence.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_5f9341b9-f764-4dd0-be58-fefbd788323b",
+        "usage": {
+          "completion_tokens": 94,
+          "prompt_tokens": 1247,
+          "total_tokens": 1341,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f14",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate states pain at right iliac fossa with sudden thrust of palpation at left flank, matching the required fact and source."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate fully conveys the required fact with no extra claims.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate states pain at right iliac fossa with sudden thrust of palpation at left flank, matching the required fact and source.\"}],\"contradictions\":[],\"extra_claims_to_review\":[],\"reason\":\"Candidate fully conveys the required fact with no extra claims.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_743346c7-3e96-4b0d-b027-a9b573c781b0",
+        "usage": {
+          "completion_tokens": 71,
+          "prompt_tokens": 1439,
+          "total_tokens": 1510,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f15",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate states CT scan of the abdomen is useful in special situations of uncertain diagnosis of appendicitis, matching the required fact."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [
+      {
+        "claim": "In recurrent appendicitis, CT scan (along with barium follow through X-ray) is often required to confirm the diagnosis."
+      }
+    ],
+    "reason": "The required fact is directly supported; the recurrent appendicitis claim is extra but supported by retrieved source chunk 80, so it is listed for review only.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate states CT scan of the abdomen is useful in special situations of uncertain diagnosis of appendicitis, matching the required fact.\"}],\"contradictions\":[],\"extra_claims_to_review\":[{\"claim\":\"In recurrent appendicitis, CT scan (along with barium follow through X-ray) is often required to confirm the diagnosis.\"}],\"reason\":\"The required fact is directly supported; the recurrent appendicitis claim is extra but supported by retrieved source chunk 80, so it is listed for review only.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_cf8c5e46-ed22-4a32-b77a-2bf92fa7106d",
+        "usage": {
+          "completion_tokens": 119,
+          "prompt_tokens": 1222,
+          "total_tokens": 1341,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f16",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate states heart rate <60 bpm is bradycardia in life-threatening exacerbation."
+      },
+      {
+        "index": 2,
+        "supported": true,
+        "reason": "Candidate says immediately refer to a higher centre with ICU facility."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Both required facts are directly conveyed and match the retrieved STW_Asthma passage.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate states heart rate <60 bpm is bradycardia in life-threatening exacerbation.\"},{\"index\":2,\"supported\":true,\"reason\":\"Candidate says immediately refer to a higher centre with ICU facility.\"}],\"contradictions\":[],\"extra_claims_to_review\":[],\"reason\":\"Both required facts are directly conveyed and match the retrieved STW_Asthma passage.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_fa573491-e7c0-45ec-9441-d0163c9cbd63",
+        "usage": {
+          "completion_tokens": 91,
+          "prompt_tokens": 1291,
+          "total_tokens": 1382,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f17",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate states follow-up outpatient visit should be scheduled at one week, matching the required fact and retrieved evidence."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate directly conveys the single required fact with no extra claims.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate states follow-up outpatient visit should be scheduled at one week, matching the required fact and retrieved evidence.\"}],\"contradictions\":[],\"extra_claims_to_review\":[],\"reason\":\"Candidate directly conveys the single required fact with no extra claims.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_cc0ca023-64f6-4425-b36f-2690b3b5380d",
+        "usage": {
+          "completion_tokens": 67,
+          "prompt_tokens": 1141,
+          "total_tokens": 1208,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f18",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate states 20 ml/kg crystalloid or colloid, matching the required volume and fluid type."
+      },
+      {
+        "index": 2,
+        "supported": true,
+        "reason": "Candidate specifies administration over 15 minutes."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate fully conveys both required facts, consistent with the retrieved STW_Dengue passage.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate states 20 ml/kg crystalloid or colloid, matching the required volume and fluid type.\"},{\"index\":2,\"supported\":true,\"reason\":\"Candidate specifies administration over 15 minutes.\"}],\"contradictions\":[],\"extra_claims_to_review\":[],\"reason\":\"Candidate fully conveys both required facts, consistent with the retrieved STW_Dengue passage.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_dc539f2e-0375-4386-b653-434d16c95e5b",
+        "usage": {
+          "completion_tokens": 91,
+          "prompt_tokens": 950,
+          "total_tokens": 1041,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f19",
+    "verdict": "incorrect",
+    "reason": "Refused an answerable question.",
+    "fact_results": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "raw_response": null,
+    "method": "deterministic_refusal",
+    "model_calls": []
+  },
+  {
+    "id": "f20",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate states 'Within the first one hour', matching the required fact that the first antibiotic dose should be given within the first hour, consistent with the retrieved STW_Sepsis_Children passage."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "The candidate directly and correctly answers the question with the required fact; no extra claims or contradictions present.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate states 'Within the first one hour', matching the required fact that the first antibiotic dose should be given within the first hour, consistent with the retrieved STW_Sepsis_Children passage.\"}],\"contradictions\":[],\"extra_claims_to_review\":[],\"reason\":\"The candidate directly and correctly answers the question with the required fact; no extra claims or contradictions present.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_beb68dbb-b31b-460f-9cbe-e8d2091cb601",
+        "usage": {
+          "completion_tokens": 93,
+          "prompt_tokens": 1142,
+          "total_tokens": 1235,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f21",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate states adrenaline infusion at 0.1 microgram/kg/min, matching the required fact and retrieved evidence."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate directly conveys the required starting rate of adrenaline infusion.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate states adrenaline infusion at 0.1 microgram/kg/min, matching the required fact and retrieved evidence.\"}],\"contradictions\":[],\"extra_claims_to_review\":[],\"reason\":\"Candidate directly conveys the required starting rate of adrenaline infusion.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_c7ba65da-a960-49e1-8bfe-6ec5d7dd434b",
+        "usage": {
+          "completion_tokens": 67,
+          "prompt_tokens": 1063,
+          "total_tokens": 1130,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f22",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate states 'Maintain O2 saturation >94%', matching the required fact and the source evidence."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate exactly conveys the required oxygen saturation target of >94%.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate states 'Maintain O2 saturation >94%', matching the required fact and the source evidence.\"}],\"contradictions\":[],\"extra_claims_to_review\":[],\"reason\":\"Candidate exactly conveys the required oxygen saturation target of >94%.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_9f8e78f5-6b7f-4e52-8855-287d1dc0dfe1",
+        "usage": {
+          "completion_tokens": 67,
+          "prompt_tokens": 873,
+          "total_tokens": 940,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f23",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate answers 'Lumbar puncture', matching the required investigation for suspected subarachnoid haemorrhage with negative CT."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate directly names lumbar puncture, consistent with the reference evidence.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate answers 'Lumbar puncture', matching the required investigation for suspected subarachnoid haemorrhage with negative CT.\"}],\"contradictions\":[],\"extra_claims_to_review\":[],\"reason\":\"Candidate directly names lumbar puncture, consistent with the reference evidence.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_8051546f-c84c-40e3-8a5e-e100626a0811",
+        "usage": {
+          "completion_tokens": 75,
+          "prompt_tokens": 1006,
+          "total_tokens": 1081,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f24",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate states amitriptyline 10mg HS (at bedtime), matching the required starting dose and dosing time."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate conveys the required fact exactly: 10 mg dose at bedtime (HS), consistent with the reference evidence.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate states amitriptyline 10mg HS (at bedtime), matching the required starting dose and dosing time.\"}],\"contradictions\":[],\"extra_claims_to_review\":[],\"reason\":\"Candidate conveys the required fact exactly: 10 mg dose at bedtime (HS), consistent with the reference evidence.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_6779bfe8-8b75-4dfe-8a26-591f5169bdde",
+        "usage": {
+          "completion_tokens": 80,
+          "prompt_tokens": 1100,
+          "total_tokens": 1180,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f25",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate states indomethacin 25mg TID for 7 days, matching the required fact and source evidence."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate exactly conveys the required dose, frequency, and duration.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate states indomethacin 25mg TID for 7 days, matching the required fact and source evidence.\"}],\"contradictions\":[],\"extra_claims_to_review\":[],\"reason\":\"Candidate exactly conveys the required dose, frequency, and duration.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_635f94ff-19d5-490c-907d-a5a41bca203a",
+        "usage": {
+          "completion_tokens": 70,
+          "prompt_tokens": 933,
+          "total_tokens": 1003,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f26",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate states endoscopy within 24 hours of initial stabilisation, matching the required fact."
+      },
+      {
+        "index": 2,
+        "supported": true,
+        "reason": "Candidate states active ongoing bleed may require earlier endoscopy, matching the required fact."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Both required facts are directly conveyed and supported by the retrieved STW_GI_Bleed passage.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate states endoscopy within 24 hours of initial stabilisation, matching the required fact.\"},{\"index\":2,\"supported\":true,\"reason\":\"Candidate states active ongoing bleed may require earlier endoscopy, matching the required fact.\"}],\"contradictions\":[],\"extra_claims_to_review\":[],\"reason\":\"Both required facts are directly conveyed and supported by the retrieved STW_GI_Bleed passage.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_c5afb1b1-b23a-4b97-b589-85b39dbd9c89",
+        "usage": {
+          "completion_tokens": 100,
+          "prompt_tokens": 941,
+          "total_tokens": 1041,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f27",
+    "verdict": "incorrect",
+    "reason": "Refused an answerable question.",
+    "fact_results": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "raw_response": null,
+    "method": "deterministic_refusal",
+    "model_calls": []
+  },
+  {
+    "id": "f28",
+    "verdict": "incorrect",
+    "reason": "Refused an answerable question.",
+    "fact_results": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "raw_response": null,
+    "method": "deterministic_refusal",
+    "model_calls": []
+  },
+  {
+    "id": "f29",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate states prasugrel loading dose 60 mg, matching the STEMI workflow."
+      },
+      {
+        "index": 2,
+        "supported": true,
+        "reason": "Candidate states 10 mg OD (once daily) maintenance, matching the STEMI workflow."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate exactly matches the reference evidence and retrieved STEMI source for both loading and maintenance doses.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate states prasugrel loading dose 60 mg, matching the STEMI workflow.\"},{\"index\":2,\"supported\":true,\"reason\":\"Candidate states 10 mg OD (once daily) maintenance, matching the STEMI workflow.\"}],\"contradictions\":[],\"extra_claims_to_review\":[],\"reason\":\"Candidate exactly matches the reference evidence and retrieved STEMI source for both loading and maintenance doses.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_7f5faf5e-82aa-469e-afa5-833718deca7f",
+        "usage": {
+          "completion_tokens": 98,
+          "prompt_tokens": 1374,
+          "total_tokens": 1472,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f30",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate states revascularisation within 72 hours, matching the required fact and source evidence."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Candidate directly answers the question with the correct 72-hour timeframe for intermediate-risk UA/NSTEMI revascularisation.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate states revascularisation within 72 hours, matching the required fact and source evidence.\"}],\"contradictions\":[],\"extra_claims_to_review\":[],\"reason\":\"Candidate directly answers the question with the correct 72-hour timeframe for intermediate-risk UA/NSTEMI revascularisation.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_e03ea10e-05f9-449c-a095-550a2e445a65",
+        "usage": {
+          "completion_tokens": 74,
+          "prompt_tokens": 1341,
+          "total_tokens": 1415,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f31",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate states BP and vital signs every 1 hour, matching required fact."
+      },
+      {
+        "index": 2,
+        "supported": true,
+        "reason": "Candidate states blood glucose every 1 hour."
+      },
+      {
+        "index": 3,
+        "supported": true,
+        "reason": "Candidate states venous pH, Na, K, HCO3 2-4 hourly."
+      },
+      {
+        "index": 4,
+        "supported": true,
+        "reason": "Candidate states blood ketones (if available)/urine ketones 12 hourly."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "All four required monitoring frequencies are explicitly stated and match the reference evidence.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate states BP and vital signs every 1 hour, matching required fact.\"},{\"index\":2,\"supported\":true,\"reason\":\"Candidate states blood glucose every 1 hour.\"},{\"index\":3,\"supported\":true,\"reason\":\"Candidate states venous pH, Na, K, HCO3 2-4 hourly.\"},{\"index\":4,\"supported\":true,\"reason\":\"Candidate states blood ketones (if available)/urine ketones 12 hourly.\"}],\"contradictions\":[],\"extra_claims_to_review\":[],\"reason\":\"All four required monitoring frequencies are explicitly stated and match the reference evidence.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_78e7f2ae-64f2-4afe-9cc5-4cd6ba86c926",
+        "usage": {
+          "completion_tokens": 140,
+          "prompt_tokens": 1271,
+          "total_tokens": 1411,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f32",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate states all GDM women are tested 6 weeks post-partum."
+      },
+      {
+        "index": 2,
+        "supported": true,
+        "reason": "Candidate states once every 3 years after GDM."
+      },
+      {
+        "index": 3,
+        "supported": true,
+        "reason": "Candidate states prediabetes should be tested yearly."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "All three required facts are directly conveyed and match the retrieved source text.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate states all GDM women are tested 6 weeks post-partum.\"},{\"index\":2,\"supported\":true,\"reason\":\"Candidate states once every 3 years after GDM.\"},{\"index\":3,\"supported\":true,\"reason\":\"Candidate states prediabetes should be tested yearly.\"}],\"contradictions\":[],\"extra_claims_to_review\":[],\"reason\":\"All three required facts are directly conveyed and match the retrieved source text.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_0285e5c9-d6fe-4d7f-9170-3b4587d52bd4",
+        "usage": {
+          "completion_tokens": 105,
+          "prompt_tokens": 1170,
+          "total_tokens": 1275,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f33",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate states immediate cardioversion after heparinization for hemodynamic instability at district hospital, matching the required fact."
+      },
+      {
+        "index": 2,
+        "supported": true,
+        "reason": "Candidate lists metoprolol, diltiazem, or verapamil at PHC/CHC if HR >110/min with no evidence of CHF, matching the required fact."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "Both required facts are directly conveyed and supported by the retrieved STW_Atrial_Fibrillation passage.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate states immediate cardioversion after heparinization for hemodynamic instability at district hospital, matching the required fact.\"},{\"index\":2,\"supported\":true,\"reason\":\"Candidate lists metoprolol, diltiazem, or verapamil at PHC/CHC if HR >110/min with no evidence of CHF, matching the required fact.\"}],\"contradictions\":[],\"extra_claims_to_review\":[],\"reason\":\"Both required facts are directly conveyed and supported by the retrieved STW_Atrial_Fibrillation passage.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_2e768d66-e119-477b-9564-45bcc1361dce",
+        "usage": {
+          "completion_tokens": 126,
+          "prompt_tokens": 1258,
+          "total_tokens": 1384,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f34",
+    "verdict": "incorrect",
+    "reason": "Refused an answerable question.",
+    "fact_results": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "raw_response": null,
+    "method": "deterministic_refusal",
+    "model_calls": []
+  },
+  {
+    "id": "f35",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate states Type A involves the intrapericardial aorta regardless of intimal tear site."
+      },
+      {
+        "index": 2,
+        "supported": true,
+        "reason": "Candidate states acute Type A dissection is a surgical emergency."
+      },
+      {
+        "index": 3,
+        "supported": true,
+        "reason": "Candidate states Type B does not involve the intrapericardial aorta."
+      },
+      {
+        "index": 4,
+        "supported": true,
+        "reason": "Candidate states Type B is mostly treated medically, with surgery/endovascular repair reserved for complicated or high-risk cases."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [
+      "TEVAR aims at covering the primary intimal tear, expansion of the true lumen, thrombosis/remodeling of the false lumen, and correction of malperfusion (supported by retrieved chunk 56, but beyond required facts)",
+      "Gold standard for Type B is optimal medical therapy with control of blood pressure and pain (supported by chunk 56)",
+      "Medical therapy to control blood pressure and pain is essential irrespective of intervention (supported by chunk 31)"
+    ],
+    "reason": "All four required facts are explicitly conveyed and match the reference evidence; extra TEVAR/medical therapy details are supported by retrieved passages.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate states Type A involves the intrapericardial aorta regardless of intimal tear site.\"},{\"index\":2,\"supported\":true,\"reason\":\"Candidate states acute Type A dissection is a surgical emergency.\"},{\"index\":3,\"supported\":true,\"reason\":\"Candidate states Type B does not involve the intrapericardial aorta.\"},{\"index\":4,\"supported\":true,\"reason\":\"Candidate states Type B is mostly treated medically, with surgery/endovascular repair reserved for complicated or high-risk cases.\"}],\"contradictions\":[],\"extra_claims_to_review\":[\"TEVAR aims at covering the primary intimal tear, expansion of the true lumen, thrombosis/remodeling of the false lumen, and correction of malperfusion (supported by retrieved chunk 56, but beyond required facts)\",\"Gold standard for Type B is optimal medical therapy with control of blood pressure and pain (supported by chunk 56)\",\"Medical therapy to control blood pressure and pain is essential irrespective of intervention (supported by chunk 31)\"],\"reason\":\"All four required facts are explicitly conveyed and match the reference evidence; extra TEVAR/medical therapy details are supported by retrieved passages.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_e859c724-faaf-45e2-877c-15fc8e66a8f2",
+        "usage": {
+          "completion_tokens": 255,
+          "prompt_tokens": 1511,
+          "total_tokens": 1766,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f36",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate states examining the operation wound for induration, collection or purulent discharge, matching the source."
+      },
+      {
+        "index": 2,
+        "supported": true,
+        "reason": "Pelvis listed as a residual abscess site."
+      },
+      {
+        "index": 3,
+        "supported": true,
+        "reason": "RIF (right iliac fossa) explicitly listed."
+      },
+      {
+        "index": 4,
+        "supported": true,
+        "reason": "Hepatorenal pouch of Morrison explicitly listed."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "All four required facts are directly conveyed and supported by the retrieved source chunk.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate states examining the operation wound for induration, collection or purulent discharge, matching the source.\"},{\"index\":2,\"supported\":true,\"reason\":\"Pelvis listed as a residual abscess site.\"},{\"index\":3,\"supported\":true,\"reason\":\"RIF (right iliac fossa) explicitly listed.\"},{\"index\":4,\"supported\":true,\"reason\":\"Hepatorenal pouch of Morrison explicitly listed.\"}],\"contradictions\":[],\"extra_claims_to_review\":[],\"reason\":\"All four required facts are directly conveyed and supported by the retrieved source chunk.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_ee8c48b5-9586-4a25-adfa-a2c1ae48a5df",
+        "usage": {
+          "completion_tokens": 133,
+          "prompt_tokens": 1200,
+          "total_tokens": 1333,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f37",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate states symptoms improved."
+      },
+      {
+        "index": 2,
+        "supported": true,
+        "reason": "Wheezing absent or significantly reduced stated."
+      },
+      {
+        "index": 3,
+        "supported": true,
+        "reason": "Heart rate <100 bpm stated."
+      },
+      {
+        "index": 4,
+        "supported": true,
+        "reason": "Respiratory rate <30/min stated."
+      },
+      {
+        "index": 5,
+        "supported": true,
+        "reason": "Room air SpO2 >94% stated."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "All five discharge criteria match the reference evidence exactly.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate states symptoms improved.\"},{\"index\":2,\"supported\":true,\"reason\":\"Wheezing absent or significantly reduced stated.\"},{\"index\":3,\"supported\":true,\"reason\":\"Heart rate <100 bpm stated.\"},{\"index\":4,\"supported\":true,\"reason\":\"Respiratory rate <30/min stated.\"},{\"index\":5,\"supported\":true,\"reason\":\"Room air SpO2 >94% stated.\"}],\"contradictions\":[],\"extra_claims_to_review\":[],\"reason\":\"All five discharge criteria match the reference evidence exactly.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_5232f4f4-cfe8-4dab-a208-8521991b8b66",
+        "usage": {
+          "completion_tokens": 128,
+          "prompt_tokens": 1300,
+          "total_tokens": 1428,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f38",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate states 2 mg I.V. stat then 1 mg 6 hourly for 3-5 days, matching the required regimen."
+      },
+      {
+        "index": 2,
+        "supported": true,
+        "reason": "Candidate states avoid in suspected heart disease or peripheral vascular disease."
+      },
+      {
+        "index": 3,
+        "supported": true,
+        "reason": "Candidate states examine regularly for peripheral/cardiac ischemia during treatment."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "reason": "All three required facts are directly conveyed and match the reference evidence.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate states 2 mg I.V. stat then 1 mg 6 hourly for 3-5 days, matching the required regimen.\"},{\"index\":2,\"supported\":true,\"reason\":\"Candidate states avoid in suspected heart disease or peripheral vascular disease.\"},{\"index\":3,\"supported\":true,\"reason\":\"Candidate states examine regularly for peripheral/cardiac ischemia during treatment.\"}],\"contradictions\":[],\"extra_claims_to_review\":[],\"reason\":\"All three required facts are directly conveyed and match the reference evidence.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_d89ed5eb-0009-4307-9e66-39e26d04da05",
+        "usage": {
+          "completion_tokens": 121,
+          "prompt_tokens": 1287,
+          "total_tokens": 1408,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f39",
+    "fact_results": [
+      {
+        "index": 1,
+        "supported": true,
+        "reason": "Candidate states STEMI short-acting metoprolol 25-100 mg BD, matching the required fact."
+      },
+      {
+        "index": 2,
+        "supported": true,
+        "reason": "Candidate states STEMI long-acting metoprolol 25-100 mg OD, matching the required fact."
+      },
+      {
+        "index": 3,
+        "supported": true,
+        "reason": "Candidate states heart failure metoprolol 12.5-50 mg twice daily PO, matching the required fact."
+      }
+    ],
+    "contradictions": [],
+    "extra_claims_to_review": [
+      "Heart failure precautions: start after decongestion with low dose if BP > 100 mmHg and HR > 60/min, uptitrate 1-2 weekly to maximum tolerable dose (supported by retrieved STW_Heart_Failure passage, but beyond required facts)"
+    ],
+    "reason": "All three required facts are directly conveyed; the extra heart-failure precaution details are supported by the retrieved source but go beyond the required facts.",
+    "verdict": "correct",
+    "raw_response": "{\"fact_results\":[{\"index\":1,\"supported\":true,\"reason\":\"Candidate states STEMI short-acting metoprolol 25-100 mg BD, matching the required fact.\"},{\"index\":2,\"supported\":true,\"reason\":\"Candidate states STEMI long-acting metoprolol 25-100 mg OD, matching the required fact.\"},{\"index\":3,\"supported\":true,\"reason\":\"Candidate states heart failure metoprolol 12.5-50 mg twice daily PO, matching the required fact.\"}],\"contradictions\":[],\"extra_claims_to_review\":[\"Heart failure precautions: start after decongestion with low dose if BP > 100 mmHg and HR > 60/min, uptitrate 1-2 weekly to maximum tolerable dose (supported by retrieved STW_Heart_Failure passage, but beyond required facts)\"],\"reason\":\"All three required facts are directly conveyed; the extra heart-failure precaution details are supported by the retrieved source but go beyond the required facts.\"}",
+    "method": "llm_fact_judge",
+    "model_calls": [
+      {
+        "requested_model": "glm5.3",
+        "http_status": 200,
+        "response_model": "glm5.3",
+        "response_id": "20261107_f01eda77-ca71-45f1-858e-3ccbe882c389",
+        "usage": {
+          "completion_tokens": 211,
+          "prompt_tokens": 1646,
+          "total_tokens": 1857,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": null,
+            "audio_tokens": null,
+            "reasoning_tokens": 0,
+            "rejected_prediction_tokens": null
+          },
+          "prompt_tokens_details": {
+            "audio_tokens": null,
+            "cached_tokens": 0
+          }
+        },
+        "finish_reason": "stop"
+      }
+    ]
+  },
+  {
+    "id": "f40",
+    "verdict": "incorrect",
+    "reason": "Refused an answerable question.",
+    "fact_results": [],
+    "contradictions": [],
+    "extra_claims_to_review": [],
+    "raw_response": null,
+    "method": "deterministic_refusal",
+    "model_calls": []
+  }
+]
