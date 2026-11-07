@@ -579,6 +579,32 @@ h1 em {
   line-height: 1.7;
   text-align: center;
 }
+.document-empty {
+  flex: 1;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 36px 28px;
+  text-align: center;
+  color: var(--muted);
+}
+.document-empty > svg {
+  color: #8996af;
+}
+.document-empty h3 {
+  font-family: var(--serif);
+  font-size: 29px;
+  font-weight: 400;
+  color: var(--ink);
+}
+.document-empty p {
+  max-width: 32ch;
+  font-size: 14px;
+  line-height: 1.8;
+}
 .evidence-item.selected p {
   -webkit-line-clamp: unset;
 }

@@ -28,7 +28,6 @@ import { PdfPage } from "./PdfReader";
 import type { AskResult, Guideline, OpenDocument } from "./types";
 import "./App.css";
 
-const initialDocument = documentById("STW_DKA")!;
 const prompts = [
   "When should potassium be supplemented before starting insulin in DKA?",
   "What are the warning signs of stroke?",
@@ -44,10 +43,7 @@ export default function App() {
   const [result, setResult] = useState<AskResult | null>(null);
   const [error, setError] = useState("");
   const [example, setExample] = useState(false);
-  const [document, setDocument] = useState<OpenDocument>({
-    ...initialDocument,
-    url: documentUrl(initialDocument),
-  });
+  const [document, setDocument] = useState<OpenDocument | null>(null);
   const [page, setPage] = useState(1),
     [pages, setPages] = useState(1),
     [zoom, setZoom] = useState(1);
@@ -311,6 +307,7 @@ export default function App() {
     }
   }
   function expandPdf() {
+    if (!document || sourceUnavailable) return;
     pdfDialog.current?.showModal();
     setExpanded(true);
   }
@@ -646,9 +643,9 @@ export default function App() {
               <h2>
                 {sourceUnavailable
                   ? readableName(activeSource!.doc_name)
-                  : document.shortTitle}
+                  : document?.shortTitle ?? "Document"}
               </h2>
-              {document.local && !sourceUnavailable && (
+              {document?.local && !sourceUnavailable && (
                 <span className="local-preview-label">Local preview</span>
               )}
             </div>
@@ -661,7 +658,7 @@ export default function App() {
               >
                 <Library size={18} />
               </button>
-              {!sourceUnavailable && (
+              {document && !sourceUnavailable && (
                 <a
                   className="icon-button"
                   aria-label="Open original PDF"
@@ -677,7 +674,7 @@ export default function App() {
                 className="icon-button"
                 aria-label="Expand document reader"
                 title="Expand reader"
-                disabled={sourceUnavailable}
+                disabled={!document || sourceUnavailable}
                 onClick={expandPdf}
               >
                 <Expand size={17} />
@@ -695,6 +692,15 @@ export default function App() {
           {sourceUnavailable ? (
             <div className="pdf-unavailable" role="status">
               PDF not available in this library.
+            </div>
+          ) : !document ? (
+            <div className="document-empty">
+              <BookOpen size={32} strokeWidth={1.25} aria-hidden="true" />
+              <h3>Your source appears here.</h3>
+              <p>Ask a question to see its cited guideline, or choose one from the library.</p>
+              <button className="secondary-button" onClick={() => libraryDialog.current?.showModal()}>
+                <Library size={16} /> Browse guidelines
+              </button>
             </div>
           ) : (
             <div className="document-view">
@@ -841,7 +847,7 @@ export default function App() {
           {matches.map((item, index) => (
             <button
               key={item.id}
-              className={`library-card ${item.id === document.id ? "active" : ""}`}
+              className={`library-card ${item.id === document?.id ? "active" : ""}`}
               onClick={() => {
                 openDocument(item);
                 libraryDialog.current?.close();
@@ -900,13 +906,13 @@ export default function App() {
           <div>
             <span className="small-label">ORIGINAL DOCUMENT</span>
             <h2 id="expanded-title">
-              {document.shortTitle} <span>· page {page}</span>
+              {document?.shortTitle} <span>· page {page}</span>
             </h2>
           </div>
           <div>
             <a
               className="secondary-button"
-              href={`${document.url}#page=${page}`}
+              href={document ? `${document.url}#page=${page}` : undefined}
               target="_blank"
               rel="noreferrer"
             >
@@ -921,7 +927,7 @@ export default function App() {
             </button>
           </div>
         </div>
-        {expanded && (
+        {expanded && document && (
           <PdfPage
             url={document.url}
             page={page}

@@ -51,6 +51,15 @@ function submit() {
   fireEvent.submit(question.closest("form")!);
 }
 describe("answer and provenance states", () => {
+  it("starts with an empty reader instead of an unrelated guideline", () => {
+    render(<App />);
+    expect(screen.getByText("Your source appears here.")).toBeTruthy();
+    expect(screen.queryByTestId("pdf-reader")).toBeNull();
+    expect(screen.queryByRole("link", { name: "Open original PDF" })).toBeNull();
+    expect(screen.queryByRole("button", { name: "Next page" })).toBeNull();
+    expect((screen.getByRole("button", { name: "Expand document reader" }) as HTMLButtonElement).disabled).toBe(true);
+    expect(screen.getByRole("button", { name: "Browse guidelines" })).toBeTruthy();
+  });
   it("switches each citation's PDF text, including two passages from the same page", async () => {
     const sources = [
       result.sources[0],
@@ -189,7 +198,7 @@ describe("answer and provenance states", () => {
     submit();
     await screen.findByText("I couldn't find this in the guidelines.");
     expect(screen.queryByRole("button", { name: /DKA · p\. 1/ })).toBeNull();
-    expect(screen.getByTestId("selected-pdf-text").textContent).toBe("");
+    expect(screen.queryByTestId("pdf-reader")).toBeNull();
   });
   it("keeps streamed citations noninteractive until the final event", async () => {
     let resolve!: (value: AskResult) => void;
