@@ -6,6 +6,48 @@ is measured on a 40-question eval set.
 
 > Work in progress. A guideline lookup tool, not medical advice.
 
+## Demo
+
+Ask a question, read the cited answer, and check the highlighted passage in the original PDF.
+
+![MediRAG: aspirin question, cited answer and highlighted source](docs/assets/medirag-refined.gif)
+
+[Watch the MP4](docs/assets/medirag-refined.mp4) · [Try the app](https://medirag-desk.vercel.app/)
+
+Highlights locate retrieved passages, rather than independently verifying every answer claim.
+
+## Architecture
+
+```mermaid
+flowchart TD
+    subgraph Ingestion["Offline ingestion"]
+        PDFs["14 ICMR PDFs"] --> Extract["PyMuPDF extraction"]
+        Extract --> Chunk["Page-bound chunks: up to 600 characters"]
+        Chunk --> Embed["MiniLM embeddings: 384 dimensions"]
+        Embed --> DB[("Supabase PostgreSQL + pgvector")]
+    end
+
+    subgraph Answering["Live question answering"]
+        UI["React frontend · Vercel"] --> API["FastAPI · Render"]
+        API --> Cache{"Answer cached?"}
+        Cache -- Yes --> Final["Final answer or refusal"]
+        Cache -- No --> Query["Embed question"]
+        Query --> Retrieve["Vector search: top 20"]
+        DB --> Retrieve
+        Retrieve --> Rerank["Cross-encoder: keep top 5"]
+        Rerank --> Prompt["Question + numbered passages"]
+        Prompt --> LLM["Sarvam-hosted LLM"]
+        LLM --> Validate["Validate citation tags; retry once if invalid"]
+        Validate --> Final
+        Final -- "SSE response" --> UI
+        UI -- "Select citation" --> Reader["PDF reader + passage highlighting"]
+    end
+```
+
+Streamed text is provisional until the final result. Citation checks
+validate source tags, not whether every claim is supported.
+PDF imports currently support local preview only.
+
 ## Setup (Windows, PowerShell)
 
 ```powershell
