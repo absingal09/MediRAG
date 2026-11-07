@@ -1,8 +1,9 @@
 # MediRAG
 
-RAG over ICMR Standard Treatment Workflows: answers clinical questions with
-document and page citations, refuses when the guidelines don't cover it, and
-is measured on a 40-question eval set.
+Deployed clinical guideline assistant over **14 ICMR workflows and 494 chunks**,
+with streamed answers, interactive PDF citations and passage highlighting.
+Evaluated across **90 questions**; **82.5% answer correctness** on the latest
+50-question supplementary test (33/40 answerable; 10/10 correct refusals).
 
 > Work in progress. A guideline lookup tool, not medical advice.
 
@@ -84,53 +85,31 @@ Open http://127.0.0.1:5173/. See `frontend/README.md` for details.
 | `app/` | API code |
 | `scripts/` | Ingestion and inspection scripts |
 | `evals/questions.yaml` | 40 eval questions (30 dev, 10 held-out) |
+| `evals/fresh50/` | Frozen supplementary test: 50 questions, outputs and results |
 
-## Dev baseline results
+## Evaluation
 
-30 dev questions; 10 held-out questions were reserved until pipeline tuning finished.
-Vector-only retrieval, 494 chunks, top 5; generator and judge: glm5.3.
+**Cross-encoder reranking raised dev answer correctness by 22.2 percentage points**
+(55.6% → 77.8%) and reduced false refusals from 7/27 to 4/27.
 
-| Metric | Result |
-|---|---|
-| Hit@5 | 27/27 (100%) |
-| MRR@5 | 0.907 |
-| Mean page coverage@5 | 100% |
-| All-required-pages@5 | 27/27 |
-| Correct refusals | 3/3 unanswerable |
-| False refusals | 7/27 answerable |
-| Raw LLM judge: correct / partial / incorrect | 14 / 5 / 8 |
-| Manual review: correct / partial / incorrect | 15 / 4 / 8 |
+| Evaluation | Answer correctness | Correct refusals | MRR@5 |
+|---|---|---|---|
+| Dev: vector baseline | 15/27 (55.6%) | 3/3 | 0.907 |
+| Dev: reranked | 21/27 (77.8%) | 3/3 | 0.944 |
+| Original held-out: reranked | 5/8 (62.5%) | 2/2 | 1.000 |
+| Fresh 50: reranked | **33/40 (82.5%)** | **10/10** | **0.951** |
 
-Manual review changed three verdicts:
+90 distinct questions: 30 dev, 10 original held-out and 50 supplementary.
+Answer accuracy excludes unanswerable questions; refusals are scored separately.
 
-- **q08 and q17: partial → correct.** Both answered the question asked; the
-  judge penalized omitted reference details beyond its scope.
-- **q23: correct → partial.** Pain migration to the right iliac fossa was unclear.
+Fresh 50 used frozen questions/settings, cache bypass, LLM judging and assistant
+review of all outputs. Seven false refusals lacked complete retrieved evidence.
+This same-corpus supplementary score is separate from the earlier held-out
+result; it is not a matched before/after gain or independent clinical validation.
 
-All 27 answerable responses were manually reviewed. Page-level retrieval
-scores do not establish complete evidence retrieval or answer correctness.
-See `evals/results.md` for settings, evidence coverage and limitations.
-
-## Held-out results — frozen reranked configuration
-
-Vector top 20 → cross-encoder/ms-marco-MiniLM-L6-v2 → top 5.
-Evaluated 10 held-out questions after dev tuning finished.
-
-| Metric | Result |
-|---|---|
-| Hit@5 | 8/8 |
-| MRR@5 | 1.000 |
-| Mean page coverage@5 | 93.8% |
-| All-required-pages@5 | 7/8 |
-| Correct refusals | 2/2 unanswerable |
-| False refusals | 3/8 answerable |
-| Manually reviewed correct answers | 5/8 |
-
-All 8 answerable responses manually reviewed. Page-level retrieval
-does not establish complete evidence. See `evals/results.md` for
-failures, wording caveats and evaluation limits.
-
-The deployed app uses vector top 20 → cross-encoder reranking → top 5.
+Deployed retrieval: vector top 20 → cross-encoder reranking → top 5.
+Page-level hits do not establish complete evidence. See
+[original evaluations](evals/results.md) and [fresh 50 results](evals/fresh50/results.md).
 
 ## Status
 
@@ -145,6 +124,7 @@ The deployed app uses vector top 20 → cross-encoder reranking → top 5.
 - [x] Deployment — [frontend](https://medirag-desk.vercel.app/) on Vercel, [backend](https://medirag-3xvf.onrender.com/) on Render
 - [x] Dev baseline adjudication
 - [x] Held-out evaluation after tuning
+- [x] Frozen 50-question supplementary evaluation
 
 ## Deferred tasks
 

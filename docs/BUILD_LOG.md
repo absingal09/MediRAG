@@ -537,3 +537,15 @@ How ingest works:
 ### What it taught
 - Passing a memory limit does not establish acceptable CPU performance.
 - Docker memory tests did not reproduce Render Free's 0.1 CPU allocation.
+
+## Phase 21 – Fresh 50-question evaluation (Nov 7)
+
+- Froze 30 direct, 10 multi-part and 10 unanswerable questions before generation;
+  preserved the original 40-question evaluation and production configuration.
+- **82.5% answer correctness (33/40)**; **10/10 correct refusals**; MRR@5 **0.951**.
+- LLM judging and assistant review agreed; seven failures were false refusals
+  with incomplete retrieved evidence. No completed answers were rerun.
+- Saved questions, evidence, hashes, outputs and reviews in `evals/fresh50/`;
+  runner: `scripts/eval_fresh50.py`. Total evaluation coverage: **90 questions**.
+- Supplementary same-corpus score, not a replacement for the old held-out result
+  or independent clinical validation.
